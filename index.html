@@ -119,6 +119,11 @@
             font-size: 1.125rem !important;
         }
     }
+    
+    /* Gallery hover effects */
+    .gallery-item img {
+        transition: transform 0.3s ease;
+    }
   </style>
 </head>
 <body class="antialiased">
@@ -140,6 +145,7 @@
           <a class="text-white hover:text-gray-200 transition" href="#about">About</a>
           <a class="text-white hover:text-gray-200 transition" href="#initiatives">Initiatives</a>
           <a class="text-white hover:text-gray-200 transition" href="#media">Media</a>
+          <a class="text-white hover:text-gray-200 transition" href="#gallery">Gallery</a>
           <a class="text-white hover:text-gray-200 transition" href="#contact">Contact</a>
         </div>
         
@@ -155,6 +161,7 @@
           <a class="block py-2 text-white hover:text-gray-200" href="#about">About</a>
           <a class="block py-2 text-white hover:text-gray-200" href="#initiatives">Initiatives</a>
           <a class="block py-2 text-white hover:text-gray-200" href="#media">Media</a>
+          <a class="block py-2 text-white hover:text-gray-200" href="#gallery">Gallery</a>
           <a class="block py-2 text-white hover:text-gray-200" href="#contact">Contact</a>
         </div>
       </div>
@@ -253,30 +260,122 @@
       </div>
     </section>
     
-    <section class="py-12 sm:py-16 md:py-20 contact-bg" id="contact">
-      <div class="container mx-auto px-4 sm:px-6 text-center">
-        <h2 class="text-3xl sm:text-4xl font-bold mb-6 sm:mb-8" style="color: var(--color-primary-green);">Get in Touch</h2>
-        <p class="max-w-2xl mx-auto text-base sm:text-lg text-gray-800 mb-6 sm:mb-8 fade-in px-2">We welcome your questions, partnership ideas, and messages of support. Please feel free to reach out to us to learn more about our work and how you can be a part of this journey.</p>
-        <div class="max-w-md mx-auto fade-in">
-          <div class="bg-white/70 backdrop-blur-sm p-4 sm:p-6 rounded-lg shadow-lg space-y-3 sm:space-y-4 text-left">
-            <div class="flex items-start sm:items-center space-x-3 sm:space-x-4">
-              <svg class="w-5 h-5 sm:w-6 sm:h-6 text-[var(--color-primary-green)] flex-shrink-0 mt-1 sm:mt-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
-              <p class="text-sm sm:text-lg text-gray-800"><strong>Instagram:</strong> <a class="hover:text-[var(--color-primary-green)] break-all" href="https://www.instagram.com/Syrianmosaicgroup" target="_blank">Syrianmosaicgroup</a></p>
+    <!-- Gallery Section -->
+    <section class="py-12 sm:py-16 md:py-20 bg-white" id="gallery">
+      <div class="container mx-auto px-4 sm:px-6">
+        <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4" style="color: var(--color-primary-green);">Our Journey in Pictures</h2>
+        <p class="text-center text-gray-600 mb-8 sm:mb-12 max-w-2xl mx-auto">Explore moments from our trips, cultural exchanges, and the beautiful heritage sites we work to preserve.</p>
+        
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
+          <div class="gallery-item group relative overflow-hidden rounded-lg shadow-lg fade-in">
+            <img src="assets/images/1.jpg" alt="Syrian heritage moment" class="w-full h-48 sm:h-56 object-cover group-hover:scale-110 transition-transform duration-300"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </div>
+          <div class="gallery-item group relative overflow-hidden rounded-lg shadow-lg fade-in" style="animation-delay: 0.1s;">
+            <img src="assets/images/2.jpg" alt="Cultural exchange moment" class="w-full h-48 sm:h-56 object-cover group-hover:scale-110 transition-transform duration-300"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </div>
+          <div class="gallery-item group relative overflow-hidden rounded-lg shadow-lg fade-in" style="animation-delay: 0.2s;">
+            <img src="assets/images/3.jpg" alt="Damascus Old City" class="w-full h-48 sm:h-56 object-cover group-hover:scale-110 transition-transform duration-300"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </div>
+          <div class="gallery-item group relative overflow-hidden rounded-lg shadow-lg fade-in" style="animation-delay: 0.3s;">
+            <img src="assets/images/4.jpg" alt="Heritage preservation work" class="w-full h-48 sm:h-56 object-cover group-hover:scale-110 transition-transform duration-300"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </div>
+          <div class="gallery-item group relative overflow-hidden rounded-lg shadow-lg fade-in" style="animation-delay: 0.4s;">
+            <img src="assets/images/5.jpg" alt="Community gathering" class="w-full h-48 sm:h-56 object-cover group-hover:scale-110 transition-transform duration-300"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </div>
+          <div class="gallery-item group relative overflow-hidden rounded-lg shadow-lg fade-in" style="animation-delay: 0.5s;">
+            <img src="assets/images/6.jpg" alt="Syrian architecture" class="w-full h-48 sm:h-56 object-cover group-hover:scale-110 transition-transform duration-300"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </div>
+          <div class="gallery-item group relative overflow-hidden rounded-lg shadow-lg fade-in col-span-2" style="animation-delay: 0.6s;">
+            <img src="assets/images/7.jpg" alt="Group photo with locals" class="w-full h-48 sm:h-56 object-cover group-hover:scale-110 transition-transform duration-300"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Enhanced Contact Section -->
+    <section class="py-16 sm:py-20 md:py-24 relative overflow-hidden" id="contact">
+      <div class="absolute inset-0 bg-gradient-to-br from-[var(--color-primary-green)] to-[var(--color-secondary-green)]"></div>
+      <div class="absolute inset-0 opacity-10">
+        <div class="absolute -top-40 -right-40 w-80 h-80 bg-white rounded-full"></div>
+        <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-white rounded-full"></div>
+      </div>
+      
+      <div class="container mx-auto px-4 sm:px-6 relative z-10">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-white">Let's Connect</h2>
+          <p class="max-w-2xl mx-auto text-base sm:text-lg text-gray-100 px-2">Join us in celebrating Syria's heritage and building bridges across cultures. We'd love to hear from you.</p>
+        </div>
+        
+        <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+          <!-- Contact Info Card -->
+          <div class="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-6 sm:p-8 fade-in">
+            <h3 class="text-2xl font-bold mb-6" style="color: var(--color-primary-green);">Reach Out</h3>
+            <div class="space-y-5">
+              <a href="https://www.instagram.com/Syrianmosaicgroup" target="_blank" class="flex items-center space-x-4 group hover:translate-x-1 transition-transform">
+                <div class="w-12 h-12 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
+                  <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1112.324 0 6.162 6.162 0 01-12.324 0zM12 16a4 4 0 110-8 4 4 0 010 8zm4.965-10.405a1.44 1.44 0 112.881.001 1.44 1.44 0 01-2.881-.001z"/></svg>
+                </div>
+                <div>
+                  <p class="text-sm text-gray-600">Instagram</p>
+                  <p class="font-semibold text-gray-800">@Syrianmosaicgroup</p>
+                </div>
+              </a>
+              
+              <a href="https://x.com/syrianmosaicgrp" target="_blank" class="flex items-center space-x-4 group hover:translate-x-1 transition-transform">
+                <div class="w-12 h-12 rounded-full bg-black flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
+                  <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </div>
+                <div>
+                  <p class="text-sm text-gray-600">X (Twitter)</p>
+                  <p class="font-semibold text-gray-800">@syrianmosaicgrp</p>
+                </div>
+              </a>
+              
+              <a href="mailto:info@syrianmosaicgroup.org" class="flex items-center space-x-4 group hover:translate-x-1 transition-transform">
+                <div class="w-12 h-12 rounded-full bg-[var(--color-gold)] flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
+                  <span class="material-icons text-white">email</span>
+                </div>
+                <div>
+                  <p class="text-sm text-gray-600">Email</p>
+                  <p class="font-semibold text-gray-800 break-all">info@syrianmosaicgroup.org</p>
+                </div>
+              </a>
             </div>
-            <div class="flex items-start sm:items-center space-x-3 sm:space-x-4">
-              <svg class="w-5 h-5 sm:w-6 sm:h-6 text-[var(--color-primary-green)] flex-shrink-0 mt-1 sm:mt-0" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
-              <p class="text-sm sm:text-lg text-gray-800"><strong>X (Twitter):</strong> <a class="hover:text-[var(--color-primary-green)] break-all" href="https://x.com/syrianmosaicgrp" target="_blank">syrianmosaicgrp</a></p>
-            </div>
-            <div class="flex items-start sm:items-center space-x-3 sm:space-x-4">
-              <span class="material-icons text-[var(--color-primary-green)] text-xl sm:text-2xl flex-shrink-0">phone</span>
-              <div class="text-sm sm:text-lg text-gray-800">
-                <p>+963993858064</p>
-                <p>+1 (347) 893-3032</p>
+          </div>
+          
+          <!-- Phone Numbers Card -->
+          <div class="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-6 sm:p-8 fade-in" style="animation-delay: 0.2s;">
+            <h3 class="text-2xl font-bold mb-6" style="color: var(--color-primary-green);">Call Us</h3>
+            <div class="space-y-6">
+              <div class="bg-gray-50 rounded-xl p-5 hover:shadow-md transition-shadow">
+                <div class="flex items-center space-x-3 mb-2">
+                  <span class="material-icons text-[var(--color-primary-green)]">location_on</span>
+                  <p class="font-semibold text-gray-800">Syria Office</p>
+                </div>
+                <p class="text-xl text-gray-700 ml-9">+963 993 858 064</p>
               </div>
-            </div>
-            <div class="flex items-start sm:items-center space-x-3 sm:space-x-4">
-              <span class="material-icons text-[var(--color-primary-green)] text-xl sm:text-2xl flex-shrink-0">email</span>
-              <a class="text-sm sm:text-lg text-gray-800 hover:text-[var(--color-primary-green)] break-all" href="mailto:info@syrianmosaicgroup.org">info@syrianmosaicgroup.org</a>
+              
+              <div class="bg-gray-50 rounded-xl p-5 hover:shadow-md transition-shadow">
+                <div class="flex items-center space-x-3 mb-2">
+                  <span class="material-icons text-[var(--color-primary-green)]">location_on</span>
+                  <p class="font-semibold text-gray-800">USA Office</p>
+                </div>
+                <p class="text-xl text-gray-700 ml-9">+1 (347) 893-3032</p>
+              </div>
+              
+              <div class="text-center mt-8">
+                <p class="text-sm text-gray-600 mb-3">Ready to explore Syria?</p>
+                <a href="#initiatives" class="inline-block bg-[var(--color-gold)] text-white font-semibold px-6 py-3 rounded-full hover:bg-opacity-90 transform hover:scale-105 transition-all">
+                  Learn About Our Tours
+                </a>
+              </div>
             </div>
           </div>
         </div>

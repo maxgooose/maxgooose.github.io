@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact - The Syrian Mosaic Foundation</title>
+  <meta name="description" content="Get in touch with the Syrian Mosaic Foundation to learn more or get involved."/>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css"/>
+  
+  <style>
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .form-group {
+      margin-bottom: var(--space-6);
+    }
+    
+    .form-label {
+      display: block;
+      margin-bottom: var(--space-2);
+      font-weight: 500;
+      color: var(--color-text);
+    }
+    
+    .form-input,
+    .form-textarea {
+      width: 100%;
+      padding: var(--space-3);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      transition: border-color var(--transition-normal);
+    }
+    
+    .form-input:focus,
+    .form-textarea:focus {
+      outline: none;
+      border-color: var(--color-navy);
+    }
+    
+    .form-textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+    
+    .contact-info-item {
+      margin-bottom: var(--space-6);
+      padding-bottom: var(--space-6);
+      border-bottom: 1px solid var(--color-border);
+    }
+    
+    .contact-info-item:last-child {
+      border-bottom: none;
+    }
+    
+    .contact-info-label {
+      font-weight: 600;
+      color: var(--color-navy);
+      margin-bottom: var(--space-2);
+    }
+  </style>
+</head>
+<body>
+  <!-- Skip to main content -->
+  <a href="#main-content" class="skip-to-main">Skip to main content</a>
+  
+  <!-- Header -->
+  <header class="header" role="banner">
+    <div class="container">
+      <nav class="header-nav" aria-label="Main navigation">
+        <a href="/" class="header-logo">
+          <img src="assets/images/logo.jpeg" alt="SMF"/>
+          <span>Syrian Mosaic Foundation</span>
+        </a>
+        
+        <div class="header-links" role="navigation">
+          <a href="index.html#mission" class="header-link">Mission</a>
+          <a href="impact.html" class="header-link">Impact</a>
+          <a href="tours.html" class="header-link">Tours</a>
+          <a href="team.html" class="header-link">Team</a>
+          <a href="media.html" class="header-link">Media</a>
+          <a href="contact.html" class="header-link active">Contact</a>
+        </div>
+        
+        <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+  
+  <!-- Main Content -->
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <h1 class="hero-title">Get in <span class="accent-gold">Touch</span></h1>
+        <div class="heritage-section-divider"></div>
+        <p class="hero-description">
+          We'd love to hear from you. Reach out to learn more about our work or explore how you can get involved.
+        </p>
+      </div>
+    </section>
+    
+    <!-- Contact Information -->
+    <section class="section">
+      <div class="container">
+        <div class="grid grid-2" style="max-width: 900px; margin: 0 auto;">
+          <!-- Contact Form -->
+          <div class="fade-in">
+            <h2 class="mb-8">Send Us a Message</h2>
+            
+            <form class="contact-form" action="mailto:info@syrianmosaicfoundation.org" method="get" enctype="text/plain">
+              <div class="form-group">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" id="name" name="name" class="form-input" required/>
+              </div>
+              
+              <div class="form-group">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" id="email" name="email" class="form-input" required/>
+              </div>
+              
+              <div class="form-group">
+                <label for="message" class="form-label">Message</label>
+                <textarea id="message" name="body" class="form-textarea" required></textarea>
+              </div>
+              
+              <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">Send Message</button>
+            </form>
+            
+            <p class="small text-muted mt-6" style="text-align: center;">
+              Or email us directly at <a href="mailto:info@syrianmosaicfoundation.org">info@syrianmosaicfoundation.org</a>
+            </p>
+          </div>
+          
+          <!-- Contact Details -->
+          <div class="fade-in">
+            <h2 class="mb-8">Contact Information</h2>
+            
+            <div class="contact-info-item">
+              <p class="contact-info-label">Email</p>
+              <p><a href="mailto:info@syrianmosaicfoundation.org">info@syrianmosaicfoundation.org</a></p>
+            </div>
+            
+            <div class="contact-info-item">
+              <p class="contact-info-label">WhatsApp</p>
+              <p><a href="https://wa.me/963993858064" target="_blank" rel="noopener">+963 993 858 064</a></p>
+            </div>
+            
+            <div class="contact-info-item">
+              <p class="contact-info-label">Founder - Joe Jajati</p>
+              <p><a href="tel:+13478933032">+1 347-893-3032</a></p>
+              <p><a href="mailto:Joe@syrianmosaicfoundation.org">Joe@syrianmosaicfoundation.org</a></p>
+            </div>
+            
+            <div class="contact-info-item">
+              <p class="contact-info-label">Co-Founder - Abd Alaziz</p>
+              <p><a href="tel:+19298329645">+1 929-832-9645</a></p>
+              <p><a href="mailto:Abd@syrianmosaicfoundation.org">Abd@syrianmosaicfoundation.org</a></p>
+            </div>
+            
+            <div class="contact-info-item">
+              <p class="contact-info-label">Social Media</p>
+              <p>
+                <a href="https://www.instagram.com/SyrianMosaicFoundation" target="_blank" rel="noopener">Instagram</a><br/>
+                <a href="https://x.com/SyrianMosaicFDN" target="_blank" rel="noopener">X / Twitter</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-content">
+        <h3 class="footer-title">The Syrian Mosaic Foundation</h3>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="index.html#mission" class="footer-link">Mission</a>
+          <a href="impact.html" class="footer-link">Impact</a>
+          <a href="tours.html" class="footer-link">Tours</a>
+          <a href="team.html" class="footer-link">Team</a>
+          <a href="media.html" class="footer-link">Media</a>
+          <a href="contact.html" class="footer-link">Contact</a>
+        </nav>
+        <p class="footer-copyright">
+          © 2025 The Syrian Mosaic Foundation. All Rights Reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Scripts -->
+  <script src="animations.js"></script>
+</body>
+</html>
+

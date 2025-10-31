@@ -2,706 +2,374 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>The Syrian Mosaic Foundation</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com" rel="preconnect"/>
-  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-  <link href="https://fonts.googleapis.com/css2?family=David+Libre:wght@400;700&amp;family=Rubik:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
-  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-  <style>
-    :root {
-        --color-primary-green: #4A6341;
-        --color-secondary-green: #7B8D76;
-        --color-white: #FFFFFF;
-        --color-gold: #C9A86B;
-        --color-cream: #F4F1E9;
-        --color-dark-text: #3C3636;
-    }
-    body {
-        font-family: 'Rubik', sans-serif;
-        background-color: var(--color-cream);
-        color: var(--color-dark-text);
-        overflow-x: hidden;
-    }
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        font-family: 'David Libre', serif;
-    }
-    .hero-bg {
-        background-image:
-          linear-gradient(rgba(74, 99, 65, 0.7), rgba(74, 99, 65, 0.7));
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-        position: relative;
-        min-height: 100vh;
-        min-height: 100dvh;
-    }
-    
-    @media (max-width: 768px) {
-        .hero-bg {
-            background-attachment: scroll;
-        }
-    }
-    
-    .hero-bg::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M50 0L62.5 25L87.5 25L68.75 43.75L75 68.75L50 50L25 68.75L31.25 43.75L12.5 25L37.5 25Z' fill='rgba(255, 255, 255, 0.05)'/%3E%3C/svg%3E");
-        opacity: 0.5;
-    }
-    .sticky-nav {
-        position: sticky;
-        top: 0;
-        z-index: 50;
-        background-color: rgba(74, 99, 65, 0.9);
-        backdrop-filter: blur(10px);
-    }
-    .mosaic-border {
-        border: 4px solid transparent;
-        border-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23C9A86B' stroke-width='8' stroke-dasharray='15, 15' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e") 1;
-    }
-    .fade-in {
-        opacity: 0;
-        transform: translateY(20px);
-        animation: fadeInAnimation 0.8s ease-out forwards;
-        animation-play-state: paused;
-    }
-    @keyframes fadeInAnimation {
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-    .contact-bg {
-         background-image:
-           linear-gradient(rgba(244, 241, 233, 0.85), rgba(244, 241, 233, 0.85)),
-           url('https://lh3.googleusercontent.com/aida-public/AB6AXuAp5Hv55dk4awvI_CHRwTQA9gjD2hLBGeBLmUrbhDF1wH4q1xrbRB5QsS4i_jTBEHCg4XcmSbSzgoM1SDS1XMb6nt2R7JW4cru7VmW3tXZd8AgcO9fE5G3DtafLK74YBGTLFOEAYe8WeWwe8FVKQ-u1xbWVv3zynUskuLzieb1xMhw4GvzkYSedgFM-cXyZpwUOaKLeCKTsQndHsdwfH2w4sdTVSa3dJAgHaknzE8zZ-fi7Qdo_ItNCPyJmdjgS9g1QLBoqg86fdq9j');
-         background-size: cover;
-         background-position: center;
-    }
-    
-    /* Mobile menu styles */
-    .mobile-menu-container {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease-out;
-    }
-    
-    .mobile-menu-container.active {
-        max-height: 500px;
-    }
-    
-    /* Responsive typography */
-    @media (max-width: 640px) {
-        h1 {
-            font-size: 2rem !important;
-            line-height: 1.2;
-        }
-        h2 {
-            font-size: 1.75rem !important;
-        }
-        h3 {
-            font-size: 1.5rem !important;
-        }
-        .hero-content p {
-            font-size: 1.125rem !important;
-        }
-    }
-    
-    /* Gallery hover effects */
-    .gallery-item img {
-        transition: transform 0.3s ease;
-    }
-  </style>
+  <meta name="description" content="Preserving Syria's heritage and building bridges across communities through cultural exchange, heritage preservation, and humanitarian initiatives."/>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css"/>
 </head>
-<body class="antialiased">
-  <header class="sticky-nav transition-all duration-300" id="header">
-    <nav class="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
-      <div class="flex justify-between items-center">
-        <a href="#" class="flex items-center">
-          <img src="assets/images/logo.jpeg" alt="The Syrian Mosaic Foundation logo" class="h-8 sm:h-10"/>
-          <span class="ml-2 sm:ml-3 text-white text-lg sm:text-xl md:text-2xl font-bold font-david-libre hidden sm:block">
-            The Syrian Mosaic Foundation
-          </span>
-          <span class="ml-2 text-white text-lg font-bold font-david-libre block sm:hidden">
-            Syrian Mosaic Foundation
-          </span>
+<body>
+  <!-- Skip to main content -->
+  <a href="#main-content" class="skip-to-main">Skip to main content</a>
+  
+  <!-- Header -->
+  <header class="header" role="banner">
+    <div class="container">
+      <nav class="header-nav" aria-label="Main navigation">
+        <a href="/" class="header-logo">
+          <img src="assets/images/logo.jpeg" alt="SMF"/>
+          <span>Syrian Mosaic Foundation</span>
         </a>
         
-        <!-- Desktop Menu -->
-        <div class="hidden md:flex space-x-6">
-          <a class="text-white hover:text-gray-200 transition" href="#about">About</a>
-          <a class="text-white hover:text-gray-200 transition" href="#team">Team</a>
-          <a class="text-white hover:text-gray-200 transition" href="#initiatives">Initiatives</a>
-          <a class="text-white hover:text-gray-200 transition" href="tours.html">Tours</a>
-          <a class="text-white hover:text-gray-200 transition" href="#media">Media</a>
-          <a class="text-white hover:text-gray-200 transition" href="#gallery">Gallery</a>
-          <a class="text-white hover:text-gray-200 transition" href="#videos">Videos</a>
-          <a class="text-white hover:text-gray-200 transition" href="#contact">Contact</a>
+        <div class="header-links" role="navigation">
+          <a href="#mission" class="header-link">Mission</a>
+          <a href="impact.html" class="header-link">Impact</a>
+          <a href="tours.html" class="header-link">Tours</a>
+          <a href="team.html" class="header-link">Team</a>
+          <a href="media.html" class="header-link">Media</a>
+          <a href="contact.html" class="header-link">Contact</a>
         </div>
-        
-        <!-- Mobile Menu Button -->
-        <button class="md:hidden text-white focus:outline-none p-2" id="mobile-menu-button">
-          <span class="material-icons">menu</span>
+
+        <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
         </button>
+      </nav>
       </div>
-      
-      <!-- Mobile Menu -->
-      <div class="mobile-menu-container md:hidden" id="mobile-menu">
-        <div class="pt-4 pb-2">
-          <a class="block py-2 text-white hover:text-gray-200" href="#about">About</a>
-          <a class="block py-2 text-white hover:text-gray-200" href="#team">Team</a>
-          <a class="block py-2 text-white hover:text-gray-200" href="#initiatives">Initiatives</a>
-          <a class="block py-2 text-white hover:text-gray-200" href="tours.html">Tours</a>
-          <a class="block py-2 text-white hover:text-gray-200" href="#media">Media</a>
-          <a class="block py-2 text-white hover:text-gray-200" href="#gallery">Gallery</a>
-          <a class="block py-2 text-white hover:text-gray-200" href="#videos">Videos</a>
-          <a class="block py-2 text-white hover:text-gray-200" href="#contact">Contact</a>
-        </div>
-      </div>
-    </nav>
   </header>
   
-  <main>
-    <section class="hero-bg flex items-center justify-center text-center text-white">
-      <div class="hero-content px-4 fade-in relative z-10 max-w-4xl mx-auto">
-        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4">The Syrian Mosaic Foundation</h1>
-        <p class="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 text-gray-200 px-2">A passion project born from a deep love for Syria's vibrant heritage.</p>
-        <a class="inline-block bg-[var(--color-gold)] hover:bg-opacity-90 text-white font-bold py-2 sm:py-3 px-6 sm:px-8 rounded-full transition duration-300 transform hover:scale-105" href="#about">Learn More</a>
+  <!-- Main Content -->
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <h1 class="hero-title">Preserving Heritage,<br/>Building Bridges</h1>
+        <p class="hero-description">
+          The Syrian Mosaic Foundation is dedicated to preserving Syria's rich cultural heritage and reconnecting the global diaspora with the homeland through tangible, on-the-ground action.
+        </p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="#mission" class="btn btn-primary btn-lg">Our Mission</a>
+          <a href="contact.html" class="btn btn-secondary btn-lg">Get Involved</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="section" id="mission">
+      <div class="container">
+        <div class="prose">
+          <h2 class="text-center">Our Mission and Vision</h2>
+          
+          <p>
+            Our core mission is to protect Syrian cultural heritage, promote unity among its diverse communities, and foster peace and prosperity by combining heritage preservation, cultural exchange, and humanitarian initiatives into measurable results. We specifically direct our humanitarian work to benefit our Syrian neighbors and local communities.
+          </p>
+          
+          <p>
+            We envision a thriving, diverse, and united Syria, reconnected to its global diaspora and celebrated for its profound cultural legacy. We look forward to seeing a Syria where its rich diversity is a source of national strength, and where the world sees it as an inclusive, resilient, and welcoming nation.
+          </p>
+        </div>
       </div>
     </section>
     
-   <!-- Our Story Section -->
-<section class="py-12 sm:py-16 md:py-20 bg-[var(--color-cream)]" id="about">
-  <div class="container mx-auto px-4 sm:px-6">
-          <div class="text-center max-w-4xl mx-auto mb-8 sm:mb-12 md:mb-16">
-        <h2 class="text-3xl sm:text-4xl font-bold mb-4 sm:mb-6" style="color: var(--color-primary-green);">Our Story</h2>
-        <p class="text-base sm:text-lg text-gray-700 leading-relaxed fade-in px-2">I am Joseph Jajati, a Syrian-American passionate about my heritage. Inspired by my grandfather, a former leader of Syria's Jewish community, I founded The Syrian Mosaic Foundation to unite Syrians and global supporters in celebrating our diversity and building a brighter future.</p>
-      </div>
-    <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
-      <div class="fade-in bg-white p-6 sm:p-8 rounded-lg shadow-lg" style="animation-delay: 0.2s;">
-        <h3 class="text-2xl sm:text-3xl font-bold mb-4" style="color: var(--color-primary-green);">Our Mission</h3>
-        <p class="text-sm sm:text-base text-gray-700 leading-relaxed mb-4">Since 2018, I've spent over 16 months in Syria, guiding visitors and fostering connections. Our journey has been featured by outlets like Alikhbaria Syria, highlighting a growing momentum for renewal. With a network of cultural leaders and allies, we are collaborating with all who share our vision to uplift Syria's image, economy, and heritage. We invite you to join us in this beautiful effort.</p>
-        <div class="pt-4 text-right">
-          <p class="font-bold text-sm sm:text-base">Joseph Jajati</p>
-          <p class="italic text-sm">Founder, The Syrian Mosaic Foundation</p>
-        </div>
-      </div>
-      <!-- Updated Image Column -->
-      <div class="fade-in space-y-4 sm:space-y-8" style="animation-delay: 0.4s;">
-        <div class="mosaic-border rounded-lg overflow-hidden shadow-lg">
-          <img alt="Mission highlight image" class="w-full h-48 sm:h-64 object-cover" src="assets/images/attention-grabber.png" />
-        </div>
-        <div class="mosaic-border rounded-lg overflow-hidden shadow-lg">
-          <img alt="Community feature image" class="w-full h-48 sm:h-64 object-cover" src="assets/images/history-media.jpeg" />
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-    <!-- Team Section -->
-    <section class="py-12 sm:py-16 md:py-20 bg-white" id="team">
-      <div class="container mx-auto px-4 sm:px-6">
-        <div class="text-center max-w-4xl mx-auto mb-8 sm:mb-12 md:mb-16">
-          <h2 class="text-3xl sm:text-4xl font-bold mb-4 sm:mb-6" style="color: var(--color-primary-green);">Our Team</h2>
-          <p class="text-base sm:text-lg text-gray-700 leading-relaxed px-2">Meet the dedicated individuals working to preserve Syria's heritage and build bridges across cultures.</p>
-        </div>
+    <!-- Why SMF Matters -->
+    <section class="section section-alt">
+      <div class="container">
+        <h2 class="text-center mb-16">Why the Syrian Mosaic Foundation Matters</h2>
         
-        <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-8 max-w-8xl mx-auto">
-          <!-- Joe Jajati - Founder -->
-          <div class="bg-white p-6 sm:p-8 rounded-lg shadow-lg fade-in border-l-4" style="border-left-color: var(--color-gold);">
-            <div class="text-center mb-6">
-              <div class="w-24 h-24 mx-auto mb-4 bg-gradient-to-br from-[var(--color-primary-green)] to-[var(--color-secondary-green)] rounded-full flex items-center justify-center">
-                <span class="text-white text-2xl font-bold">JJ</span>
-              </div>
-              <h3 class="text-xl sm:text-2xl font-bold mb-2" style="color: var(--color-primary-green);">Joe Jajati</h3>
-              <p class="text-sm sm:text-base font-semibold mb-4" style="color: var(--color-gold);">Founder</p>
+        <div class="grid grid-3">
+          <div class="card fade-in">
+            <h3 class="card-title">A Living Mosaic</h3>
+            <div class="card-content">
+              <p>
+                The Foundation was co-founded by Joseph Jajati (Syrian-American Jew) and Abd Alaziz (Syrian-American Muslim), neighbors from Damascus and now in New York. Their enduring friendship forms the very foundation of our work, demonstrating that Syria's spirit of coexistence is not merely a memory, but a present reality waiting to be reclaimed.
+              </p>
             </div>
-            <div class="space-y-3 text-sm">
-              <div class="flex items-center space-x-3">
-                <span class="material-icons text-[var(--color-gold)]">phone</span>
-                <a href="tel:+13478933032" class="text-gray-700 hover:text-[var(--color-gold)] transition-colors">+1-347-893-3032</a>
-              </div>
-              <div class="flex items-center space-x-3">
-                <span class="material-icons text-[var(--color-gold)]">email</span>
-                <a href="mailto:Joe@syrianmosaicfoundation.org" class="text-gray-700 hover:text-[var(--color-gold)] transition-colors break-all">Joe@syrianmosaicfoundation.org</a>
-              </div>
-              <div class="flex items-center space-x-3">
-                <span class="material-icons text-[var(--color-gold)]">location_on</span>
-                <span class="text-gray-700">New York - Damascus</span>
-              </div>
+          </div>
+          
+          <div class="card fade-in">
+            <h3 class="card-title">Direct Engagement</h3>
+            <div class="card-content">
+              <p>
+                With over 18 months spent directly on the ground, our work is rooted in trust and direct engagement with the Syrian people. This allows us to deliver impactful cultural and humanitarian aid with unparalleled understanding and precision.
+              </p>
             </div>
           </div>
 
-          <!-- Aziz Harb - Co-Founder -->
-          <div class="bg-white p-6 sm:p-8 rounded-lg shadow-lg fade-in border-l-4" style="border-left-color: var(--color-gold); animation-delay: 0.2s;">
-            <div class="text-center mb-6">
-              <div class="w-24 h-24 mx-auto mb-4 bg-gradient-to-br from-[var(--color-primary-green)] to-[var(--color-secondary-green)] rounded-full flex items-center justify-center">
-                <span class="text-white text-2xl font-bold">AH</span>
-              </div>
-              <h3 class="text-xl sm:text-2xl font-bold mb-2" style="color: var(--color-primary-green);">Aziz Harb</h3>
-              <p class="text-sm sm:text-base font-semibold mb-4" style="color: var(--color-gold);">Co-Founder</p>
-            </div>
-            <div class="space-y-3 text-sm">
-              <div class="flex items-center space-x-3">
-                <span class="material-icons text-[var(--color-gold)]">phone</span>
-                <a href="tel:+19298329645" class="text-gray-700 hover:text-[var(--color-gold)] transition-colors">+1-929-832-9645</a>
-              </div>
-              <div class="flex items-center space-x-3">
-                <span class="material-icons text-[var(--color-gold)]">email</span>
-                <a href="mailto:Aziz@syrianmosaicfoundation.org" class="text-gray-700 hover:text-[var(--color-gold)] transition-colors break-all">Aziz@syrianmosaicfoundation.org</a>
-              </div>
-              <div class="flex items-center space-x-3">
-                <span class="material-icons text-[var(--color-gold)]">location_on</span>
-                <span class="text-gray-700">New York - Damascus</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Bakhour Simantob - President of Jewish Community -->
-          <div class="bg-white p-6 sm:p-8 rounded-lg shadow-lg fade-in border-l-4" style="border-left-color: var(--color-gold); animation-delay: 0.4s;">
-            <div class="text-center mb-6">
-              <div class="w-24 h-24 mx-auto mb-4 bg-gradient-to-br from-[var(--color-primary-green)] to-[var(--color-secondary-green)] rounded-full flex items-center justify-center">
-                <span class="text-white text-2xl font-bold">BS</span>
-              </div>
-              <h3 class="text-xl sm:text-2xl font-bold mb-2" style="color: var(--color-primary-green);">Bakhour Simantob</h3>
-              <p class="text-sm sm:text-base font-semibold mb-4" style="color: var(--color-gold);">President of Jewish Community In Syria</p>
-            </div>
-            <div class="space-y-3 text-sm">
-              <div class="flex items-center space-x-3">
-                <span class="material-icons text-[var(--color-gold)]">phone</span>
-                <a href="tel:+963932084823" class="text-gray-700 hover:text-[var(--color-gold)] transition-colors">+963 932 084 823</a>
-              </div>
-              <div class="flex items-center space-x-3">
-                <span class="material-icons text-[var(--color-gold)]">email</span>
-                <a href="mailto:Bakhour@syrianmosaicfoundation.org" class="text-gray-700 hover:text-[var(--color-gold)] transition-colors break-all">Bakhour@syrianmosaicfoundation.org</a>
-              </div>
-              <div class="flex items-center space-x-3">
-                <span class="material-icons text-[var(--color-gold)]">location_on</span>
-                <span class="text-gray-700">New York - Damascus</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Maysarah al zoubi - Team Member -->
-          <div class="bg-white p-6 sm:p-8 rounded-lg shadow-lg fade-in border-l-4" style="border-left-color: var(--color-gold); animation-delay: 0.6s;">
-            <div class="text-center mb-6">
-              <div class="w-24 h-24 mx-auto mb-4 bg-gradient-to-br from-[var(--color-primary-green)] to-[var(--color-secondary-green)] rounded-full flex items-center justify-center">
-                <span class="text-white text-2xl font-bold">MZ</span>
-              </div>
-              <h3 class="text-xl sm:text-2xl font-bold mb-2" style="color: var(--color-primary-green);">Maysarah al zoubi</h3>
-              <p class="text-sm sm:text-base font-semibold mb-4" style="color: var(--color-gold);">Team Member</p>
-            </div>
-            <div class="space-y-3 text-sm">
-              <div class="flex items-center space-x-3">
-                <span class="material-icons text-[var(--color-gold)]">phone</span>
-                <a href="tel:+963944605807" class="text-gray-700 hover:text-[var(--color-gold)] transition-colors">+963 944 605 807</a>
-              </div>
-              <div class="flex items-center space-x-3">
-                <span class="material-icons text-[var(--color-gold)]">email</span>
-                <a href="mailto:Maysarah@syrianmosaicfoundation.org" class="text-gray-700 hover:text-[var(--color-gold)] transition-colors break-all">Maysarah@syrianmosaicfoundation.org</a>
-              </div>
-              <div class="flex items-center space-x-3">
-                <span class="material-icons text-[var(--color-gold)]">location_on</span>
-                <span class="text-gray-700">New York - Damascus</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Rania Kataf - Team Member -->
-          <div class="bg-white p-6 sm:p-8 rounded-lg shadow-lg fade-in border-l-4" style="border-left-color: var(--color-gold); animation-delay: 0.8s;">
-            <div class="text-center mb-6">
-              <div class="w-24 h-24 mx-auto mb-4 bg-gradient-to-br from-[var(--color-primary-green)] to-[var(--color-secondary-green)] rounded-full flex items-center justify-center">
-                <span class="text-white text-2xl font-bold">RK</span>
-              </div>
-              <h3 class="text-xl sm:text-2xl font-bold mb-2" style="color: var(--color-primary-green);">Rania Kataf</h3>
-              <p class="text-sm sm:text-base font-semibold mb-4" style="color: var(--color-gold);">Team Member</p>
-            </div>
-            <div class="space-y-3 text-sm">
-              <div class="flex items-center space-x-3">
-                <span class="material-icons text-[var(--color-gold)]">phone</span>
-                <a href="tel:+963944373163" class="text-gray-700 hover:text-[var(--color-gold)] transition-colors">+963 944 373 163</a>
-              </div>
-              <div class="flex items-center space-x-3">
-                <span class="material-icons text-[var(--color-gold)]">email</span>
-                <a href="mailto:Rania@syrianmosaicfoundation.org" class="text-gray-700 hover:text-[var(--color-gold)] transition-colors break-all">Rania@syrianmosaicfoundation.org</a>
-              </div>
-              <div class="flex items-center space-x-3">
-                <span class="material-icons text-[var(--color-gold)]">location_on</span>
-                <span class="text-gray-700">New York - Damascus</span>
-              </div>
+          <div class="card fade-in">
+            <h3 class="card-title">Building Bridges, Not Walls</h3>
+            <div class="card-content">
+              <p>
+                Every initiative, from restoring sites for all communities to organizing diverse, collaborative delegations (academic, religious, social), is designed to intentionally connect disparate groups, showing the world that unity is the ultimate form of renewal.
+              </p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="py-12 sm:py-16 md:py-20 bg-gray-50" id="initiatives" style="background-image: url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%234A6341%22 fill-opacity=%220.04%22%3E%3Cpath d=%22M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');">
-      <div class="container mx-auto px-4 sm:px-6 text-center">
-        <h2 class="text-3xl sm:text-4xl font-bold mb-8 sm:mb-12" style="color: var(--color-primary-green);">Our Initiatives</h2>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto">
-          <div class="bg-white p-6 sm:p-8 rounded-lg shadow-lg fade-in text-left">
-            <span class="material-icons text-4xl sm:text-5xl mb-3 sm:mb-4 block" style="color: var(--color-gold);">location_city</span>
-            <h3 class="text-xl sm:text-2xl font-bold mb-2">Damascus Cultural Hub</h3>
-            <p class="text-sm sm:text-base text-gray-700">A vibrant space in the Old City featuring a kosher kitchen and cafe, designed to host and guide visitors while providing a space to meet, discuss and encourage efforts to engage and help foster unity.</p>
-          </div>
-          <div class="bg-white p-6 sm:p-8 rounded-lg shadow-lg fade-in text-left" style="animation-delay: 0.2s;">
-            <span class="material-icons text-4xl sm:text-5xl mb-3 sm:mb-4 block" style="color: var(--color-gold);">explore</span>
-            <h3 class="text-xl sm:text-2xl font-bold mb-2">Guided Trips</h3>
-            <p class="text-sm sm:text-base text-gray-700">Tours to historic sites, led by trusted local guides, showing Syria's warmth and cultural depth.</p>
-          </div>
-          <div class="bg-white p-6 sm:p-8 rounded-lg shadow-lg fade-in text-left" style="animation-delay: 0.4s;">
-            <span class="material-icons text-4xl sm:text-5xl mb-3 sm:mb-4 block" style="color: var(--color-gold);">movie</span>
-            <h3 class="text-xl sm:text-2xl font-bold mb-2">Unity Documentary</h3>
-            <p class="text-sm sm:text-base text-gray-700">A film capturing real stories from Damascus, interviewing neighbors highlighting the love and unity in Syria to inspire people globally.</p>
-          </div>
-          <div class="bg-white p-6 sm:p-8 rounded-lg shadow-lg fade-in text-left" style="animation-delay: 0.6s;">
-            <span class="material-icons text-4xl sm:text-5xl mb-3 sm:mb-4 block" style="color: var(--color-gold);">foundation</span>
-            <h3 class="text-xl sm:text-2xl font-bold mb-2">Heritage Preservation</h3>
-            <p class="text-sm sm:text-base text-gray-700">Restoration work on ancient landmarks, and humanitarian efforts for our country to encourage hope, progress, and prosperity.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    
-    <!-- Media Coverage Section -->
-    <section class="py-12 sm:py-16 md:py-20 bg-white" id="media">
-      <div class="container mx-auto px-4 sm:px-6">
-        <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4" style="color: var(--color-primary-green);">Media Coverage</h2>
-        <p class="text-center text-gray-600 mb-8 sm:mb-12 max-w-2xl mx-auto">Our work has been featured in major international publications, highlighting the importance of cultural preservation and unity.</p>
-
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          <!-- Major Publications -->
-          <div class="bg-white p-6 sm:p-8 rounded-lg shadow-lg fade-in border-l-4" style="border-left-color: var(--color-gold);">
-            <h3 class="text-xl font-bold mb-4" style="color: var(--color-primary-green);">Major International Media</h3>
-            <div class="space-y-3 text-sm">
-              <a href="https://www.ynetnews.com/magazine/article/r1rnkzzexg" target="_blank" class="block hover:text-[var(--color-gold)] transition-colors">
-                <strong>Ynet News (May 2025)</strong> - Interview from Damascus on Jewish properties
-              </a>
-              <a href="https://www.i24news.tv/en/news/middle-east/culture/artc-syrian-jews-imagine-rebuilding-life-after-fall-of-assad" target="_blank" class="block hover:text-[var(--color-gold)] transition-colors">
-                <strong>i24 News (May 2025)</strong> - Syrian Jews imagining rebuilding life post-Assad
-              </a>
-            </div>
-          </div>
-
-          <!-- Historical Coverage -->
-          <div class="bg-white p-6 sm:p-8 rounded-lg shadow-lg fade-in border-l-4" style="border-left-color: var(--color-gold); animation-delay: 0.2s;">
-            <h3 class="text-xl font-bold mb-4" style="color: var(--color-primary-green);">Historical Coverage</h3>
-            <div class="space-y-3 text-sm">
-
-              <a href="https://www.thejc.com/opinion/as-a-syrian-jew-the-countrys-tragic-story-resonates-k3ovgtp7" target="_blank" class="block hover:text-[var(--color-gold)] transition-colors">
-                <strong>Jewish Chronicle (Jan 2025)</strong> - Syria's tragedy resonating with Syrian Jews
-              </a>
-            </div>
-          </div>
-
-          <!-- Video Coverage -->
-          <div class="bg-white p-6 sm:p-8 rounded-lg shadow-lg fade-in border-l-4" style="border-left-color: var(--color-gold); animation-delay: 0.4s;">
-            <h3 class="text-xl font-bold mb-4" style="color: var(--color-primary-green);">Video Interviews</h3>
-            <div class="space-y-3 text-sm">
-              <a href="https://www.youtube.com/watch?v=qC-p78yw6zI" target="_blank" class="block hover:text-[var(--color-gold)] transition-colors">
-                <strong>i24 News (May 2025)</strong> - Video interview from Damascus
-              </a>
-
-              <a href="https://www.youtube.com/shorts/Zvt24rEOCdI" target="_blank" class="block hover:text-[var(--color-gold)] transition-colors">
-                <strong>Al Hadath (Feb 2025)</strong> - Syrian Jew returning to Damascus
-              </a>
-            </div>
-          </div>
-
-          <!-- Social Media Impact -->
-          <div class="bg-white p-6 sm:p-8 rounded-lg shadow-lg fade-in border-l-4" style="border-left-color: var(--color-gold); animation-delay: 0.6s;">
-            <h3 class="text-xl font-bold mb-4" style="color: var(--color-primary-green);">Social Media Impact</h3>
-            <div class="space-y-3 text-sm">
-              <a href="https://x.com/JoeJajati/status/1922731089686069502" target="_blank" class="block hover:text-[var(--color-gold)] transition-colors">
-                <strong>X/Twitter (May 2025)</strong> - Sharing Damascus beauty and Jewish sites
-              </a>
-              <a href="https://x.com/SoccerMouaz/status/1891981695911592271" target="_blank" class="block hover:text-[var(--color-gold)] transition-colors">
-                <strong>Community Response</strong> - Syrian man greeting Jewish community
-              </a>
-              <a href="https://x.com/WHinarabic/status/1951280702680424892" target="_blank" class="block hover:text-[var(--color-gold)] transition-colors">
-                <strong>White House Arabic</strong> - Official recognition of efforts
-              </a>
-            </div>
-          </div>
-
-          <!-- Regional Coverage -->
-          <div class="bg-white p-6 sm:p-8 rounded-lg shadow-lg fade-in border-l-4" style="border-left-color: var(--color-gold); animation-delay: 0.8s;">
-            <h3 class="text-xl font-bold mb-4" style="color: var(--color-primary-green);">Regional Media</h3>
-            <div class="space-y-3 text-sm">
-              <a href="https://www.syria.tv/tag/%D9%83%D9%86%D9%8A%D8%B3%20%D9%8A%D9%87%D9%88%D8%AF%D9%8A" target="_blank" class="block hover:text-[var(--color-gold)] transition-colors">
-                <strong>Syria TV</strong> - Jewish synagogue coverage
-              </a>
-              <a href="https://www.alestiklal.net/ar/article/lmmarsh-tqwshm-hl-yfkr-yhwd-swrya-balawdh-walastqrar-bad-aqwd-mn-alhjrh" target="_blank" class="block hover:text-[var(--color-gold)] transition-colors">
-                <strong>Al Estiklal (Feb 2025)</strong> - Syrian Jews considering return
-              </a>
-              <a href="https://ebd3.net/115765/" target="_blank" class="block hover:text-[var(--color-gold)] transition-colors">
-                <strong>Ebd3 (Dec 2021)</strong> - 12 Jewish New Yorkers in Syria
-              </a>
-            </div>
-          </div>
-
-          <!-- Academic & Analysis -->
-          <div class="bg-white p-6 sm:p-8 rounded-lg shadow-lg fade-in border-l-4" style="border-left-color: var(--color-gold); animation-delay: 1s;">
-            <h3 class="text-xl font-bold mb-4" style="color: var(--color-primary-green);">Analysis & Research</h3>
-            <div class="space-y-3 text-sm">
-              <a href="https://strategiecs.com/ar/analyses/%D8%A7%D9%84%D8%AA%D8%B9%D8%A7%D9%8A%D8%B4%20%D8%A7%D9%84%D8%B3%D9%84%D9%85%D9%8A%20%D8%A7%D9%84%D9%85%D8%B4%D8%AA%D8%B1%D9%83%20%D9%8A%D8%B6%D9%85%D9%86%20%D8%A7%D9%84%D8%A8%D9%82%D8%A7%D8%A1%20%D9%88%D8%A7%D9%84%D8%A7%D8%B2%D8%AF%D9%87%D8%A7%D8%B1%20%D8%A7%D9%84%D9%85%D8%AA%D8%A8%D8%A7%D8%AF%D9%84" target="_blank" class="block hover:text-[var(--color-gold)] transition-colors">
-                <strong>Strategiecs (Jan 2022)</strong> - Peaceful coexistence analysis
-              </a>
-              <a href="https://en.wikipedia.org/wiki/Syrian_Jews" target="_blank" class="block hover:text-[var(--color-gold)] transition-colors">
-                <strong>Wikipedia (Updated 2025)</strong> - Syrian Jews encyclopedia entry
-              </a>
-              <a href="https://www.jewishideas.org/article/syrian-jews-renaissance-and-modern-era" target="_blank" class="block hover:text-[var(--color-gold)] transition-colors">
-                <strong>Jewish Ideas</strong> - Syrian Jews in renaissance and modern era
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="text-center mt-12">
-          <p class="text-gray-600 mb-6">Our work continues to receive recognition from international media outlets, highlighting the importance of cultural preservation and unity.</p>
-          <a href="#contact" class="inline-block bg-[var(--color-gold)] text-white font-semibold px-6 py-3 rounded-full hover:bg-opacity-90 transform hover:scale-105 transition-all">
-            Get in Touch
-          </a>
-        </div>
-      </div>
-    </section>
-
-    
-   
-    <!-- Updated Gallery Section -->
-<section class="py-12 sm:py-16 md:py-20 bg-white" id="gallery">
-  <div class="container mx-auto px-4 sm:px-6">
-    <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4" style="color: var(--color-primary-green);">Our Journey in Pictures</h2>
-    <p class="text-center text-gray-600 mb-8 sm:mb-12 max-w-2xl mx-auto">Explore moments from our trips, cultural exchanges, and the beautiful heritage sites we work to preserve.</p>
-
-    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
-      <div class="gallery-item group relative overflow-hidden rounded-lg shadow-lg fade-in">
-        <img src="assets/images/attention-grabber.png" alt="Syrian heritage moment" class="w-full h-48 sm:h-56 object-cover group-hover:scale-110 transition-transform duration-300"/>
-      </div>
-      <div class="gallery-item group relative overflow-hidden rounded-lg shadow-lg fade-in" style="animation-delay: 0.1s;">
-        <img src="assets/images/group-pic-2.jpeg" alt="Cultural exchange moment" class="w-full h-48 sm:h-56 object-cover group-hover:scale-110 transition-transform duration-300"/>
-      </div>
-      <div class="gallery-item group relative overflow-hidden rounded-lg shadow-lg fade-in" style="animation-delay: 0.2s;">
-        <img src="assets/images/group-pic.jpeg" alt="Damascus Old City" class="w-full h-48 sm:h-56 object-cover group-hover:scale-110 transition-transform duration-300"/>
-      </div>
-      <div class="gallery-item group relative overflow-hidden rounded-lg shadow-lg fade-in" style="animation-delay: 0.3s;">
-        <img src="assets/images/historical-pic-2.png" alt="Heritage preservation work" class="w-full h-48 sm:h-56 object-cover group-hover:scale-110 transition-transform duration-300"/>
-      </div>
-      <div class="gallery-item group relative overflow-hidden rounded-lg shadow-lg fade-in" style="animation-delay: 0.4s;">
-        <img src="assets/images/history-media.jpeg" alt="Community gathering" class="w-full h-48 sm:h-56 object-cover group-hover:scale-110 transition-transform duration-300"/>
-      </div>
-      <div class="gallery-item group relative overflow-hidden rounded-lg shadow-lg fade-in" style="animation-delay: 0.5s;">
-        <img src="assets/images/historical-pic.png" alt="Syrian architecture" class="w-full h-48 sm:h-56 object-cover group-hover:scale-110 transition-transform duration-300"/>
-      </div>
-      <div class="gallery-item group relative overflow-hidden rounded-lg shadow-lg fade-in col-span-2" style="animation-delay: 0.6s;">
-        <img src="assets/images/modern-image.png" alt="Group photo with locals" class="w-full h-48 sm:h-56 object-cover group-hover:scale-110 transition-transform duration-300"/>
-      </div>
-      <div class="gallery-item group relative overflow-hidden rounded-lg shadow-lg fade-in" style="animation-delay: 0.7s;">
-        <img src="assets/images/team-meeting.jpg" alt="Team meeting in traditional courtyard with three men in formal setting" class="w-full h-48 sm:h-56 object-cover group-hover:scale-110 transition-transform duration-300"/>
-      </div>
-      <div class="gallery-item group relative overflow-hidden rounded-lg shadow-lg fade-in" style="animation-delay: 0.8s;">
-        <img src="assets/images/team-meeting-old.jpg" alt="Previous team meeting photo" class="w-full h-48 sm:h-56 object-cover group-hover:scale-110 transition-transform duration-300"/>
-      </div>
-    </div>
-  </div>
-</section>
-
-    <!-- Video Section -->
-    <section class="py-12 sm:py-16 md:py-20 bg-gray-50" id="videos">
-      <div class="container mx-auto px-4 sm:px-6">
-        <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4" style="color: var(--color-primary-green);">Latest Videos</h2>
-        <p class="text-center text-gray-600 mb-8 sm:mb-12 max-w-2xl mx-auto">Watch our latest updates and insights from Syria</p>
-        
-        <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          <!-- Video 1 -->
+    <!-- Heritage Showcase with Image -->
+    <section class="section">
+      <div class="container">
+        <div class="split-content">
           <div class="fade-in">
-            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-              <div class="aspect-w-16 aspect-h-9">
-                <blockquote class="twitter-tweet" data-theme="light">
-                  <p lang="en" dir="ltr">Follow us for updates from Syria 🇸🇾</p>&mdash; Syrian Mosaic Foundation (@syrianmosaicfdn) 
-                  <a href="https://x.com/syrianmosaicfdn/status/1969597931155079671?s=48">September 21, 2025</a>
-                </blockquote>
-              </div>
-            </div>
+            <figure class="image-figure">
+              <img src="assets/images/jewish-quarter-alley.jpg" alt="Alley in the Jewish Quarter of Damascus" class="heritage-image"/>
+              <figcaption class="image-caption">
+                An alley in the Jewish Quarter, where Muslims, Christians, and Jews live together in the same neighborhood. Photo by Rania Kataf.
+              </figcaption>
+            </figure>
           </div>
           
-          <!-- Video 2 -->
-          <div class="fade-in" style="animation-delay: 0.2s;">
-            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-              <div class="aspect-w-16 aspect-h-9">
-                <blockquote class="twitter-tweet" data-theme="light">
-                  <p lang="en" dir="ltr">Updates from Damascus 🇸🇾</p>&mdash; Syrian Mosaic Foundation (@syrianmosaicfdn) 
-                  <a href="https://x.com/syrianmosaicfdn/status/1969318802434273584?s=48">September 21, 2025</a>
-                </blockquote>
-              </div>
-            </div>
+          <div class="fade-in">
+            <h2 class="mb-6">A Living Mosaic of <span class="accent-gold">Coexistence</span></h2>
+            <div class="heritage-section-divider" style="margin-left: 0;"></div>
+            <p class="lead mb-6">
+              In Damascus's historic Jewish Quarter, the spirit of unity lives on. Neighbors of different faiths share streets, traditions, and lives—a testament to Syria's enduring diversity.
+            </p>
+            <p>
+              This is the Syria we work to preserve and celebrate: a place where cultural and religious differences enrich rather than divide, where ancient stones bear witness to centuries of peaceful coexistence.
+            </p>
           </div>
-        </div>
-        
-        <div class="text-center mt-12">
-          <a href="https://x.com/syrianmosaicfdn" target="_blank" class="inline-block bg-black text-white font-semibold px-6 py-3 rounded-full hover:bg-gray-800 transform hover:scale-105 transition-all">
-            Follow Us on X
-          </a>
         </div>
       </div>
     </section>
     
-    <!-- Enhanced Contact Section -->
-    <section class="py-16 sm:py-20 md:py-24 relative overflow-hidden" id="contact">
-      <div class="absolute inset-0 bg-gradient-to-br from-[var(--color-primary-green)] to-[var(--color-secondary-green)]"></div>
-      <div class="absolute inset-0 opacity-10">
-        <div class="absolute -top-40 -right-40 w-80 h-80 bg-white rounded-full"></div>
-        <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-white rounded-full"></div>
-      </div>
-      
-      <div class="container mx-auto px-4 sm:px-6 relative z-10">
-        <div class="text-center mb-12">
-          <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-white">Let's Connect</h2>
-          <p class="max-w-2xl mx-auto text-base sm:text-lg text-gray-100 px-2">Join us in celebrating Syria's heritage and building bridges across cultures. We'd love to hear from you.</p>
+    <!-- Strategic Initiatives -->
+    <section class="section section-alt">
+      <div class="container">
+        <h2 class="text-center mb-16">Our Strategic Initiatives</h2>
+        
+        <div class="prose">
+          <p class="lead text-center mb-12">
+            We pursue a multi-faceted approach to achieve our vision through key projects, connecting expertise and resources across communities.
+          </p>
         </div>
         
-        <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
-          <!-- Contact Info Card -->
-          <div class="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-6 sm:p-8 fade-in">
-            <h3 class="text-2xl font-bold mb-6" style="color: var(--color-primary-green);">Reach Out</h3>
-            <div class="space-y-5">
-              <a href="https://www.instagram.com/SyrianMosaicFoundation" target="_blank" class="flex items-center space-x-4 group hover:translate-x-1 transition-transform">
-                <div class="w-12 h-12 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
-                  <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1112.324 0 6.162 6.162 0 01-12.324 0zM12 16a4 4 0 110-8 4 4 0 010 8zm4.965-10.405a1.44 1.44 0 112.881.001 1.44 1.44 0 01-2.881-.001z"/></svg>
-                </div>
-                <div>
-                  <p class="text-sm text-gray-600">Instagram</p>
-                  <p class="font-semibold text-gray-800">@SyrianMosaicFoundation</p>
-                </div>
-              </a>
-              
-              <a href="https://x.com/SyrianMosaicFDN" target="_blank" class="flex items-center space-x-4 group hover:translate-x-1 transition-transform">
-                <div class="w-12 h-12 rounded-full bg-black flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
-                  <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-                </div>
-                <div>
-                  <p class="text-sm text-gray-600">X (Twitter)</p>
-                  <p class="font-semibold text-gray-800">@SyrianMosaicFDN</p>
-                </div>
-              </a>
-              
-              <a href="mailto:info@syrianmosaicfoundation.org" class="flex items-center space-x-4 group hover:translate-x-1 transition-transform">
-                <div class="w-12 h-12 rounded-full bg-[var(--color-gold)] flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
-                  <span class="material-icons text-white">email</span>
-                </div>
-                <div>
-                  <p class="text-sm text-gray-600">Email</p>
-                  <p class="font-semibold text-gray-800 break-all">info@syrianmosaicfoundation.org</p>
-                </div>
-              </a>
+        <div class="grid grid-2">
+          <div class="card fade-in">
+            <h3 class="card-title">Delegations & Tours</h3>
+            <div class="card-content">
+              <p>
+                We organize trips for a variety of purposes—educational, academic, archaeological, religious, cultural, and social—acting as a bridge that connects all sides. These cultural tours, led by trusted local partners, present Syrian society as open and tolerant.
+              </p>
+            </div>
+          </div>
+
+          <div class="card fade-in">
+            <h3 class="card-title">Heritage Preservation</h3>
+            <div class="card-content">
+              <p>
+                Restoring and protecting historical sites of religious and cultural significance for all of Syria's communities, with a special focus on Jewish heritage landmarks such as synagogues.
+              </p>
+            </div>
+          </div>
+
+          <div class="card fade-in">
+            <h3 class="card-title">Cultural Center & Community Revival</h3>
+            <div class="card-content">
+              <p>
+                Establishing a vibrant hub in the heart of Damascus for art, education, historical archives, and intercultural dialogue.
+              </p>
+            </div>
+          </div>
+
+          <div class="card fade-in">
+            <h3 class="card-title">Media & Educational Support</h3>
+            <div class="card-content">
+              <p>
+                Producing media documenting Syria's powerful story of coexistence and resilience, and providing modern resources to Syrian students to invest in the country's next generation.
+              </p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Heritage Preservation Image -->
+        <div class="split-content split-content-reverse" style="margin-top: var(--space-16);">
+          <div class="fade-in">
+            <h3 class="mb-6"><span class="accent-blue">Preserving Sacred Heritage</span></h3>
+            <div class="heritage-section-divider" style="margin-left: 0;"></div>
+            <p>
+              The Frenj Synagogue in Damascus stands as a testament to Syria's rich Jewish heritage. Its ark, adorned with Hebrew inscriptions from Psalms 16:8 and 65:5, represents centuries of faith and tradition that we are committed to preserving for future generations.
+            </p>
+            <p class="small text-muted mt-4">
+              Our heritage preservation work extends to all of Syria's diverse communities, ensuring that these irreplaceable treasures remain protected and celebrated.
+            </p>
+          </div>
+          
+          <div class="fade-in">
+            <figure class="image-figure">
+              <img src="assets/images/frenj-synagogue-ark.jpg" alt="The ark at the Frenj Synagogue" class="heritage-image"/>
+              <figcaption class="image-caption">
+                The ark at the Frenj Synagogue, with Hebrew inscriptions from Psalms 16:8 and 65:5. Jewish Quarter in Old Damascus. Photo by Rania Kataf.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Events & Timeline - Vertical with Images -->
+    <section class="section section-alt">
+      <div class="container">
+        <h2 class="text-center mb-16">Events & Timeline</h2>
+        
+        <div class="timeline-split">
+          <!-- Sticky Image Gallery -->
+          <div class="timeline-gallery">
+            <div class="timeline-gallery-inner">
+              <div class="timeline-img active" data-timeline-img="2018-2024">
+                <img src="assets/images/historical-pic.png" alt="Foundational Heritage Trips" />
+              </div>
+              <div class="timeline-img" data-timeline-img="early-2025">
+                <img src="assets/images/group-pic.jpeg" alt="First Diaspora Jewish Group Returns" />
+              </div>
+              <div class="timeline-img" data-timeline-img="april-2025">
+                <img src="assets/images/team-meeting.jpg" alt="Interfaith Iftar in Jewish Quarter" />
+              </div>
+              <div class="timeline-img" data-timeline-img="late-2025">
+                <img src="assets/images/history-media.jpeg" alt="Damascus Opera House Cultural Partnership" />
+              </div>
+              <div class="timeline-img" data-timeline-img="2026">
+                <img src="assets/images/new-imagee.jpg" alt="Heritage Week Launch" />
+              </div>
+              <div class="timeline-img" data-timeline-img="upcoming-1">
+                <img src="assets/images/group-pic-2.jpeg" alt="Heritage + Faith Coexistence Talks" />
+              </div>
+              <div class="timeline-img" data-timeline-img="upcoming-2">
+                <img src="assets/images/historical-pic-2.png" alt="Mosaic Arts Exhibitions" />
+              </div>
+              <div class="timeline-img" data-timeline-img="upcoming-3">
+                <img src="assets/images/team-meeting-old.jpg" alt="Cultural Seminars & Walking-Tour Series" />
+              </div>
             </div>
           </div>
           
-          <!-- WhatsApp Card -->
-          <div class="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-6 sm:p-8 fade-in" style="animation-delay: 0.2s;">
-            <h3 class="text-2xl font-bold mb-6" style="color: var(--color-primary-green);">WhatsApp Us</h3>
-            <div class="space-y-6">
-              <a href="https://wa.me/963993858064" target="_blank" class="flex items-center space-x-4 group hover:translate-x-1 transition-transform">
-                <div class="w-12 h-12 rounded-full bg-green-500 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
-                  <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
-                  </svg>
-                </div>
-                <div>
-                  <p class="text-sm text-gray-600">WhatsApp</p>
-                  <p class="font-semibold text-gray-800">+963 993 858 064</p>
-                </div>
-              </a>
-              
-              <div class="text-center mt-8">
-                <p class="text-sm text-gray-600 mb-3">Ready to explore Syria?</p>
-                <a href="#initiatives" class="inline-block bg-[var(--color-gold)] text-white font-semibold px-6 py-3 rounded-full hover:bg-opacity-90 transform hover:scale-105 transition-all">
-                  Learn About Our Tours
-                </a>
+          <!-- Vertical Timeline -->
+          <div class="timeline-v">
+            <div class="timeline-v-item active" data-img-id="2018-2024">
+              <div class="timeline-v-marker"></div>
+              <div class="timeline-v-content">
+                <div class="timeline-v-year">2018–2024</div>
+                <h3 class="timeline-v-title">Foundational Heritage Trips & Local Partnerships</h3>
+                <p class="timeline-v-description">Building relationships and establishing our presence in Syria through consistent on-the-ground work.</p>
               </div>
             </div>
+
+            <div class="timeline-v-item" data-img-id="early-2025">
+              <div class="timeline-v-marker"></div>
+              <div class="timeline-v-content">
+                <div class="timeline-v-year">Early 2025</div>
+                <h3 class="timeline-v-title">First Diaspora Jewish Group Returns to Damascus</h3>
+                <p class="timeline-v-description">A historic milestone reconnecting the Syrian Jewish diaspora with their ancestral homeland.</p>
+              </div>
+            </div>
+
+            <div class="timeline-v-item" data-img-id="april-2025">
+              <div class="timeline-v-marker"></div>
+              <div class="timeline-v-content">
+                <div class="timeline-v-year">April 2025</div>
+                <h3 class="timeline-v-title">Interfaith Iftar in Jewish Quarter</h3>
+                <p class="timeline-v-description">A powerful demonstration of coexistence and unity during Ramadan in the heart of Damascus's Jewish Quarter.</p>
+              </div>
+            </div>
+
+            <div class="timeline-v-item" data-img-id="late-2025">
+              <div class="timeline-v-marker"></div>
+              <div class="timeline-v-content">
+                <div class="timeline-v-year">Late 2025</div>
+                <h3 class="timeline-v-title">Damascus Opera House Cultural Partnership</h3>
+                <p class="timeline-v-description">Establishing partnerships with cultural institutions to showcase Syria's artistic heritage.</p>
+              </div>
+            </div>
+
+            <div class="timeline-v-item" data-img-id="2026">
+              <div class="timeline-v-marker"></div>
+              <div class="timeline-v-content">
+                <div class="timeline-v-year">2026</div>
+                <h3 class="timeline-v-title">Heritage Week Launch & Expanded Tours</h3>
+                <p class="timeline-v-description">Launching our signature Heritage Week program with expanded cultural tours and educational initiatives.</p>
+              </div>
+            </div>
+
+            <div class="timeline-v-divider">
+              <span>Upcoming Initiatives</span>
+            </div>
+
+            <div class="timeline-v-item timeline-v-item-upcoming" data-img-id="upcoming-1">
+              <div class="timeline-v-marker timeline-v-marker-upcoming"></div>
+              <div class="timeline-v-content">
+                <h3 class="timeline-v-title">Heritage + Faith Coexistence Talks</h3>
+                <p class="timeline-v-description">Interfaith dialogues celebrating Syria's tradition of religious diversity and peaceful coexistence.</p>
+              </div>
+            </div>
+
+            <div class="timeline-v-item timeline-v-item-upcoming" data-img-id="upcoming-2">
+              <div class="timeline-v-marker timeline-v-marker-upcoming"></div>
+              <div class="timeline-v-content">
+                <h3 class="timeline-v-title">Mosaic Arts Exhibitions</h3>
+                <p class="timeline-v-description">Showcasing Syria's rich tradition of mosaic artistry through curated exhibitions.</p>
+              </div>
+            </div>
+
+            <div class="timeline-v-item timeline-v-item-upcoming" data-img-id="upcoming-3">
+              <div class="timeline-v-marker timeline-v-marker-upcoming"></div>
+              <div class="timeline-v-content">
+                <h3 class="timeline-v-title">Cultural Seminars & Walking-Tour Series</h3>
+                <p class="timeline-v-description">Regular educational programs exploring Damascus's neighborhoods and their living history.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="section">
+      <div class="container">
+        <div class="prose text-center">
+          <h2>Join Us in This Beautiful Effort</h2>
+          <p class="lead">
+            We invite you to be part of Syria's story of renewal, unity, and cultural preservation.
+          </p>
+          <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
+            <a href="tours.html" class="btn btn-primary btn-lg">Explore Tours</a>
+            <a href="contact.html" class="btn btn-secondary btn-lg">Contact Us</a>
           </div>
         </div>
       </div>
     </section>
   </main>
   
-  <footer class="text-white py-8 sm:py-10" style="background-color: var(--color-primary-green);">
-    <div class="container mx-auto px-4 sm:px-6 text-center">
-      <p class="text-xl sm:text-2xl font-bold font-david-libre mb-3 sm:mb-4">The Syrian Mosaic Foundation</p>
-      <p class="text-base sm:text-lg mb-3 sm:mb-4" style="color: var(--color-gold);">Celebrating Diversity, Building a Brighter Future</p>
-      <div class="flex justify-center space-x-4 sm:space-x-6 mb-3 sm:mb-4">
-        <a class="text-sm sm:text-base text-gray-300 hover:text-white" href="#">Privacy Policy</a>
-        <a class="text-sm sm:text-base text-gray-300 hover:text-white" href="#">Contact Us</a>
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-content">
+        <h3 class="footer-title">The Syrian Mosaic Foundation</h3>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="#mission" class="footer-link">Mission</a>
+          <a href="impact.html" class="footer-link">Impact</a>
+          <a href="tours.html" class="footer-link">Tours</a>
+          <a href="team.html" class="footer-link">Team</a>
+          <a href="media.html" class="footer-link">Media</a>
+          <a href="contact.html" class="footer-link">Contact</a>
+        </nav>
+        <p class="footer-copyright">
+          © 2025 The Syrian Mosaic Foundation. All Rights Reserved.
+        </p>
       </div>
-      <p class="text-xs sm:text-sm text-gray-300">© 2025 The Syrian Mosaic Foundation. All Rights Reserved.</p>
     </div>
   </footer>
 
-  <script>
-    // Mobile menu toggle with smooth animation
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-    
-    mobileMenuButton.addEventListener('click', () => {
-      mobileMenu.classList.toggle('active');
-    });
-    
-    // Close mobile menu when clicking on a link
-    const mobileMenuLinks = mobileMenu.querySelectorAll('a');
-    mobileMenuLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.remove('active');
-      });
-    });
-    
-    // Intersection Observer for fade-in animations
-    const faders = document.querySelectorAll('.fade-in');
-    const appearOptions = {
-      threshold: 0.1,
-      rootMargin: "0px 0px -50px 0px"
-    };
-    
-    const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) {
-          return;
-        } else {
-          entry.target.style.animationPlayState = 'running';
-          appearOnScroll.unobserve(entry.target);
-        }
-      });
-    }, appearOptions);
-    
-    faders.forEach(fader => {
-      appearOnScroll.observe(fader);
-    });
-    
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      });
-    });
-  </script>
+  <!-- Scripts -->
+  <script src="animations.js"></script>
+</body>
+</html>

@@ -290,6 +290,45 @@ a:hover {
     background: var(--color-white);
 }
 
+/* Hero patterned background that fades into header and next section */
+.hero-pattern {
+    background-color: var(--color-cream);
+    background-image: url('assets/images/360_F_424194700_YLn8PuaiqR36LI84T9E76ATDd6HrU2at.jpg');
+    background-repeat: repeat;
+    background-size: 640px auto; /* keep ratio, pleasant scale */
+    background-position: top center;
+    position: relative;
+}
+
+.hero-pattern::before,
+.hero-pattern::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    pointer-events: none;
+}
+
+/* Fade into fixed header */
+.hero-pattern::before {
+    top: 0;
+    height: 120px;
+    background: linear-gradient(to bottom, var(--color-cream) 0%, rgba(250, 250, 248, 0) 100%);
+}
+
+/* Fade into the next white section */
+.hero-pattern::after {
+    bottom: 0;
+    height: 140px;
+    background: linear-gradient(to top, var(--color-white) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+@media (max-width: 768px) {
+    .hero-pattern { background-size: 420px auto; }
+    .hero-pattern::before { height: 80px; }
+    .hero-pattern::after { height: 100px; }
+}
+
 .hero-title {
     font-size: clamp(2.5rem, 6vw, 4rem);
     font-weight: 600;

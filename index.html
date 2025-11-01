@@ -23,8 +23,7 @@
     <div class="container">
       <nav class="header-nav" aria-label="Main navigation">
         <a href="/" class="header-logo">
-          <img src="assets/images/logo.jpeg" alt="SMF"/>
-          <span>Syrian Mosaic Foundation</span>
+          Syrian Mosaic Foundation
         </a>
         
         <div class="header-links" role="navigation">
@@ -66,8 +65,196 @@
       </div>
     </section>
 
-    <!-- Heritage Showcase with Image -->
+    <!-- Diplomatic Engagement -->
     <section class="section">
+      <div class="container">
+        <div class="highlight-box">
+          <h2 class="text-center mb-8"><span class="accent-blue">Building Bridges: Diplomatic Partnerships</span></h2>
+          <div class="heritage-section-divider"></div>
+          
+          <div class="split-content" style="margin-top: var(--space-12);">
+            <div class="fade-in">
+              <figure class="image-figure">
+                <img src="assets/images/joe meeting politician.png" alt="Joe Jajati meeting with Syrian Foreign Ministry official" class="heritage-image"/>
+                <figcaption class="image-caption">
+                  Joe Jajati and his father meeting with Mr. Qutaiba Idlbi, Director of American Affairs in Syria's Foreign Ministry, during an American Jewish delegation visit.
+                </figcaption>
+              </figure>
+            </div>
+            
+            <div class="fade-in">
+              <p class="lead mb-6">
+                I am incredibly honored, as it was a privilege to meet with Mr. Qutaiba Idlbi, Director of American Affairs in Syria's Foreign Ministry, alongside my father, during the visit of an American Jewish delegation.
+              </p>
+              <p class="mb-4">
+                We had very encouraging meetings where we reinforced each other's commitment to this important work. These dialogues represent the kind of meaningful engagement that can bridge communities and build understanding across all divides.
+              </p>
+              <p class="mb-4">
+                As a symbol of this shared purpose, we presented a gift inscribed with the eternal Hebrew principle, <strong>"Love your friend as yourself."</strong> This is the foundation for a unified Syria where all communities can thrive.
+              </p>
+              <p class="small text-muted">
+                — Joseph Jajati, Founder
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Preserving Sacred Heritage -->
+    <section class="section section-alt">
+      <div class="container">
+        <h2 class="text-center mb-16"><span class="accent-blue">Preserving Sacred Heritage</span></h2>
+        <div class="heritage-section-divider"></div>
+        
+        <div class="split-content split-content-reverse" style="margin-top: var(--space-12);">
+          <div class="fade-in">
+            <p class="lead mb-6">
+              The Frenj Synagogue in Damascus stands as a testament to Syria's rich Jewish heritage. Its ark, adorned with Hebrew inscriptions from Psalms 16:8 and 65:5, represents centuries of faith and tradition that we are committed to preserving for future generations.
+            </p>
+            <p>
+              Our heritage preservation work extends to all of Syria's diverse communities, ensuring that these irreplaceable treasures remain protected and celebrated.
+            </p>
+          </div>
+          
+          <div class="fade-in">
+            <figure class="image-figure">
+              <img src="assets/images/The ark at the Fr.png" alt="The ark at the Frenj Synagogue" class="heritage-image"/>
+              <figcaption class="image-caption">
+                The ark at the Frenj Synagogue, with Hebrew inscriptions from Psalms 16:8 and 65:5. Jewish Quarter in Old Damascus. Photo by Rania Kataf.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Events & Timeline - Vertical with Images -->
+    <!-- 
+      MOBILE INLINE IMAGES IMPLEMENTATION (Nov 2025)
+      - Desktop (1024px+): Sticky gallery on left, timeline on right
+      - Mobile/Tablet: Inline images within each card, gallery hidden
+      - To revert: See comments in styles.css under "MOBILE INLINE IMAGES"
+    -->
+    <section class="section">
+      <div class="container">
+        <h2 class="text-center mb-16">Events & Timeline</h2>
+        
+        <div class="timeline-split">
+          <!-- Sticky Image Gallery (Desktop only) -->
+          <div class="timeline-gallery">
+            <div class="timeline-gallery-inner">
+              <div class="timeline-img active" data-timeline-img="2018-2024">
+                <img src="assets/images/historical-pic.png" alt="Foundational Heritage Trips" />
+              </div>
+              <div class="timeline-img" data-timeline-img="early-2025">
+                <img src="assets/images/group-pic.jpeg" alt="First Diaspora Jewish Group Returns" />
+              </div>
+              <div class="timeline-img" data-timeline-img="april-2025">
+                <img src="assets/images/team-meeting.jpg" alt="Eid, Head of Syrian Jewish Community, Meeting with Congressman" />
+              </div>
+              <div class="timeline-img" data-timeline-img="late-2025">
+                <img src="assets/images/opera house.png" alt="Damascus Opera House Cultural Partnership" />
+              </div>
+              <div class="timeline-img" data-timeline-img="2026">
+                <img src="assets/images/team-meeting-old.jpg" alt="SMF Leadership Meeting with United Nations" />
+              </div>
+              <div class="timeline-img" data-timeline-img="upcoming-1">
+                <img src="assets/images/group-pic-2.jpeg" alt="Heritage + Faith Coexistence Talks" />
+              </div>
+              <div class="timeline-img" data-timeline-img="upcoming-2">
+                <img src="assets/images/historical-pic-2.png" alt="Mosaic Arts Exhibitions" />
+              </div>
+            </div>
+          </div>
+          
+          <!-- Vertical Timeline -->
+          <div class="timeline-v">
+            <div class="timeline-v-item active" data-img-id="2018-2024">
+              <div class="timeline-v-marker"></div>
+              <div class="timeline-v-content">
+                <!-- Mobile inline image (hidden on desktop) -->
+                <img src="assets/images/historical-pic.png" alt="Foundational Heritage Trips" class="timeline-v-mobile-img"/>
+                <div class="timeline-v-year">2018–2024</div>
+                <h3 class="timeline-v-title">Foundational Heritage Trips</h3>
+                <p class="timeline-v-description">Building relationships and establishing our presence in Syria.</p>
+              </div>
+            </div>
+
+            <div class="timeline-v-item" data-img-id="early-2025">
+              <div class="timeline-v-marker"></div>
+              <div class="timeline-v-content">
+                <!-- Mobile inline image (hidden on desktop) -->
+                <img src="assets/images/group-pic.jpeg" alt="First Diaspora Jewish Group Returns" class="timeline-v-mobile-img"/>
+                <div class="timeline-v-year">Early 2025</div>
+                <h3 class="timeline-v-title">First Diaspora Group Returns</h3>
+                <p class="timeline-v-description">Historic milestone reconnecting the Syrian Jewish diaspora.</p>
+              </div>
+            </div>
+
+            <div class="timeline-v-item" data-img-id="april-2025">
+              <div class="timeline-v-marker"></div>
+              <div class="timeline-v-content">
+                <!-- Mobile inline image (hidden on desktop) -->
+                <img src="assets/images/team-meeting.jpg" alt="Leadership & Congressional Engagement" class="timeline-v-mobile-img"/>
+                <div class="timeline-v-year">April 2025</div>
+                <h3 class="timeline-v-title">Leadership & Congressional Engagement</h3>
+                <p class="timeline-v-description">Eid, Head of the Syrian Jewish Community, meets with U.S. Congressional leadership to advocate for Syria.</p>
+              </div>
+            </div>
+
+            <div class="timeline-v-item" data-img-id="late-2025">
+              <div class="timeline-v-marker"></div>
+              <div class="timeline-v-content">
+                <!-- Mobile inline image (hidden on desktop) -->
+                <img src="assets/images/opera house.png" alt="Opera House Partnership" class="timeline-v-mobile-img"/>
+                <div class="timeline-v-year">Late 2025</div>
+                <h3 class="timeline-v-title">Opera House Partnership</h3>
+                <p class="timeline-v-description">Cultural partnerships showcasing Syria's artistic heritage.</p>
+              </div>
+            </div>
+
+            <div class="timeline-v-item" data-img-id="2026">
+              <div class="timeline-v-marker"></div>
+              <div class="timeline-v-content">
+                <!-- Mobile inline image (hidden on desktop) -->
+                <img src="assets/images/team-meeting-old.jpg" alt="United Nations Engagement" class="timeline-v-mobile-img"/>
+                <div class="timeline-v-year">2025</div>
+                <h3 class="timeline-v-title">United Nations Engagement</h3>
+                <p class="timeline-v-description">Strategic discussions with UN leadership on Syria's cultural preservation and renewal.</p>
+              </div>
+            </div>
+
+            <div class="timeline-v-divider">
+              <span>Upcoming Initiatives</span>
+            </div>
+
+            <div class="timeline-v-item timeline-v-item-upcoming" data-img-id="upcoming-1">
+              <div class="timeline-v-marker timeline-v-marker-upcoming"></div>
+              <div class="timeline-v-content">
+                <!-- Mobile inline image (hidden on desktop) -->
+                <img src="assets/images/group-pic-2.jpeg" alt="Heritage + Faith Coexistence Talks" class="timeline-v-mobile-img"/>
+                <h3 class="timeline-v-title">Coexistence Talks</h3>
+                <p class="timeline-v-description">Interfaith dialogues celebrating religious diversity.</p>
+              </div>
+            </div>
+
+            <div class="timeline-v-item timeline-v-item-upcoming" data-img-id="upcoming-2">
+              <div class="timeline-v-marker timeline-v-marker-upcoming"></div>
+              <div class="timeline-v-content">
+                <!-- Mobile inline image (hidden on desktop) -->
+                <img src="assets/images/historical-pic-2.png" alt="Mosaic Arts Exhibitions" class="timeline-v-mobile-img"/>
+                <h3 class="timeline-v-title">Mosaic Arts Exhibitions</h3>
+                <p class="timeline-v-description">Showcasing Syria's rich mosaic artistry tradition.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Heritage Showcase with Image -->
+    <section class="section section-alt">
       <div class="container">
         <div class="split-content">
           <div class="fade-in">
@@ -127,12 +314,12 @@
     </section>
 
     <!-- Heritage Protection Achievement -->
-    <section class="section">
+    <section class="section section-alt">
       <div class="container">
         <div class="split-content">
           <div class="fade-in">
             <figure class="image-figure">
-              <img src="assets/images/Screenshot 2025-10-31 at 9.21.43 PM.png" alt="Recovery of historic Syrian artifacts in Damascus" class="heritage-image"/>
+              <img src="assets/images/artifacts-recovery-damascus-2025.png" alt="Recovery of historic Syrian artifacts in Damascus" class="heritage-image"/>
               <figcaption class="image-caption">
                 Recovered Syrian artifacts, September 2025. SMF assisted in securing and preserving these historic pieces.
               </figcaption>
@@ -148,42 +335,6 @@
             <p>
               Working with local authorities, we helped identify, secure, and preserve these historic pieces—protecting Syria's diverse cultural legacy for future generations.
             </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Diplomatic Engagement -->
-    <section class="section section-alt">
-      <div class="container">
-        <div class="highlight-box">
-          <h2 class="text-center mb-8"><span class="accent-blue">Building Bridges: Diplomatic Partnerships</span></h2>
-          <div class="heritage-section-divider"></div>
-          
-          <div class="split-content" style="margin-top: var(--space-12);">
-            <div class="fade-in">
-              <figure class="image-figure">
-                <img src="assets/images/joe meeting politician.png" alt="Joe Jajati meeting with Syrian Foreign Ministry official" class="heritage-image"/>
-                <figcaption class="image-caption">
-                  Joe Jajati and his father meeting with Mr. Qutaiba Idlbi, Director of American Affairs in Syria's Foreign Ministry, during an American Jewish delegation visit.
-                </figcaption>
-              </figure>
-            </div>
-            
-            <div class="fade-in">
-              <p class="lead mb-6">
-                I am incredibly honored, as it was a privilege to meet with Mr. Qutaiba Idlbi, Director of American Affairs in Syria's Foreign Ministry, alongside my father, during the visit of an American Jewish delegation.
-              </p>
-              <p class="mb-4">
-                We had very encouraging meetings where we reinforced each other's commitment to this important work. These dialogues represent the kind of meaningful engagement that can bridge communities and build understanding across all divides.
-              </p>
-              <p class="mb-4">
-                As a symbol of this shared purpose, we presented a gift inscribed with the eternal Hebrew principle, <strong>"Love your friend as yourself."</strong> This is the foundation for a unified Syria where all communities can thrive.
-              </p>
-              <p class="small text-muted">
-                — Joseph Jajati, Founder
-              </p>
-            </div>
           </div>
         </div>
       </div>
@@ -237,29 +388,6 @@
             </div>
           </div>
         </div>
-        
-        <!-- Heritage Preservation Image -->
-        <div class="split-content split-content-reverse" style="margin-top: var(--space-16);">
-          <div class="fade-in">
-            <h3 class="mb-6"><span class="accent-blue">Preserving Sacred Heritage</span></h3>
-            <div class="heritage-section-divider" style="margin-left: 0;"></div>
-            <p>
-              The Frenj Synagogue in Damascus stands as a testament to Syria's rich Jewish heritage. Its ark, adorned with Hebrew inscriptions from Psalms 16:8 and 65:5, represents centuries of faith and tradition that we are committed to preserving for future generations.
-            </p>
-            <p class="small text-muted mt-4">
-              Our heritage preservation work extends to all of Syria's diverse communities, ensuring that these irreplaceable treasures remain protected and celebrated.
-            </p>
-          </div>
-          
-          <div class="fade-in">
-            <figure class="image-figure">
-              <img src="assets/images/The ark at the Fr.png" alt="The ark at the Frenj Synagogue" class="heritage-image"/>
-              <figcaption class="image-caption">
-                The ark at the Frenj Synagogue, with Hebrew inscriptions from Psalms 16:8 and 65:5. Jewish Quarter in Old Damascus. Photo by Rania Kataf.
-              </figcaption>
-            </figure>
-          </div>
-        </div>
       </div>
     </section>
     
@@ -310,110 +438,6 @@
               <p>
                 Every initiative, from restoring sites for all communities to organizing diverse, collaborative delegations (academic, religious, social), is designed to intentionally connect disparate groups, showing the world that unity is the ultimate form of renewal.
               </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    
-    <!-- Events & Timeline - Vertical with Images -->
-    <section class="section section-alt">
-      <div class="container">
-        <h2 class="text-center mb-16">Events & Timeline</h2>
-        
-        <div class="timeline-split">
-          <!-- Sticky Image Gallery -->
-          <div class="timeline-gallery">
-            <div class="timeline-gallery-inner">
-              <div class="timeline-img active" data-timeline-img="2018-2024">
-                <img src="assets/images/historical-pic.png" alt="Foundational Heritage Trips" />
-              </div>
-              <div class="timeline-img" data-timeline-img="early-2025">
-                <img src="assets/images/group-pic.jpeg" alt="First Diaspora Jewish Group Returns" />
-              </div>
-              <div class="timeline-img" data-timeline-img="april-2025">
-                <img src="assets/images/team-meeting.jpg" alt="Eid, Head of Syrian Jewish Community, Meeting with Congressman" />
-              </div>
-              <div class="timeline-img" data-timeline-img="late-2025">
-                <img src="assets/images/opera house.png" alt="Damascus Opera House Cultural Partnership" />
-              </div>
-              <div class="timeline-img" data-timeline-img="2026">
-                <img src="assets/images/team-meeting-old.jpg" alt="SMF Leadership Meeting with United Nations" />
-              </div>
-              <div class="timeline-img" data-timeline-img="upcoming-1">
-                <img src="assets/images/group-pic-2.jpeg" alt="Heritage + Faith Coexistence Talks" />
-              </div>
-              <div class="timeline-img" data-timeline-img="upcoming-2">
-                <img src="assets/images/historical-pic-2.png" alt="Mosaic Arts Exhibitions" />
-              </div>
-            </div>
-          </div>
-          
-          <!-- Vertical Timeline -->
-          <div class="timeline-v">
-            <div class="timeline-v-item active" data-img-id="2018-2024">
-              <div class="timeline-v-marker"></div>
-              <div class="timeline-v-content">
-                <div class="timeline-v-year">2018–2024</div>
-                <h3 class="timeline-v-title">Foundational Heritage Trips</h3>
-                <p class="timeline-v-description">Building relationships and establishing our presence in Syria.</p>
-              </div>
-            </div>
-
-            <div class="timeline-v-item" data-img-id="early-2025">
-              <div class="timeline-v-marker"></div>
-              <div class="timeline-v-content">
-                <div class="timeline-v-year">Early 2025</div>
-                <h3 class="timeline-v-title">First Diaspora Group Returns</h3>
-                <p class="timeline-v-description">Historic milestone reconnecting the Syrian Jewish diaspora.</p>
-              </div>
-            </div>
-
-            <div class="timeline-v-item" data-img-id="april-2025">
-              <div class="timeline-v-marker"></div>
-              <div class="timeline-v-content">
-                <div class="timeline-v-year">April 2025</div>
-                <h3 class="timeline-v-title">Leadership & Congressional Engagement</h3>
-                <p class="timeline-v-description">Eid, Head of the Syrian Jewish Community, meets with U.S. Congressional leadership to advocate for Syria.</p>
-              </div>
-            </div>
-
-            <div class="timeline-v-item" data-img-id="late-2025">
-              <div class="timeline-v-marker"></div>
-              <div class="timeline-v-content">
-                <div class="timeline-v-year">Late 2025</div>
-                <h3 class="timeline-v-title">Opera House Partnership</h3>
-                <p class="timeline-v-description">Cultural partnerships showcasing Syria's artistic heritage.</p>
-              </div>
-            </div>
-
-            <div class="timeline-v-item" data-img-id="2026">
-              <div class="timeline-v-marker"></div>
-              <div class="timeline-v-content">
-                <div class="timeline-v-year">2025</div>
-                <h3 class="timeline-v-title">United Nations Engagement</h3>
-                <p class="timeline-v-description">Strategic discussions with UN leadership on Syria's cultural preservation and renewal.</p>
-              </div>
-            </div>
-
-            <div class="timeline-v-divider">
-              <span>Upcoming Initiatives</span>
-            </div>
-
-            <div class="timeline-v-item timeline-v-item-upcoming" data-img-id="upcoming-1">
-              <div class="timeline-v-marker timeline-v-marker-upcoming"></div>
-              <div class="timeline-v-content">
-                <h3 class="timeline-v-title">Coexistence Talks</h3>
-                <p class="timeline-v-description">Interfaith dialogues celebrating religious diversity.</p>
-              </div>
-            </div>
-
-            <div class="timeline-v-item timeline-v-item-upcoming" data-img-id="upcoming-2">
-              <div class="timeline-v-marker timeline-v-marker-upcoming"></div>
-              <div class="timeline-v-content">
-                <h3 class="timeline-v-title">Mosaic Arts Exhibitions</h3>
-                <p class="timeline-v-description">Showcasing Syria's rich mosaic artistry tradition.</p>
-              </div>
             </div>
           </div>
         </div>

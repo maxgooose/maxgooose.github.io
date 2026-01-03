@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta property="og:title" content="Register | Syrian Mosaic Foundation">
+    <meta property="og:description" content="Register your interest for a heritage trip or delegation to Syria.">
+    <meta property="og:image" content="assets/images/smf-logo.png">
+    <meta property="og:type" content="website">
+
+    <title>Trip Registration | Syrian Mosaic Foundation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #1A3A52;
+            --color-secondary: #6B7280;
+            --color-border: #E5E7EB;
+            --color-bg-page: #FFFFFF;
+            --color-bg-card: #FFFFFF;
+            --radius-card: 12px;
+            --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            font-family: var(--font-main); 
+            background: var(--color-bg-page); 
+            color: var(--color-primary); 
+            line-height: 1.6; 
+            -webkit-font-smoothing: antialiased; 
+            min-height: 100vh;
+            overflow-x: hidden;
+            width: 100%; 
+        }
+
+        /* --- Header --- */
+        .header { 
+            background: var(--color-bg-card); 
+            border-bottom: 1px solid var(--color-border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-content { 
+            max-width: 900px; 
+            margin: 0 auto; 
+            padding: 16px 24px; 
+            display: flex; 
+            justify-content: center;
+            align-items: center; 
+        }
+        .logo-text { font-size: 15px; font-weight: 600; color: var(--color-primary); text-decoration: none; }
+
+        /* --- Hero --- */
+        .hero { 
+            background: linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.8) 100%), url('assets/images/jewish people visiting synagogue in damascus but name it something nicer.jpg') center 20% / cover no-repeat scroll;
+            padding: 30px 24px 40px; 
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-logo {
+            height: 140px;
+            width: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+            transform: translateZ(0);
+            display: block;
+            margin: 0 auto 20px;
+        }
+        .hero-logo.emblem {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            height: 40px;
+            margin: 0;
+        }
+
+        .hero h1 { 
+            font-size: 26px; 
+            font-weight: 600; 
+            line-height: 1.2; 
+            margin-bottom: 8px; 
+        }
+        .hero p { 
+            font-size: 14px; 
+            opacity: 0.9; 
+            max-width: 400px; 
+            margin: 0 auto; 
+        }
+
+        /* --- Main Container --- */
+        .main-container {
+            max-width: 700px;
+            margin: 0 auto; 
+            padding: 0 24px 30px; 
+            position: relative;
+            z-index: 10;
+        }
+
+        /* --- Selection Cards --- */
+        .selection-header {
+            text-align: center;
+            margin-bottom: 20px;
+            padding-top: 24px;
+        }
+        .selection-header h2 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--color-primary);
+            margin-bottom: 4px;
+        }
+        .selection-header p {
+            font-size: 13px;
+            color: var(--color-secondary);
+        }
+
+        .cards-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .selection-card {
+            background: var(--color-bg-card);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-card);
+            padding: 24px 20px;
+            text-align: center;
+            text-decoration: none;
+            color: var(--color-primary);
+            transition: all 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .selection-card:hover {
+            border-color: var(--color-primary);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            background: #F3F4F6;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 14px;
+        }
+
+        .card-icon svg {
+            width: 22px;
+            height: 22px;
+            stroke: var(--color-primary);
+            stroke-width: 1.5;
+            fill: none;
+        }
+
+        .card-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .card-description {
+            font-size: 13px;
+            color: var(--color-secondary);
+            line-height: 1.5;
+            margin-bottom: 16px;
+        }
+
+        .card-cta {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--color-primary);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: auto;
+        }
+
+        .card-cta svg {
+            width: 16px;
+            height: 16px;
+            transition: transform 0.2s ease;
+        }
+
+        .selection-card:hover .card-cta svg {
+            transform: translateX(3px);
+        }
+
+        /* --- Footer --- */
+        .footer { 
+            margin-top: 20px; 
+            text-align: center; 
+            font-size: 11px; 
+            color: var(--color-secondary); 
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 560px) {
+            .cards-container {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            .hero h1 {
+                font-size: 26px;
+            }
+            .selection-card {
+                padding: 28px 20px;
+            }
+        }
+
+        /* Desktop enhancements - fit on one screen */
+        @media (min-width: 768px) {
+            .header-content {
+                padding: 14px 40px;
+            }
+            .logo-text { font-size: 15px; }
+            
+            .hero {
+                padding: 40px 40px 50px;
+            }
+            .hero-logo {
+                height: 160px;
+                margin: 0 auto 24px;
+            }
+            .hero-logo.emblem {
+                top: 20px;
+                right: 30px;
+                height: 50px;
+            }
+            .hero h1 {
+                font-size: 32px;
+            }
+            .hero p {
+                font-size: 15px;
+            }
+            .main-container {
+                max-width: 750px;
+            padding-bottom: 20px;
+            }
+            .selection-header {
+                padding-top: 28px;
+                margin-bottom: 24px;
+            }
+            .selection-header h2 {
+                font-size: 20px;
+            }
+            .selection-card {
+                padding: 28px 24px;
+            }
+            .card-icon {
+                width: 56px;
+                height: 56px;
+                margin-bottom: 16px;
+            }
+            .card-icon svg {
+                width: 26px;
+                height: 26px;
+            }
+            .card-title {
+                font-size: 17px;
+            }
+            .card-description {
+                font-size: 13px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .header-content {
+                max-width: 1100px;
+                padding: 16px 60px;
+            }
+            .hero {
+                padding: 50px 60px 60px;
+            }
+            .hero-logo {
+                height: 180px;
+            }
+            .hero-logo.emblem {
+                top: 25px;
+                right: 50px;
+                height: 55px;
+            }
+            .hero h1 {
+                font-size: 36px;
+            }
+            .main-container {
+                max-width: 800px;
+            }
+            .selection-header {
+                padding-top: 32px;
+            }
+            .cards-container {
+                gap: 24px;
+            }
+            .selection-card {
+                padding: 32px 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-content">
+            <a href="index.html" class="logo-text">Syrian Mosaic Foundation</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <img src="assets/images/syria-emblem.png" alt="Syria" class="hero-logo emblem" onerror="this.style.display='none'">
+            <img src="assets/images/smf-logo.png" alt="Syrian Mosaic Foundation" class="hero-logo" onerror="this.style.display='none'">
+
+        <h1>Register Your Interest</h1>
+        <p>Choose the type of visit that best describes your purpose.</p>
+    </section>
+
+    <div class="main-container">
+        
+        <div class="selection-header">
+            <h2>What brings you to Syria?</h2>
+            <p>Select the option that matches your visit purpose</p>
+        </div>
+
+        <div class="cards-container">
+            
+            <!-- Tourism Card -->
+            <a href="tourist-registration.html" class="selection-card">
+                <div class="card-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                        <path d="M2 17l10 5 10-5"/>
+                        <path d="M2 12l10 5 10-5"/>
+                    </svg>
+                </div>
+                <h3 class="card-title">Tourist</h3>
+                <p class="card-description">For individuals wanting to visit Syria for cultural tourism, sightseeing, and experiencing Syrian heritage.</p>
+                <span class="card-cta">
+                    Register as Tourist
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </span>
+            </a>
+
+            <!-- Delegation Card -->
+            <a href="delegation-registration.html" class="selection-card">
+                <div class="card-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                        <circle cx="9" cy="7" r="4"/>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                    </svg>
+                </div>
+                <h3 class="card-title">Delegation</h3>
+                <p class="card-description">For business leaders, diplomats, journalists, researchers, and official organizational visits.</p>
+                <span class="card-cta">
+                    Register as Delegation
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </span>
+            </a>
+
+            </div>
+
+        <footer class="footer">
+            <p>© 2025 Syrian Mosaic Foundation</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta property="og:title" content="Delegation Registration | Syrian Mosaic Foundation">
+    <meta property="og:description" content="Register your interest for an official delegation visit to Syria.">
+    <meta property="og:image" content="assets/images/smf-logo.png">
+    <meta property="og:type" content="website">
+
+    <title>Delegation Registration | Syrian Mosaic Foundation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #111111;
+            --color-secondary: #6B7280;
+            --color-border: #E5E7EB;
+            --color-bg-page: #F9FAFB;
+            --color-bg-card: #FFFFFF;
+            --color-accent: #C9A962; 
+            --radius-input: 12px;
+            --radius-card: 16px;
+            --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            font-family: var(--font-main); 
+            background: var(--color-bg-page); 
+            color: var(--color-primary); 
+            line-height: 1.6; 
+            -webkit-font-smoothing: antialiased; 
+            padding-bottom: 80px;
+            overflow-x: hidden;
+            width: 100%; 
+        }
+
+        /* --- Header --- */
+        .header { 
+            background: var(--color-bg-card); 
+            border-bottom: 1px solid var(--color-border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            will-change: transform;
+        }
+        .header-content { 
+            max-width: 900px; 
+            margin: 0 auto; 
+            padding: 16px 24px; 
+            display: flex; 
+            justify-content: space-between;
+            align-items: center; 
+        }
+        .logo-text { font-size: 15px; font-weight: 700; color: var(--color-primary); text-decoration: none; }
+        .back-link { font-size: 13px; color: var(--color-secondary); text-decoration: none; display: flex; align-items: center; gap: 4px; transition: color 0.2s; }
+        .back-link:hover { color: var(--color-primary); }
+        .back-link svg { width: 16px; height: 16px; }
+
+        /* --- Hero --- */
+        .hero { 
+            background: linear-gradient(180deg, rgba(17,17,17,0.75) 0%, rgba(17,17,17,0.85) 100%), url('assets/images/delegation-hero.jpg') center center / cover no-repeat scroll;
+            padding: 40px 24px 50px; 
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        
+        .hero-logo {
+            height: 200px;
+            width: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+            transform: translateZ(0);
+            display: block;
+            margin: 40px auto 28px;
+        }
+        .hero-logo.emblem {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            height: 50px;
+            margin: 0;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(201, 169, 98, 0.2);
+            color: #EBCB8B;
+            border: 1px solid rgba(201, 169, 98, 0.4);
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 6px 12px;
+            border-radius: 20px;
+            margin-bottom: 16px;
+        }
+        .hero h1 { font-size: 28px; font-weight: 700; line-height: 1.2; margin-bottom: 12px; }
+        .hero p { font-size: 15px; opacity: 0.9; max-width: 400px; margin: 0 auto; }
+
+        /* --- Main Container --- */
+        .main-container {
+            max-width: 540px;
+            margin: -30px auto 0; 
+            padding: 0 24px; 
+            position: relative;
+            z-index: 10;
+        }
+
+        /* --- Notice Card --- */
+        .notice-card {
+            background: #fff;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-card);
+            padding: 24px;
+            margin-bottom: 32px;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.08);
+            transform: translateZ(0);
+        }
+        .notice-title { font-size: 12px; font-weight: 700; text-transform: uppercase; color: var(--color-secondary); margin-bottom: 6px; letter-spacing: 1px; }
+        .notice-text { font-size: 14px; color: var(--color-primary); line-height: 1.6; }
+
+        /* --- Form Sections --- */
+        .form-section {
+            background: var(--color-bg-card);
+            border-radius: var(--radius-card);
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            border: 1px solid var(--color-border);
+            transform: translateZ(0);
+        }
+        .section-header { margin-bottom: 24px; border-bottom: 1px solid var(--color-border); padding-bottom: 16px; }
+        .section-title { font-size: 17px; font-weight: 700; color: var(--color-primary); }
+
+        /* --- Form Elements --- */
+        .form-group { margin-bottom: 28px; }
+        .form-group:last-child { margin-bottom: 0; }
+        
+        label { 
+            display: block; 
+            font-size: 14px; 
+            font-weight: 600; 
+            margin-bottom: 8px; 
+            color: #1f2937;
+        }
+        .required::after { content: '*'; color: #C9A962; margin-left: 2px; } 
+        .sub-label { display: block; font-size: 12px; color: var(--color-secondary); margin-top: -4px; margin-bottom: 8px; font-weight: 400; }
+
+        input[type="text"], input[type="email"], input[type="tel"], input[type="date"], input[type="number"], select, textarea {
+            width: 100%;
+            height: 52px;
+            padding: 0 16px;
+            font-size: 16px;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-input);
+            background: #fff;
+            color: var(--color-primary);
+            appearance: none;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        textarea { height: auto; min-height: 100px; padding: 16px; resize: vertical; }
+        
+        input:focus, select:focus, textarea:focus { 
+            outline: none; 
+            border-color: var(--color-accent); 
+            box-shadow: 0 0 0 4px rgba(201, 169, 98, 0.15); 
+        }
+
+        /* Custom Select Arrow */
+        .select-wrapper { position: relative; }
+        .select-wrapper::after {
+            content: '';
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 10px;
+            height: 10px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-size: contain;
+            background-repeat: no-repeat;
+            pointer-events: none;
+        }
+
+        /* Option Cards (Radio Buttons) */
+        .options-group { display: flex; flex-direction: column; gap: 10px; }
+        .option-item {
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding: 14px 16px;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-input);
+            cursor: pointer;
+            transition: background 0.1s, border-color 0.1s;
+            background: white;
+        }
+        .option-item:active { transform: scale(0.99); background: #fafafa; }
+        .option-item.selected { 
+            border-color: var(--color-accent); 
+            background: #FFFCF5;
+            box-shadow: inset 0 0 0 1px var(--color-accent);
+        }
+        .option-item input {
+            height: 20px; width: 20px;
+            margin-right: 12px;
+            accent-color: var(--color-accent);
+        }
+        .option-item span { font-size: 15px; font-weight: 500; }
+
+        /* --- Footer / Submit --- */
+        .submit-section { margin-top: 32px; text-align: center; }
+        .submit-btn {
+            width: 100%;
+            background: var(--color-primary);
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 16px;
+            border-radius: var(--radius-card);
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: transform 0.1s, background 0.2s;
+            transform: translateZ(0);
+        }
+        .submit-btn:active { transform: scale(0.97); }
+        .submit-btn:hover { background: #000; }
+        .submit-btn:disabled { opacity: 0.7; cursor: not-allowed; transform: none; }
+
+        .footer { 
+            margin-top: 40px; 
+            text-align: center; 
+            font-size: 12px; 
+            color: var(--color-secondary); 
+            padding-bottom: 20px;
+        }
+
+        @media (min-width: 500px) {
+            .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+            .form-section { padding: 0; border: none; box-shadow: none; background: transparent; }
+            .section-header { border-bottom: none; margin-bottom: 30px; padding-bottom: 0; }
+            .section-title { font-size: 20px; }
+            .main-container {
+                background: white;
+                border-radius: 20px;
+                padding: 40px;
+                margin-top: -40px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            }
+            .notice-card { border: 1px solid var(--color-border); box-shadow: none; background: #F9FAFB; }
+        }
+
+        /* Desktop enhancements */
+        @media (min-width: 768px) {
+            .header-content {
+                padding: 18px 40px;
+            }
+            .logo-text { font-size: 16px; }
+            .back-link { font-size: 14px; gap: 6px; }
+            .back-link svg { width: 18px; height: 18px; }
+            
+            .hero {
+                padding: 60px 40px 80px;
+            }
+            .hero-logo {
+                height: 220px;
+                margin: 30px auto 32px;
+            }
+            .hero-logo.emblem {
+                top: 30px;
+                right: 40px;
+                height: 60px;
+            }
+            .hero h1 {
+                font-size: 36px;
+            }
+            .hero p {
+                font-size: 17px;
+            }
+            .main-container {
+                max-width: 640px;
+                padding: 48px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .header-content {
+                max-width: 1100px;
+                padding: 20px 60px;
+            }
+            .hero {
+                padding: 80px 60px 100px;
+            }
+            .hero-logo {
+                height: 240px;
+            }
+            .hero-logo.emblem {
+                top: 40px;
+                right: 60px;
+                height: 70px;
+            }
+            .hero h1 {
+                font-size: 42px;
+            }
+            .main-container {
+                max-width: 680px;
+                margin-top: -50px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-content">
+            <a href="index.html" class="logo-text">Syrian Mosaic Foundation</a>
+            <a href="trip-registration.html" class="back-link">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+                Back
+            </a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <img src="assets/images/syria-emblem.png" alt="Syria" class="hero-logo emblem" onerror="this.style.display='none'">
+        <img src="assets/images/smf-logo.png" alt="Syrian Mosaic Foundation" class="hero-logo" onerror="this.style.display='none'">
+
+        <h1>Delegation Visit to Syria</h1>
+        <p>Professional, diplomatic, or organizational visits.</p>
+    </section>
+
+    <div class="main-container">
+        
+        <div class="notice-card">
+            <div class="notice-title">About Delegations</div>
+            <div class="notice-text">This form is for official visits including diplomatic missions, organizational partnerships, research trips, media coverage, and business engagements. Our team will coordinate logistics and facilitate introductions.</div>
+        </div>
+
+        <form action="https://formspree.io/f/mvzozenq" method="POST" id="registrationForm">
+            <input type="hidden" name="_subject" value="New Delegation Registration">
+            <input type="hidden" name="registrationType" value="Official Delegation">
+
+            <div class="form-section">
+                <div class="section-header">
+                    <h2 class="section-title">1. Contact Information</h2>
+                </div>
+                
+                <div class="form-group">
+                    <label for="fullName" class="required">Full Name</label>
+                    <span class="sub-label">Primary contact for this delegation</span>
+                    <input type="text" id="fullName" name="fullName" required placeholder="e.g. Alex Doe" autocomplete="name" autocorrect="off" spellcheck="false">
+                </div>
+
+                <div class="form-group two-col">
+                    <div>
+                        <label for="email" class="required">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="alex@organization.com" autocomplete="email">
+                    </div>
+                    <div style="margin-top: 24px;">
+                        <label for="phone" class="required">Phone</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="+1 (555) 000-0000" autocomplete="tel">
+                    </div>
+                </div>
+                <style>@media(min-width:500px){ [style*="margin-top: 24px"] { margin-top: 0 !important; } }</style>
+
+                <div class="form-group two-col" style="margin-top: 24px;">
+                    <div>
+                        <label for="title" class="required">Title / Role</label>
+                        <input type="text" id="title" name="title" required placeholder="e.g. Director, Journalist" autocorrect="off" spellcheck="false">
+                    </div>
+                    <div style="margin-top: 24px;">
+                        <label for="location" class="required">City & Country</label>
+                        <input type="text" id="location" name="location" required placeholder="e.g. New York, USA" autocomplete="address-level2">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <div class="section-header">
+                    <h2 class="section-title">2. Organization Details</h2>
+                </div>
+
+                <div class="form-group">
+                    <label for="organization" class="required">Organization Name</label>
+                    <span class="sub-label">Company, institution, or group you represent</span>
+                    <input type="text" id="organization" name="organization" required placeholder="e.g. ABC Foundation, Reuters" autocorrect="off" spellcheck="false">
+                </div>
+
+                <div class="form-group">
+                    <label class="required">Organization Type</label>
+                    <div class="options-group">
+                        <label class="option-item"><input type="radio" name="organizationType" value="Non-profit / NGO" required><span>Non-profit / NGO</span></label>
+                        <label class="option-item"><input type="radio" name="organizationType" value="Government / Diplomatic"><span>Government / Diplomatic</span></label>
+                        <label class="option-item"><input type="radio" name="organizationType" value="Media / Journalism"><span>Media / Journalism</span></label>
+                        <label class="option-item"><input type="radio" name="organizationType" value="Academic / Research"><span>Academic / Research</span></label>
+                        <label class="option-item"><input type="radio" name="organizationType" value="Business / Corporate"><span>Business / Corporate</span></label>
+                        <label class="option-item"><input type="radio" name="organizationType" value="Religious / Community"><span>Religious / Community</span></label>
+                        <label class="option-item"><input type="radio" name="organizationType" value="Other"><span>Other</span></label>
+                    </div>
+                    <input type="text" id="orgTypeOther" name="organizationTypeOther" placeholder="Please specify" style="display: none; margin-top: 12px;">
+                </div>
+
+                <div class="form-group">
+                    <label for="website">Organization Website</label>
+                    <input type="text" id="website" name="website" placeholder="https://www.example.org">
+                </div>
+            </div>
+
+            <div class="form-section">
+                <div class="section-header">
+                    <h2 class="section-title">3. Delegation Details</h2>
+                </div>
+
+                <div class="form-group">
+                    <label class="required">Purpose of Visit</label>
+                    <div class="options-group">
+                        <label class="option-item"><input type="radio" name="visitPurpose" value="Partnership / Collaboration" required><span>Partnership / Collaboration</span></label>
+                        <label class="option-item"><input type="radio" name="visitPurpose" value="Research / Documentation"><span>Research / Documentation</span></label>
+                        <label class="option-item"><input type="radio" name="visitPurpose" value="Media Coverage / Journalism"><span>Media Coverage / Journalism</span></label>
+                        <label class="option-item"><input type="radio" name="visitPurpose" value="Diplomatic / Official"><span>Diplomatic / Official</span></label>
+                        <label class="option-item"><input type="radio" name="visitPurpose" value="Heritage Preservation"><span>Heritage Preservation</span></label>
+                        <label class="option-item"><input type="radio" name="visitPurpose" value="Humanitarian / Aid"><span>Humanitarian / Aid</span></label>
+                        <label class="option-item"><input type="radio" name="visitPurpose" value="Business Development"><span>Business Development</span></label>
+                        <label class="option-item"><input type="radio" name="visitPurpose" value="Other"><span>Other</span></label>
+                    </div>
+                    <input type="text" id="purposeOther" name="visitPurposeOther" placeholder="Please specify" style="display: none; margin-top: 12px;">
+                </div>
+
+                <div class="form-group two-col" style="margin-top: 24px;">
+                    <div>
+                        <label for="delegationSize" class="required">Delegation Size</label>
+                        <span class="sub-label">Number of people</span>
+                        <input type="number" id="delegationSize" name="delegationSize" required placeholder="e.g. 5" min="1" max="100">
+                    </div>
+                    <div style="margin-top: 24px;">
+                        <label for="preferredDates">Preferred Dates</label>
+                        <span class="sub-label">Approximate timeframe</span>
+                        <input type="text" id="preferredDates" name="preferredDates" placeholder="e.g. March 2025">
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin-top: 24px;">
+                    <label for="objectives" class="required">Objectives & Goals</label>
+                    <span class="sub-label">What do you hope to accomplish during this visit?</span>
+                    <textarea id="objectives" name="objectives" required placeholder="Please describe your delegation's objectives, who you'd like to meet, and what you hope to achieve..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="previousExperience">Previous Syria Experience</label>
+                    <span class="sub-label">Has your organization worked in Syria before?</span>
+                    <textarea id="previousExperience" name="previousExperience" placeholder="Describe any previous visits, projects, or connections to Syria..."></textarea>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <div class="section-header">
+                    <h2 class="section-title">4. Travel & Logistics</h2>
+                </div>
+
+                <div class="form-group">
+                    <label class="required">Primary Passport (Contact Person)</label>
+                    <div class="select-wrapper">
+                        <select name="primaryPassport" required>
+                            <option value="" disabled selected>Select Passport</option>
+                            <option value="United States">United States</option>
+                            <option value="United Kingdom">United Kingdom</option>
+                            <option value="France">France</option>
+                            <option value="Germany">Germany</option>
+                            <option value="Canada">Canada</option>
+                            <option value="Australia">Australia</option>
+                            <option value="Syria">Syria</option>
+                            <option value="Israel">Israel</option>
+                            <option value="Other EU">Other EU Country</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <input type="text" id="passportOtherText" name="passportOther" placeholder="Specify country" style="display: none; margin-top: 12px;">
+                </div>
+
+                <div class="form-group">
+                    <label for="delegationNationalities">Delegation Nationalities</label>
+                    <span class="sub-label">List all passport nationalities of delegation members</span>
+                    <input type="text" id="delegationNationalities" name="delegationNationalities" placeholder="e.g. USA, UK, France">
+                </div>
+
+                <div class="form-group">
+                    <label for="specialRequirements">Special Requirements</label>
+                    <span class="sub-label">Security needs, accessibility, equipment, or other logistics</span>
+                    <textarea id="specialRequirements" name="specialRequirements" placeholder="Describe any special requirements..."></textarea>
+                </div>
+            </div>
+
+            <div class="form-group" style="margin-top: 32px;">
+                <label class="option-item" style="align-items: flex-start;">
+                    <input type="checkbox" name="acknowledgment" required style="margin-top: 4px;">
+                    <span style="font-size: 13px; line-height: 1.5; color: #555;">I understand this is an interest form. Our team will contact you to discuss logistics, feasibility, and coordination details.</span>
+                </label>
+            </div>
+
+            <div class="submit-section">
+                <button type="submit" class="submit-btn" id="submitBtn">Submit Delegation Request</button>
+            </div>
+
+        </form>
+
+        <footer class="footer">
+            <p>© 2025 Syrian Mosaic Foundation</p>
+        </footer>
+
+    </div>
+
+    <script>
+        // Toggle 'Other' inputs
+        document.querySelector('select[name="primaryPassport"]').addEventListener('change', function() {
+            document.getElementById('passportOtherText').style.display = this.value === 'Other' ? 'block' : 'none';
+        });
+
+        // Toggle 'Other' for organization type
+        document.querySelectorAll('input[name="organizationType"]').forEach(input => {
+            input.addEventListener('change', function() {
+                document.getElementById('orgTypeOther').style.display = this.value === 'Other' ? 'block' : 'none';
+            });
+        });
+
+        // Toggle 'Other' for visit purpose
+        document.querySelectorAll('input[name="visitPurpose"]').forEach(input => {
+            input.addEventListener('change', function() {
+                document.getElementById('purposeOther').style.display = this.value === 'Other' ? 'block' : 'none';
+            });
+        });
+
+        // Add 'selected' class to radio buttons for styling
+        document.querySelectorAll('.option-item input').forEach(input => {
+            input.addEventListener('change', function() {
+                if (this.type === 'radio') {
+                    this.closest('.options-group').querySelectorAll('.option-item').forEach(item => item.classList.remove('selected'));
+                }
+                this.closest('.option-item').classList.toggle('selected', this.checked);
+            });
+        });
+
+        // Loading State Script
+        document.getElementById('registrationForm').addEventListener('submit', function() {
+            const btn = document.getElementById('submitBtn');
+            btn.innerText = 'Processing...';
+            btn.style.opacity = '0.7';
+            btn.disabled = true;
+        });
+    </script>
+</body>
+</html>

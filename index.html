@@ -5,34 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>The Syrian Mosaic Foundation</title>
   <meta name="description" content="Preserving Syria's heritage and building bridges across communities through cultural exchange, heritage preservation, and humanitarian initiatives."/>
-  
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
-  
+
   <!-- Styles -->
   <link rel="stylesheet" href="styles.css"/>
 </head>
-<body>
+<body class="has-fullscreen-hero">
   <!-- Skip to main content -->
   <a href="#main-content" class="skip-to-main">Skip to main content</a>
-  
-  <!-- Header -->
+
+  <!-- Header (hidden initially, shows on scroll) -->
   <header class="header" role="banner">
     <div class="container">
       <nav class="header-nav" aria-label="Main navigation">
         <a href="/" class="header-logo">
           Syrian Mosaic Foundation
         </a>
-        
+
         <div class="header-links" role="navigation">
           <a href="#mission" class="header-link">Mission</a>
-          <a href="impact.html" class="header-link">Impact</a>
-          <a href="tours.html" class="header-link">Tours</a>
-          <a href="team.html" class="header-link">Team</a>
-          <a href="media.html" class="header-link">Media</a>
-          <a href="contact.html" class="header-link">Contact</a>
         </div>
 
         <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
@@ -45,24 +40,43 @@
       </nav>
       </div>
   </header>
-  
+
   <!-- Main Content -->
   <main id="main-content">
-    <!-- Hero Section -->
-    <section class="hero hero-pattern" style="padding: var(--space-24) 0; overflow: hidden; position: relative;">
-      
-      <div class="container">
-        <div class="fade-in" style="max-width: 820px; margin: 0 auto; text-align: center;">
-          <h1 class="hero-title">Preserving Heritage,<br/>Building Bridges</h1>
-          <p class="hero-description">
-            The Syrian Mosaic Foundation is dedicated to preserving Syria's rich cultural heritage and reconnecting the global diaspora with the homeland through tangible, on-the-ground action.
-          </p>
-          <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
-            <a href="#mission" class="btn btn-primary btn-lg">Our Mission</a>
-            <a href="contact.html" class="btn btn-secondary btn-lg">Get Involved</a>
-          </div>
+    <!-- Fullscreen Hero Section with Depth Masking Effect -->
+    <section class="hero-fullscreen hero-depth">
+      <!-- Layer 1: Background (sky + full image) -->
+      <div class="hero-depth-bg">
+        <img src="assets/images/damascus-gate-hero.jpg" alt="Damascus Gate at sunset"/>
+      </div>
+
+      <!-- Layer 2: Content (sits between bg and foreground) -->
+      <div class="hero-depth-content">
+        <!-- Logo at top center -->
+        <div class="hero-fullscreen-logo">
+          <img src="assets/images/smf-logo-new.png" alt="Syrian Mosaic Foundation"/>
+        </div>
+
+        <!-- Main Title - will appear to go behind the castle -->
+        <div class="hero-fullscreen-content">
+          <h1 class="hero-fullscreen-title">Syria<br/>Your Way</h1>
         </div>
       </div>
+
+      <!-- Layer 3: Foreground (castle cutout - sits on top) -->
+      <div class="hero-depth-foreground">
+        <img src="assets/images/damascus-gate-foreground.png" alt=""/>
+      </div>
+
+      <!-- Layer 4: Navigation (always on top) -->
+      <nav class="hero-fullscreen-nav" aria-label="Main navigation">
+        <a href="/" class="hero-fullscreen-nav-link active">Home</a>
+        <a href="tours.html" class="hero-fullscreen-nav-link">Travels</a>
+        <a href="media.html" class="hero-fullscreen-nav-link">Get Inspired</a>
+        <a href="team.html" class="hero-fullscreen-nav-link">About</a>
+        <a href="contact.html" class="hero-fullscreen-nav-link">Contact</a>
+        <a href="trip-registration.html" class="hero-fullscreen-nav-cta">BOOK NOW</a>
+      </nav>
     </section>
 
     <!-- Mission & Vision -->

@@ -6,12 +6,15 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Simple fade-in on scroll
     initScrollAnimations();
-    
+
     // Mobile menu toggle
     initMobileMenu();
-    
+
     // Timeline animations
     initTimeline();
+
+    // Fullscreen hero header scroll behavior
+    initFullscreenHeroScroll();
 });
 
 /**
@@ -329,4 +332,97 @@ function initHorizontalTimeline() {
             preloadImg.src = img.src;
         }
     });
+}
+
+/**
+ * Fullscreen Hero - Header scroll behavior & Depth Masking Parallax
+ * Creates 3D depth effect where text slides behind the castle foreground
+ */
+function initFullscreenHeroScroll() {
+    const body = document.body;
+
+    // Only run if page has fullscreen hero
+    if (!body.classList.contains('has-fullscreen-hero')) return;
+
+    const heroSection = document.querySelector('.hero-fullscreen');
+    const heroNav = document.querySelector('.hero-fullscreen-nav');
+    const heroContent = document.querySelector('.hero-depth-content');
+    const heroForeground = document.querySelector('.hero-depth-foreground');
+    const titleSyria = document.querySelector('.title-syria');
+    const titleYourWay = document.querySelector('.title-yourway');
+    const isDepthHero = heroSection && heroSection.classList.contains('hero-depth');
+
+    if (!heroSection) return;
+
+    // Check for reduced motion preference
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Scroll handler with depth parallax
+    function handleScroll() {
+        const heroHeight = heroSection.offsetHeight;
+        const scrollY = window.scrollY || window.pageYOffset;
+
+        // Header solid background toggle
+        if (scrollY > heroHeight * 0.3) {
+            body.classList.add('scrolled');
+        } else {
+            body.classList.remove('scrolled');
+        }
+
+        // Depth masking parallax effect
+        if (!prefersReducedMotion && scrollY < heroHeight) {
+
+            if (isDepthHero && heroContent) {
+                // Container moves down
+                const containerSpeed = 1.2;
+                const containerOffset = scrollY * containerSpeed;
+                heroContent.style.transform = `translateY(${containerOffset}px)`;
+
+                // SYRIA text - moves FAST downward (falls behind castle quickly)
+                if (titleSyria) {
+                    const syriaSpeed = 2.0; // Fast fall
+                    const syriaOffset = -20 + (scrollY * syriaSpeed); // Start -20px up, move down fast
+                    const syriaOpacity = 1 - (scrollY / (heroHeight * 0.3));
+                    titleSyria.style.transform = `translateY(${syriaOffset}px)`;
+                    titleSyria.style.opacity = Math.max(0, syriaOpacity);
+                }
+
+                // YOUR WAY text - preserves existing behavior, just offset start position
+                if (titleYourWay) {
+                    const yourwaySpeed = 1.5;
+                    const yourwayOffset = 10 + (scrollY * yourwaySpeed); // Start +10px down
+                    const yourwayOpacity = 1 - (scrollY / (heroHeight * 0.35));
+                    titleYourWay.style.transform = `translateY(${yourwayOffset}px)`;
+                    titleYourWay.style.opacity = Math.max(0, yourwayOpacity);
+                }
+
+                // Foreground stays almost stationary
+                if (heroForeground) {
+                    const fgSpeed = 0.05;
+                    heroForeground.style.transform = `translateY(${scrollY * fgSpeed}px)`;
+                }
+            }
+
+            // Nav fades out
+            if (heroNav) {
+                const navOpacity = 1 - (scrollY / (heroHeight * 0.6));
+                heroNav.style.opacity = Math.max(0, navOpacity);
+            }
+        }
+    }
+
+    // Initial check
+    handleScroll();
+
+    // Listen for scroll with requestAnimationFrame for smooth performance
+    let ticking = false;
+    window.addEventListener('scroll', function() {
+        if (!ticking) {
+            window.requestAnimationFrame(function() {
+                handleScroll();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    }, { passive: true });
 }

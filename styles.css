@@ -338,6 +338,295 @@ a:hover {
     }
 }
 
+/* ==================== Fullscreen Hero (Ima Aicha Style) ==================== */
+.hero-fullscreen {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    overflow: hidden;
+}
+
+/* Background image */
+.hero-fullscreen-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.hero-fullscreen-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Gradient overlay for better text readability */
+.hero-fullscreen-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 50, 80, 0.3) 0%,
+        rgba(0, 30, 50, 0.1) 40%,
+        rgba(0, 20, 40, 0.2) 70%,
+        rgba(0, 20, 40, 0.4) 100%
+    );
+    z-index: 1;
+}
+
+/* ==================== Depth Masking Effect ==================== */
+/* Layer 1: Background - full image with sky */
+.hero-depth .hero-depth-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-depth .hero-depth-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center bottom;
+}
+
+/* Layer 2: Content - text sits between bg and foreground */
+.hero-depth .hero-depth-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    pointer-events: none;
+}
+
+.hero-depth .hero-depth-content > * {
+    pointer-events: auto;
+}
+
+/* Layer 3: Foreground - castle cutout on top */
+.hero-depth .hero-depth-foreground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.hero-depth .hero-depth-foreground img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center bottom;
+}
+
+/* Layer 4: Nav always on top */
+.hero-depth .hero-fullscreen-nav {
+    z-index: 10;
+}
+
+/* Logo at top left */
+.hero-fullscreen-logo {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    z-index: 10;
+}
+
+.hero-fullscreen-logo img {
+    height: 80px;
+    width: auto;
+    filter: brightness(0) invert(1); /* Make logo white */
+}
+
+/* Main title in center - positioned higher for sky visibility */
+.hero-fullscreen-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding: 0 var(--space-6);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 12vh;
+}
+
+.hero-fullscreen-title {
+    font-family: var(--font-heading);
+    font-size: clamp(3.5rem, 12vw, 8rem);
+    font-weight: 400;
+    color: white;
+    line-height: 1;
+    margin: 0;
+    text-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    letter-spacing: -0.02em;
+    will-change: transform, opacity;
+    transition: transform 0.1s linear, opacity 0.1s linear;
+}
+
+/* Navigation bar at bottom */
+.hero-fullscreen-nav {
+    position: absolute;
+    bottom: var(--space-10);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: var(--space-6);
+    padding: var(--space-4) var(--space-8);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 999px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.hero-fullscreen-nav-link {
+    font-family: var(--font-body);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--color-text);
+    padding: var(--space-2) var(--space-3);
+    text-decoration: none;
+    transition: color var(--transition-normal);
+    position: relative;
+}
+
+.hero-fullscreen-nav-link:hover {
+    color: var(--color-navy);
+}
+
+.hero-fullscreen-nav-link.active {
+    color: var(--color-navy);
+}
+
+.hero-fullscreen-nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: var(--space-3);
+    right: var(--space-3);
+    height: 2px;
+    background: var(--color-navy);
+}
+
+.hero-fullscreen-nav-cta {
+    display: inline-block;
+    padding: var(--space-3) var(--space-6);
+    background: #4CAF50;
+    color: white;
+    font-family: var(--font-body);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: all var(--transition-normal);
+    margin-left: var(--space-2);
+}
+
+.hero-fullscreen-nav-cta:hover {
+    background: #43A047;
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.4);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .hero-fullscreen {
+        min-height: 100vh;
+        min-height: 100svh; /* Safari viewport fix */
+    }
+
+    .hero-fullscreen-logo {
+        padding-top: var(--space-6);
+    }
+
+    .hero-fullscreen-logo img {
+        height: 40px;
+    }
+
+    .hero-fullscreen-title {
+        font-size: clamp(2.5rem, 15vw, 5rem);
+    }
+
+    .hero-fullscreen-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: var(--space-2);
+        padding: var(--space-3) var(--space-4);
+        margin: 0 var(--space-4) var(--space-6);
+        border-radius: var(--radius-lg);
+    }
+
+    .hero-fullscreen-nav-link {
+        font-size: 0.8125rem;
+        padding: var(--space-2);
+    }
+
+    .hero-fullscreen-nav-cta {
+        width: 100%;
+        text-align: center;
+        margin-left: 0;
+        margin-top: var(--space-2);
+    }
+}
+
+/* Hide default header when fullscreen hero is present */
+body.has-fullscreen-hero {
+    padding-top: 0;
+}
+
+/* Header is completely hidden until user scrolls */
+body.has-fullscreen-hero .header {
+    opacity: 0;
+    pointer-events: none;
+    background: transparent;
+    border-bottom: none;
+    backdrop-filter: none;
+    transition: opacity 0.3s ease, background 0.3s ease;
+}
+
+/* Header becomes visible and solid on scroll */
+body.has-fullscreen-hero.scrolled .header {
+    opacity: 1;
+    pointer-events: auto;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--color-border);
+}
+
+body.has-fullscreen-hero.scrolled .header .header-logo,
+body.has-fullscreen-hero.scrolled .header .header-link {
+    color: var(--color-text);
+}
+
+body.has-fullscreen-hero.scrolled .header .header-link::after {
+    background: var(--color-navy);
+}
+
 /* ==================== Buttons ==================== */
 .btn {
     display: inline-block;

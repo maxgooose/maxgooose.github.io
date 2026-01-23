@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700">
+  <!-- Light green background rectangle (left) -->
+  <rect x="150" y="50" width="500" height="550" fill="#e8f5e9"/>
+
+  <!-- Right border rectangle -->
+  <rect x="600" y="50" width="500" height="550" fill="none" stroke="#d0d0c8" stroke-width="1"/>
+
+  <!-- Green square (bottom right) -->
+  <rect x="900" y="480" width="120" height="120" fill="#46c75b"/>
+
+  <!-- Syria map - using the actual syria-map.svg scaled and positioned -->
+  <image href="syria-map.svg" x="200" y="80" width="400" height="480"/>
+</svg>

@@ -445,13 +445,13 @@ a:hover {
     z-index: 10;
 }
 
-/* Logo at top center (matching imaaicha style) */
+/* Logo at top center - scrolls with hero section */
 .hero-fullscreen-logo {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 10;
+    z-index: 100;
     display: flex;
     justify-content: center;
     padding-top: 2.4em;
@@ -490,13 +490,13 @@ a:hover {
     transition: transform 0.1s linear, opacity 0.1s linear;
 }
 
-/* Navigation bar at bottom (matching imaaicha style) */
+/* Navigation bar - FIXED at bottom of viewport always */
 .hero-fullscreen-nav {
-    position: absolute;
-    bottom: 3.5em;
+    position: fixed;
+    bottom: 1.5em;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 40;
+    z-index: 1000;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -504,6 +504,8 @@ a:hover {
     border-radius: 3.9em;
     box-shadow: 0 1px 17px -3px rgba(40, 70, 65, 0.16);
     pointer-events: auto;
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
 .hero-fullscreen-nav-link {
@@ -635,108 +637,7 @@ body.has-fullscreen-hero .header {
 }
 
 /* ==================== About Section (imaaicha exact clone) ==================== */
-/* CSS Variables from imaaicha */
-:root {
-    --bg-color: #f5f5f0;
-    --khdyr: #46c75b;
-    --green: #284641;
-    --container--desktop--max-width: 85%;
-}
-
-.home-about {
-    z-index: 2;
-    background-color: var(--bg-color);
-    background-image: url('assets/images/syria-about-bg.svg');
-    background-position: 50%;
-    background-repeat: no-repeat;
-    background-size: auto 50vh;
-    background-attachment: scroll;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    width: 100%;
-    padding-top: 10em;
-    padding-bottom: 22em;
-    display: flex;
-    position: relative;
-}
-
-.section-title-and-text {
-    max-width: var(--container--desktop--max-width);
-    justify-content: space-between;
-    align-items: stretch;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    padding-bottom: 0;
-    display: flex;
-}
-
-.sec-numb {
-    border-top: 0.25rem solid var(--khdyr);
-    padding-top: 10px;
-    font-family: var(--font-body);
-    font-size: 0.875rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--green);
-    line-height: 1.4;
-}
-
-.about-text-ctn {
-    border-bottom: 0.12em solid var(--khdyr);
-    flex-direction: column;
-    width: 50%;
-    padding-bottom: 1em;
-    font-size: 0.7rem;
-    line-height: 1;
-    display: flex;
-}
-
-.home-heading {
-    font-family: var(--font-heading);
-    font-size: 1.1em;
-    font-weight: 400;
-    line-height: 1.5;
-    color: var(--green);
-    margin-bottom: 0;
-}
-
-.green-highlight {
-    color: var(--khdyr);
-}
-
-/* Responsive - Tablet */
-@media (max-width: 991px) {
-    .home-about {
-        background-size: 72vw;
-        justify-content: center;
-    }
-
-    .about-text-ctn {
-        width: 50%;
-    }
-}
-
-/* Responsive - Mobile */
-@media (max-width: 767px) {
-    .home-about {
-        padding-top: 6em;
-        padding-bottom: 14em;
-        background-size: 90vw;
-    }
-
-    .section-title-and-text {
-        flex-direction: column;
-        gap: 2rem;
-        max-width: 90%;
-    }
-
-    .about-text-ctn {
-        width: 100%;
-    }
-}
+/* REMOVED duplicate :root - using main imaaicha variables below */
 
 /* ==================== Buttons ==================== */
 .btn {
@@ -1997,28 +1898,57 @@ To use the vertical timeline again:
 
 /* ==================== Travel Plans Section (Exact imaaicha.com) ==================== */
 
-/* imaaicha CSS Variables */
+/* imaaicha CSS Variables - SINGLE DEFINITION */
 :root {
-    --ima-bg-color: #f9fcf2;
-    --ima-green: #284641;
-    --ima-whitee: #fff;
-    --ima-khdyr: #46c75b;
-    --ima-container-max: 90vw;
+    --bg-color: #f9fcf2;
+    --khdyr: #46c75b;
+    --green: #284641;
+    --whitee: #fff;
+    --container--desktop--max-width: 90vw;
+    --column-gap: 0.75em;
 }
 
-/* Section Container */
-.destinations-cnt {
-    max-width: var(--ima-container-max);
-    background-color: var(--ima-bg-color);
-    margin-bottom: 2em;
-    margin-left: auto;
-    margin-right: auto;
-    padding-bottom: 0.4em;
+/* ==================== About Section (01 ABOUT) ==================== */
+.home-about {
+    z-index: 2;
+    background-color: var(--bg-color);
+    background-image: url('https://cdn.prod.website-files.com/657b5d5bf6c3e07bb4b09757/65b11b8f1f4616f38bc951d0_home-about-bg.avif');
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: auto 50vh;
+    background-attachment: scroll;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    padding-top: 10em;
+    padding-bottom: 22em;
+    display: flex;
+    position: relative;
 }
 
-/* Section Title & Text */
+/* Desktop */
+@media (min-width: 992px) {
+    .home-about {
+        background-size: 72vw;
+        justify-content: center;
+    }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+    .home-about {
+        background-image: url('https://cdn.prod.website-files.com/657b5d5bf6c3e07bb4b09757/65e24c17cca568f9dcbe8657_about-bg-mobile.avif');
+        background-size: auto 93vw;
+        justify-content: flex-start;
+        padding-top: 7em;
+        padding-bottom: 14em;
+    }
+}
+
+/* Section Title and Text (shared between about and travel plans) */
 .section-title-and-text {
-    max-width: var(--ima-container-max);
+    max-width: var(--container--desktop--max-width);
     justify-content: space-between;
     align-items: stretch;
     width: 100%;
@@ -2026,54 +1956,58 @@ To use the vertical timeline again:
     margin-right: auto;
     padding-bottom: 0;
     display: flex;
-    grid-row-gap: 3em;
-    flex-direction: column;
-}
-
-.section-title-and-text.is-03 {
-    justify-content: space-between;
-    align-items: flex-end;
-    padding-top: 5em;
-    color: var(--ima-khdyr);
-}
-
-@media (min-width: 768px) {
-    .section-title-and-text {
-        flex-direction: row;
-    }
 }
 
 /* Section Number */
 .sec-numb {
-    border-top: 0.25rem solid var(--ima-khdyr);
+    border-top: 0.25rem solid var(--khdyr);
     padding-top: 10px;
+    font-family: var(--font-body);
     font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--green);
     line-height: 1.4;
 }
 
 /* About Text Container */
 .about-text-ctn {
-    grid-row-gap: 0.75em;
-    border-bottom: 0.12em solid var(--ima-khdyr);
+    grid-row-gap: var(--column-gap);
+    border-bottom: 0.12em solid var(--khdyr);
     flex-direction: column;
-    width: 100%;
+    width: 50%;
     padding-bottom: 1em;
     font-size: 0.7rem;
     line-height: 1;
     display: flex;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 991px) {
     .about-text-ctn {
         width: 50%;
     }
 }
 
-/* Heading */
+@media (max-width: 767px) {
+    .about-text-ctn {
+        width: 100%;
+        border-bottom-style: none;
+    }
+
+    .section-title-and-text {
+        flex-direction: column;
+        gap: 2rem;
+        max-width: 90%;
+    }
+}
+
+/* Home Heading */
 .home-heading {
+    font-family: var(--font-heading);
     font-size: 1.3rem;
     font-weight: 400;
     line-height: 1.2;
+    color: var(--green);
+    margin-bottom: 0;
 }
 
 @media (min-width: 768px) {
@@ -2090,7 +2024,30 @@ To use the vertical timeline again:
 
 /* Green Highlight */
 .green-highlight {
-    color: var(--ima-khdyr);
+    color: var(--khdyr);
+}
+
+/* ==================== Section 02: OUR TRAVEL PLANS ==================== */
+/* Section Container */
+.destinations-cnt {
+    max-width: var(--container--desktop--max-width);
+    background-color: var(--bg-color);
+    margin-bottom: 2em;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 0.4em;
+}
+
+.section-title-and-text.is-03 {
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-top: 5em;
+}
+
+@media (max-width: 767px) {
+    .section-title-and-text.is-03 {
+        padding-top: 3em;
+    }
 }
 
 /* Page Main */
@@ -2101,23 +2058,31 @@ To use the vertical timeline again:
 
 /* Cards Wrap */
 .cards-wrap.u-container-2 {
-    max-width: var(--ima-container-max);
+    max-width: var(--container--desktop--max-width);
+    flex-flow: column;
+    justify-content: center;
+    width: 100%;
     min-height: auto;
-    margin-bottom: 4rem;
-    padding: 0 2rem;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 4rem;
+    padding: 0 2rem;
+    display: flex;
+    position: relative;
 }
 
-/* Benefits Wrap (Container for cards) */
+/* Benefits Wrap (Card Container) */
 .benefits_wrap {
     grid-column-gap: 16px;
     grid-row-gap: 16px;
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-columns: 1fr;
     margin-bottom: 1rem;
     container-type: inline-size;
 }
 
-/* Benefits Layout (Flex container for cards) */
+/* Benefits Layout (Flex Container for Cards) */
 .benefits_layout {
     grid-column-gap: 1rem;
     grid-row-gap: 1rem;
@@ -2125,7 +2090,7 @@ To use the vertical timeline again:
     display: flex;
 }
 
-/* Benefits Card Wrap (Individual card) */
+/* Benefits Card Wrap (Individual Card) */
 .benefits_card_wrap {
     color: #fff;
     background-position: 50%;
@@ -2135,16 +2100,16 @@ To use the vertical timeline again:
     justify-content: space-between;
     align-items: stretch;
     width: 100%;
-    padding: 30% 1.5rem 1.5rem;
+    padding: 1.3rem;
     transition: width 0.3s;
     display: flex;
     position: relative;
     overflow: hidden;
-    border-radius: 12px;
+    aspect-ratio: 1 / 1.05;
 }
 
 .benefits_card_wrap.is-travel {
-    aspect-ratio: 1/1.05;
+    aspect-ratio: 1 / 1.05;
     transition-duration: 0.875s;
     transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
 }
@@ -2177,14 +2142,14 @@ To use the vertical timeline again:
 /* Benefits Card Header */
 .benefits_card_header.is-travel {
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: flex-end;
     display: flex;
     padding-bottom: 0.5rem;
 }
 
 /* Benefits Card Title */
 .benefits_card_title {
-    color: var(--ima-whitee);
+    color: var(--whitee);
     text-wrap: balance;
     margin-bottom: 0;
     font-size: 1.5rem;
@@ -2193,8 +2158,8 @@ To use the vertical timeline again:
 }
 
 .benefits_card_title.is-travel {
-    background-color: var(--ima-whitee);
-    color: var(--ima-khdyr);
+    background-color: var(--whitee);
+    color: var(--khdyr);
     border-radius: 0.3rem;
     justify-content: center;
     align-items: center;
@@ -2207,15 +2172,15 @@ To use the vertical timeline again:
 .benefits_card_title.is-travel-p {
     -webkit-backdrop-filter: blur(9px);
     backdrop-filter: blur(9px);
+    background: rgba(255, 255, 255, 0.15);
     border-radius: 0.3rem;
     margin-bottom: 0;
     padding: 0.7rem;
     font-size: 0.9rem;
     line-height: 1;
-    background: rgba(255, 255, 255, 0.15);
 }
 
-/* Benefits Link (Clickable overlay) */
+/* Benefits Link (Clickable Overlay) */
 .benefits_link {
     z-index: 10;
     cursor: pointer;
@@ -2223,7 +2188,7 @@ To use the vertical timeline again:
     inset: 0%;
 }
 
-/* Benefits Background (Gradient overlay) */
+/* Benefits Background (Gradient Overlay) */
 .benefits_bg {
     pointer-events: none;
     mix-blend-mode: multiply;
@@ -2246,7 +2211,7 @@ To use the vertical timeline again:
 
 /* Navigation Link CTA */
 .nav-item-link {
-    color: var(--ima-khdyr);
+    color: var(--green);
     text-align: center;
     white-space: nowrap;
     word-break: normal;
@@ -2254,26 +2219,49 @@ To use the vertical timeline again:
     justify-content: center;
     align-items: center;
     padding: 0.7em;
+    font-size: 1em;
     text-decoration: none;
     display: flex;
-    font-size: 1em;
 }
 
 .nav-item-link.is-home-cta {
-    background-color: var(--ima-khdyr);
-    color: var(--ima-whitee);
+    background-color: var(--khdyr);
+    color: var(--whitee);
     border-radius: 100vh;
     margin: 0.6rem 0 0;
     padding: 0.7rem 0.9rem;
     font-size: 0.9em;
-    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .nav-item-link.is-home-cta:hover {
-    background-color: var(--ima-green);
-    transform: translateY(-2px);
+    background-color: var(--green);
 }
 
-.nav-link-text {
-    font-weight: 500;
+/* Container Query: Desktop Hover Effects */
+@container (width > 55em) {
+    .benefits_layout:has(.benefits_card_wrap:is(:hover, :focus-within)) .benefits_card_wrap:not(:is(:hover, :focus-within)) .benefits_card_content {
+        opacity: 0;
+    }
+    .benefits_card_wrap {
+        min-height: 25rem;
+    }
+    .benefits_card_wrap:is(:hover, :focus-within) {
+        width: 190%;
+    }
+    .benefits_card_wrap:is(:hover, :focus-within) .benefits_card_mask_wrap {
+        grid-template-rows: 1fr;
+    }
+    .benefits_card_mask_wrap {
+        grid-template-rows: 0fr;
+    }
+    .benefits_layout {
+        flex-direction: row;
+    }
+}
+
+/* Responsive adjustments for travel cards */
+@media (max-width: 767px) {
+    .benefits_card_wrap {
+        aspect-ratio: 16 / 10;
+    }
 }

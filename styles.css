@@ -1989,8 +1989,262 @@ To use the vertical timeline again:
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
     }
-    
+
     .timeline-item:hover .timeline-marker {
         animation: none;
+    }
+}
+
+/* ==================== Travel Plans Section ==================== */
+/* Parallax card component based on imaaicha.com design */
+
+.travel-plans-section {
+    background-color: var(--color-cream);
+    padding: var(--space-20) 0;
+    overflow: hidden;
+}
+
+.travel-plans-container {
+    max-width: var(--max-w-wide);
+    margin: 0 auto;
+    padding: 0 var(--space-6);
+}
+
+/* Section Header */
+.travel-plans-header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+    margin-bottom: var(--space-12);
+}
+
+@media (min-width: 768px) {
+    .travel-plans-header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+}
+
+.section-number {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    line-height: 1.4;
+    border-top: 3px solid var(--color-terracotta);
+    padding-top: var(--space-4);
+    min-width: 120px;
+}
+
+.section-description {
+    max-width: 600px;
+}
+
+.section-description h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 400;
+    line-height: 1.4;
+    color: var(--color-text);
+    margin-bottom: 0;
+}
+
+.section-description .highlight {
+    color: var(--color-terracotta);
+    text-decoration: underline;
+    text-decoration-color: var(--color-terracotta);
+    text-underline-offset: 4px;
+}
+
+/* Cards Wrapper - Container Query Context */
+.travel-cards-wrapper {
+    container-type: inline-size;
+    container-name: cards;
+    margin-bottom: var(--space-10);
+}
+
+/* Cards Layout */
+.travel-cards-layout {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+@media (min-width: 768px) {
+    .travel-cards-layout {
+        flex-direction: row;
+        gap: var(--space-4);
+    }
+}
+
+/* Individual Card */
+.travel-card {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1.05;
+    background-image: var(--card-bg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: var(--space-6);
+    color: var(--color-white);
+    transition:
+        transform 0.875s cubic-bezier(0.645, 0.045, 0.355, 1),
+        width 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+    cursor: pointer;
+}
+
+/* Card Link Overlay */
+.travel-card-link {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+}
+
+/* Card Gradient Overlay */
+.travel-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.7) 0%,
+        rgba(0, 0, 0, 0.3) 40%,
+        rgba(0, 0, 0, 0) 100%
+    );
+    z-index: 1;
+    transition: opacity 0.3s ease;
+}
+
+/* Card Content */
+.travel-card-content {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    transition: opacity 0.3s ease;
+}
+
+/* Card Meta (Duration & Price) */
+.travel-card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.travel-card-duration {
+    font-size: 0.875rem;
+    font-weight: 400;
+    padding: var(--space-2) var(--space-3);
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: var(--radius-sm);
+}
+
+.travel-card-price {
+    font-size: 0.875rem;
+    font-weight: 700;
+    padding: var(--space-2) var(--space-3);
+    background: var(--color-white);
+    color: var(--color-terracotta);
+    border-radius: var(--radius-sm);
+}
+
+/* Card Title */
+.travel-card-title {
+    font-family: var(--font-heading);
+    font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+    font-weight: 500;
+    color: var(--color-white);
+    margin: 0;
+    text-wrap: balance;
+}
+
+/* ===== HOVER EFFECTS ===== */
+
+/* Card Lift on Hover */
+.travel-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Container Query: Desktop Expand Effect */
+@container cards (min-width: 55em) {
+    .travel-cards-layout {
+        flex-direction: row;
+    }
+
+    .travel-card {
+        min-height: 25rem;
+    }
+
+    /* Hovered card expands */
+    .travel-card:hover,
+    .travel-card:focus-within {
+        width: 190%;
+        transform: translateY(-10px);
+    }
+
+    /* Non-hovered cards fade content */
+    .travel-cards-layout:has(.travel-card:hover) .travel-card:not(:hover) .travel-card-content,
+    .travel-cards-layout:has(.travel-card:focus-within) .travel-card:not(:focus-within) .travel-card-content {
+        opacity: 0;
+    }
+}
+
+/* ===== CTA Button ===== */
+.travel-plans-cta {
+    display: flex;
+    justify-content: center;
+}
+
+.travel-plans-button {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-4) var(--space-8);
+    background-color: var(--color-terracotta);
+    color: var(--color-white);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 999px;
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.travel-plans-button:hover {
+    background-color: var(--color-navy);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.travel-plans-button svg {
+    transition: transform 0.3s ease;
+}
+
+.travel-plans-button:hover svg {
+    transform: translateX(4px);
+}
+
+/* Mobile adjustments */
+@media (max-width: 767px) {
+    .travel-card {
+        aspect-ratio: 16 / 10;
+    }
+
+    .travel-card:hover {
+        transform: translateY(-5px);
     }
 }

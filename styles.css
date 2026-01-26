@@ -634,163 +634,31 @@ a:hover {
 }
 
 /* ==================== Contact Overlay (imaaicha style) ==================== */
-.contact-overlay {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 100%;
-    max-width: 420px;
-    height: 100vh;
-    background-color: var(--color-navy);
-    z-index: 1001;
-    display: none;
-    flex-direction: column;
-    padding: 2rem;
-    transform: translateX(100%);
-    transition: transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
-}
+/* Contact Overlay - VERBATIM from Imaaicha (only bg color changed to white) */
+.contact-overlay{grid-column-gap:3em;grid-row-gap:3em;background-color:#ffffff;pointer-events:auto;border-bottom-left-radius:1.4em;flex-flow:column;justify-content:flex-start;align-items:stretch;width:21em;height:auto;padding:1.5em;display:none;position:fixed;inset:0% 0% auto auto;box-shadow:0 2px .875rem .375rem #28464138;z-index:1001}
 
-.contact-overlay.is-open {
-    display: flex;
-    transform: translateX(0);
-}
+.contact-overlay.is-open{display:flex}
 
-.contact-options {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 3rem;
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-}
+.contact-options{justify-content:space-between;align-items:center;display:flex}
 
-.contact-overlay-title {
-    font-family: var(--font-heading);
-    font-size: 1.5rem;
-    font-weight: 400;
-    color: #fff;
-    margin: 0;
-}
+.text-block-15{color:#1a1a1a;font-size:2em;font-weight:300;line-height:1.3em}
 
-.close-overlay {
-    width: 32px;
-    height: 32px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.2s ease;
-}
+.close-overlay{cursor:pointer;height:2.9em;transform:rotate(45deg);filter:invert(1)}
 
-.close-overlay:hover {
-    transform: rotate(90deg);
-}
+.bottom-contanct{grid-column-gap:1.1em;grid-row-gap:1.1em;flex-flow:column;display:flex}
 
-.close-overlay svg {
-    width: 24px;
-    height: 24px;
-    stroke: #fff;
-    stroke-width: 2;
-}
+.contact-container{grid-column-gap:.3em;grid-row-gap:.3em;flex-flow:column;display:flex}
 
-.contact-overlay-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    overflow-y: auto;
-}
+.contact-details{color:#1a1a1a;font-size:1.1em;text-decoration:none}
 
-.contact-container {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
+.contact-details.is-link{font-size:.9em;font-weight:200;color:#555}
 
-.contact-label {
-    font-family: var(--font-body);
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: rgba(255, 255, 255, 0.5);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-}
-
-.contact-details {
-    font-family: var(--font-body);
-    font-size: 1rem;
-    font-weight: 400;
-    color: #fff;
-    line-height: 1.6;
-}
-
-.contact-details.is-link {
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.2s ease;
-    display: inline-block;
-}
-
-.contact-details.is-link:hover {
-    color: var(--color-gold);
-}
-
-.contact-social-links {
-    display: flex;
-    gap: 1rem;
-    margin-top: 0.5rem;
-}
-
-.contact-social-link {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: #fff;
-    text-decoration: none;
-    font-size: 0.9375rem;
-    transition: color 0.2s ease;
-}
-
-.contact-social-link:hover {
-    color: var(--color-gold);
-}
-
-.contact-social-link svg {
-    width: 20px;
-    height: 20px;
-    fill: currentColor;
-}
+.div-block-23{grid-column-gap:.5em;grid-row-gap:.5em;flex-flow:row;grid-template-rows:auto auto;grid-template-columns:1fr 1fr;grid-auto-columns:1fr;display:grid}
 
 /* Overlay backdrop */
-.contact-overlay-backdrop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-}
+.contact-overlay-backdrop{position:fixed;top:0;left:0;width:100%;height:100%;background-color:transparent;z-index:1000;opacity:0;visibility:hidden;transition:opacity 0.3s ease,visibility 0.3s ease}
 
-.contact-overlay-backdrop.is-visible {
-    opacity: 1;
-    visibility: visible;
-}
-
-/* Mobile responsive */
-@media (max-width: 480px) {
-    .contact-overlay {
-        max-width: 100%;
-        padding: 1.5rem;
-    }
-
-    .contact-overlay-title {
-        font-size: 1.25rem;
-    }
-}
+.contact-overlay-backdrop.is-visible{opacity:1;visibility:visible}
 
 /* ==================== Enhanced Footer (imaaicha style) ==================== */
 .footer-enhanced {

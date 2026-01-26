@@ -48,37 +48,68 @@
     }
   </style>
 </head>
-<body>
+<body class="has-floating-nav">
   <!-- Skip to main content -->
   <a href="#main-content" class="skip-to-main">Skip to main content</a>
-  
-  <!-- Header -->
-  <header class="header" role="banner">
-    <div class="container">
-      <nav class="header-nav" aria-label="Main navigation">
-        <a href="/" class="header-logo">
-          Syrian Mosaic Foundation
-        </a>
-        
-        <div class="header-links" role="navigation">
-          <a href="index.html#mission" class="header-link">Mission</a>
-          <a href="impact.html" class="header-link">Impact</a>
-          <a href="tours.html" class="header-link">Tours</a>
-          <a href="team.html" class="header-link">Team</a>
-          <a href="media.html" class="header-link active">Media</a>
-          <a href="contact.html" class="header-link">Contact</a>
-        </div>
-        
-        <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <line x1="3" y1="12" x2="21" y2="12"/>
-            <line x1="3" y1="6" x2="21" y2="6"/>
-            <line x1="3" y1="18" x2="21" y2="18"/>
-          </svg>
-        </button>
-      </nav>
+
+  <!-- Contact Overlay Backdrop -->
+  <div class="contact-overlay-backdrop" id="contact-backdrop"></div>
+
+  <!-- Contact Overlay -->
+  <div class="contact-overlay" id="contact-overlay">
+    <div class="contact-options">
+      <h2 class="contact-overlay-title">Get in Touch</h2>
+      <button class="close-overlay" id="close-overlay" aria-label="Close contact overlay">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1="18" y1="6" x2="6" y2="18" stroke="currentColor"/>
+          <line x1="6" y1="6" x2="18" y2="18" stroke="currentColor"/>
+        </svg>
+      </button>
     </div>
-  </header>
+    <div class="contact-overlay-content">
+      <div class="contact-container">
+        <span class="contact-label">Email</span>
+        <a href="mailto:info@syrianmosaicfoundation.org" class="contact-details is-link">info@syrianmosaicfoundation.org</a>
+      </div>
+      <div class="contact-container">
+        <span class="contact-label">WhatsApp</span>
+        <a href="https://wa.me/963993858064" target="_blank" rel="noopener" class="contact-details is-link">+963 993 858 064</a>
+      </div>
+      <div class="contact-container">
+        <span class="contact-label">Founder - Joe Jajati</span>
+        <a href="tel:+13478933032" class="contact-details is-link">+1 347-893-3032</a>
+        <a href="mailto:Joe@syrianmosaicfoundation.org" class="contact-details is-link">Joe@syrianmosaicfoundation.org</a>
+      </div>
+      <div class="contact-container">
+        <span class="contact-label">Co-Founder - Aziz</span>
+        <a href="tel:+19298329645" class="contact-details is-link">+1 929-832-9645</a>
+        <a href="mailto:aziz@syrianmosaicfoundation.org" class="contact-details is-link">aziz@syrianmosaicfoundation.org</a>
+      </div>
+      <div class="contact-container">
+        <span class="contact-label">Social</span>
+        <div class="contact-social-links">
+          <a href="https://www.instagram.com/SyrianMosaicFoundation" target="_blank" rel="noopener" class="contact-social-link">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            Instagram
+          </a>
+          <a href="https://x.com/SyrianMosaicFDN" target="_blank" rel="noopener" class="contact-social-link">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            X / Twitter
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fixed Navigation Pill -->
+  <nav class="hero-fullscreen-nav" aria-label="Main navigation">
+    <a href="/" class="hero-fullscreen-nav-link">Home</a>
+    <a href="tours.html" class="hero-fullscreen-nav-link">Travels</a>
+    <a href="media.html" class="hero-fullscreen-nav-link active">Get Inspired</a>
+    <a href="team.html" class="hero-fullscreen-nav-link">About</a>
+    <a href="#" class="hero-fullscreen-nav-link" id="nav-contact-trigger">Contact</a>
+    <a href="trip-registration.html" class="hero-fullscreen-nav-cta">BOOK NOW</a>
+  </nav>
   
   <!-- Main Content -->
   <main id="main-content">
@@ -303,27 +334,48 @@
     </section>
   </main>
   
-  <!-- Footer -->
-  <footer class="footer" role="contentinfo">
-    <div class="container">
-      <div class="footer-content">
-        <h3 class="footer-title">The Syrian Mosaic Foundation</h3>
-        <nav class="footer-links" aria-label="Footer navigation">
-          <a href="index.html#mission" class="footer-link">Mission</a>
-          <a href="impact.html" class="footer-link">Impact</a>
-          <a href="tours.html" class="footer-link">Tours</a>
-          <a href="team.html" class="footer-link">Team</a>
-          <a href="media.html" class="footer-link">Media</a>
-          <a href="contact.html" class="footer-link">Contact</a>
+  <!-- Enhanced Footer -->
+  <footer class="footer-enhanced" role="contentinfo">
+    <div class="footer-enhanced-inner">
+      <div class="footer-social-section">
+        <a href="https://www.instagram.com/SyrianMosaicFoundation" target="_blank" rel="noopener" class="footer-social-card">
+          <div class="footer-social-icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </div>
+          <div class="footer-social-text">
+            <span class="footer-social-label">Instagram</span>
+            <span class="footer-social-handle">@SyrianMosaicFoundation</span>
+          </div>
+        </a>
+        <a href="https://x.com/SyrianMosaicFDN" target="_blank" rel="noopener" class="footer-social-card">
+          <div class="footer-social-icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </div>
+          <div class="footer-social-text">
+            <span class="footer-social-label">X / Twitter</span>
+            <span class="footer-social-handle">@SyrianMosaicFDN</span>
+          </div>
+        </a>
+      </div>
+      <div class="footer-links-section">
+        <nav class="footer-links-group" aria-label="Footer navigation">
+          <a href="tours.html" class="footer-link-enhanced">Our Tours</a>
+          <a href="team.html" class="footer-link-enhanced">About</a>
+          <a href="team.html" class="footer-link-enhanced">Team</a>
+          <a href="media.html" class="footer-link-enhanced">Media</a>
+          <a href="contact.html" class="footer-link-enhanced">Contact</a>
+          <a href="trip-registration.html" class="footer-link-enhanced">Book Now</a>
         </nav>
-        <p class="footer-copyright">
-          © 2025 The Syrian Mosaic Foundation. All Rights Reserved.
-        </p>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-credit">Built with purpose by <a href="https://syrianmosaicfoundation.org">Syrian Mosaic Foundation</a></p>
+        <p class="footer-copyright-enhanced">© 2025 The Syrian Mosaic Foundation. All Rights Reserved.</p>
       </div>
     </div>
   </footer>
-  
+
   <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.23/bundled/lenis.min.js"></script>
   <script src="animations.js"></script>
 </body>
 </html>

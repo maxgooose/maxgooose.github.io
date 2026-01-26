@@ -15,543 +15,697 @@
   <link rel="stylesheet" href="styles.css"/>
 </head>
 <body class="has-fullscreen-hero">
-  <!-- Skip to main content -->
-  <a href="#main-content" class="skip-to-main">Skip to main content</a>
 
-  <!-- Main Content -->
-  <main id="main-content">
-    <!-- Fullscreen Hero Section with Depth Masking Effect -->
-    <section class="hero-fullscreen hero-depth">
-      <!-- Layer 1: Background (sky + full image) -->
-      <div class="hero-depth-bg">
-        <img src="assets/images/damascus-gate-hero.jpg" alt="Damascus Gate at sunset"/>
+  <!-- Contact Overlay Backdrop -->
+  <div class="contact-overlay-backdrop" id="contact-backdrop"></div>
+
+  <!-- Contact Overlay (imaaicha structure) -->
+  <div class="contact-overlay" id="contact-overlay">
+    <div class="contact-options">
+      <div class="text-block-15">Get in touch</div>
+      <img src="https://cdn.prod.website-files.com/657b5d5bf6c3e07bb4b09757/65e2376ca1b031ac2d5e8ac4_pluss.svg" loading="lazy" alt="Close" class="close-overlay" id="close-overlay"/>
+    </div>
+    <div class="bottom-contanct">
+      <div class="contact-container">
+        <div class="contact-details">Address</div>
+        <div class="contact-details is-link">Damascus, Syria & New York, USA</div>
       </div>
-
-      <!-- Layer 2: Content (sits between bg and foreground) -->
-      <div class="hero-depth-content">
-        <!-- Logo at top center -->
-        <div class="hero-fullscreen-logo">
-          <img src="assets/images/smf-logo-new.png" alt="Syrian Mosaic Foundation"/>
+      <div class="contact-container">
+        <div class="contact-details">Phone number</div>
+        <a href="tel:+13478933032" class="contact-details is-link">+1 347-893-3032</a>
+      </div>
+      <div class="contact-container">
+        <div class="contact-details">Socials</div>
+        <div class="div-block-23">
+          <a href="https://instagram.com/SyrianMosaicFoundation" class="contact-details is-link">Instagram</a>
+          <a href="https://www.linkedin.com/company/syrian-mosaic-foundation/" class="contact-details is-link">LinkedIn</a>
+          <a href="https://x.com/SyrianMosaicFDN" class="contact-details is-link">X / Twitter</a>
         </div>
-
-        <!-- Main Title - will appear to go behind the castle -->
-        <div class="hero-fullscreen-content">
-          <h1 class="hero-fullscreen-title">Syria<br/>Your Way</h1>
-        </div>
       </div>
-
-      <!-- Layer 3: Foreground (castle cutout - sits on top) -->
-      <div class="hero-depth-foreground">
-        <img src="assets/images/damascus-gate-foreground.png" alt=""/>
-      </div>
-
-      <!-- Layer 4: Navigation (always on top) -->
-      <nav class="hero-fullscreen-nav" aria-label="Main navigation">
-        <a href="/" class="hero-fullscreen-nav-link active">Home</a>
-        <a href="tours.html" class="hero-fullscreen-nav-link">Travels</a>
-        <a href="media.html" class="hero-fullscreen-nav-link">Get Inspired</a>
-        <a href="team.html" class="hero-fullscreen-nav-link">About</a>
-        <a href="contact.html" class="hero-fullscreen-nav-link">Contact</a>
-        <a href="trip-registration.html" class="hero-fullscreen-nav-cta">BOOK NOW</a>
-      </nav>
-    </section>
-
-    <!-- About Section (imaaicha style) -->
-    <div class="home-about">
-      <div class="section-title-and-text">
-        <div class="sec-numb"><div>01<br/>ABOUT</div></div>
-        <div class="about-text-ctn"><h2 class="home-heading">We craft immersive, luxurious journeys that reveal <span class="green-highlight">Syria's</span> hidden soul—its people, traditions, and untold stories. Where mystery lingers behind closed doors, we hold the key to unforgettable experiences.</h2></div>
+      <div class="contact-container">
+        <div class="contact-details">Email</div>
+        <a href="mailto:info@syrianmosaicfoundation.org" class="contact-details is-link">info@syrianmosaicfoundation.org</a>
       </div>
     </div>
+  </div>
 
-    <!-- Our Travel Plans Section (Exact imaaicha.com structure) -->
-    <div class="destinations-cnt">
-      <div id="tours" class="section-title-and-text is-03">
-        <div class="sec-numb">
-          <div>02<br/>OUR TRAVEL<br/>PLANS</div>
-        </div>
-        <div class="about-text-ctn">
-          <h1 class="home-heading">Join one of our upcoming small-group journeys — <span class="green-highlight">limited to 12 travelers </span>for an intimate, authentic experience. Each departure requires a minimum of 6 participants.</h1>
-        </div>
+  <!-- Navigation (imaaicha structure: nav-header > navbar > menu-container) -->
+  <div class="nav-header">
+    <nav class="navbar">
+      <div class="menu-container">
+        <a href="index.html" aria-current="page" class="nav-item-link is--first w-inline-block w--current">
+          <img src="https://cdn.prod.website-files.com/657b5d5bf6c3e07bb4b09757/65e20460654b96e4fa1c544a_arrow.svg" loading="lazy" alt="" class="nav-arrow"/>
+          <div class="nav-link-text">Home</div>
+        </a>
+        <a href="tours.html" class="nav-item-link w-inline-block">
+          <img src="https://cdn.prod.website-files.com/657b5d5bf6c3e07bb4b09757/65e20460654b96e4fa1c544a_arrow.svg" loading="lazy" alt="" class="nav-arrow"/>
+          <div class="nav-link-text">Travels</div>
+        </a>
+        <a href="media.html" class="nav-item-link w-inline-block">
+          <img src="https://cdn.prod.website-files.com/657b5d5bf6c3e07bb4b09757/65e20460654b96e4fa1c544a_arrow.svg" loading="lazy" alt="" class="nav-arrow"/>
+          <div class="nav-link-text">Get Inspired</div>
+        </a>
+        <a href="team.html" class="nav-item-link w-inline-block">
+          <img src="https://cdn.prod.website-files.com/657b5d5bf6c3e07bb4b09757/65e20460654b96e4fa1c544a_arrow.svg" loading="lazy" alt="" class="nav-arrow"/>
+          <div class="nav-link-text">About</div>
+        </a>
+        <a href="#" class="nav-item-link is-contact w-inline-block" id="nav-contact-trigger">
+          <img src="https://cdn.prod.website-files.com/657b5d5bf6c3e07bb4b09757/65e20460654b96e4fa1c544a_arrow.svg" loading="lazy" alt="" class="nav-arrow"/>
+          <div class="nav-link-text">Contact</div>
+        </a>
+        <a href="trip-registration.html" class="nav-item-link is--button w-inline-block">
+          <img src="https://cdn.prod.website-files.com/657b5d5bf6c3e07bb4b09757/65e20460654b96e4fa1c544a_arrow.svg" loading="lazy" alt="" class="nav-arrow"/>
+          <div class="nav-link-text">BOOK NOW</div>
+        </a>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Hero Section (imaaicha structure: home-hero > home-parallax > parallax-component) -->
+  <div class="home-hero">
+    <div class="home-parallax">
+      <div class="parallax-component">
+        <!-- Background layer -->
+        <img src="https://placehold.co/2000x1200/1A3A52/D4A574?text=Syria+Hero+Background" loading="eager" alt="Syria landscape" class="parallax-layer is-bg"/>
+        <!-- Logo -->
+        <a href="index.html" aria-current="page" class="w-inline-block w--current">
+          <div class="logo">
+            <img src="assets/images/smf-logo-new.png" alt="Syrian Mosaic Foundation" style="height: 55px; filter: brightness(0) invert(1);"/>
+          </div>
+        </a>
+        <!-- Main display text -->
+        <div class="display">Syria<br/>Your Way</div>
+        <!-- Foreground layer -->
+        <img src="https://placehold.co/928x600/1A3A52/D4A574?text=Syria+Foreground" loading="eager" alt="" class="parallax-layer is-1"/>
       </div>
     </div>
+  </div>
 
-    <div class="page_main">
-      <div class="cards-wrap u-container-2">
-        <style>
-          @container (width > 55em) {
-            .benefits_layout:has(.benefits_card_wrap:is(:hover, :focus-within)) .benefits_card_wrap:not(:is(:hover, :focus-within)) .benefits_card_content { opacity: 0; }
-            .benefits_card_wrap { min-height: 25rem; }
-            .benefits_card_wrap:is(:hover, :focus-within) { width: 190%; }
-            .benefits_card_wrap:is(:hover, :focus-within) .benefits_card_mask_wrap { grid-template-rows: 1fr; }
-            .benefits_card_mask_wrap { grid-template-rows: 0fr; }
-            .benefits_layout { flex-direction: row; }
-          }
-        </style>
+  <!-- About Section (imaaicha structure: home-about > section-title-and-text) -->
+  <div class="home-about">
+    <div class="section-title-and-text">
+      <div class="sec-numb">
+        <div>01<br/>ABOUT</div>
+      </div>
+      <div class="about-text-ctn">
+        <h2 class="home-heading">We craft immersive, meaningful journeys that reveal <span class="green-highlight">Syria's</span> hidden soul—its people, traditions, and untold stories. Where mystery lingers behind closed doors, we hold the key to unforgettable experiences.</h2>
+      </div>
+    </div>
+  </div>
 
-        <div class="benefits_wrap">
-          <div role="list" class="benefits_layout">
+  <!-- Travel Plans Section (imaaicha structure: destinations-cnt > section-title-and-text is-03) -->
+  <div class="destinations-cnt">
+    <div id="tours" class="section-title-and-text is-03">
+      <div class="sec-numb">
+        <div>02<br/>OUR TRAVEL<br/>PLANS</div>
+      </div>
+      <div class="about-text-ctn">
+        <h1 class="home-heading">Join one of our upcoming small-group journeys — <span class="green-highlight">limited to 12 travelers </span>for an intimate, authentic experience. Each departure requires a minimum of 6 participants.</h1>
+      </div>
+    </div>
+  </div>
 
-            <!-- Card 1: Morocco with Kids (original imaaicha image) -->
-            <div style="background-image:url('https://cdn.prod.website-files.com/65e47cc209c47dfee5b48486/6873d9d963fcf76ffda04496_pexels-lina-pratkeviciute-621634-1450015.jpg')" role="listitem" class="benefits_card_wrap is-travel">
-              <a href="tours.html" class="benefits_link"></a>
-              <div class="benefits_card_content is-travel">
-                <div class="benefits_card_header is-travel">
-                  <p class="benefits_card_title is-travel-p">10 Days</p>
-                  <p class="benefits_card_title is-travel">$3,500</p>
-                </div>
-                <div class="benefits_card_header is-travel">
-                  <h2 class="benefits_card_title">Morocco with Kids</h2>
-                </div>
+  <!-- Travel Cards (imaaicha structure: page_main > cards-wrap > benefits_wrap > benefits_layout) -->
+  <div class="page_main">
+    <div class="cards-wrap u-container-2">
+      <!-- Container query CSS (inline as in original) -->
+      <style>
+        @container (width > 55em) {
+          .benefits_layout:has(.benefits_card_wrap:is(:hover, :focus-within)) .benefits_card_wrap:not(:is(:hover, :focus-within)) .benefits_card_content { opacity: 0; }
+          .benefits_card_wrap { min-height: 25rem; }
+          .benefits_card_wrap:is(:hover, :focus-within) { width: 190%; }
+          .benefits_card_wrap:is(:hover, :focus-within) .benefits_card_mask_wrap { grid-template-rows: 1fr; }
+          .benefits_card_mask_wrap { grid-template-rows: 0fr; }
+          .benefits_layout { flex-direction: row; }
+        }
+      </style>
+
+      <div class="benefits_wrap">
+        <div role="list" class="benefits_layout">
+
+          <!-- Card 1: Heritage Discovery -->
+          <div style="background-image:url('https://placehold.co/800x840/1A3A52/D4A574?text=Damascus+Heritage')" role="listitem" class="benefits_card_wrap is-travel">
+            <a href="tours.html" class="benefits_link"></a>
+            <div class="benefits_card_content is-travel">
+              <div class="benefits_card_header is-travel">
+                <p class="benefits_card_title is-travel-p">10 Days</p>
+                <p class="benefits_card_title is-travel">$3,500</p>
               </div>
-              <div class="benefits_bg"></div>
-            </div>
-
-            <!-- Card 2: Yoga and Moroccan Heritage (original imaaicha image) -->
-            <div style="background-image:url('https://cdn.prod.website-files.com/65e47cc209c47dfee5b48486/694295bbbe43325fe09e2d85_6873cf210dbc414547c568f5_Agafay.jpg')" role="listitem" class="benefits_card_wrap is-travel">
-              <a href="tours.html" class="benefits_link"></a>
-              <div class="benefits_card_content is-travel">
-                <div class="benefits_card_header is-travel">
-                  <p class="benefits_card_title is-travel-p">12 Days</p>
-                  <p class="benefits_card_title is-travel">$3,750</p>
-                </div>
-                <div class="benefits_card_header is-travel">
-                  <h2 class="benefits_card_title">Yoga and Moroccan Heritage</h2>
-                </div>
+              <div class="benefits_card_header is-travel">
+                <h2 class="benefits_card_title">Heritage Discovery</h2>
               </div>
-              <div class="benefits_bg"></div>
             </div>
+            <div class="benefits_bg"></div>
+          </div>
 
-            <!-- Card 3: Magical Morocco (original imaaicha image) -->
-            <div style="background-image:url('https://cdn.prod.website-files.com/65e47cc209c47dfee5b48486/6942962a697343dd79785f4b_69382bc66114861efefc8c0a_IMG_0058.jpg')" role="listitem" class="benefits_card_wrap is-travel">
-              <a href="tours.html" class="benefits_link"></a>
-              <div class="benefits_card_content is-travel">
-                <div class="benefits_card_header is-travel">
-                  <p class="benefits_card_title is-travel-p">6 Days</p>
-                  <p class="benefits_card_title is-travel">$4,600</p>
-                </div>
-                <div class="benefits_card_header is-travel">
-                  <h2 class="benefits_card_title">Magical Morocco</h2>
-                </div>
+          <!-- Card 2: Jewish Heritage Tour -->
+          <div style="background-image:url('https://placehold.co/800x840/1A3A52/D4A574?text=Jewish+Quarter')" role="listitem" class="benefits_card_wrap is-travel">
+            <a href="tours.html" class="benefits_link"></a>
+            <div class="benefits_card_content is-travel">
+              <div class="benefits_card_header is-travel">
+                <p class="benefits_card_title is-travel-p">12 Days</p>
+                <p class="benefits_card_title is-travel">$4,200</p>
               </div>
-              <div class="benefits_bg"></div>
+              <div class="benefits_card_header is-travel">
+                <h2 class="benefits_card_title">Jewish Heritage Tour</h2>
+              </div>
             </div>
+            <div class="benefits_bg"></div>
+          </div>
 
+          <!-- Card 3: Cultural Immersion -->
+          <div style="background-image:url('https://placehold.co/800x840/1A3A52/D4A574?text=Cultural+Immersion')" role="listitem" class="benefits_card_wrap is-travel">
+            <a href="tours.html" class="benefits_link"></a>
+            <div class="benefits_card_content is-travel">
+              <div class="benefits_card_header is-travel">
+                <p class="benefits_card_title is-travel-p">8 Days</p>
+                <p class="benefits_card_title is-travel">$2,900</p>
+              </div>
+              <div class="benefits_card_header is-travel">
+                <h2 class="benefits_card_title">Cultural Immersion</h2>
+              </div>
+            </div>
+            <div class="benefits_bg"></div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CTA Button (imaaicha structure) -->
+    <div class="div-block-42">
+      <div class="div-block-43"></div>
+      <a href="tours.html" class="nav-item-link is-home-cta">
+        <div class="nav-link-text">Discover All Travel Plans</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- Section 03: GET INSPIRED (imaaicha structure) -->
+  <div class="destinations-cnt">
+    <div id="experience" class="section-title-and-text is-03">
+      <div class="sec-numb">
+        <div class="text-block-23">03<br/>GET INSPIRED</div>
+      </div>
+      <a href="media.html" class="nav-item-link is-home-cta w-inline-block">
+        <img src="https://cdn.prod.website-files.com/657b5d5bf6c3e07bb4b09757/65e20460654b96e4fa1c544a_arrow.svg" loading="lazy" alt="" class="nav-arrow"/>
+        <div class="nav-link-text">Discover All Experiences</div>
+      </a>
+    </div>
+  </div>
+
+  <div class="page_main">
+    <div class="cards-wrap u-container-2">
+      <style>
+        @container (width > 55em) {
+          .benefits_layout.is-inspired:has(.benefits_card_wrap:is(:hover, :focus-within)) .benefits_card_wrap:not(:is(:hover, :focus-within)) .benefits_card_content { opacity: 0; }
+          .benefits_layout.is-inspired .benefits_card_wrap { min-height: 45rem; }
+          .benefits_layout.is-inspired .benefits_card_wrap:is(:hover, :focus-within) { width: 160%; }
+          .benefits_layout.is-inspired .benefits_card_wrap:is(:hover, :focus-within) .benefits_card_mask_wrap { grid-template-rows: 1fr; }
+          .benefits_layout.is-inspired .benefits_card_mask_wrap { grid-template-rows: 0fr; }
+          .benefits_layout.is-inspired { flex-direction: row; }
+        }
+      </style>
+      <div class="benefits_wrap">
+        <div role="list" class="benefits_layout is-inspired">
+          <!-- Card 1: Ancient Markets -->
+          <div style="background-image:url('https://placehold.co/800x1000/1A3A52/D4A574?text=Damascus+Souks')" role="listitem" class="benefits_card_wrap">
+            <a href="media.html" class="benefits_link w-inline-block"></a>
+            <div class="benefits_card_content">
+              <div class="benefits_card_header">
+                <h2 class="benefits_card_title">Ancient Markets & Souks</h2>
+              </div>
+            </div>
+            <div class="benefits_bg"></div>
+          </div>
+          <!-- Card 2: Sacred Sites -->
+          <div style="background-image:url('https://placehold.co/800x1000/1A3A52/D4A574?text=Umayyad+Mosque')" role="listitem" class="benefits_card_wrap">
+            <a href="media.html" class="benefits_link w-inline-block"></a>
+            <div class="benefits_card_content">
+              <div class="benefits_card_header">
+                <h2 class="benefits_card_title">Sacred Sites & Mosques</h2>
+              </div>
+            </div>
+            <div class="benefits_bg"></div>
+          </div>
+          <!-- Card 3: Culinary Heritage -->
+          <div style="background-image:url('https://placehold.co/800x1000/1A3A52/D4A574?text=Syrian+Cuisine')" role="listitem" class="benefits_card_wrap">
+            <a href="media.html" class="benefits_link w-inline-block"></a>
+            <div class="benefits_card_content">
+              <div class="benefits_card_header">
+                <h2 class="benefits_card_title">Culinary Heritage</h2>
+              </div>
+            </div>
+            <div class="benefits_bg"></div>
           </div>
         </div>
-
       </div>
+    </div>
+  </div>
 
-      <div class="div-block-42">
-        <div class="div-block-43"></div>
-        <a href="tours.html" class="nav-item-link is-home-cta">
-          <div class="nav-link-text">Discover All Travel Plans</div>
+  <!-- Quote Section (imaaicha structure) -->
+  <div class="quote">
+    <div class="text-block-12">"Syria is a country where the past whispers in every stone, and the present hums with resilience"<br/>
+      <span class="text-span-4">Syrian Mosaic Foundation</span>
+    </div>
+  </div>
+
+  <!-- Section 04: OUR INITIATIVES (imaaicha OUR ACTIVITIES slider structure) -->
+  <div class="slider-main_component">
+    <div class="slider-main_top-wrapper">
+      <div class="sec-numb">
+        <div>04<br/>OUR INITIATIVES</div>
+      </div>
+      <div class="slider-main_button-wrapper">
+        <a href="#" class="slider-main_button swiper-prev w-inline-block">
+          <div class="slider-main_button-icon is-reversed w-embed">
+            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 29.541 22.323">
+              <g transform="translate(0 1.014)">
+                <path d="M115.445,20.633l9.311-10.148L115.445.338" transform="translate(-97.25 -0.338)" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="3"/>
+                <line x1="27.506" transform="translate(0 10.148)" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="3"/>
+              </g>
+            </svg>
+          </div>
+        </a>
+        <a href="#" class="slider-main_button swiper-next w-inline-block">
+          <div class="slider-main_button-icon w-embed">
+            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 29.541 22.323">
+              <g transform="translate(0 1.014)">
+                <path d="M115.445,20.633l9.311-10.148L115.445.338" transform="translate(-97.25 -0.338)" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="3"/>
+                <line x1="27.506" transform="translate(0 10.148)" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="3"/>
+              </g>
+            </svg>
+          </div>
         </a>
       </div>
     </div>
-
-    <!-- Diplomatic Engagement -->
-    <section class="section">
-      <div class="container">
-        <div class="highlight-box">
-          <h2 class="text-center mb-8"><span class="accent-blue">Building Bridges: Diplomatic Partnerships</span></h2>
-          <div class="heritage-section-divider"></div>
-          
-          <div class="split-content" style="margin-top: var(--space-12);">
-            <div class="fade-in">
-              <figure class="image-figure">
-                <img src="assets/images/joe meeting politician.png" alt="Joe Jajati meeting with Syrian Foreign Ministry official" class="heritage-image"/>
-                <figcaption class="image-caption">
-                  Joe Jajati meeting with Mr. Qutaiba Idlbi, Director of American Political Affairs at Syria's Foreign Ministry, during an American Jewish delegation visit.
-                </figcaption>
-              </figure>
+    <div class="swiper is-slider-main">
+      <div role="list" class="swiper-wrapper is-slider-main">
+        <!-- Slide 1: Heritage Preservation -->
+        <div role="listitem" class="swiper-slide is-slider-main">
+          <a href="team.html" class="slider-main_link w-inline-block">
+            <div class="slider-main_img-height">
+              <img alt="Heritage Preservation" src="https://placehold.co/600x800/1A3A52/D4A574?text=Heritage+Preservation" class="slider-main_img"/>
             </div>
-            
-            <div class="fade-in">
-              <p class="lead mb-6">
-                I am incredibly honored, as it was a privilege to meet with Mr. Qutaiba Idlbi, Director of American Affairs in Syria's Foreign Ministry, during the visit of an American Jewish delegation.
-              </p>
-              <p class="mb-4">
-                We had very encouraging meetings where we reinforced each other's commitment to this important work. These dialogues represent the kind of meaningful engagement that can bridge communities and build understanding across all divides.
-              </p>
-              <p class="mb-4">
-                As a symbol of this shared purpose, we presented a gift inscribed with the eternal Hebrew principle, <strong>"Love your friend as yourself."</strong> This is the foundation for a unified Syria where all communities can thrive.
-              </p>
-              <p class="small text-muted">
-                — Joseph Jajati, Founder
-              </p>
+            <div class="slider-main_text-wrapper">
+              <h2 class="slider-main_title">Heritage Preservation</h2>
             </div>
-          </div>
+          </a>
         </div>
-      </div>
-    </section>
-
-    <!-- Preserving Sacred Heritage -->
-    <section class="section section-alt">
-      <div class="container">
-        <h2 class="text-center mb-16"><span class="accent-blue">Preserving Sacred Heritage</span></h2>
-        <div class="heritage-section-divider"></div>
-        
-        <div class="split-content split-content-reverse" style="margin-top: var(--space-12);">
-          <div class="fade-in">
-            <p class="lead mb-6">
-              The Frenj Synagogue in Damascus stands as a testament to Syria's rich Jewish heritage. Its ark, adorned with Hebrew inscriptions from Psalms 16:8 and 65:5, represents centuries of faith and tradition that we are committed to preserving for future generations.
-            </p>
-            <p>
-              Our heritage preservation work extends to all of Syria's diverse communities, ensuring that these irreplaceable treasures remain protected and celebrated.
-            </p>
-          </div>
-          
-          <div class="fade-in">
-            <figure class="image-figure">
-              <img src="assets/images/The ark at the Fr.png" alt="The ark at the Frenj Synagogue" class="heritage-image"/>
-              <figcaption class="image-caption">
-                The ark at the Frenj Synagogue, with Hebrew inscriptions from Psalms 16:8 and 65:5. Jewish Quarter in Old Damascus. Photo by Rania Kataf.
-              </figcaption>
-            </figure>
-          </div>
+        <!-- Slide 2: Cultural Exchange -->
+        <div role="listitem" class="swiper-slide is-slider-main">
+          <a href="team.html" class="slider-main_link w-inline-block">
+            <div class="slider-main_img-height">
+              <img alt="Cultural Exchange" src="https://placehold.co/600x800/1A3A52/D4A574?text=Cultural+Exchange" class="slider-main_img"/>
+            </div>
+            <div class="slider-main_text-wrapper">
+              <h2 class="slider-main_title">Cultural Exchange</h2>
+            </div>
+          </a>
         </div>
-      </div>
-    </section>
-    
-    <!-- Events & Timeline - Vertical with Images -->
-    <!-- 
-      MOBILE INLINE IMAGES IMPLEMENTATION (Nov 2025)
-      - Desktop (1024px+): Sticky gallery on left, timeline on right
-      - Mobile/Tablet: Inline images within each card, gallery hidden
-      - To revert: See comments in styles.css under "MOBILE INLINE IMAGES"
-    -->
-    <section class="section">
-      <div class="container">
-        <h2 class="text-center mb-16">Events & Timeline</h2>
-        
-        <div class="timeline-split">
-          <!-- Sticky Image Gallery (Desktop only) -->
-          <div class="timeline-gallery">
-            <div class="timeline-gallery-inner">
-              <div class="timeline-img active" data-timeline-img="2018-2024">
-                <img src="assets/images/historical-pic.png" alt="Foundational Heritage Trips" />
-              </div>
-              <div class="timeline-img" data-timeline-img="early-2025">
-                <img src="assets/images/group-pic.jpeg" alt="First Diaspora Jewish Group Returns" />
-              </div>
-              <div class="timeline-img" data-timeline-img="april-2025">
-                <img src="assets/images/team-meeting.jpg" alt="Eid, Head of Syrian Jewish Community, Meeting with Congressman" />
-              </div>
-              <div class="timeline-img" data-timeline-img="late-2025">
-                <img src="assets/images/opera house.png" alt="Damascus Opera House Cultural Partnership" />
-              </div>
-              <div class="timeline-img" data-timeline-img="2026">
-                <img src="assets/images/team-meeting-old.jpg" alt="SMF Leadership Meeting with United Nations" />
-              </div>
-              <div class="timeline-img" data-timeline-img="upcoming-1">
-                <img src="assets/images/group-pic-2.jpeg" alt="Heritage + Faith Coexistence Talks" />
-              </div>
-              <div class="timeline-img" data-timeline-img="upcoming-2">
-                <img src="assets/images/historical-pic-2.png" alt="Mosaic Arts Exhibitions" />
-              </div>
+        <!-- Slide 3: Community Empowerment -->
+        <div role="listitem" class="swiper-slide is-slider-main">
+          <a href="team.html" class="slider-main_link w-inline-block">
+            <div class="slider-main_img-height">
+              <img alt="Community Empowerment" src="https://placehold.co/600x800/1A3A52/D4A574?text=Community+Empowerment" class="slider-main_img"/>
             </div>
-          </div>
-          
-          <!-- Vertical Timeline -->
-          <div class="timeline-v">
-            <div class="timeline-v-item active" data-img-id="2018-2024">
-              <div class="timeline-v-marker"></div>
-              <div class="timeline-v-content">
-                <!-- Mobile inline image (hidden on desktop) -->
-                <img src="assets/images/historical-pic.png" alt="Foundational Heritage Trips" class="timeline-v-mobile-img"/>
-                <div class="timeline-v-year">2018–2024</div>
-                <h3 class="timeline-v-title">Foundational Heritage Trips</h3>
-                <p class="timeline-v-description">Building relationships and establishing our presence in Syria.</p>
-              </div>
+            <div class="slider-main_text-wrapper">
+              <h2 class="slider-main_title">Community Empowerment</h2>
             </div>
-
-            <div class="timeline-v-item" data-img-id="early-2025">
-              <div class="timeline-v-marker"></div>
-              <div class="timeline-v-content">
-                <!-- Mobile inline image (hidden on desktop) -->
-                <img src="assets/images/group-pic.jpeg" alt="First Diaspora Jewish Group Returns" class="timeline-v-mobile-img"/>
-                <div class="timeline-v-year">Early 2025</div>
-                <h3 class="timeline-v-title">First Diaspora Group Returns</h3>
-                <p class="timeline-v-description">Historic milestone reconnecting the Syrian Jewish diaspora.</p>
-              </div>
-            </div>
-
-            <div class="timeline-v-item" data-img-id="april-2025">
-              <div class="timeline-v-marker"></div>
-              <div class="timeline-v-content">
-                <!-- Mobile inline image (hidden on desktop) -->
-                <img src="assets/images/team-meeting.jpg" alt="Leadership & Congressional Engagement" class="timeline-v-mobile-img"/>
-                <div class="timeline-v-year">April 2025</div>
-                <h3 class="timeline-v-title">Leadership & Congressional Engagement</h3>
-                <p class="timeline-v-description">Eid, Head of the Syrian Jewish Community, meets with U.S. Congressional leadership to advocate for Syria.</p>
-              </div>
-            </div>
-
-            <div class="timeline-v-item" data-img-id="late-2025">
-              <div class="timeline-v-marker"></div>
-              <div class="timeline-v-content">
-                <!-- Mobile inline image (hidden on desktop) -->
-                <img src="assets/images/opera house.png" alt="Opera House Partnership" class="timeline-v-mobile-img"/>
-                <div class="timeline-v-year">Late 2025</div>
-                <h3 class="timeline-v-title">Opera House Partnership</h3>
-                <p class="timeline-v-description">Cultural partnerships showcasing Syria's artistic heritage.</p>
-              </div>
-            </div>
-
-            <div class="timeline-v-item" data-img-id="2026">
-              <div class="timeline-v-marker"></div>
-              <div class="timeline-v-content">
-                <!-- Mobile inline image (hidden on desktop) -->
-                <img src="assets/images/team-meeting-old.jpg" alt="United Nations Engagement" class="timeline-v-mobile-img"/>
-                <div class="timeline-v-year">2025</div>
-                <h3 class="timeline-v-title">United Nations Engagement</h3>
-                <p class="timeline-v-description">Strategic discussions with UN leadership on Syria's cultural preservation and renewal.</p>
-              </div>
-            </div>
-
-            <div class="timeline-v-divider">
-              <span>Upcoming Initiatives</span>
-            </div>
-
-            <div class="timeline-v-item timeline-v-item-upcoming" data-img-id="upcoming-1">
-              <div class="timeline-v-marker timeline-v-marker-upcoming"></div>
-              <div class="timeline-v-content">
-                <!-- Mobile inline image (hidden on desktop) -->
-                <img src="assets/images/group-pic-2.jpeg" alt="Heritage + Faith Coexistence Talks" class="timeline-v-mobile-img"/>
-                <h3 class="timeline-v-title">Coexistence Talks</h3>
-                <p class="timeline-v-description">Interfaith dialogues celebrating religious diversity.</p>
-              </div>
-            </div>
-
-            <div class="timeline-v-item timeline-v-item-upcoming" data-img-id="upcoming-2">
-              <div class="timeline-v-marker timeline-v-marker-upcoming"></div>
-              <div class="timeline-v-content">
-                <!-- Mobile inline image (hidden on desktop) -->
-                <img src="assets/images/historical-pic-2.png" alt="Mosaic Arts Exhibitions" class="timeline-v-mobile-img"/>
-                <h3 class="timeline-v-title">Mosaic Arts Exhibitions</h3>
-                <p class="timeline-v-description">Showcasing Syria's rich mosaic artistry tradition.</p>
-              </div>
-            </div>
-          </div>
+          </a>
         </div>
-      </div>
-    </section>
-
-    <!-- Heritage Showcase with Image -->
-    <section class="section section-alt">
-      <div class="container">
-        <div class="split-content">
-          <div class="fade-in">
-            <figure class="image-figure">
-              <img src="assets/images/An Alley in the Jewis.png" alt="Alley in the Jewish Quarter of Damascus" class="heritage-image"/>
-              <figcaption class="image-caption">
-                An alley in the Jewish Quarter, where Muslims, Christians, and Jews live together in the same neighborhood. Photo by Rania Kataf.
-              </figcaption>
-            </figure>
-          </div>
-          
-          <div class="fade-in">
-            <h2 class="mb-6">A Living Mosaic of <span class="accent-gold">Coexistence</span></h2>
-            <div class="heritage-section-divider" style="margin-left: 0;"></div>
-            <p class="lead mb-6">
-              In Damascus's historic Jewish Quarter, the spirit of unity lives on. Neighbors of different faiths share streets, traditions, and lives—a testament to Syria's enduring diversity.
-            </p>
-            <p>
-              This is the Syria we work to preserve and celebrate: a place where cultural and religious differences enrich rather than divide, where ancient stones bear witness to centuries of peaceful coexistence.
-            </p>
-          </div>
+        <!-- Slide 4: Educational Programs -->
+        <div role="listitem" class="swiper-slide is-slider-main">
+          <a href="team.html" class="slider-main_link w-inline-block">
+            <div class="slider-main_img-height">
+              <img alt="Educational Programs" src="https://placehold.co/600x800/1A3A52/D4A574?text=Educational+Programs" class="slider-main_img"/>
+            </div>
+            <div class="slider-main_text-wrapper">
+              <h2 class="slider-main_title">Educational Programs</h2>
+            </div>
+          </a>
         </div>
-      </div>
-    </section>
-    
-    <!-- Opera House Cultural Sponsorship -->
-    <section class="section section-alt">
-      <div class="container">
-        <div class="highlight-box">
-          <h2 class="text-center mb-8"><span class="accent-gold">Cultural Renaissance: Sponsoring Damascus Opera House</span></h2>
-          <div class="heritage-section-divider"></div>
-          
-          <div class="split-content split-content-reverse" style="margin-top: var(--space-12);">
-            <div class="fade-in">
-              <p class="lead mb-6">
-                The Syrian Mosaic Foundation is incredibly proud and honored to sponsor the magnificent "وردة اشبيلية" at the Damascus Opera House in partnership with the Syrian Ministry of Culture.
-              </p>
-              <p class="mb-4">
-                We are supporting what will be one of the biggest dynamic presentations of Damascus's rich cultural art and incredible show skills. This powerful live performance features our esteemed Syrian actors and dancers, celebrating the artistic heritage that has made Syria a cultural beacon for millennia.
-              </p>
-              <p class="small text-muted">
-                Our support stems from the belief that "art and music are an integral part of ancient Syrian civilization." We are committed to enhancing the local presence of musical theater through sustainable institutional cooperation.
-              </p>
+        <!-- Slide 5: Humanitarian Aid -->
+        <div role="listitem" class="swiper-slide is-slider-main">
+          <a href="team.html" class="slider-main_link w-inline-block">
+            <div class="slider-main_img-height">
+              <img alt="Humanitarian Aid" src="https://placehold.co/600x800/1A3A52/D4A574?text=Humanitarian+Aid" class="slider-main_img"/>
             </div>
-            
-            <div class="fade-in">
-              <figure class="image-figure">
-                <img src="assets/images/opera house.png" alt="Damascus Opera House cultural performance" class="heritage-image"/>
-                <figcaption class="image-caption">
-                  SMF-sponsored performance at the Damascus Opera House, celebrating Syria's rich cultural traditions and artistic excellence.
-                </figcaption>
-              </figure>
+            <div class="slider-main_text-wrapper">
+              <h2 class="slider-main_title">Humanitarian Aid</h2>
             </div>
-          </div>
+          </a>
         </div>
-      </div>
-    </section>
-
-    <!-- Heritage Protection Achievement -->
-    <section class="section section-alt">
-      <div class="container">
-        <div class="split-content">
-          <div class="fade-in">
-            <figure class="image-figure">
-              <img src="assets/images/artifacts-recovery-damascus-2025.png" alt="Recovery of historic Syrian artifacts in Damascus" class="heritage-image"/>
-              <figcaption class="image-caption">
-                Recovered Syrian artifacts, September 2025. SMF assisted in securing and preserving these historic pieces.
-              </figcaption>
-            </figure>
-          </div>
-          
-          <div class="fade-in">
-            <h2 class="mb-6"><span class="accent-terracotta">Recovering Syrian Heritage</span></h2>
-            <div class="heritage-section-divider" style="margin-left: 0;"></div>
-            <p class="lead mb-6">
-              In September 2025, SMF played a key role in the successful recovery of rare cultural artifacts in Damascus's Shaghour district.
-            </p>
-            <p>
-              Working with local authorities, we helped identify, secure, and preserve these historic pieces—protecting Syria's diverse cultural legacy for future generations.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Strategic Initiatives -->
-    <section class="section">
-      <div class="container">
-        <h2 class="text-center mb-16">Our Strategic Initiatives</h2>
-        
-        <div class="prose">
-          <p class="lead text-center mb-12">
-            We pursue a multi-faceted approach to achieve our vision through key projects, connecting expertise and resources across communities.
-          </p>
-        </div>
-        
-        <div class="grid grid-2">
-          <div class="card fade-in">
-            <h3 class="card-title">Delegations & Tours</h3>
-            <div class="card-content">
-              <p>
-                We organize trips for a variety of purposes—educational, academic, archaeological, religious, cultural, and social—acting as a bridge that connects all sides. These cultural tours, led by trusted local partners, present Syrian society as open and tolerant.
-              </p>
-              <a href="trip-registration.html" style="display: inline-block; margin-top: var(--space-4); font-size: 0.9375rem; font-weight: 500; color: var(--color-gold);">Register for Heritage Trip →</a>
-            </div>
-          </div>
-
-          <div class="card fade-in">
-            <h3 class="card-title">Heritage Preservation</h3>
-            <div class="card-content">
-              <p>
-                Restoring and protecting historical sites of religious and cultural significance for all of Syria's communities, with a special focus on Jewish heritage landmarks such as synagogues.
-              </p>
-            </div>
-          </div>
-
-          <div class="card fade-in">
-            <h3 class="card-title">Cultural Center & Community Revival</h3>
-            <div class="card-content">
-              <p>
-                Establishing a vibrant hub in the heart of Damascus for art, education, historical archives, and intercultural dialogue.
-              </p>
-            </div>
-          </div>
-
-          <div class="card fade-in">
-            <h3 class="card-title">Media & Educational Support</h3>
-            <div class="card-content">
-              <p>
-                Producing media documenting Syria's powerful story of coexistence and resilience, and providing modern resources to Syrian students to invest in the country's next generation.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    
-    <!-- Why SMF Matters -->
-    <section class="section">
-      <div class="container">
-        <h2 class="text-center mb-16">Why the Syrian Mosaic Foundation Matters</h2>
-        
-        <div class="grid grid-3">
-          <div class="card fade-in">
-            <h3 class="card-title">A Living Mosaic</h3>
-            <div class="card-content">
-              <p>
-                The Foundation was co-founded by Joseph Jajati (Syrian-American Jew) and Aziz (Syrian-American Muslim), neighbors from Damascus and now in New York. Their enduring friendship forms the very foundation of our work, demonstrating that Syria's spirit of coexistence is not merely a memory, but a present reality waiting to be reclaimed.
-              </p>
-            </div>
-          </div>
-          
-          <div class="card fade-in">
-            <h3 class="card-title">Direct Engagement</h3>
-            <div class="card-content">
-              <p>
-                With over 18 months spent directly on the ground, our work is rooted in trust and direct engagement with the Syrian people. This allows us to deliver impactful cultural and humanitarian aid with unparalleled understanding and precision.
-              </p>
-            </div>
-          </div>
-
-          <div class="card fade-in">
-            <h3 class="card-title">Building Bridges, Not Walls</h3>
-            <div class="card-content">
-              <p>
-                Every initiative, from restoring sites for all communities to organizing diverse, collaborative delegations (academic, religious, social), is designed to intentionally connect disparate groups, showing the world that unity is the ultimate form of renewal.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="section">
-      <div class="container">
-        <div class="prose text-center">
-          <h2>Join Us in This Beautiful Effort</h2>
-          <p class="lead">
-            We invite you to be part of Syria's story of renewal, unity, and cultural preservation.
-          </p>
-          <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
-            <a href="trip-registration.html" class="btn btn-primary btn-lg" style="background: var(--color-gold); border-color: var(--color-gold);">Register for Heritage Trip</a>
-            <a href="tours.html" class="btn btn-secondary btn-lg">Explore Tours</a>
-            <a href="contact.html" class="btn btn-secondary btn-lg">Contact Us</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-  
-  <!-- Footer -->
-  <footer class="footer" role="contentinfo">
-    <div class="container">
-      <div class="footer-content">
-        <h3 class="footer-title">The Syrian Mosaic Foundation</h3>
-        <nav class="footer-links" aria-label="Footer navigation">
-          <a href="#about" class="footer-link">About</a>
-          <a href="impact.html" class="footer-link">Impact</a>
-          <a href="tours.html" class="footer-link">Tours</a>
-          <a href="team.html" class="footer-link">Team</a>
-          <a href="media.html" class="footer-link">Media</a>
-          <a href="contact.html" class="footer-link">Contact</a>
-        </nav>
-        <p class="footer-copyright">
-          © 2025 The Syrian Mosaic Foundation. All Rights Reserved.
-        </p>
       </div>
     </div>
-  </footer>
+  </div>
+
+  <!-- Section 05: OUR PARTNERS (imaaicha WHERE TO STAY structure) -->
+  <div class="destinations-cnt">
+    <div class="desti-cards-cnt">
+      <div class="section-title-and-text is-03">
+        <div class="sec-numb">
+          <div>05<br/>OUR PARTNERS</div>
+        </div>
+        <div class="about-text-ctn">
+          <h1 class="home-heading"><span class="green-highlight">Syria</span> is full of passionate people—dedicated artisans, local guides, and community leaders who preserve their heritage with pride. At <strong>Syrian Mosaic Foundation</strong>, we partner with trusted organizations and individuals who share our vision of cultural preservation and community empowerment.</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page_main">
+    <div class="cards-wrap u-container-2">
+      <style>
+        @container (width > 55em) {
+          .benefits_layout.is-partners:has(.benefits_card_wrap:is(:hover, :focus-within)) .benefits_card_wrap:not(:is(:hover, :focus-within)) .benefits_card_content { opacity: 0; }
+          .benefits_layout.is-partners .benefits_card_wrap { min-height: 25rem; }
+          .benefits_layout.is-partners .benefits_card_wrap:is(:hover, :focus-within) { width: 190%; }
+          .benefits_layout.is-partners .benefits_card_wrap:is(:hover, :focus-within) .benefits_card_mask_wrap { grid-template-rows: 1fr; }
+          .benefits_layout.is-partners .benefits_card_mask_wrap { grid-template-rows: 0fr; }
+          .benefits_layout.is-partners { flex-direction: row; }
+        }
+      </style>
+      <div class="benefits_wrap">
+        <div role="list" class="benefits_layout is-partners">
+          <!-- Partner 1: Local Artisans -->
+          <div style="background-image:url('https://placehold.co/800x600/1A3A52/D4A574?text=Local+Artisans')" role="listitem" class="benefits_card_wrap">
+            <a href="team.html" class="benefits_link w-inline-block"></a>
+            <div class="benefits_card_content">
+              <div class="benefits_card_header">
+                <h2 class="benefits_card_title">Local Artisan Cooperatives</h2>
+                <div class="benefits_card_mask_wrap">
+                  <div class="benefits_card_mask_clip">
+                    <p class="benefits_card_text">We work with skilled craftsmen preserving traditional Syrian arts—from mosaic work to textile weaving. Every partnership helps sustain ancient techniques for future generations.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="benefits_bg"></div>
+          </div>
+          <!-- Partner 2: Cultural Institutions -->
+          <div style="background-image:url('https://placehold.co/800x600/1A3A52/D4A574?text=Cultural+Institutions')" role="listitem" class="benefits_card_wrap">
+            <a href="team.html" class="benefits_link w-inline-block"></a>
+            <div class="benefits_card_content">
+              <div class="benefits_card_header">
+                <h2 class="benefits_card_title">Cultural Institutions</h2>
+                <div class="benefits_card_mask_wrap">
+                  <div class="benefits_card_mask_clip">
+                    <p class="benefits_card_text">Collaborating with museums, universities, and cultural centers to document, preserve, and share Syria's rich heritage with the world.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="benefits_bg"></div>
+          </div>
+          <!-- Partner 3: Community Leaders -->
+          <div style="background-image:url('https://placehold.co/800x600/1A3A52/D4A574?text=Community+Leaders')" role="listitem" class="benefits_card_wrap">
+            <a href="team.html" class="benefits_link w-inline-block"></a>
+            <div class="benefits_card_content">
+              <div class="benefits_card_header">
+                <h2 class="benefits_card_title">Community Leaders</h2>
+                <div class="benefits_card_mask_wrap">
+                  <div class="benefits_card_mask_clip">
+                    <p class="benefits_card_text">Our network of local guides and community leaders ensures authentic experiences while supporting grassroots initiatives across Syria.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="benefits_bg"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 06: SYRIA BY NUMBERS (imaaicha MOROCCO BY NUMBERS structure) -->
+  <div class="destinations-cnt">
+    <div class="desti-cards-cnt">
+      <div class="section-title-and-text is-03">
+        <div class="sec-numb">
+          <div>06<br/>SYRIA<br/>BY NUMBERS</div>
+        </div>
+        <a href="team.html" class="nav-item-link is-home-cta w-inline-block">
+          <img src="https://cdn.prod.website-files.com/657b5d5bf6c3e07bb4b09757/65e20460654b96e4fa1c544a_arrow.svg" loading="lazy" alt="" class="nav-arrow"/>
+          <div class="nav-link-text">Discover Syria</div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="page_main">
+    <div class="cards-wrap u-container-2">
+      <style>
+        @container (width > 55em) {
+          .benefits_layout.is-numbers:has(.benefits_card_wrap:is(:hover, :focus-within)) .benefits_card_wrap:not(:is(:hover, :focus-within)) .benefits_card_content { opacity: 0; }
+          .benefits_layout.is-numbers .benefits_card_wrap { min-height: 25rem; }
+          .benefits_layout.is-numbers .benefits_card_wrap:is(:hover, :focus-within) { width: 190%; }
+          .benefits_layout.is-numbers .benefits_card_wrap:is(:hover, :focus-within) .benefits_card_mask_wrap { grid-template-rows: 1fr; }
+          .benefits_layout.is-numbers .benefits_card_mask_wrap { grid-template-rows: 0fr; }
+          .benefits_layout.is-numbers { flex-direction: row; }
+        }
+      </style>
+      <div class="benefits_wrap">
+        <div role="list" class="benefits_layout is-numbers">
+          <!-- Stat 1: UNESCO Sites -->
+          <div style="background-image:url('https://placehold.co/800x600/1A3A52/D4A574?text=Palmyra')" role="listitem" class="benefits_card_wrap">
+            <a href="team.html" class="benefits_link w-inline-block"></a>
+            <div class="benefits_card_content">
+              <div class="benefits_card_header">
+                <h2 class="benefits_card_title">6 UNESCO World Heritage Sites</h2>
+                <div class="benefits_card_mask_wrap">
+                  <div class="benefits_card_mask_clip">
+                    <p class="benefits_card_text">Syria is home to six UNESCO World Heritage Sites, including the Ancient City of Damascus, Palmyra, Aleppo, Bosra, and Crac des Chevaliers—testaments to millennia of civilization.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="benefits_bg"></div>
+          </div>
+          <!-- Stat 2: Years of History -->
+          <div style="background-image:url('https://placehold.co/800x600/1A3A52/D4A574?text=Ancient+Damascus')" role="listitem" class="benefits_card_wrap">
+            <a href="team.html" class="benefits_link w-inline-block"></a>
+            <div class="benefits_card_content">
+              <div class="benefits_card_header">
+                <h2 class="benefits_card_title">10,000+ Years of History</h2>
+                <div class="benefits_card_mask_wrap">
+                  <div class="benefits_card_mask_clip">
+                    <p class="benefits_card_text">Damascus is one of the oldest continuously inhabited cities in the world, with evidence of settlement dating back over 10,000 years.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="benefits_bg"></div>
+          </div>
+          <!-- Stat 3: Religious Diversity -->
+          <div style="background-image:url('https://placehold.co/800x600/1A3A52/D4A574?text=Religious+Sites')" role="listitem" class="benefits_card_wrap">
+            <a href="team.html" class="benefits_link w-inline-block"></a>
+            <div class="benefits_card_content">
+              <div class="benefits_card_header">
+                <h2 class="benefits_card_title">3 Major Religions' Holy Sites</h2>
+                <div class="benefits_card_mask_wrap">
+                  <div class="benefits_card_mask_clip">
+                    <p class="benefits_card_text">Syria holds sacred sites for Christianity, Islam, and Judaism—including the Umayyad Mosque, Chapel of Ananias, and ancient synagogues of Damascus.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="benefits_bg"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Defined Section (imaaicha structure) -->
+  <div class="defined">
+    <div class="top-cnt">
+      <div class="defined-header">
+        <div class="text-block-4">Our travels are defined by</div>
+      </div>
+      <div class="list-cnt">
+        <div data-hover="false" data-delay="0" class="travel-dropdown w-dropdown">
+          <div class="drop-toggle w-dropdown-toggle">
+            <div class="dropdown-title">Authentic Experiences</div>
+            <img src="https://cdn.prod.website-files.com/657b5d5bf6c3e07bb4b09757/65e2376ca1b031ac2d5e8ac4_pluss.svg" loading="lazy" alt="" class="traval-arrow"/>
+          </div>
+          <nav class="drop-list w-dropdown-list">
+            <div class="dropdown-text">Our local guides share personal stories and hidden gems that reveal Syria's true soul beyond the tourist trails.</div>
+          </nav>
+        </div>
+        <div data-hover="false" data-delay="0" class="travel-dropdown second w-dropdown">
+          <div class="drop-toggle w-dropdown-toggle">
+            <div class="dropdown-title">Cultural Immersion</div>
+            <img src="https://cdn.prod.website-files.com/657b5d5bf6c3e07bb4b09757/65e2376ca1b031ac2d5e8ac4_pluss.svg" loading="lazy" alt="" class="traval-arrow"/>
+          </div>
+          <nav class="drop-list w-dropdown-list">
+            <div class="dropdown-text">From traditional cooking classes to artisan workshops, every experience connects you deeply with Syrian heritage.</div>
+          </nav>
+        </div>
+        <div data-hover="false" data-delay="0" class="travel-dropdown second w-dropdown">
+          <div class="drop-toggle w-dropdown-toggle">
+            <div class="dropdown-title">Small Group Journeys</div>
+            <img src="https://cdn.prod.website-files.com/657b5d5bf6c3e07bb4b09757/65e2376ca1b031ac2d5e8ac4_pluss.svg" loading="lazy" alt="" class="traval-arrow"/>
+          </div>
+          <nav class="drop-list w-dropdown-list">
+            <div class="dropdown-text">Limited to 12 travelers, our intimate groups ensure personalized attention and meaningful connections.</div>
+          </nav>
+        </div>
+        <div data-hover="false" data-delay="0" class="travel-dropdown second w-dropdown">
+          <div class="drop-toggle w-dropdown-toggle">
+            <div class="dropdown-title">Community Impact</div>
+            <img src="https://cdn.prod.website-files.com/657b5d5bf6c3e07bb4b09757/65e2376ca1b031ac2d5e8ac4_pluss.svg" loading="lazy" alt="" class="traval-arrow"/>
+          </div>
+          <nav class="drop-list w-dropdown-list">
+            <div class="dropdown-text">Every journey supports local communities, artisans, and heritage preservation initiatives across Syria.</div>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <div class="long-phrases" data-parallax-phrases>
+      <img src="https://cdn.prod.website-files.com/657b5d5bf6c3e07bb4b09757/65b27aa7c4a2338ebcad3647_3.svg" loading="lazy" alt="Captured moments" class="phrase-line _3"/>
+      <img src="https://cdn.prod.website-files.com/657b5d5bf6c3e07bb4b09757/65b27aa73a45a6e0d297e57c_2.svg" loading="lazy" alt="Lifetime experiences" class="phrase-line _2"/>
+      <img src="https://cdn.prod.website-files.com/657b5d5bf6c3e07bb4b09757/65b27aa73fefd815d74986dd_1.svg" loading="lazy" alt="Authentique travels" class="phrase-line _1"/>
+    </div>
+    <div class="div-block-3">
+      <div class="text-block-6">We excel through precise planning, cultivating lasting connections, and a profound understanding of Syria's rich cultural landscape.</div>
+    </div>
+    <div class="div-block-4">
+      <div class="video-embed w-embed">
+        <!-- Video placeholder - replace with actual Syria video -->
+        <div style="width: 100%; aspect-ratio: 16/9; background: linear-gradient(135deg, var(--color-navy) 0%, #2a4f6a 100%); border-radius: 0.5em; display: flex; align-items: center; justify-content: center;">
+          <span style="color: var(--color-gold); font-size: 1.2rem; opacity: 0.7;">Video Coming Soon</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 07: NEWS & UPDATES (imaaicha OUR JOURNAL structure) -->
+  <div class="blog-section">
+    <div class="section-title-and-text is-04">
+      <div class="sec-numb">
+        <div>07<br/>NEWS &amp;<br/>UPDATES</div>
+      </div>
+    </div>
+    <div class="collection-list-wrapper-3">
+      <div role="list" class="blog-cnt">
+        <!-- Blog Card 1 -->
+        <div role="listitem" class="blog-item">
+          <a href="media.html" class="blog-cards w-inline-block">
+            <div class="card-wrapper">
+              <img src="https://placehold.co/600x400/1A3A52/D4A574?text=Trip+Update" loading="eager" alt="Spring 2025 Trip Announcement" class="blog-image"/>
+            </div>
+            <div class="div-block-40">
+              <div class="div-block-35">
+                <div class="button-arrow needed w-embed">
+                  <svg width="100%" height="100%" viewBox="0 0 512 512" fill="CurrentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M282.744 353.488L302.468 372L418 256.5L302.468 141L282.744 159.512L367.279 242.012H102V270.988H367.279L282.744 353.488Z" fill="CurrentColor"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M512 256C512 397.385 397.385 512 256 512C114.615 512 0 397.385 0 256C0 114.615 114.615 0 256 0C397.385 0 512 114.615 512 256ZM494 256C494 387.444 387.444 494 256 494C124.556 494 18 387.444 18 256C18 124.556 124.556 18 256 18C387.444 18 494 124.556 494 256Z" fill="CurrentColor"/>
+                  </svg>
+                </div>
+                <div class="text-block-18">Spring 2025 Trip Dates Announced</div>
+              </div>
+              <div class="blog-text">Join us for our inaugural heritage discovery tour through Damascus, Aleppo, and the ancient cities of Syria.</div>
+            </div>
+          </a>
+        </div>
+        <!-- Blog Card 2 -->
+        <div role="listitem" class="blog-item">
+          <a href="media.html" class="blog-cards w-inline-block">
+            <div class="card-wrapper">
+              <img src="https://placehold.co/600x400/1A3A52/D4A574?text=Heritage+News" loading="eager" alt="Heritage Preservation Update" class="blog-image"/>
+            </div>
+            <div class="div-block-40">
+              <div class="div-block-35">
+                <div class="button-arrow needed w-embed">
+                  <svg width="100%" height="100%" viewBox="0 0 512 512" fill="CurrentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M282.744 353.488L302.468 372L418 256.5L302.468 141L282.744 159.512L367.279 242.012H102V270.988H367.279L282.744 353.488Z" fill="CurrentColor"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M512 256C512 397.385 397.385 512 256 512C114.615 512 0 397.385 0 256C0 114.615 114.615 0 256 0C397.385 0 512 114.615 512 256ZM494 256C494 387.444 387.444 494 256 494C124.556 494 18 387.444 18 256C18 124.556 124.556 18 256 18C387.444 18 494 124.556 494 256Z" fill="CurrentColor"/>
+                  </svg>
+                </div>
+                <div class="text-block-18">Artisan Preservation Initiative Launch</div>
+              </div>
+              <div class="blog-text">Our new program supports traditional Syrian craftsmen in preserving ancient mosaic and textile techniques.</div>
+            </div>
+          </a>
+        </div>
+        <!-- Blog Card 3 -->
+        <div role="listitem" class="blog-item">
+          <a href="media.html" class="blog-cards w-inline-block">
+            <div class="card-wrapper">
+              <img src="https://placehold.co/600x400/1A3A52/D4A574?text=Cultural+Exchange" loading="eager" alt="Cultural Exchange Program" class="blog-image"/>
+            </div>
+            <div class="div-block-40">
+              <div class="div-block-35">
+                <div class="button-arrow needed w-embed">
+                  <svg width="100%" height="100%" viewBox="0 0 512 512" fill="CurrentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M282.744 353.488L302.468 372L418 256.5L302.468 141L282.744 159.512L367.279 242.012H102V270.988H367.279L282.744 353.488Z" fill="CurrentColor"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M512 256C512 397.385 397.385 512 256 512C114.615 512 0 397.385 0 256C0 114.615 114.615 0 256 0C397.385 0 512 114.615 512 256ZM494 256C494 387.444 387.444 494 256 494C124.556 494 18 387.444 18 256C18 124.556 124.556 18 256 18C387.444 18 494 124.556 494 256Z" fill="CurrentColor"/>
+                  </svg>
+                </div>
+                <div class="text-block-18">Cultural Exchange: New York & Damascus</div>
+              </div>
+              <div class="blog-text">Connecting diaspora communities with their homeland through virtual experiences and cultural programming.</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer (imaaicha structure: contact-form > contact-form-inside) -->
+  <div class="contact-form">
+    <div class="contact-form-inside">
+      <div class="top">
+        <div class="form-side left">
+          <div class="social-cards">
+            <a href="https://instagram.com/SyrianMosaicFoundation" target="_blank" class="social-card w-inline-block">
+              <div class="footer-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073z"/></svg>
+              </div>
+              <div class="social-text">Instagram</div>
+            </a>
+            <a href="https://www.linkedin.com/company/syrian-mosaic-foundation/" target="_blank" class="social-card w-inline-block">
+              <div class="footer-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              </div>
+              <div class="social-text">LinkedIn</div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="bottom">
+        <div class="social-cards is-bottom">
+          <div class="footer-line">
+            <div class="footer_links">
+              <a href="tours.html" class="footer-link">Our Tours</a>
+              <a href="team.html" class="footer-link">About</a>
+              <a href="media.html" class="footer-link">Media</a>
+            </div>
+            <div class="footer_links">
+              <a href="contact.html" class="footer-link">Contact</a>
+              <a href="trip-registration.html" class="footer-link">Book Now</a>
+            </div>
+          </div>
+          <div class="footer-lineee"></div>
+          <div class="footer-line">
+            <div class="footer_links">
+              <div class="footer-link">Built with purpose</div>
+            </div>
+            <div class="footer_links">
+              <div class="footer-link">© 2025 Syrian Mosaic Foundation</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Scripts -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.23/bundled/lenis.min.js"></script>
   <script src="animations.js"></script>
 </body>
 </html>

@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Syrian Heritage Experiences | Syrian Mosaic Foundation</title>
+  <meta name="description" content="Discover unique ways to experience Syria with curated journeys designed to spark curiosity, connection, and creativity. Let each experience inspire your next adventure."/>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+  <!-- Main Styles -->
+  <link rel="stylesheet" href="styles.css"/>
+
+  <!-- Experiences Section Styles (ported from imaaicha) -->
+  <style>
+    /* ==================== Slider Gallery Section (imaaicha port) ==================== */
+    .section.is-slider-gallery {
+      max-width: none;
+      min-height: 100vh;
+      margin-left: 0;
+      margin-right: 0;
+      font-size: 1rem;
+      display: flex;
+      justify-content: flex-start;
+      align-items: stretch;
+    }
+
+    .slider-gallery_component {
+      background-color: #000;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: stretch;
+      width: 100%;
+      font-size: 1rem;
+      display: flex;
+      position: relative;
+    }
+
+    /* Background slider */
+    .slider-bg_component {
+      opacity: 0.8;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      inset: 0%;
+    }
+
+    .swiper.is-slider-bg {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .swiper-wrapper.is-slider-bg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .swiper-slide.is-slider-bg {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .slider-bg_img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      inset: 0%;
+    }
+
+    /* Titles slider */
+    .slider-titles_component {
+      height: 100%;
+      margin-top: -6rem;
+      font-size: 1rem;
+      position: relative;
+      inset: 0%;
+    }
+
+    .swiper.is-slider-titles {
+      width: 100%;
+      height: 100%;
+      font-size: 1rem;
+      overflow: visible;
+    }
+
+    .swiper-wrapper.is-slider-titles {
+      justify-content: flex-start;
+      align-items: flex-start;
+      height: 100%;
+      font-size: 1rem;
+      display: flex;
+    }
+
+    .swiper-slide.is-slider-titles {
+      flex-flow: column;
+      flex: none;
+      justify-content: flex-start;
+      align-items: flex-start;
+      width: 100%;
+      height: 100%;
+      padding: 7rem 2.5rem;
+      font-size: 1rem;
+      line-height: 1em;
+      display: flex;
+    }
+
+    .slider-titles_heading {
+      color: rgba(255, 255, 255, 0.14);
+      letter-spacing: -0.04em;
+      cursor: default;
+      text-wrap: balance;
+      margin-bottom: 0.9rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 5.1rem;
+      font-weight: 600;
+      line-height: 1;
+      transition: color 0.4s ease;
+    }
+
+    .swiper-slide.is-slider-titles.swiper-slide-active .slider-titles_heading {
+      color: #fff;
+    }
+
+    .slider-titles_heading.is-p {
+      letter-spacing: 0;
+      text-wrap: balance;
+      max-width: 43ch;
+      margin-bottom: 0;
+      margin-left: 7px;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.14);
+      transition: color 0.4s ease;
+    }
+
+    .swiper-slide.is-slider-titles.swiper-slide-active .slider-titles_heading.is-p {
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    /* Thumbs slider */
+    .slider-thumbs_component {
+      width: 40%;
+    }
+
+    .slider-thumbs_overflow {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .slider-thumbs_overflow > div {
+      display: flex;
+    }
+
+    .swiper.is-slider-thumbs {
+      width: 100%;
+      overflow: visible;
+    }
+
+    .swiper-wrapper.is-slider-thumbs {
+      justify-content: flex-start;
+      align-items: center;
+      display: flex;
+    }
+
+    .swiper-slide.is-slider-thumbs {
+      flex: none;
+      width: 100%;
+      padding-right: 0.5em;
+    }
+
+    .slider-thumbs_wrapper {
+      width: 33.3333%;
+    }
+
+    .slider-thumbs_height {
+      padding-top: 62%;
+      position: relative;
+    }
+
+    .slider-thumbs_img {
+      cursor: pointer;
+      object-fit: cover;
+      border-radius: 4px;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      inset: 0%;
+      transition: opacity 0.3s ease;
+    }
+
+    .slider-thumbs_img:hover {
+      opacity: 0.8;
+    }
+
+    /* Bottom wrapper */
+    .slider-gallery_bottom-wrapper {
+      z-index: 10;
+      grid-column-gap: 0em;
+      grid-row-gap: 1.5em;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-top: 2rem;
+      padding-left: 3%;
+      padding-right: 3%;
+      display: flex;
+      position: relative;
+    }
+
+    /* Navigation buttons */
+    .slider-gallery_button-wrapper {
+      grid-column-gap: 1em;
+      grid-row-gap: 1em;
+      flex-flow: row;
+      justify-content: space-between;
+      align-items: stretch;
+      display: flex;
+    }
+
+    .slider-gallery_button {
+      -webkit-backdrop-filter: blur(30px);
+      backdrop-filter: blur(30px);
+      color: #fff;
+      background-color: rgba(255, 255, 255, 0.1);
+      border: none;
+      border-radius: 50%;
+      flex: none;
+      justify-content: center;
+      align-items: center;
+      width: 3rem;
+      height: 3rem;
+      cursor: pointer;
+      transition: background-color 0.2s, color 0.2s;
+      display: flex;
+    }
+
+    .slider-gallery_button:hover {
+      color: #000;
+      background-color: #fff;
+    }
+
+    .slider-gallery_button-icon {
+      width: 40%;
+      height: 40%;
+    }
+
+    .slider-gallery_button-icon.is-reversed {
+      transform: rotate(-180deg);
+    }
+
+    /* Pagination numbers */
+    .slider-gallery_numbers {
+      color: #fff;
+      letter-spacing: 0.04em;
+      margin-bottom: 0;
+      font-size: 1rem;
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* Responsive */
+    @media screen and (max-width: 991px) {
+      .slider-titles_heading {
+        font-size: 3.1rem;
+      }
+
+      .slider-thumbs_component {
+        width: 100%;
+      }
+
+      .slider-thumbs_wrapper {
+        width: 25%;
+      }
+
+      .swiper-slide.is-slider-titles {
+        padding: 5rem 1.5rem;
+      }
+    }
+
+    @media screen and (max-width: 767px) {
+      .slider-titles_heading {
+        font-size: 2.4rem;
+      }
+
+      .slider-titles_heading.is-p {
+        font-size: 0.9rem;
+      }
+
+      .slider-gallery_bottom-wrapper {
+        padding-left: 5%;
+        padding-right: 5%;
+        flex-direction: column-reverse;
+        gap: 1.5rem;
+      }
+
+      .slider-thumbs_component {
+        width: 100%;
+      }
+
+      .slider-gallery_button-wrapper {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    @media screen and (max-width: 479px) {
+      .slider-titles_heading {
+        font-size: 1.8rem;
+      }
+
+      .swiper-slide.is-slider-titles {
+        padding: 4rem 1rem;
+      }
+    }
+
+    /* ==================== Brand Color Overrides ==================== */
+    /* Accent color: Gold #D4A574 instead of green */
+    .slider-gallery_button:hover {
+      background-color: #D4A574;
+      color: #1A3A52;
+    }
+
+    .swiper-slide.is-slider-titles.swiper-slide-active .slider-titles_heading {
+      color: #fff;
+    }
+
+    /* Page header for experiences */
+    .experiences-header {
+      background: #1A3A52;
+      padding: 2rem 3%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      z-index: 100;
+    }
+
+    .experiences-header .back-link {
+      color: #fff;
+      font-size: 0.9rem;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      opacity: 0.8;
+      transition: opacity 0.2s;
+    }
+
+    .experiences-header .back-link:hover {
+      opacity: 1;
+    }
+
+    .experiences-header .page-title {
+      color: #fff;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .experiences-header .cta-button {
+      background: #D4A574;
+      color: #1A3A52;
+      padding: 0.6rem 1.2rem;
+      border-radius: 100vh;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .experiences-header .cta-button:hover {
+      background: #fff;
+    }
+  </style>
+
+  <!-- Webflow animations init -->
+  <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
+</head>
+<body>
+
+  <!-- Page Header -->
+  <header class="experiences-header">
+    <a href="index.html" class="back-link">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M19 12H5M12 19l-7-7 7-7"/>
+      </svg>
+      Back to Home
+    </a>
+    <h1 class="page-title">Syrian Heritage Experiences</h1>
+    <a href="trip-registration.html" class="cta-button">Book Now</a>
+  </header>
+
+  <!-- Experiences Slider Section (ported from imaaicha morocco-experiences) -->
+  <section class="section is-slider-gallery">
+    <div class="slider-gallery_component">
+
+      <!-- Background Slider -->
+      <div class="slider-bg_component">
+        <div class="swiper is-slider-bg">
+          <div role="list" class="swiper-wrapper is-slider-bg">
+            <!-- Slide 1: Saffron Harvest -->
+            <div role="listitem" class="swiper-slide is-slider-bg">
+              <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=1600&q=80" alt="Saffron Harvest" class="slider-bg_img"/>
+            </div>
+            <!-- Slide 2: Ancient Damascus -->
+            <div role="listitem" class="swiper-slide is-slider-bg">
+              <img src="https://images.unsplash.com/photo-1579606032821-4e6161c81571?w=1600&q=80" alt="Ancient Damascus" class="slider-bg_img"/>
+            </div>
+            <!-- Slide 3: Culinary Heritage -->
+            <div role="listitem" class="swiper-slide is-slider-bg">
+              <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1600&q=80" alt="Syrian Cuisine" class="slider-bg_img"/>
+            </div>
+            <!-- Slide 4: Sacred Sites -->
+            <div role="listitem" class="swiper-slide is-slider-bg">
+              <img src="https://images.unsplash.com/photo-1548013146-72479768bada?w=1600&q=80" alt="Sacred Sites" class="slider-bg_img"/>
+            </div>
+            <!-- Slide 5: Artisan Workshops -->
+            <div role="listitem" class="swiper-slide is-slider-bg">
+              <img src="https://images.unsplash.com/photo-1509099381441-ea3c0cf98b94?w=1600&q=80" alt="Artisan Workshops" class="slider-bg_img"/>
+            </div>
+            <!-- Slide 6: Architectural Wonders -->
+            <div role="listitem" class="swiper-slide is-slider-bg">
+              <img src="https://images.unsplash.com/photo-1568322445389-f64ac2515020?w=1600&q=80" alt="Architecture" class="slider-bg_img"/>
+            </div>
+            <!-- Slide 7: Desert Adventures -->
+            <div role="listitem" class="swiper-slide is-slider-bg">
+              <img src="https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=1600&q=80" alt="Desert" class="slider-bg_img"/>
+            </div>
+            <!-- Slide 8: Cultural Journeys -->
+            <div role="listitem" class="swiper-slide is-slider-bg">
+              <img src="https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=1600&q=80" alt="Cultural Journey" class="slider-bg_img"/>
+            </div>
+            <!-- Slide 9: Jewish Heritage -->
+            <div role="listitem" class="swiper-slide is-slider-bg">
+              <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=1600&q=80" alt="Jewish Heritage" class="slider-bg_img"/>
+            </div>
+            <!-- Slide 10: Photography Tours -->
+            <div role="listitem" class="swiper-slide is-slider-bg">
+              <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=1600&q=80" alt="Photography" class="slider-bg_img"/>
+            </div>
+            <!-- Slide 11: Wellness Retreats -->
+            <div role="listitem" class="swiper-slide is-slider-bg">
+              <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1600&q=80" alt="Wellness" class="slider-bg_img"/>
+            </div>
+            <!-- Slide 12: Go Local -->
+            <div role="listitem" class="swiper-slide is-slider-bg">
+              <img src="https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?w=1600&q=80" alt="Local Experience" class="slider-bg_img"/>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Titles Slider -->
+      <div class="slider-titles_component">
+        <div class="swiper is-slider-titles">
+          <div role="list" class="swiper-wrapper is-slider-titles">
+
+            <!-- Slide 1: Saffron Harvest Experience -->
+            <div role="listitem" class="swiper-slide is-slider-titles">
+              <h2 class="slider-titles_heading">Saffron Harvest Experience</h2>
+              <p class="slider-titles_heading is-p">Every autumn, Syria's most delicate treasure comes to life. Experience an intimate, seasonal journey that connects you to nature, tradition, and the rhythm of rural life. Walk through the fields at dawn and learn how each precious thread is hand-separated.</p>
+            </div>
+
+            <!-- Slide 2: Ancient Damascus Tour -->
+            <div role="listitem" class="swiper-slide is-slider-titles">
+              <h2 class="slider-titles_heading">Ancient Damascus Tour</h2>
+              <p class="slider-titles_heading is-p">Walk through the oldest continuously inhabited city in the world. Discover hidden courtyards, ancient souks, and sacred sites that have witnessed 10,000 years of human civilization. Every stone tells a story.</p>
+            </div>
+
+            <!-- Slide 3: Culinary Heritage -->
+            <div role="listitem" class="swiper-slide is-slider-titles">
+              <h2 class="slider-titles_heading">Culinary Adventures</h2>
+              <p class="slider-titles_heading is-p">Taste Syria through spices, markets, and hands-on cooking classes with local families. Discover regional dishes and the stories behind them. From bread-making to slow-cooked stews, every experience is rich and flavorful.</p>
+            </div>
+
+            <!-- Slide 4: Sacred Sites -->
+            <div role="listitem" class="swiper-slide is-slider-titles">
+              <h2 class="slider-titles_heading">Sacred Sites Pilgrimage</h2>
+              <p class="slider-titles_heading is-p">Syria holds sacred sites for Christianity, Islam, and Judaism. Visit the Umayyad Mosque, the Chapel of Ananias, and ancient synagogues. A spiritual journey through millennia of faith and devotion.</p>
+            </div>
+
+            <!-- Slide 5: Artisan Workshops -->
+            <div role="listitem" class="swiper-slide is-slider-titles">
+              <h2 class="slider-titles_heading">Artisan Workshops</h2>
+              <p class="slider-titles_heading is-p">Learn ancient crafts from master artisans who preserve Syria's artistic heritage. From mosaic work to textile weaving, silver inlay to woodcarving. Create your own piece of Syrian craftsmanship to take home.</p>
+            </div>
+
+            <!-- Slide 6: Architectural Insights -->
+            <div role="listitem" class="swiper-slide is-slider-titles">
+              <h2 class="slider-titles_heading">Architectural Insights Tour</h2>
+              <p class="slider-titles_heading is-p">Syria is a masterpiece of harmony - intricate geometric patterns, carved stone, and bold geometry. Explore palaces, caravanserais, mosques, and traditional courtyard houses with expert architectural guidance.</p>
+            </div>
+
+            <!-- Slide 7: Desert Adventures -->
+            <div role="listitem" class="swiper-slide is-slider-titles">
+              <h2 class="slider-titles_heading">Desert Adventures</h2>
+              <p class="slider-titles_heading is-p">For travelers who seek movement, challenge, and pure nature. Explore the Syrian desert, ancient Palmyra, and Bedouin hospitality. Every adventure is safely guided and tailored to your comfort level.</p>
+            </div>
+
+            <!-- Slide 8: Cultural Journeys -->
+            <div role="listitem" class="swiper-slide is-slider-titles">
+              <h2 class="slider-titles_heading">Cultural Journeys</h2>
+              <p class="slider-titles_heading is-p">Follow the threads of Syria's history through palaces, gardens, and winding medinas. Expert guides bring each site to life with stories, legends, and insider knowledge. Perfect for travelers who love depth and meaningful discovery.</p>
+            </div>
+
+            <!-- Slide 9: Jewish Heritage -->
+            <div role="listitem" class="swiper-slide is-slider-titles">
+              <h2 class="slider-titles_heading">Jewish Heritage Tour</h2>
+              <p class="slider-titles_heading is-p">Explore Syria's rich Jewish history from ancient times to the modern era. Visit historic synagogues in Damascus, the Jewish Quarter, and sites connected to biblical history. A meaningful journey of connection and remembrance.</p>
+            </div>
+
+            <!-- Slide 10: Photography Tours -->
+            <div role="listitem" class="swiper-slide is-slider-titles">
+              <h2 class="slider-titles_heading">Photography Tours</h2>
+              <p class="slider-titles_heading is-p">Syria's light, colors, textures, and contrasts make it a paradise for photographers. From ancient ruins to vibrant markets, every corner offers a new story to capture. Perfect for hobbyists and professionals alike.</p>
+            </div>
+
+            <!-- Slide 11: Wellness Retreats -->
+            <div role="listitem" class="swiper-slide is-slider-titles">
+              <h2 class="slider-titles_heading">Wellness &amp; Yoga Retreats</h2>
+              <p class="slider-titles_heading is-p">Reset your mind and body in landscapes made for serenity. Practice yoga at sunrise overlooking ancient sites or meditate in peaceful courtyards. Enjoy nourishing meals and gentle immersion in Syrian hospitality.</p>
+            </div>
+
+            <!-- Slide 12: Go Local -->
+            <div role="listitem" class="swiper-slide is-slider-titles">
+              <h2 class="slider-titles_heading">Go Local</h2>
+              <p class="slider-titles_heading is-p">Step into daily Syrian life with experiences that feel intimate and real. Share homemade meals with families, learn ancient crafts, and explore weekly markets. A true immersion into the Syria locals love.</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Controls -->
+      <div class="slider-gallery_bottom-wrapper">
+        <!-- Thumbnail Slider -->
+        <div class="slider-thumbs_component">
+          <div class="slider-thumbs_overflow">
+            <div class="swiper is-slider-thumbs">
+              <div role="list" class="swiper-wrapper is-slider-thumbs">
+                <!-- Thumb 1 -->
+                <div role="listitem" class="swiper-slide is-slider-thumbs">
+                  <div class="slider-thumbs_wrapper">
+                    <div class="slider-thumbs_height">
+                      <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=400&q=80" alt="Saffron Harvest" class="slider-thumbs_img"/>
+                    </div>
+                  </div>
+                </div>
+                <!-- Thumb 2 -->
+                <div role="listitem" class="swiper-slide is-slider-thumbs">
+                  <div class="slider-thumbs_wrapper">
+                    <div class="slider-thumbs_height">
+                      <img src="https://images.unsplash.com/photo-1579606032821-4e6161c81571?w=400&q=80" alt="Ancient Damascus" class="slider-thumbs_img"/>
+                    </div>
+                  </div>
+                </div>
+                <!-- Thumb 3 -->
+                <div role="listitem" class="swiper-slide is-slider-thumbs">
+                  <div class="slider-thumbs_wrapper">
+                    <div class="slider-thumbs_height">
+                      <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&q=80" alt="Syrian Cuisine" class="slider-thumbs_img"/>
+                    </div>
+                  </div>
+                </div>
+                <!-- Thumb 4 -->
+                <div role="listitem" class="swiper-slide is-slider-thumbs">
+                  <div class="slider-thumbs_wrapper">
+                    <div class="slider-thumbs_height">
+                      <img src="https://images.unsplash.com/photo-1548013146-72479768bada?w=400&q=80" alt="Sacred Sites" class="slider-thumbs_img"/>
+                    </div>
+                  </div>
+                </div>
+                <!-- Thumb 5 -->
+                <div role="listitem" class="swiper-slide is-slider-thumbs">
+                  <div class="slider-thumbs_wrapper">
+                    <div class="slider-thumbs_height">
+                      <img src="https://images.unsplash.com/photo-1509099381441-ea3c0cf98b94?w=400&q=80" alt="Artisan Workshops" class="slider-thumbs_img"/>
+                    </div>
+                  </div>
+                </div>
+                <!-- Thumb 6 -->
+                <div role="listitem" class="swiper-slide is-slider-thumbs">
+                  <div class="slider-thumbs_wrapper">
+                    <div class="slider-thumbs_height">
+                      <img src="https://images.unsplash.com/photo-1568322445389-f64ac2515020?w=400&q=80" alt="Architecture" class="slider-thumbs_img"/>
+                    </div>
+                  </div>
+                </div>
+                <!-- Thumb 7 -->
+                <div role="listitem" class="swiper-slide is-slider-thumbs">
+                  <div class="slider-thumbs_wrapper">
+                    <div class="slider-thumbs_height">
+                      <img src="https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=400&q=80" alt="Desert" class="slider-thumbs_img"/>
+                    </div>
+                  </div>
+                </div>
+                <!-- Thumb 8 -->
+                <div role="listitem" class="swiper-slide is-slider-thumbs">
+                  <div class="slider-thumbs_wrapper">
+                    <div class="slider-thumbs_height">
+                      <img src="https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=400&q=80" alt="Cultural Journey" class="slider-thumbs_img"/>
+                    </div>
+                  </div>
+                </div>
+                <!-- Thumb 9 -->
+                <div role="listitem" class="swiper-slide is-slider-thumbs">
+                  <div class="slider-thumbs_wrapper">
+                    <div class="slider-thumbs_height">
+                      <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&q=80" alt="Jewish Heritage" class="slider-thumbs_img"/>
+                    </div>
+                  </div>
+                </div>
+                <!-- Thumb 10 -->
+                <div role="listitem" class="swiper-slide is-slider-thumbs">
+                  <div class="slider-thumbs_wrapper">
+                    <div class="slider-thumbs_height">
+                      <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=400&q=80" alt="Photography" class="slider-thumbs_img"/>
+                    </div>
+                  </div>
+                </div>
+                <!-- Thumb 11 -->
+                <div role="listitem" class="swiper-slide is-slider-thumbs">
+                  <div class="slider-thumbs_wrapper">
+                    <div class="slider-thumbs_height">
+                      <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=400&q=80" alt="Wellness" class="slider-thumbs_img"/>
+                    </div>
+                  </div>
+                </div>
+                <!-- Thumb 12 -->
+                <div role="listitem" class="swiper-slide is-slider-thumbs">
+                  <div class="slider-thumbs_wrapper">
+                    <div class="slider-thumbs_height">
+                      <img src="https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?w=400&q=80" alt="Local Experience" class="slider-thumbs_img"/>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Navigation & Pagination -->
+        <div class="div-block-38">
+          <div class="slider-gallery_numbers">
+            <span class="swiper-number-current">01</span> — <span class="swiper-number-total">12</span>
+          </div>
+          <div class="slider-gallery_button-wrapper">
+            <button class="slider-gallery_button swiper-prev" aria-label="Previous slide">
+              <div class="slider-gallery_button-icon is-reversed">
+                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 29.541 22.323">
+                  <g transform="translate(0 1.014)">
+                    <path d="M115.445,20.633l9.311-10.148L115.445.338" transform="translate(-97.25 -0.338)" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="3"/>
+                    <line x1="27.506" transform="translate(0 10.148)" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="3"/>
+                  </g>
+                </svg>
+              </div>
+            </button>
+            <button class="slider-gallery_button swiper-next" aria-label="Next slide">
+              <div class="slider-gallery_button-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 29.541 22.323">
+                  <g transform="translate(0 1.014)">
+                    <path d="M115.445,20.633l9.311-10.148L115.445.338" transform="translate(-97.25 -0.338)" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="3"/>
+                    <line x1="27.506" transform="translate(0 10.148)" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="3"/>
+                  </g>
+                </svg>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    // Helper function for zero-padded numbers
+    function numberWithZero(num) {
+      return num < 10 ? '0' + num : String(num);
+    }
+
+    // Initialize Experiences Gallery Slider (imaaicha structure)
+    document.addEventListener('DOMContentLoaded', function() {
+      const sliderComponent = document.querySelector('.slider-gallery_component');
+      if (!sliderComponent) return;
+
+      // Get total slides and update display
+      const totalSlides = document.querySelectorAll('.swiper-slide.is-slider-thumbs').length;
+      const totalDisplay = document.querySelector('.swiper-number-total');
+      const currentDisplay = document.querySelector('.swiper-number-current');
+
+      if (totalDisplay) {
+        totalDisplay.textContent = numberWithZero(totalSlides);
+      }
+
+      // Initialize Background Slider (fullscreen images)
+      const bgSwiper = new Swiper('.swiper.is-slider-bg', {
+        speed: 600,
+        loop: false,
+        allowTouchMove: false,
+        effect: 'fade',
+        fadeEffect: {
+          crossFade: true
+        }
+      });
+
+      // Initialize Thumbs Slider (bottom thumbnails)
+      const thumbsSwiper = new Swiper('.swiper.is-slider-thumbs', {
+        speed: 400,
+        loop: false,
+        slidesPerView: 3,
+        spaceBetween: 8,
+        breakpoints: {
+          768: {
+            slidesPerView: 4,
+            spaceBetween: 10
+          },
+          1024: {
+            slidesPerView: 5,
+            spaceBetween: 12
+          }
+        }
+      });
+
+      // Initialize Text/Titles Slider
+      const textSwiper = new Swiper('.swiper.is-slider-titles', {
+        speed: 500,
+        loop: false,
+        effect: 'fade',
+        fadeEffect: {
+          crossFade: true
+        },
+        thumbs: {
+          swiper: thumbsSwiper
+        },
+        navigation: {
+          nextEl: '.swiper-next',
+          prevEl: '.swiper-prev'
+        }
+      });
+
+      // Sync controllers
+      textSwiper.controller.control = [bgSwiper, thumbsSwiper];
+      thumbsSwiper.controller.control = textSwiper;
+
+      // Update slide number on change
+      textSwiper.on('slideChange', function(e) {
+        const slideNumber = numberWithZero(e.activeIndex + 1);
+        if (currentDisplay) {
+          currentDisplay.textContent = slideNumber;
+        }
+      });
+
+      // Make thumbnails clickable
+      const thumbSlides = document.querySelectorAll('.swiper-slide.is-slider-thumbs');
+      thumbSlides.forEach((thumb, index) => {
+        thumb.addEventListener('click', () => {
+          textSwiper.slideTo(index);
+        });
+      });
+    });
+  </script>
+</body>
+</html>

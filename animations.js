@@ -351,7 +351,7 @@ function initHorizontalTimeline() {
 
 /**
  * Fullscreen Hero - Header scroll behavior & Depth Masking Parallax
- * Creates 3D depth effect where text slides behind the castle foreground
+ * Creates 3D depth effect where text slides behind the mountain/castle foreground (imaaicha style)
  * Nav becomes sticky when scrolled past hero
  */
 function initFullscreenHeroScroll() {
@@ -360,20 +360,18 @@ function initFullscreenHeroScroll() {
     // Only run if page has fullscreen hero
     if (!body.classList.contains('has-fullscreen-hero')) return;
 
-    const heroSection = document.querySelector('.hero-fullscreen');
-    const heroNav = document.querySelector('.hero-fullscreen-nav');
-    const heroContent = document.querySelector('.hero-depth-content');
-    const heroForeground = document.querySelector('.hero-depth-foreground');
-    const titleSyria = document.querySelector('.title-syria');
-    const titleYourWay = document.querySelector('.title-yourway');
-    const isDepthHero = heroSection && heroSection.classList.contains('hero-depth');
+    // imaaicha structure selectors
+    const heroSection = document.querySelector('.home-hero');
+    const homeParallax = document.querySelector('.home-parallax');
+    const displayText = document.querySelector('.display');
+    const parallaxForeground = document.querySelector('.parallax-layer.is-1');
 
     if (!heroSection) return;
 
     // Check for reduced motion preference
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    // Scroll handler with depth parallax
+    // Scroll handler with depth parallax (imaaicha style)
     function handleScroll() {
         const heroHeight = heroSection.offsetHeight;
         const scrollY = window.scrollY || window.pageYOffset;
@@ -385,40 +383,25 @@ function initFullscreenHeroScroll() {
             body.classList.remove('scrolled');
         }
 
-        // Depth masking parallax effect
+        // Webflow-style parallax effect
         if (!prefersReducedMotion && scrollY < heroHeight) {
+            const progress = scrollY / heroHeight;
 
-            if (isDepthHero && heroContent) {
-                // Container moves down
-                const containerSpeed = 1.2;
-                const containerOffset = scrollY * containerSpeed;
-                heroContent.style.transform = `translateY(${containerOffset}px)`;
-
-                // SYRIA text - moves FAST downward (falls behind castle quickly)
-                if (titleSyria) {
-                    const syriaSpeed = 2.0; // Fast fall
-                    const syriaOffset = -20 + (scrollY * syriaSpeed); // Start -20px up, move down fast
-                    const syriaOpacity = 1 - (scrollY / (heroHeight * 0.3));
-                    titleSyria.style.transform = `translateY(${syriaOffset}px)`;
-                    titleSyria.style.opacity = Math.max(0, syriaOpacity);
-                }
-
-                // YOUR WAY text - preserves existing behavior, just offset start position
-                if (titleYourWay) {
-                    const yourwaySpeed = 1.5;
-                    const yourwayOffset = 10 + (scrollY * yourwaySpeed); // Start +10px down
-                    const yourwayOpacity = 1 - (scrollY / (heroHeight * 0.35));
-                    titleYourWay.style.transform = `translateY(${yourwayOffset}px)`;
-                    titleYourWay.style.opacity = Math.max(0, yourwayOpacity);
-                }
-
-                // Foreground stays almost stationary
-                if (heroForeground) {
-                    const fgSpeed = 0.05;
-                    heroForeground.style.transform = `translateY(${scrollY * fgSpeed}px)`;
-                }
+            // The whole parallax container moves up as user scrolls
+            if (homeParallax) {
+                homeParallax.style.transform = `translate3d(0px, ${scrollY * 0.5}px, 0px)`;
             }
 
+            // Text moves DOWN faster (sinks behind mountains)
+            if (displayText) {
+                const textMove = scrollY * 0.7;
+                displayText.style.transform = `translate3d(0px, ${textMove}px, 0px)`;
+            }
+
+            // Foreground stays more stable (moves slowest)
+            if (parallaxForeground) {
+                parallaxForeground.style.transform = `translate3d(0px, ${scrollY * 0.1}px, 0px)`;
+            }
         }
     }
 

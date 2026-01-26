@@ -13,14 +13,15 @@
   
   <!-- Styles -->
   <link rel="stylesheet" href="styles.css"/>
+  <link href="https://cdn.prod.website-files.com/657b5d5bf6c3e07bb4b09757/css/ima-aicha.webflow.shared.5926db06a.min.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
   <!-- Navigation (imaaicha structure) -->
   <div class="nav-header">
-    <div class="contact-overlay">
+    <div id="contact-overlay" class="contact-overlay">
       <div class="contact-options">
         <div class="text-block-15">Get in touch</div>
-        <img src="https://cdn.prod.website-files.com/657b5d5bf6c3e07bb4b09757/65e2376ca1b031ac2d5e8ac4_pluss.svg" loading="lazy" alt="" class="close-overlay"/>
+        <img id="close-overlay" src="https://cdn.prod.website-files.com/657b5d5bf6c3e07bb4b09757/65e2376ca1b031ac2d5e8ac4_pluss.svg" loading="lazy" alt="" class="close-overlay"/>
       </div>
       <div class="bottom-contanct">
         <div class="contact-container">
@@ -66,7 +67,7 @@
           <img src="https://cdn.prod.website-files.com/657b5d5bf6c3e07bb4b09757/65e20460654b96e4fa1c544a_arrow.svg" loading="lazy" alt="" class="nav-arrow"/>
           <div class="nav-link-text">About</div>
         </a>
-        <a href="#" class="nav-item-link is-contact w-inline-block">
+        <a id="nav-contact-trigger" href="#" class="nav-item-link is-contact w-inline-block">
           <img src="https://cdn.prod.website-files.com/657b5d5bf6c3e07bb4b09757/65e20460654b96e4fa1c544a_arrow.svg" loading="lazy" alt="" class="nav-arrow"/>
           <div class="nav-link-text">Contact</div>
         </a>

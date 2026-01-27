@@ -13,7 +13,41 @@
   
   <!-- Styles -->
   <link rel="stylesheet" href="styles.css"/>
-  
+
+  <!-- GSAP Animation Styles -->
+  <style>
+    /* Ensure smooth initial load - prevent flash of unstyled content */
+    .hero-title, .hero-description {
+      will-change: transform, opacity;
+    }
+
+    .hero-word {
+      perspective: 1000px;
+    }
+
+    .benefits_card_wrap {
+      will-change: clip-path, opacity, transform;
+    }
+
+    .image-card img {
+      will-change: clip-path, transform;
+    }
+
+    /* Paper texture overlay - subtle premium feel */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.025;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    }
+  </style>
+
   <style>
     .tour-features {
       list-style: none;
@@ -87,7 +121,7 @@
           <div class="benefits_layout is-travel-plans">
             <!-- Card 1: Ancient Damascus Heritage -->
             <div class="benefits_card_wrap is-travel" style="background-image: url('assets/images/The ark at the Fr.png');">
-              <a href="contact.html" class="benefits_link" title="Book Ancient Damascus Heritage Tour"></a>
+              <a href="trip-registration.html" class="benefits_link" title="Book Ancient Damascus Heritage Tour"></a>
               <div class="benefits_card_content is-travel">
                 <div class="benefits_card_header is-travel">
                   <p class="benefits_card_title is-travel-p">10 Days</p>
@@ -101,7 +135,7 @@
 
             <!-- Card 2: Aleppo Citadel & Souks -->
             <div class="benefits_card_wrap is-travel" style="background-image: url('assets/images/An Alley in the Jewis.png');">
-              <a href="contact.html" class="benefits_link" title="Book Aleppo Citadel & Souks Tour"></a>
+              <a href="trip-registration.html" class="benefits_link" title="Book Aleppo Citadel & Souks Tour"></a>
               <div class="benefits_card_content is-travel">
                 <div class="benefits_card_header is-travel">
                   <p class="benefits_card_title is-travel-p">8 Days</p>
@@ -115,7 +149,7 @@
 
             <!-- Card 3: Palmyra Desert Expedition -->
             <div class="benefits_card_wrap is-travel" style="background-image: url('assets/images/Records inclu.png');">
-              <a href="contact.html" class="benefits_link" title="Book Palmyra Desert Expedition Tour"></a>
+              <a href="trip-registration.html" class="benefits_link" title="Book Palmyra Desert Expedition Tour"></a>
               <div class="benefits_card_content is-travel">
                 <div class="benefits_card_header is-travel">
                   <p class="benefits_card_title is-travel-p">5 Days</p>
@@ -301,7 +335,8 @@
             Contact us today to start planning your unforgettable journey.
           </p>
           <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
-            <a href="https://wa.me/963993858064" target="_blank" rel="noopener" class="btn btn-primary btn-lg">WhatsApp Us</a>
+            <a href="trip-registration.html" class="btn btn-primary btn-lg">Register for Trip</a>
+            <a href="https://wa.me/963993858064" target="_blank" rel="noopener" class="btn btn-secondary btn-lg">WhatsApp Us</a>
             <a href="contact.html" class="btn btn-secondary btn-lg">Email Us</a>
           </div>
         </div>
@@ -330,6 +365,15 @@
   </footer>
   
   <!-- Scripts -->
+  <!-- GSAP Core -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <!-- GSAP ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+  <!-- Premium GSAP Animations -->
+  <script src="gsap-animations.js"></script>
+  <!-- Fallback basic animations -->
   <script src="animations.js"></script>
 </body>
 </html>

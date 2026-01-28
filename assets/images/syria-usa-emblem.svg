@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" width="60" height="60">
+  <!-- Syria-USA Unity - Infinity Bridge -->
+
+  <!-- Filters for Gaussian blur reveal -->
+  <defs>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Shadow layer (for 3D depth) -->
+  <g class="emblem-shadow" opacity="0.1" transform="translate(2, 2)">
+    <path
+      d="M15,30 C15,20 25,15 30,25 C35,35 45,30 45,30 C55,30 55,40 45,40 C35,40 35,35 30,35 C25,35 15,40 15,30 Z"
+      fill="none"
+      stroke="#1A3A52"
+      stroke-width="3"
+      stroke-linecap="round"
+      vector-effect="non-scaling-stroke"
+    />
+  </g>
+
+  <!-- Infinity symbol made of two connecting loops -->
+  <path
+    class="infinity-path"
+    d="M15,30 C15,20 25,15 30,25 C35,35 45,30 45,30 C55,30 55,40 45,40 C35,40 35,35 30,35 C25,35 15,40 15,30 Z"
+    fill="none"
+    stroke="#1A3A52"
+    stroke-width="3"
+    stroke-linecap="round"
+    vector-effect="non-scaling-stroke"
+  />
+
+  <!-- Left loop fill - Syria (circle) -->
+  <circle class="syria-symbol" cx="20" cy="30" r="4" fill="#D4A574"/>
+
+  <!-- Right loop fill - USA (5-point star) -->
+  <polygon
+    class="usa-symbol"
+    points="45,26 46.5,29.5 50,30 47,32.5 48,36 45,34 42,36 43,32.5 40,30 43.5,29.5"
+    fill="#D4A574"
+  />
+
+  <!-- Center connection point - unity -->
+  <circle class="unity-point" cx="30" cy="30" r="2.5" fill="#1A3A52"/>
+</svg>

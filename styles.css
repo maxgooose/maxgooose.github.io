@@ -2541,17 +2541,20 @@ To use the vertical timeline again:
 .logo {
     color: var(--color-white);
     mix-blend-mode: normal;
-    width: 7.5em;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
     padding-top: 2.4em;
     position: absolute;
     inset: 0% 0% auto;
+    display: flex;
+    justify-content: center;
 }
 
 .logo img {
-    height: 55px;
-    width: auto;
+    height: 100px !important;
+    width: auto !important;
+    max-height: none !important;
 }
 
 .display {

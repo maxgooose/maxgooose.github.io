@@ -157,21 +157,25 @@ body {
 
 /* 13. Submit button */
 .button_main_wrap {
-  background-color: #1A3A52 !important;
-  border-color: #D4A574 !important;
+  background-color: var(--green) !important;
+  color: var(--whitee) !important;
+  border-color: #c6fb50 !important;
+  border-radius: 100vw !important;
 }
 .button_main_wrap:hover {
-  background-color: #0F2538 !important;
+  background-color: black !important;
+  color: #fff !important;
 }
 
 /* 14. Back/Next nav buttons */
 .button_main_wrap.is-nav {
-  background-color: #E8DDD3 !important;
-  color: #1A3A52 !important;
+  background-color: var(--light-green) !important;
+  color: var(--green) !important;
 }
 .button_main_wrap.is-nav:hover {
-  background-color: #1A3A52 !important;
-  color: #fff !important;
+  background-color: var(--green) !important;
+  color: var(--whitee) !important;
+  border-color: transparent !important;
 }
 
 /* 15. Success message */
@@ -244,10 +248,10 @@ html.lenis {
 
     <!-- Navigation Header -->
     <div bind="4ca375cd-d92e-94c5-dd93-80faadb53a1b" class="nav-header">
-      <div class="contact-overlay">
+      <div id="contact-overlay" class="contact-overlay">
         <div class="contact-options">
           <div class="text-block-15">Get in touch</div>
-          <img src="https://cdn.prod.website-files.com/657b5d5bf6c3e07bb4b09757/65e2376ca1b031ac2d5e8ac4_pluss.svg" loading="lazy" alt="" class="close-overlay"/>
+          <img id="close-overlay" src="https://cdn.prod.website-files.com/657b5d5bf6c3e07bb4b09757/65e2376ca1b031ac2d5e8ac4_pluss.svg" loading="lazy" alt="" class="close-overlay"/>
         </div>
         <div class="bottom-contanct">
           <div class="contact-container">
@@ -287,13 +291,13 @@ html.lenis {
           </a>
           <a data-w-id="e72677fd-cec2-a074-aba0-b4ef6c6c865e" href="media.html" class="nav-item-link w-inline-block">
             <img src="https://cdn.prod.website-files.com/657b5d5bf6c3e07bb4b09757/65e20460654b96e4fa1c544a_arrow.svg" loading="lazy" alt="" class="nav-arrow"/>
-            <div class="nav-link-text">Get Inspired</div>
+            <div class="nav-link-text">The Syrian Mosaic</div>
           </a>
           <a data-w-id="4ca375cd-d92e-94c5-dd93-80faadb53a21" href="team.html" class="nav-item-link w-inline-block">
             <img src="https://cdn.prod.website-files.com/657b5d5bf6c3e07bb4b09757/65e20460654b96e4fa1c544a_arrow.svg" loading="lazy" alt="" class="nav-arrow"/>
             <div class="nav-link-text">About</div>
           </a>
-          <a data-w-id="4ca375cd-d92e-94c5-dd93-80faadb53a29" href="#" class="nav-item-link is-contact w-inline-block">
+          <a id="nav-contact-trigger" data-w-id="4ca375cd-d92e-94c5-dd93-80faadb53a29" href="#" class="nav-item-link is-contact w-inline-block">
             <img src="https://cdn.prod.website-files.com/657b5d5bf6c3e07bb4b09757/65e20460654b96e4fa1c544a_arrow.svg" loading="lazy" alt="" class="nav-arrow"/>
             <div class="nav-link-text">Contact</div>
           </a>

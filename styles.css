@@ -129,13 +129,14 @@ p {
     line-height: 1.6;
 }
 
-a {
+/* Exclude .nav-item-link so navbar uses Webflow CSS (green theme like media.html) */
+a:not(.nav-item-link) {
     color: var(--color-navy);
     text-decoration: none;
     transition: color var(--transition-normal);
 }
 
-a:hover {
+a:not(.nav-item-link):hover {
     color: var(--color-gold);
 }
 
@@ -2433,33 +2434,7 @@ To use the vertical timeline again:
     height: 0;
 }
 
-/* Navigation Link CTA */
-.nav-item-link {
-    color: var(--green);
-    text-align: center;
-    white-space: nowrap;
-    word-break: normal;
-    flex-flow: row;
-    justify-content: center;
-    align-items: center;
-    padding: 0.7em;
-    font-size: 1em;
-    text-decoration: none;
-    display: flex;
-}
-
-.nav-item-link.is-home-cta {
-    background-color: var(--khdyr);
-    color: var(--whitee);
-    border-radius: 100vh;
-    margin: 0.6rem 0 0;
-    padding: 0.7rem 0.9rem;
-    font-size: 0.9em;
-}
-
-.nav-item-link.is-home-cta:hover {
-    background-color: var(--green);
-}
+/* Navigation Link CTA - styles handled by Webflow CSS */
 
 /* Container Query: Desktop Hover Effects */
 @container (width > 55em) {
@@ -2583,104 +2558,28 @@ To use the vertical timeline again:
     padding-bottom: 1.5em;
 }
 
-.navbar {
-    z-index: 40;
-    pointer-events: auto;
-    background-color: #fff;
-    border-radius: 3.9em;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    box-shadow: 0 1px 17px -3px rgba(26, 58, 82, 0.16);
+/* Navbar: FORCED green theme (match media.html) */
+.nav-header .nav-item-link {
+    color: #284641 !important;
+    text-decoration: none !important;
 }
-
-.menu-container {
-    display: flex;
+.nav-header .nav-item-link:hover {
+    color: #46c75b !important;
 }
-
-.nav-item-link {
-    color: var(--color-navy);
-    text-align: center;
-    white-space: nowrap;
-    word-break: normal;
-    flex-flow: row;
-    justify-content: center;
-    align-items: center;
-    padding: 0.5em 0.7em;
-    font-size: 0.93rem;
-    font-weight: 300;
-    text-decoration: none;
-    display: flex;
-    transition: color 0.2s ease;
+.nav-header .nav-item-link.w--current {
+    color: #284641 !important;
+    text-decoration: underline !important;
+    text-decoration-color: #46c75b !important;
+    text-underline-offset: 0.25rem !important;
+    font-weight: 800 !important;
 }
-
-.nav-item-link:hover {
-    color: var(--color-gold);
+.nav-header .nav-item-link.is--button {
+    background-color: #46c75b !important;
+    color: #fff !important;
 }
-
-.nav-item-link.w--current {
-    color: var(--color-navy);
-    text-underline-offset: 0.25rem;
-    font-weight: 800;
-    text-decoration: underline var(--color-gold);
-    text-decoration-thickness: 0.1875rem;
-}
-
-.nav-item-link.is--first {
-    padding-left: 1.5em;
-}
-
-.nav-item-link.is--button {
-    background-color: var(--khdyr);
-    color: var(--whitee);
-    border-radius: 100vh;
-    margin: 0.375rem;
-    padding: 0.6em 0.9em;
-    font-size: 0.9em;
-}
-
-.nav-item-link.is--button:hover {
-    background-color: var(--green);
-}
-
-.nav-item-link.is--button.w--current {
-    background-color: var(--khdyr);
-    text-decoration: none;
-}
-
-.nav-item-link.is--button.w--current:hover {
-    background-color: var(--green);
-}
-
-.nav-item-link.is-home-cta {
-    background-color: var(--khdyr);
-    color: var(--whitee);
-    border-radius: 100vh;
-    margin: 0.6rem 0 0;
-    padding: 0.7rem 0.9rem;
-    font-size: 0.9em;
-}
-
-.nav-item-link.is-home-cta:hover {
-    background-color: var(--green);
-}
-
-.nav-item-link.is-home-cta.w--current {
-    background-color: var(--khdyr);
-    text-decoration: none;
-}
-
-.nav-item-link.is-home-cta.w--current:hover {
-    background-color: var(--green);
-}
-
-.nav-arrow {
-    display: none;
-}
-
-.nav-link-text {
-    font-size: 0.93rem;
-    font-weight: 300;
+.nav-header .nav-item-link.is--button:hover {
+    background-color: #284641 !important;
+    color: #fff !important;
 }
 
 /* Contact Overlay (imaaicha structure) */

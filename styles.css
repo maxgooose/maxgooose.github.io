@@ -2546,40 +2546,18 @@ To use the vertical timeline again:
     inset: 20% auto auto;
 }
 
-/* Navigation */
-.nav-header {
-    z-index: 60;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    display: flex;
-    position: fixed;
-    inset: auto 0% 0%;
-    padding-bottom: 1.5em;
-}
-
-/* Navbar: FORCED green theme (match media.html) */
-.nav-header .nav-item-link {
-    color: #284641 !important;
-    text-decoration: none !important;
-}
-.nav-header .nav-item-link:hover {
-    color: #46c75b !important;
-}
-.nav-header .nav-item-link.w--current {
-    color: #284641 !important;
-    text-decoration: underline !important;
-    text-decoration-color: #46c75b !important;
-    text-underline-offset: 0.25rem !important;
-    font-weight: 800 !important;
-}
-.nav-header .nav-item-link.is--button {
-    background-color: #46c75b !important;
-    color: #fff !important;
-}
-.nav-header .nav-item-link.is--button:hover {
-    background-color: #284641 !important;
-    color: #fff !important;
+/* Navigation — undo styles.css base resets so Webflow CSS controls the navbar */
+.nav-header,
+.nav-header * {
+    margin: revert;
+    padding: revert;
+    box-sizing: revert;
+    font-family: revert;
+    font-size: revert;
+    font-weight: revert;
+    line-height: revert;
+    color: revert;
+    text-decoration: revert;
 }
 
 /* Contact Overlay (imaaicha structure) */
@@ -2764,46 +2742,6 @@ To use the vertical timeline again:
         top: 23%;
     }
 
-    .navbar {
-        flex-flow: column;
-        grid-column-gap: 0.4em;
-        grid-row-gap: 0.4em;
-        background-color: var(--color-cream);
-        border-radius: 1.1em 1.1em 0 0;
-        grid-template-rows: auto auto;
-        grid-template-columns: repeat(6, 1fr);
-        grid-auto-columns: 1fr;
-        width: 100%;
-        height: 4em;
-        position: relative;
-        bottom: 0;
-        box-shadow: 0 0 20px 11px rgba(26, 58, 82, 0.14);
-        display: grid;
-    }
-
-    .nav-header {
-        padding-bottom: 0;
-        inset: auto 0% 0%;
-    }
-
-    .nav-item-link {
-        font-size: 0.75rem;
-        padding: 0.4em;
-    }
-
-    .nav-item-link.is--first {
-        padding-left: 0.3em;
-    }
-
-    .nav-item-link.is--button {
-        padding: 0.4em 0.6em;
-        margin: 0.25rem;
-    }
-
-    .menu-container {
-        display: contents;
-    }
-
     .logo {
         width: 7.2em;
         padding-top: 1.4em;
@@ -2816,22 +2754,6 @@ To use the vertical timeline again:
         font-size: 14vw;
         line-height: 0.9em;
         top: 25%;
-    }
-
-    .navbar {
-        grid-template-columns: repeat(3, 1fr);
-        border-top-left-radius: 0.7rem;
-        border-top-right-radius: 0.7rem;
-    }
-
-    .nav-item-link {
-        font-size: 0.7rem;
-        padding: 0.7em 0.2em;
-    }
-
-    .nav-item-link.is--button {
-        margin: 0.25rem;
-        padding: 0.5em 0.7em;
     }
 
     .logo {

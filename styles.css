@@ -3609,3 +3609,164 @@ a.footer-link {
         font-size: 0.8rem;
     }
 }
+
+/* ==================== NAV BAR FIX ==================== */
+/* The Webflow .menu-container needs flex to lay out nav items horizontally */
+.menu-container {
+    display: flex !important;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+/* Hide burger icon on desktop — we show all nav items inline */
+.burger-menu {
+    display: none !important;
+}
+
+/* Ensure nav-item-link has proper padding (Webflow reset may strip it) */
+.navbar .nav-item-link {
+    padding: 0.5em 0.7em;
+    white-space: nowrap;
+}
+
+.navbar .nav-item-link.is--first {
+    padding-left: 1.5em;
+}
+
+/* On small screens, stack nav and show burger */
+@media (max-width: 767px) {
+    .menu-container {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0;
+    }
+
+    .navbar .nav-item-link {
+        padding: 0.35em 0.5em;
+        font-size: 0.78rem;
+    }
+
+    .navbar .nav-item-link.is--first {
+        padding-left: 0.5em;
+    }
+
+    .navbar .nav-item-link.is--button {
+        padding: 0.4em 0.7em;
+        font-size: 0.72rem;
+    }
+}
+
+/* ==================== SMF HERO — INSTITUTIONAL ==================== */
+.smf-hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(160deg, #0A1628 0%, #122240 35%, #1A3A52 65%, #0F2A3F 100%);
+    overflow: hidden;
+}
+
+/* Subtle geometric pattern overlay */
+.smf-hero__pattern {
+    position: absolute;
+    inset: 0;
+    opacity: 0.04;
+    background-image: url('assets/images/syrian_pattern.png');
+    background-repeat: repeat;
+    background-size: 300px;
+    pointer-events: none;
+}
+
+/* Content block */
+.smf-hero__content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    padding: 0 2rem;
+}
+
+/* Logo */
+.smf-hero__logo {
+    width: 120px;
+    height: auto;
+    margin-bottom: 2.5rem;
+}
+
+.smf-hero__logo img {
+    width: 100%;
+    height: auto;
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
+}
+
+/* Gold divider line */
+.smf-hero__divider {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #D4A574, transparent);
+    margin-bottom: 2.5rem;
+}
+
+/* Title */
+.smf-hero__title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.8rem, 7vw, 5.5rem);
+    font-weight: 400;
+    color: #FFFFFF;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 0 0 1.5rem 0;
+    text-shadow: 0 2px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Subtitle */
+.smf-hero__subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(0.85rem, 1.5vw, 1.1rem);
+    font-weight: 300;
+    color: rgba(212, 165, 116, 0.85);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+/* Subtle radial glow behind content */
+.smf-hero__content::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(ellipse, rgba(212, 165, 116, 0.06) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .smf-hero {
+        min-height: 100svh;
+    }
+
+    .smf-hero__logo {
+        width: 90px;
+        margin-bottom: 2rem;
+    }
+
+    .smf-hero__divider {
+        margin-bottom: 2rem;
+    }
+
+    .smf-hero__title {
+        margin-bottom: 1.2rem;
+    }
+}

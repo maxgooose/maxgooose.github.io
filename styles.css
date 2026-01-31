@@ -3610,6 +3610,118 @@ a.footer-link {
     }
 }
 
+/* ==================== Partner Tagline (on cards) ==================== */
+
+.partner-tagline {
+    color: rgba(255, 255, 255, 0.85);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 300;
+    line-height: 1.4;
+    margin: 0;
+    position: relative;
+    z-index: 10;
+}
+
+/* ==================== Partner Section (below cards) ==================== */
+
+.partner-section {
+    padding: 4rem 1.5rem 3rem;
+    display: flex;
+    justify-content: center;
+}
+
+.partner-section__inner {
+    max-width: 720px;
+    text-align: center;
+}
+
+.partner-section__divider {
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #D4A574, #c4956a);
+    margin: 0 auto 2rem;
+    border-radius: 2px;
+}
+
+.partner-section__title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #fff;
+    margin: 0 0 1.25rem;
+}
+
+.partner-section__text {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.75);
+    margin: 0 0 1rem;
+}
+
+.partner-section__cta {
+    margin-top: 2.5rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(26, 58, 82, 0.3), rgba(26, 58, 82, 0.15));
+    border: 1px solid rgba(212, 165, 116, 0.25);
+    border-radius: 1rem;
+}
+
+.partner-section__cta-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0 0 1.25rem;
+    line-height: 1.6;
+}
+
+.partner-section__button {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    background-color: #1A3A52;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.partner-section__button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(26, 58, 82, 0.35);
+}
+
+/* Partner section responsive */
+@media (max-width: 768px) {
+    .partner-section {
+        padding: 3rem 1.25rem 2rem;
+    }
+
+    .partner-section__title {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .partner-tagline {
+        font-size: 0.78rem;
+    }
+
+    .partner-section {
+        padding: 2.5rem 1rem 1.5rem;
+    }
+
+    .partner-section__button {
+        padding: 0.65rem 1.5rem;
+        font-size: 0.85rem;
+    }
+}
+
 /* ==================== NAV BAR FIX ==================== */
 /* The Webflow .menu-container needs flex to lay out nav items horizontally */
 .menu-container {

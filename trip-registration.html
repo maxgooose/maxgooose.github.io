@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -56,8 +56,8 @@
         .logo-text { font-size: 15px; font-weight: 600; color: var(--color-primary); text-decoration: none; }
 
         /* --- Hero --- */
-        .hero { 
-            background: linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.8) 100%), url('assets/images/jewish people visiting synagogue in damascus but name it something nicer.jpg') center top / cover no-repeat scroll;
+        .hero {
+            background: linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.8) 100%), url('assets/images/trip-hero-mobile.jpg') center top / cover no-repeat scroll;
             padding: 60px 24px 80px; 
             text-align: center;
             color: white;
@@ -79,12 +79,22 @@
             display: block;
             margin: 0 auto 24px;
         }
-        .hero-logo.emblem {
+        /* Flag container for animation */
+        .flag-container {
             position: absolute;
             top: 20px;
             right: 20px;
-            height: 45px;
-            margin: 0;
+            height: 40px;
+            width: 60px;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+        .flag-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .hero h1 { 
@@ -283,15 +293,17 @@
             
             .hero {
                 padding: 40px 40px 50px;
+                background: linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.8) 100%), url('assets/images/trip-hero.jpg') center center / cover no-repeat scroll;
             }
             .hero-logo {
                 height: 160px;
                 margin: 0 auto 24px;
             }
-            .hero-logo.emblem {
+            .flag-container {
                 top: 20px;
                 right: 30px;
-                height: 50px;
+                height: 35px;
+                width: 52px;
             }
             .hero h1 {
                 font-size: 32px;
@@ -341,10 +353,11 @@
             .hero-logo {
                 height: 180px;
             }
-            .hero-logo.emblem {
+            .flag-container {
                 top: 25px;
                 right: 50px;
-                height: 55px;
+                height: 40px;
+                width: 60px;
             }
             .hero h1 {
                 font-size: 36px;
@@ -362,6 +375,25 @@
                 padding: 32px 28px;
             }
         }
+
+        /* GSAP Animation Styles */
+        .hero-logo, .hero h1, .hero p, .selection-header, .selection-card {
+            will-change: transform, opacity;
+        }
+
+        /* Paper texture overlay - subtle premium feel */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.02;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
     </style>
 </head>
 <body>
@@ -373,11 +405,15 @@
     </header>
 
     <section class="hero">
-        <img src="assets/images/syria-emblem.png" alt="Syria" class="hero-logo emblem" onerror="this.style.display='none'">
-            <img src="assets/images/smf-logo.png" alt="Syrian Mosaic Foundation" class="hero-logo" onerror="this.style.display='none'">
+        <!-- Syrian Flag -->
+        <div class="flag-container">
+            <img src="assets/images/syria-flag.svg" alt="Syrian Flag">
+        </div>
 
-        <h1>Register Your Interest</h1>
-        <p>Choose the type of visit that best describes your purpose.</p>
+        <img src="assets/images/smf-logo.png" alt="Syrian Mosaic Foundation" class="hero-logo" onerror="this.style.display='none'">
+
+        <h1 class="hero-title">Register Your Interest</h1>
+        <p class="hero-description">Choose the type of visit that best describes your purpose.</p>
     </section>
 
     <div class="main-container">
@@ -428,10 +464,139 @@
             </div>
 
         <footer class="footer">
-            <p>© 2025 Syrian Mosaic Foundation</p>
+            <p>© 2025 The Syrian Mosaic Foundation. All Rights Reserved.</p>
         </footer>
 
     </div>
 
+    <!-- GSAP Core -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <!-- Lenis Smooth Scroll -->
+    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+
+    <script>
+        /**
+         * Syrian Mosaic Foundation - Artisanal Motion
+         * Premium GSAP animations with "fluid gold" aesthetic
+         */
+
+        // Initialize Lenis smooth scrolling
+        const lenis = new Lenis({
+            duration: 1.6,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            smoothWheel: true,
+            wheelMultiplier: 0.7,
+        });
+
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+
+        // Check for reduced motion preference
+        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+
+            // ========== INITIAL STATES ==========
+            gsap.set('.hero-logo', { opacity: 0, scale: 0.9, y: 30 });
+            gsap.set('.hero-title', { opacity: 0, y: 50 });
+            gsap.set('.hero-description', { opacity: 0, y: 35 });
+            gsap.set('.selection-header', { opacity: 0, y: 30 });
+            gsap.set('.selection-card', { opacity: 0, y: 50, scale: 0.95 });
+            gsap.set('.flag-container', { opacity: 0, scale: 0.8, y: -10 });
+
+            // ========== MASTER TIMELINE ==========
+            const masterTl = gsap.timeline({
+                defaults: { ease: 'expo.inOut' }
+            });
+
+            // ========== FLAG ANIMATION ==========
+
+            // Fade in flag
+            masterTl.to('.flag-container', {
+                opacity: 1,
+                scale: 1,
+                y: 0,
+                duration: 1,
+                ease: 'power2.out'
+            }, 0.2);
+
+            // ========== PAGE CONTENT REVEALS ==========
+
+            // Main logo
+            masterTl.to('.hero-logo', {
+                opacity: 1,
+                scale: 1,
+                y: 0,
+                duration: 1.6,
+                ease: 'expo.out'
+            }, 1.0);
+
+            // Title - weighty, expensive feel
+            masterTl.to('.hero-title', {
+                opacity: 1,
+                y: 0,
+                duration: 1.8,
+                ease: 'expo.out'
+            }, 1.3);
+
+            // Description
+            masterTl.to('.hero-description', {
+                opacity: 1,
+                y: 0,
+                duration: 1.5,
+                ease: 'power4.out'
+            }, 1.6);
+
+            // Selection header
+            masterTl.to('.selection-header', {
+                opacity: 1,
+                y: 0,
+                duration: 1.4,
+                ease: 'power4.out'
+            }, 2.0);
+
+            // Cards with stagger
+            masterTl.to('.selection-card', {
+                opacity: 1,
+                y: 0,
+                scale: 1,
+                duration: 1.5,
+                stagger: 0.18,
+                ease: 'expo.out'
+            }, 2.3);
+
+            // ========== CARD HOVER ANIMATIONS ==========
+            document.querySelectorAll('.selection-card').forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    gsap.to(card, {
+                        scale: 1.04,
+                        y: -5,
+                        boxShadow: '0 16px 40px rgba(26, 58, 82, 0.15)',
+                        duration: 0.6,
+                        ease: 'power3.out'
+                    });
+                });
+
+                card.addEventListener('mouseleave', () => {
+                    gsap.to(card, {
+                        scale: 1,
+                        y: 0,
+                        boxShadow: '0 4px 12px rgba(0,0,0,0.06)',
+                        duration: 0.6,
+                        ease: 'power3.out'
+                    });
+                });
+            });
+
+        } else {
+            // Reduced motion - show everything immediately
+            gsap.set('.hero-logo, .hero-title, .hero-description, .selection-header, .selection-card, .flag-container', {
+                opacity: 1,
+                y: 0,
+                scale: 1
+            });
+        }
+    </script>
 </body>
 </html>

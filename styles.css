@@ -1,6 +1,14 @@
 /* Syrian Mosaic Foundation - Minimalist Redesign */
 /* Design Philosophy: White, spacious, journalism-inspired aesthetic */
 
+/* ==================== Hide Webflow Loader ==================== */
+.loader,
+.loader_top,
+.loader_bottom,
+.loader_progress {
+    display: none !important;
+}
+
 /* ==================== CSS Variables ==================== */
 :root {
     /* Color Palette - Minimalist & Clean */
@@ -53,7 +61,7 @@
 }
 
 /* ==================== Base Styles ==================== */
-* {
+*:where(:not(.nav-header):not(.nav-header *)) {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -78,12 +86,72 @@ body {
     overflow-x: hidden;
 }
 
+/* Prevent styles.css from overriding Webflow navbar */
+.nav-header,
+.nav-header * {
+    font-family: inherit;
+    line-height: inherit;
+    color: inherit;
+    letter-spacing: inherit;
+}
+.nav-header .nav-item-link {
+    color: var(--green, #111111);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    padding: .5em .7em;
+}
+.nav-header .nav-item-link.is--first {
+    padding-left: 1.5em;
+}
+.nav-header .nav-item-link.w--current {
+    font-weight: 800;
+    text-decoration: underline #333333;
+    text-decoration-thickness: .1875rem;
+    text-underline-offset: .25rem;
+}
+.nav-header .nav-item-link.is--button {
+    background-color: var(--khdyr, #333333);
+    color: #fff;
+    border-radius: 3.9em;
+    padding: .5em 1.5em;
+}
+.nav-header .nav-link-text {
+    font-size: .93rem;
+    font-weight: 300;
+}
+.nav-header .navbar {
+    z-index: 40;
+    background-color: #fff;
+    border-radius: 3.9em;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    position: absolute;
+    inset: auto auto 3.5em;
+    box-shadow: 0 1px 1.0625rem -.1875rem #11111129;
+    pointer-events: auto;
+}
+.nav-header .menu-container {
+    display: flex;
+}
+.nav-header .nav-arrow {
+    width: 1.9em;
+    padding-left: .2em;
+    padding-right: .5em;
+    display: none;
+}
+.nav-header .burger-menu {
+    display: none;
+}
+
 body.has-fullscreen-hero {
     padding-top: 0;
 }
 
 /* ==================== Typography ==================== */
-h1, h2, h3, h4, h5, h6 {
+:where(h1, h2, h3, h4, h5, h6):not(.nav-header *) {
     font-family: var(--font-heading);
     color: var(--color-text);
     line-height: 1.2;
@@ -111,7 +179,7 @@ h4 {
     margin-bottom: var(--space-3);
 }
 
-p {
+p:not(.nav-header p) {
     font-size: 1.0625rem;
     line-height: 1.8;
     margin-bottom: var(--space-6);
@@ -129,16 +197,18 @@ p {
     line-height: 1.6;
 }
 
-/* Exclude .nav-item-link so navbar uses Webflow CSS (green theme like media.html) */
-a:not(.nav-item-link) {
+/* Exclude nav-header from base link overrides so Webflow CSS controls the navbar */
+a:not(.nav-header a) {
     color: var(--color-navy);
     text-decoration: none;
     transition: color var(--transition-normal);
 }
 
-a:not(.nav-item-link):hover {
+a:not(.nav-header a):hover {
     color: var(--color-gold);
 }
+
+/* Navigation — let Webflow CSS control the navbar without interference */
 
 /* ==================== Layout & Containers ==================== */
 .container {

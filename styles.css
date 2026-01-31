@@ -2631,9 +2631,9 @@ To use the vertical timeline again:
 
 .social-cards {
     grid-row-gap: 0.52em;
-    color: var(--color-white);
+    color: #D4A574;
     cursor: pointer;
-    background-color: rgba(61, 61, 61, 0.19);
+    background-color: transparent !important;
     border-radius: 0.4em;
     flex-direction: column;
     justify-content: space-between;
@@ -2644,60 +2644,60 @@ To use the vertical timeline again:
     font-size: 1.3em;
     text-decoration: none;
     display: flex;
-    transition: all 0.3s ease;
-}
-
-.social-cards:hover {
-    backdrop-filter: blur(15px);
-    color: #D4A574;
-    background-color: rgba(17, 17, 17, 0.5);
-    border-radius: 0.5em;
 }
 
 .social-cards.is-bottom {
     cursor: auto;
-    background-color: transparent;
+    background-color: transparent !important;
 }
 
 .social-cards.is-bottom:hover {
-    background-color: transparent;
+    background-color: transparent !important;
 }
 
 .social-card {
     grid-row-gap: 0.52em;
-    color: var(--color-white);
+    color: #D4A574;
     cursor: pointer;
-    background-color: rgba(61, 61, 61, 0.19);
+    background-color: transparent !important;
+    border: none !important;
     border-radius: 0.4em;
     flex-direction: row;
     align-items: center;
     gap: 1em;
-    padding: 1em;
+    padding: 0.5em 0;
     text-decoration: none;
     display: flex;
-    transition: all 0.3s ease;
     margin-bottom: 0.5em;
 }
 
-.social-card:hover {
-    backdrop-filter: blur(15px);
-    color: #D4A574;
-    background-color: rgba(17, 17, 17, 0.5);
-}
-
 .footer-icon {
-    width: 24px;
-    height: 24px;
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    mix-blend-mode: normal !important;
 }
 
 .footer-icon svg {
-    width: 100%;
-    height: 100%;
-    fill: currentColor;
+    width: 32px !important;
+    height: 32px !important;
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    overflow: visible !important;
+    mix-blend-mode: normal !important;
+}
+
+.social-card.w-inline-block {
+    display: flex !important;
+    align-items: center !important;
+    background-color: transparent !important;
+    border: none !important;
 }
 
 .social-text {
     font-size: 1rem;
+    color: #fff !important;
 }
 
 .footer-line {
@@ -2719,11 +2719,10 @@ To use the vertical timeline again:
     font-size: 0.8em;
     font-weight: 100;
     text-decoration: none;
-    transition: color 0.2s ease;
 }
 
-.footer-link:hover {
-    color: var(--color-gold);
+a.footer-link {
+    color: var(--color-gold) !important;
 }
 
 .footer-lineee {

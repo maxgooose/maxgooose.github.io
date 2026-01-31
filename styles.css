@@ -697,10 +697,11 @@ a:not(.nav-item-link):hover {
 }
 
 .footer-social-card:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.2);
+    background: rgba(17, 17, 17, 0.5);
+    backdrop-filter: blur(15px);
+    border-color: rgba(212, 165, 116, 0.3);
     transform: translateY(-2px);
-    color: #fff;
+    color: #D4A574;
 }
 
 .footer-social-icon {
@@ -914,8 +915,9 @@ body.has-fullscreen-hero .header {
 }
 
 .card:hover {
-    box-shadow: var(--shadow-md);
-    border-color: var(--color-gold);
+    box-shadow: 0 8px 24px rgba(17, 17, 17, 0.2);
+    border-color: rgba(212, 165, 116, 0.4);
+    transform: translateY(-2px);
 }
 
 .card-title {
@@ -2014,9 +2016,9 @@ To use the vertical timeline again:
 }
 
 .image-card:hover {
-    box-shadow: 0 8px 24px rgba(212, 165, 116, 0.2);
+    box-shadow: 0 8px 24px rgba(17, 17, 17, 0.2);
     transform: translateY(-4px);
-    border-color: #E8D4A0;
+    border-color: rgba(212, 165, 116, 0.4);
 }
 
 .image-card img {
@@ -2647,8 +2649,8 @@ To use the vertical timeline again:
 
 .social-cards:hover {
     backdrop-filter: blur(15px);
-    color: var(--color-gold);
-    background-color: rgba(26, 58, 82, 0.5);
+    color: #D4A574;
+    background-color: rgba(17, 17, 17, 0.5);
     border-radius: 0.5em;
 }
 
@@ -2679,8 +2681,8 @@ To use the vertical timeline again:
 
 .social-card:hover {
     backdrop-filter: blur(15px);
-    color: var(--color-gold);
-    background-color: rgba(26, 58, 82, 0.5);
+    color: #D4A574;
+    background-color: rgba(17, 17, 17, 0.5);
 }
 
 .footer-icon {
@@ -3424,7 +3426,7 @@ To use the vertical timeline again:
 
 .benefits_card_wrap.is-travel:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(26, 58, 82, 0.15);
+    box-shadow: 0 20px 40px rgba(17, 17, 17, 0.2);
 }
 
 .benefits_card_content {

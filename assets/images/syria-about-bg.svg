@@ -1,9 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 1100">
-  <!-- Light green rectangle (center-right area) -->
-  <rect x="540" y="198" width="860" height="703" fill="#eeeeee"/>
 
-  <!-- Green square (bottom-right corner) -->
-  <rect x="1475" y="820" width="270" height="270" fill="#333333"/>
 
   <!-- Syria map outline (positioned on left, overlapping green rect) -->
   <g transform="translate(165, 100) scale(0.95)" fill="none" stroke="#c8c8c0" stroke-width="1.5">

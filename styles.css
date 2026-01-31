@@ -2560,19 +2560,7 @@ To use the vertical timeline again:
     z-index: 1;
 }
 
-/* Navigation — undo styles.css base resets so Webflow CSS controls the navbar */
-.nav-header,
-.nav-header * {
-    margin: revert;
-    padding: revert;
-    box-sizing: revert;
-    font-family: revert;
-    font-size: revert;
-    font-weight: revert;
-    line-height: revert;
-    color: revert;
-    text-decoration: revert;
-}
+/* Navigation — let Webflow CSS control the navbar without interference */
 
 /* Contact Overlay (imaaicha structure) */
 .text-block-15 {

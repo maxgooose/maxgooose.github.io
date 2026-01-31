@@ -12,7 +12,7 @@
 <style>
   path {
     fill: none;
-    stroke: #46c75b;
+    stroke: #333333;
     stroke-width: 2;
   }
 </style>

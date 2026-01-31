@@ -364,6 +364,7 @@ function initFullscreenHeroScroll() {
     const heroSection = document.querySelector('.home-hero');
     const homeParallax = document.querySelector('.home-parallax');
     const displayText = document.querySelector('.display');
+    const parallaxBg = document.querySelector('.parallax-layer.is-bg');
     const parallaxForeground = document.querySelector('.parallax-layer.is-1');
 
     if (!heroSection) return;
@@ -383,25 +384,40 @@ function initFullscreenHeroScroll() {
             body.classList.remove('scrolled');
         }
 
-        // Webflow-style parallax effect
+        // Parallax effect — bg/fg are siblings in .home-hero, text is inside .home-parallax
         if (!prefersReducedMotion && scrollY < heroHeight) {
-            const progress = scrollY / heroHeight;
 
-            // The whole parallax container moves up as user scrolls
+            // Background scrolls up slowly (depth effect)
+            if (parallaxBg) {
+                parallaxBg.style.transform = `translate3d(0px, ${scrollY * 0.3}px, 0px)`;
+            }
+
+            // Logo + text container scrolls up at medium speed
             if (homeParallax) {
                 homeParallax.style.transform = `translate3d(0px, ${scrollY * 0.5}px, 0px)`;
             }
 
-            // Text moves DOWN faster (sinks behind mountains)
+            // Text moves DOWN relative to its container (sinks behind castle)
             if (displayText) {
                 const textMove = scrollY * 0.7;
                 displayText.style.transform = `translate3d(0px, ${textMove}px, 0px)`;
+
+                // Fade out text as it passes behind the castle
+                const foregroundTop = parallaxForeground ? parallaxForeground.getBoundingClientRect().top : heroHeight * 0.5;
+                const textBottom = displayText.getBoundingClientRect().bottom;
+                const textHeight = displayText.offsetHeight;
+
+                if (textBottom > foregroundTop) {
+                    const overlap = textBottom - foregroundTop;
+                    const fadeThreshold = textHeight * 0.5;
+                    const opacity = Math.max(0, 1 - (overlap / fadeThreshold));
+                    displayText.style.opacity = opacity;
+                } else {
+                    displayText.style.opacity = 1;
+                }
             }
 
-            // Foreground stays more stable (moves slowest)
-            if (parallaxForeground) {
-                parallaxForeground.style.transform = `translate3d(0px, ${scrollY * 0.1}px, 0px)`;
-            }
+            // Foreground: never moves — stays fixed in .home-hero
         }
     }
 

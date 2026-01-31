@@ -40,6 +40,10 @@
 }
 </script>
 
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+
 <style>
 
 /* Universal selector to remove italics on Safari */
@@ -59,6 +63,44 @@
 ::selection {
   color: #1A3A52;
   background: #D4A574;
+}
+
+/* Override CDN green palette with charcoal/black */
+:root {
+  --bg-color: #f5f5f5 !important;
+  --khdyr: #333333 !important;
+  --green: #111111 !important;
+  --light-green: #f0f0f0 !important;
+  --semi-translaprent-green: #11111161 !important;
+  --green-khfif: #999999 !important;
+}
+.defined, .contact-form { background-image: none !important; background-color: #0a0a0a !important; }
+.home-about.is--aboutpage { background-image: none !important; }
+.slider-main_arrow { background-color: #555555 !important; }
+.slider-main_button:hover { background-color: #555555 !important; }
+.draggable_section { background-color: #0a0a0a !important; }
+.loader { background-image: radial-gradient(circle farthest-side at 0% 100%, #f0f0f0, #e0e0e0) !important; }
+.button-1 { box-shadow: 0 4px 1.0625rem -.125rem #11111175 !important; }
+.benefits_bg { background-image: linear-gradient(#11111100 63%, #111111) !important; }
+.desti-cards { background-image: linear-gradient(180deg, #111111, #11111100 24%) !important; }
+.page-padding.is-chapters-next { background-image: linear-gradient(#111111f7, #11111100 34%) !important; }
+.rt_travel_cnt { border-color: #1111115e !important; }
+/* Unified font system: Playfair Display + Inter */
+body, .w-dropdown, .w-dropdown-toggle, .text-block-4, .text-block-15,
+.nav-link-text, .footer-link, .social-cards, .bio-text-team,
+.card-title-values-cms, .text-values-cards, .subtitle,
+.calend-h2, .calend-p, .form_main_field, .ms-text,
+.dropdown-title, .drop-body, .thin, .rt_richtext,
+.form-label, .form-input, .rt_p, .rt_small,
+.blog-post-text, .blog-post-date, .accordion-text {
+  font-family: 'Inter', sans-serif !important;
+}
+h1, h2, h3, h4, h5, h6,
+.display, .hero-text, .heading-5, .calend-h1,
+.card-title-values, .card-title, .sec-numb,
+.slider-main_title, .team_top h2,
+.chapter_title, .rt_h2, .rt_h3, .blog-post-title {
+  font-family: 'Playfair Display', serif !important;
 }
 
 </style>

@@ -3941,68 +3941,40 @@ a.footer-link {
     padding-left: 1.5em;
 }
 
-/* On small screens, show burger and hide menu until toggled */
+/* Mobile nav — compact single bar */
 @media (max-width: 767px) {
     .nav-header .navbar {
-        background: transparent !important;
-        box-shadow: none !important;
-        border-radius: 0 !important;
-        position: fixed !important;
-        bottom: auto !important;
-        top: 0 !important;
-        left: 0 !important;
-        right: 0 !important;
-        inset: auto !important;
-        padding: 1rem !important;
-        justify-content: flex-end !important;
-        z-index: 1001 !important;
-    }
-
-    .burger-menu {
-        display: flex !important;
-        cursor: pointer;
-        z-index: 1002;
-        padding: 0.5em;
-        background: rgba(0,0,0,0.4);
-        border-radius: 50%;
-        width: 44px;
-        height: 44px;
-        align-items: center;
-        justify-content: center;
+        border-radius: 2em !important;
+        inset: auto 0.5em 1.5em 0.5em !important;
+        padding: 0.3em 0.4em !important;
     }
 
     .menu-container {
-        display: none !important;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        background: rgba(10, 22, 40, 0.97);
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 0.5rem;
-        z-index: 1000;
-    }
-
-    .menu-container.is-open {
-        display: flex !important;
+        flex-wrap: nowrap !important;
+        justify-content: center !important;
+        gap: 0 !important;
+        width: 100% !important;
     }
 
     .navbar .nav-item-link {
-        padding: 0.8em 1.5em;
-        font-size: 1.1rem;
+        padding: 0.3em 0.45em !important;
+        white-space: nowrap !important;
+    }
+
+    .navbar .nav-item-link .nav-link-text {
+        font-size: 0.6rem !important;
     }
 
     .navbar .nav-item-link.is--first {
-        padding-left: 1.5em;
+        padding-left: 0.45em !important;
     }
 
     .navbar .nav-item-link.is--button {
-        padding: 0.7em 2em;
-        font-size: 1rem;
-        margin-top: 0.5rem;
+        padding: 0.25em 0.55em !important;
+    }
+
+    .navbar .nav-item-link.is--button .nav-link-text {
+        font-size: 0.58rem !important;
     }
 }
 

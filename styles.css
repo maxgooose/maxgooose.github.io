@@ -4713,91 +4713,7 @@ a.footer-link {
     margin: 1rem auto !important;
   }
 
-  /* Section alt background - match dark theme */
-  .section-alt {
-    background: #111 !important;
-  }
-  .section-alt .card {
-    background: #1a1a1a !important;
-    border-color: rgba(212, 165, 116, 0.15) !important;
-    color: #fff !important;
-  }
-  .section-alt .card .card-title,
-  .section-alt .card h4 {
-    color: #fff !important;
-  }
-  .section-alt .card .card-content,
-  .section-alt .card .card-content p,
-  .section-alt .card p {
-    color: rgba(255,255,255,0.7) !important;
-  }
-
-  /* Section background consistency with dark theme */
-  .section:not(.section-alt) {
-    background: #0a0a0a !important;
-  }
-  .section .container h2,
-  .section .container h3 {
-    color: #fff !important;
-  }
-  .section .container p,
-  .section .container .lead,
-  .section .container .card-content {
-    color: rgba(255,255,255,0.75) !important;
-  }
-  .section .container a:not(.btn) {
-    color: #D4A574 !important;
-  }
-
-  /* Cards on dark background */
-  .section:not(.section-alt) .card {
-    background: rgba(255,255,255,0.04) !important;
-    border-color: rgba(212, 165, 116, 0.15) !important;
-  }
-  .section:not(.section-alt) .card .card-title,
-  .section:not(.section-alt) .card h3,
-  .section:not(.section-alt) .card h4 {
-    color: #fff !important;
-  }
-  .section:not(.section-alt) .card p {
-    color: rgba(255,255,255,0.7) !important;
-  }
-
-  /* Highlight box dark theme */
-  .highlight-box {
-    background: rgba(255,255,255,0.04) !important;
-    border-color: rgba(212, 165, 116, 0.2) !important;
-  }
-
-  /* Image card on dark background */
-  .image-card {
-    background: rgba(255,255,255,0.04) !important;
-    border-color: rgba(212, 165, 116, 0.15) !important;
-  }
-  .image-card-title {
-    color: #fff !important;
-  }
-  .image-card-caption {
-    color: rgba(255,255,255,0.7) !important;
-  }
-  .image-caption {
-    background: rgba(212, 165, 116, 0.1) !important;
-    color: rgba(255,255,255,0.8) !important;
-    border-left-color: #D4A574 !important;
-  }
-
-  /* Prose text */
-  .prose p,
-  .prose .lead {
-    color: rgba(255,255,255,0.7) !important;
-  }
-
-  /* Buttons */
-  .btn-primary {
-    background: linear-gradient(135deg, #C4953A 0%, #A88A53 100%) !important;
-    border-color: #C4953A !important;
-    color: #fff !important;
-  }
+  /* Dark theme forcing removed — keeping original page colors */
 
   /* ══════════════════════════════════════════════
      CONTACT PAGE — Fix spacing & layout
@@ -4814,28 +4730,7 @@ a.footer-link {
     grid-template-columns: 1fr !important;
   }
 
-  /* Form inputs on dark background */
-  .form-input,
-  .form-textarea {
-    background: rgba(255,255,255,0.08) !important;
-    border-color: rgba(255,255,255,0.2) !important;
-    color: #fff !important;
-  }
-  .form-input::placeholder,
-  .form-textarea::placeholder {
-    color: rgba(255,255,255,0.4) !important;
-  }
-  .form-label {
-    color: rgba(255,255,255,0.8) !important;
-  }
-
-  /* Contact info styling on dark bg */
-  .contact-info-item {
-    border-bottom-color: rgba(255,255,255,0.1) !important;
-  }
-  .contact-info-label {
-    color: #D4A574 !important;
-  }
+  /* Contact form: spacing only, no color forcing */
 
   /* ══════════════════════════════════════════════
      ABOUT PAGE (Webflow-generated) — Mobile fixes
@@ -4922,11 +4817,7 @@ a.footer-link {
     border-radius: 8px !important;
   }
 
-  /* Remove white background from hero on subpages — 
-     but preserve inline background-image (e.g. contact hero) */
-  .hero {
-    background-color: transparent !important;
-  }
+  /* Hero: no background forcing */
 }
 
 /* ==================== Syrian Heritage Collection Shop ==================== */
@@ -5154,46 +5045,7 @@ a.footer-link {
     max-height: 32px !important;
   }
 
-  /* ── 5. Trip-registration / selection pages text fix ──
-     These pages define dark text colors via inline CSS vars.
-     Override to white for readability on the dark body bg.  */
-  .selection-header h2 {
-    color: #fff !important;
-  }
-  .selection-header p {
-    color: rgba(255, 255, 255, 0.6) !important;
-  }
-  .logo-text {
-    color: #fff !important;
-  }
-  .selection-card .card-title {
-    color: #fff !important;
-  }
-  .selection-card .card-description {
-    color: rgba(255, 255, 255, 0.7) !important;
-  }
-  .selection-card .card-cta {
-    color: #D4A574 !important;
-  }
-  .selection-card .card-cta svg {
-    stroke: #D4A574 !important;
-  }
-  /* Selection cards: dark glass effect instead of white bg */
-  .selection-card {
-    background: rgba(255, 255, 255, 0.05) !important;
-    border: 1px solid rgba(255, 255, 255, 0.12) !important;
-    color: #fff !important;
-  }
-  .selection-card:hover {
-    border-color: rgba(212, 165, 116, 0.4) !important;
-    box-shadow: 0 4px 16px rgba(212, 165, 116, 0.15) !important;
-  }
-  .selection-card .card-icon {
-    background: rgba(255, 255, 255, 0.08) !important;
-  }
-  .selection-card .card-icon svg {
-    stroke: #D4A574 !important;
-  }
+  /* Selection cards: spacing only, no color forcing */
 
   /* ── 6. Contact info items: better spacing & dividers ── */
   .contact-info-item {
@@ -5278,13 +5130,7 @@ a.footer-link {
     max-width: 100% !important;
   }
 
-  /* ── 16. Footer consistency: ensure dark footer bg always ── */
-  .travels-footer {
-    background-color: #111111 !important;
-  }
-  .contact-form:not(form) {
-    background-color: #0a0a0a !important;
-  }
+  /* Footer: no color forcing */
 
   /* ── 17. Gallery/Media page: thumbnail row polish ── */
   .slider-thumbs_height {

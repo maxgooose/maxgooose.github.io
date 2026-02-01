@@ -704,8 +704,8 @@ a:not(.nav-header a):hover {
     }
 }
 
-/* ==================== Contact Overlay (webflow-template style) ==================== */
-/* Contact Overlay - VERBATIM from webflow-template (only bg color changed to white) */
+/* ==================== Contact Overlay (imaaicha style) ==================== */
+/* Contact Overlay - VERBATIM from Imaaicha (only bg color changed to white) */
 .contact-overlay{grid-column-gap:3em;grid-row-gap:3em;background-color:#ffffff;pointer-events:auto;border-bottom-left-radius:1.4em;flex-flow:column;justify-content:flex-start;align-items:stretch;width:21em;height:auto;padding:1.5em;display:none;position:fixed;inset:0% 0% auto auto;box-shadow:0 2px .875rem .375rem #11111138;z-index:1001}
 
 .contact-overlay.is-open{display:flex}
@@ -731,7 +731,7 @@ a:not(.nav-header a):hover {
 
 .contact-overlay-backdrop.is-visible{opacity:1;visibility:visible}
 
-/* ==================== Enhanced Footer (webflow-template style) ==================== */
+/* ==================== Enhanced Footer (imaaicha style) ==================== */
 .footer-enhanced {
     background-color: var(--color-navy);
     color: #fff;
@@ -930,8 +930,8 @@ body.has-fullscreen-hero .header {
     display: none;
 }
 
-/* ==================== About Section (webflow-template exact clone) ==================== */
-/* REMOVED duplicate :root - using main webflow-template variables below */
+/* ==================== About Section (imaaicha exact clone) ==================== */
+/* REMOVED duplicate :root - using main imaaicha variables below */
 
 /* ==================== Buttons ==================== */
 .btn {
@@ -2191,9 +2191,9 @@ To use the vertical timeline again:
     }
 }
 
-/* ==================== Travel Plans Section (Exact webflow-template.com) ==================== */
+/* ==================== Travel Plans Section (Exact imaaicha.com) ==================== */
 
-/* webflow-template CSS Variables - SINGLE DEFINITION */
+/* imaaicha CSS Variables - SINGLE DEFINITION */
 :root {
     --bg-color: #ffffff;
     --khdyr: #333333;
@@ -2458,7 +2458,7 @@ To use the vertical timeline again:
 
 /* Old container/responsive queries removed — handled by travel cards section */
 
-/* ==================== webflow-template STRUCTURAL PORT (1:1 Clone) ==================== */
+/* ==================== IMAAICHA STRUCTURAL PORT (1:1 Clone) ==================== */
 /* Colors swapped: Original green replaced with charcoal/black palette */
 
 /* Hero Section */
@@ -2553,7 +2553,7 @@ To use the vertical timeline again:
 
 /* Navigation — let Webflow CSS control the navbar without interference */
 
-/* Contact Overlay (webflow-template structure) */
+/* Contact Overlay (imaaicha structure) */
 .text-block-15 {
     color: var(--color-white);
     font-size: 2em;
@@ -2764,7 +2764,7 @@ a.footer-link {
     }
 }
 
-/* ==================== SECTIONS 03-07 - webflow-template Port ==================== */
+/* ==================== SECTIONS 03-07 - imaaicha Port ==================== */
 
 /* Quote Section */
 .quote {
@@ -4090,94 +4090,36 @@ a.footer-link {
     overflow-x: hidden !important;
   }
 
-  /* ── Navigation: consistent top nav on all pages ── */
+  /* ── Navigation ── */
   .nav-header {
-    position: fixed !important;
-    top: 0 !important;
-    bottom: auto !important;
-    left: 0 !important;
-    right: 0 !important;
-    width: 100% !important;
-    height: auto !important;
-    z-index: 100 !important;
     padding: 0 !important;
     margin: 0 !important;
-    background: rgba(10, 10, 10, 0.92) !important;
-    backdrop-filter: blur(12px) !important;
-    -webkit-backdrop-filter: blur(12px) !important;
   }
   .navbar {
-    position: relative !important;
-    top: 0 !important;
-    bottom: auto !important;
-    left: 0 !important;
-    right: 0 !important;
-    inset: auto !important;
     max-width: 100vw !important;
-    border-radius: 0 !important;
+    border-radius: 0.8rem !important;
     box-sizing: border-box !important;
-    padding: 0 !important;
-    height: auto !important;
-    background: transparent !important;
-    background-color: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-  }
-  .burger-menu {
-    display: none !important;
   }
   .menu-container {
-    display: flex !important;
-    position: relative !important;
-    top: auto !important;
-    left: auto !important;
-    right: auto !important;
-    bottom: auto !important;
-    transform: none !important;
     flex-wrap: wrap !important;
-    gap: 0 !important;
+    gap: 0.25rem !important;
     justify-content: center !important;
-    padding: 0.5rem 0.5rem !important;
-    width: 100% !important;
-    opacity: 1 !important;
-    visibility: visible !important;
+    padding: 0.5rem 0.75rem !important;
   }
   .nav-item-link {
-    font-size: 0.7rem !important;
-    padding: 0.35rem 0.45rem !important;
-    white-space: nowrap !important;
-    position: relative !important;
-    top: auto !important;
-    transform: none !important;
-  }
-  .nav-item-link .nav-link-text,
-  .nav-link-text {
-    font-size: 0.7rem !important;
-    color: #fff !important;
+    font-size: 0.72rem !important;
+    padding: 0.3rem 0.4rem !important;
   }
   .navbar .nav-item-link.is--button {
-    padding: 0.3rem 0.55rem !important;
-    font-size: 0.65rem !important;
-    border-radius: 4px !important;
-  }
-  .navbar .nav-item-link.is--button .nav-link-text {
-    color: #fff !important;
-  }
-  .nav-item-link.is-contact {
-    display: none !important;
+    padding: 0.35rem 0.65rem !important;
+    font-size: 0.68rem !important;
   }
   .nav-arrow { display: none !important; }
   .grid-wrap, .global-code { display: none !important; }
 
-  /* ── Body top padding to account for fixed nav ── */
-  body {
-    padding-top: 52px !important;
-    background-color: #0a0a0a !important;
-  }
-
-  /* ── Hero Section (keep full-viewport height, minus nav) ── */
+  /* ── Hero Section (keep full-viewport height) ── */
   .smf-hero {
-    min-height: calc(100svh - 52px) !important;
+    min-height: 100svh !important;
     padding: 0 1rem !important;
     margin-bottom: 0 !important;
   }
@@ -4193,8 +4135,6 @@ a.footer-link {
     padding: 0.5rem 1rem 1rem !important;
     margin-bottom: 0 !important;
     min-height: unset !important;
-    height: auto !important;
-    max-height: none !important;
   }
 
   /* ── Section Titles ── */
@@ -4410,13 +4350,10 @@ a.footer-link {
     border-radius: 0.4rem !important;
   }
 
-  /* ── Page Structure — kill ALL excess spacing ── */
+  /* ── Page Structure ── */
   .page_main { padding-top: 0 !important; }
-  .page-wrapper { overflow: hidden !important; }
   .u-section { padding: 0 !important; margin: 0 !important; }
   .u-container { padding: 0 1rem !important; margin: 0 !important; }
-  .page-padding { padding: 0 !important; }
-  .page-padding.is-chapters-next { padding: 0 !important; margin: 0 !important; }
 
   /* ── Partner Section (travels page) ── */
   .partner-section {
@@ -4446,169 +4383,19 @@ a.footer-link {
   .travels-footer__brand {
     flex: none !important;
   }
-  .travels-footer__logo {
-    height: 60px !important;
-    width: auto !important;
-  }
-  .travels-footer__tagline {
-    font-size: 0.85rem !important;
-    line-height: 1.5 !important;
-  }
   .travels-footer__nav {
     flex-direction: column !important;
-    gap: 1.25rem !important;
-  }
-  .travels-footer__nav-col {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 0.4rem !important;
-  }
-  .travels-footer__nav-heading {
-    font-size: 0.75rem !important;
-    margin-bottom: 0.25rem !important;
-  }
-  .travels-footer__link {
-    display: block !important;
-    font-size: 0.88rem !important;
-    padding: 0.15rem 0 !important;
-  }
-  .travels-footer__divider {
-    margin: 1.5rem 0 !important;
+    gap: 1rem !important;
   }
   .travels-footer__bottom {
     flex-direction: column !important;
     gap: 0.25rem !important;
     text-align: center !important;
   }
-  .travels-footer__copy {
-    font-size: 0.75rem !important;
-  }
 
   /* ── Logo (travels / subpages) ── */
-  .logo-cnt img { height: 60px !important; }
-  .logo-cnt { padding: 0.75rem 0 0.25rem !important; }
-
-  /* ── Travels page hero spacing ── */
-  .home-about.is-travels .sec-numb {
-    text-align: left !important;
-  }
-  .home-about.is-travels .about-text-ctn {
-    padding: 0 !important;
-  }
-
-  /* ── Media / Gallery Page ── */
-  /* Fix the full-screen slider to not waste vertical space */
-  .section.is-slider-gallery {
-    min-height: calc(100svh - 52px) !important;
-    height: auto !important;
-    background-color: #0a0a0a !important;
-  }
-  .slider-gallery_component {
-    height: calc(100svh - 52px) !important;
-    display: flex !important;
-    flex-direction: column !important;
-  }
-  .slider-bg_component {
-    position: absolute !important;
-    inset: 0 !important;
-  }
-  .slider-gallery_bottom-wrapper {
-    position: relative !important;
-    z-index: 2 !important;
-    flex-shrink: 0 !important;
-    padding: 0.5rem 1rem !important;
-  }
-  .slider-thumbs_component {
-    margin-top: 0 !important;
-  }
-  .slider-thumbs_overflow {
-    width: 100% !important;
-    overflow-x: auto !important;
-  }
-  .slider-thumbs_overflow > div {
-    width: 100% !important;
-  }
-  .slider-thumbs_height {
-    height: 50px !important;
-  }
-  .slider-thumbs_img {
-    height: 50px !important;
-    width: auto !important;
-    border-radius: 4px !important;
-  }
-  .slider-titles_component {
-    position: relative !important;
-    z-index: 2 !important;
-    flex: 1 !important;
-    display: flex !important;
-    align-items: flex-end !important;
-    padding: 0 1rem 1.5rem !important;
-    height: auto !important;
-  }
-  .swiper.is-slider-titles {
-    height: auto !important;
-    max-height: 100% !important;
-  }
-  .swiper-slide.is-slider-titles {
-    height: auto !important;
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: flex-end !important;
-    padding-bottom: 0.5rem !important;
-  }
-  .slider-titles_heading {
-    font-size: 1.8rem !important;
-    line-height: 1.15 !important;
-  }
-  .slider-titles_heading.is-p {
-    font-size: 0.82rem !important;
-    line-height: 1.55 !important;
-    max-height: 140px !important;
-    overflow: hidden !important;
-  }
-  .slider-gallery_button-wrapper {
-    gap: 0.5rem !important;
-  }
-  .slider-gallery_button {
-    width: 36px !important;
-    height: 36px !important;
-  }
-  .slider-gallery_numbers {
-    font-size: 0.8rem !important;
-  }
-  .div-block-38 {
-    padding: 0 !important;
-    gap: 0.75rem !important;
-  }
-
-  /* Draggable/parallax sections (if present) */
-  .draggable_section {
-    min-height: unset !important;
-    height: auto !important;
-    padding-bottom: 2rem !important;
-  }
-  .draggable_wrap {
-    height: auto !important;
-    min-height: unset !important;
-  }
-  .draggable_section .page_main {
-    position: relative !important;
-    height: auto !important;
-  }
-  .chapter_title {
-    font-size: 1.6rem !important;
-    line-height: 1.2 !important;
-  }
-  .rt_richtext, .rt_p {
-    font-size: 0.9rem !important;
-    line-height: 1.6 !important;
-  }
-  .experience-gallery {
-    gap: 0.5rem !important;
-  }
-  .experience-gallery img {
-    border-radius: 8px !important;
-  }
+  .logo-cnt img { height: 80px !important; }
+  .logo-cnt { padding: 1rem 0 0.5rem !important; }
 
   /* ── Contact Overlay ── */
   .contact-overlay {
@@ -4616,208 +4403,6 @@ a.footer-link {
     border-radius: 0 0 0 1rem !important;
     right: 0 !important;
   }
-
-  /* ── Shop Images: fill cards properly ── */
-  .shop-card-img {
-    height: 240px !important;
-  }
-  .shop-card-img img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-  }
-
-  /* ── Shop card text readability ── */
-  .shop-card-desc {
-    color: rgba(255,255,255,0.75) !important;
-    font-size: 0.88rem !important;
-  }
-  .heritage-shop-card-desc {
-    color: rgba(255,255,255,0.75) !important;
-  }
-
-  /* ══════════════════════════════════════════════
-     TEAM PAGE — Kill excessive whitespace
-     ══════════════════════════════════════════════ */
-
-  /* Hero on subpages (team, contact, impact, etc.) */
-  .hero {
-    padding: 2.5rem 0 1.5rem !important;
-  }
-  .hero-title {
-    font-size: 2rem !important;
-    margin-bottom: 0.75rem !important;
-  }
-  .hero-description {
-    font-size: 1rem !important;
-    margin-bottom: 1rem !important;
-  }
-
-  /* Reduce .section padding on all subpages */
-  .section {
-    padding: 2rem 0 !important;
-  }
-
-  /* Kill oversized bottom margins on team headings */
-  .mb-16 {
-    margin-bottom: 1.5rem !important;
-  }
-  .mb-12 {
-    margin-bottom: 1rem !important;
-  }
-  .mb-8 {
-    margin-bottom: 0.75rem !important;
-  }
-  .mt-12 {
-    margin-top: 1rem !important;
-  }
-
-  /* Highlight box (founder feature on team page) */
-  .highlight-box {
-    padding: 1rem !important;
-    margin: 1rem 0 !important;
-  }
-
-  /* Split content stacks on mobile */
-  .split-content {
-    grid-template-columns: 1fr !important;
-    gap: 1.5rem !important;
-    margin: 1rem 0 !important;
-  }
-
-  /* Image grid on team page */
-  .image-grid {
-    grid-template-columns: 1fr !important;
-    gap: 1.25rem !important;
-    margin: 1.5rem 0 !important;
-  }
-  .image-card img {
-    height: 200px !important;
-  }
-
-  /* Cards grid - ensure single column at small widths */
-  .grid-2,
-  .grid-3,
-  .grid-4 {
-    grid-template-columns: 1fr !important;
-    gap: 1rem !important;
-  }
-
-  /* Card padding reduction */
-  .card {
-    padding: 1.25rem !important;
-  }
-
-  /* Heritage section divider */
-  .heritage-section-divider {
-    margin: 1rem auto !important;
-  }
-
-  /* Dark theme forcing removed — keeping original page colors */
-
-  /* ══════════════════════════════════════════════
-     CONTACT PAGE — Fix spacing & layout
-     ══════════════════════════════════════════════ */
-
-  /* Contact hero with background image */
-  .hero[style*="background"] {
-    padding: 3rem 1rem 2rem !important;
-    min-height: unset !important;
-  }
-
-  /* Contact form + info grid stacks on mobile */
-  .grid.grid-2[style*="max-width: 900px"] {
-    grid-template-columns: 1fr !important;
-  }
-
-  /* Contact form: spacing only, no color forcing */
-
-  /* ══════════════════════════════════════════════
-     ABOUT PAGE (Webflow-generated) — Mobile fixes
-     ══════════════════════════════════════════════ */
-
-  /* About page hero section */
-  .home-about.is--aboutpage {
-    padding: 2rem 1rem 2rem !important;
-    min-height: unset !important;
-  }
-
-  /* Bio/team text */
-  .bio-text-team {
-    font-size: 0.9rem !important;
-    line-height: 1.6 !important;
-  }
-
-  /* About page sections */
-  .u-section.is-team,
-  .u-section.is-values {
-    padding: 1.5rem 0 !important;
-  }
-
-  /* Values cards */
-  .card-title-values,
-  .card-title-values-cms {
-    font-size: 1.1rem !important;
-  }
-  .text-values-cards {
-    font-size: 0.85rem !important;
-  }
-
-  /* Calendar/Schedule section on about page */
-  .calend-h1 {
-    font-size: 1.6rem !important;
-  }
-  .calend-h2 {
-    font-size: 1.1rem !important;
-  }
-
-  /* ══════════════════════════════════════════════
-     IMPACT PAGE — Fix content width & spacing
-     ══════════════════════════════════════════════ */
-
-  /* Impact page sections */
-  .section .container .prose {
-    max-width: 100% !important;
-  }
-
-  /* ══════════════════════════════════════════════
-     MEDIA PAGE — Fix gap before footer
-     ══════════════════════════════════════════════ */
-
-  /* Kill any residual height on the slider gallery page sections */
-  .page-padding {
-    min-height: unset !important;
-  }
-
-  /* ══════════════════════════════════════════════
-     GLOBAL — Nav improvements & polish
-     ══════════════════════════════════════════════ */
-
-  /* Slightly larger nav text for better tap targets */
-  .nav-item-link {
-    font-size: 0.73rem !important;
-    padding: 0.4rem 0.5rem !important;
-  }
-  .nav-item-link .nav-link-text,
-  .nav-link-text {
-    font-size: 0.73rem !important;
-  }
-  .navbar .nav-item-link.is--button {
-    padding: 0.35rem 0.65rem !important;
-    font-size: 0.68rem !important;
-  }
-
-  /* Accent gold for dark pages */
-  .accent-gold {
-    color: #D4A574 !important;
-  }
-
-  /* Heritage image on dark bg */
-  .heritage-image {
-    border-radius: 8px !important;
-  }
-
-  /* Hero: no background forcing */
 }
 
 /* ==================== Syrian Heritage Collection Shop ==================== */
@@ -4945,236 +4530,4 @@ a.footer-link {
     .shop-card-desc {
         font-size: 0.85rem;
     }
-}
-
-/* ══════════════════════════════════════════════════════════════
-   MOBILE POLISH PASS — June 2025
-   Systematic fixes after full-page mobile audit (390×844)
-   ══════════════════════════════════════════════════════════════ */
-
-@media (max-width: 768px) {
-
-  /* ── 1. Fix .header on mobile (trip/tourist/delegation pages) ──
-     These pages use <header class="header"> instead of .nav-header.
-     Make it dark to match the site-wide mobile dark theme.          */
-  .header {
-    background: rgba(10, 10, 10, 0.95) !important;
-    backdrop-filter: blur(12px) !important;
-    -webkit-backdrop-filter: blur(12px) !important;
-    border-bottom-color: rgba(255, 255, 255, 0.08) !important;
-  }
-  .header-logo,
-  .header .header-logo {
-    color: #fff !important;
-  }
-  .header-link,
-  .header .header-link {
-    color: rgba(255, 255, 255, 0.8) !important;
-  }
-  .header-link:hover,
-  .header .header-link:hover {
-    color: #D4A574 !important;
-  }
-
-  /* ── 2. Contact page: fix form class collision ──
-     <form class="contact-form"> gets footer `.contact-form` styles.
-     Scope the reset to actual form elements only.                  */
-  form.contact-form {
-    background-color: transparent !important;
-    background-image: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    flex-direction: column !important;
-  }
-
-  /* ── 3. Form inputs: better visibility on dark backgrounds ── */
-  .form-input,
-  .form-textarea,
-  input[type="text"],
-  input[type="email"],
-  input[type="tel"],
-  input[type="date"],
-  input[type="number"],
-  textarea,
-  select {
-    background: rgba(255, 255, 255, 0.07) !important;
-    border: 1px solid rgba(255, 255, 255, 0.25) !important;
-    color: #fff !important;
-    font-size: 16px !important; /* prevent iOS zoom */
-    padding: 0.75rem !important;
-    border-radius: 6px !important;
-    -webkit-appearance: none;
-    appearance: none;
-  }
-  .form-input:focus,
-  .form-textarea:focus,
-  input:focus,
-  textarea:focus,
-  select:focus {
-    border-color: #D4A574 !important;
-    outline: none !important;
-    box-shadow: 0 0 0 2px rgba(212, 165, 116, 0.2) !important;
-  }
-  .form-input::placeholder,
-  .form-textarea::placeholder,
-  input::placeholder,
-  textarea::placeholder {
-    color: rgba(255, 255, 255, 0.35) !important;
-  }
-  .form-label,
-  label {
-    color: rgba(255, 255, 255, 0.75) !important;
-    font-size: 0.875rem !important;
-    margin-bottom: 0.35rem !important;
-    display: block !important;
-  }
-  .form-group {
-    margin-bottom: 1.25rem !important;
-  }
-
-  /* ── 4. Webflow spacers: reduce on mobile ── */
-  .u-section-spacer {
-    height: 24px !important;
-    min-height: 24px !important;
-    max-height: 24px !important;
-    flex: none !important;
-  }
-  .u-section-spacer.is-bottom {
-    height: 32px !important;
-    min-height: 32px !important;
-    max-height: 32px !important;
-  }
-
-  /* Selection cards: spacing only, no color forcing */
-
-  /* ── 6. Contact info items: better spacing & dividers ── */
-  .contact-info-item {
-    padding: 1rem 0 !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
-  }
-  .contact-info-item:last-child {
-    border-bottom: none !important;
-  }
-  .contact-info-label {
-    color: #D4A574 !important;
-    font-size: 0.8rem !important;
-    font-weight: 600 !important;
-    text-transform: uppercase !important;
-    letter-spacing: 0.06em !important;
-    margin-bottom: 0.25rem !important;
-  }
-
-  /* ── 7. Hero with background-image: ensure it shows on mobile ──
-     Contact, impact, etc. pages set background-image inline.
-     background-color: transparent preserves the image.
-     But we also need to keep the image visible. */
-  .hero[style*="background"] {
-    background-color: transparent !important;
-    /* Let inline background-image through */
-  }
-
-  /* ── 8. Back button (tourist/delegation registration) ── */
-  .back-btn,
-  a[class*="back"] {
-    color: #D4A574 !important;
-  }
-
-  /* ── 9. Nav overlap prevention ──
-     Ensure fixed nav-header doesn't sit under the .header or vice versa */
-  body:has(.nav-header) .header:not(.nav-header) {
-    display: none !important;
-  }
-
-  /* ── 10. Polish: tighten spacing around section headings ── */
-  .section > .container > h2:first-child,
-  .section > .container > .text-center:first-child h2 {
-    margin-top: 0 !important;
-  }
-
-  /* ── 11. Booking form: tighter layout ── */
-  .multistep-form,
-  .main-form {
-    padding: 0 1rem !important;
-  }
-  .multistep-form .form-step {
-    padding: 1.5rem !important;
-  }
-
-  /* ── 12. Improve CTA button visibility ── */
-  .div-block-42 {
-    padding: 1.5rem 0 2rem !important;
-  }
-
-  /* ── 13. About page: Webflow content sections ── */
-  .home-about.is--aboutpage {
-    padding-top: 1rem !important;
-    min-height: unset !important;
-  }
-  .bio-text-team {
-    color: rgba(255, 255, 255, 0.75) !important;
-  }
-
-  /* ── 14. Artifact-recovery page: prose readability ── */
-  .prose h2,
-  .prose h3 {
-    color: #fff !important;
-    margin-top: 1.5rem !important;
-  }
-
-  /* ── 15. Ensure no horizontal overflow on any page ── */
-  *:not(html):not(body) {
-    max-width: 100vw;
-  }
-  .slider-main_component,
-  .swiper.is-slider-main {
-    max-width: 100% !important;
-  }
-
-  /* Footer: no color forcing */
-
-  /* ── 17. Gallery/Media page: thumbnail row polish ── */
-  .slider-thumbs_height {
-    height: 48px !important;
-    border-radius: 4px !important;
-    overflow: hidden !important;
-  }
-  .slider-thumbs_img {
-    border-radius: 4px !important;
-  }
-
-  /* ── 18. Impact page: image cards proper sizing ── */
-  .split-content img,
-  .heritage-image {
-    width: 100% !important;
-    max-height: 300px !important;
-    object-fit: cover !important;
-    border-radius: 8px !important;
-  }
-
-  /* ── 19. Fix potential scroll-anchor issues ── */
-  scroll-padding-top: 60px;
-}
-
-/* ── 20. Small phone extra polish (375px and below) ── */
-@media (max-width: 375px) {
-  .nav-item-link {
-    font-size: 0.65rem !important;
-    padding: 0.3rem 0.35rem !important;
-  }
-  .nav-link-text {
-    font-size: 0.65rem !important;
-  }
-  .navbar .nav-item-link.is--button {
-    padding: 0.25rem 0.5rem !important;
-    font-size: 0.6rem !important;
-  }
-  .hero-title {
-    font-size: 1.75rem !important;
-  }
-  .hero-description {
-    font-size: 0.9rem !important;
-  }
-  .smf-hero__title {
-    font-size: clamp(2rem, 14vw, 4rem) !important;
-  }
 }

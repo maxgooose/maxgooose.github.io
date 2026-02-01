@@ -704,8 +704,8 @@ a:not(.nav-header a):hover {
     }
 }
 
-/* ==================== Contact Overlay (imaaicha style) ==================== */
-/* Contact Overlay - VERBATIM from Imaaicha (only bg color changed to white) */
+/* ==================== Contact Overlay (webflow-template style) ==================== */
+/* Contact Overlay - VERBATIM from webflow-template (only bg color changed to white) */
 .contact-overlay{grid-column-gap:3em;grid-row-gap:3em;background-color:#ffffff;pointer-events:auto;border-bottom-left-radius:1.4em;flex-flow:column;justify-content:flex-start;align-items:stretch;width:21em;height:auto;padding:1.5em;display:none;position:fixed;inset:0% 0% auto auto;box-shadow:0 2px .875rem .375rem #11111138;z-index:1001}
 
 .contact-overlay.is-open{display:flex}
@@ -731,7 +731,7 @@ a:not(.nav-header a):hover {
 
 .contact-overlay-backdrop.is-visible{opacity:1;visibility:visible}
 
-/* ==================== Enhanced Footer (imaaicha style) ==================== */
+/* ==================== Enhanced Footer (webflow-template style) ==================== */
 .footer-enhanced {
     background-color: var(--color-navy);
     color: #fff;
@@ -930,8 +930,8 @@ body.has-fullscreen-hero .header {
     display: none;
 }
 
-/* ==================== About Section (imaaicha exact clone) ==================== */
-/* REMOVED duplicate :root - using main imaaicha variables below */
+/* ==================== About Section (webflow-template exact clone) ==================== */
+/* REMOVED duplicate :root - using main webflow-template variables below */
 
 /* ==================== Buttons ==================== */
 .btn {
@@ -2191,9 +2191,9 @@ To use the vertical timeline again:
     }
 }
 
-/* ==================== Travel Plans Section (Exact imaaicha.com) ==================== */
+/* ==================== Travel Plans Section (Exact webflow-template.com) ==================== */
 
-/* imaaicha CSS Variables - SINGLE DEFINITION */
+/* webflow-template CSS Variables - SINGLE DEFINITION */
 :root {
     --bg-color: #ffffff;
     --khdyr: #333333;
@@ -2458,7 +2458,7 @@ To use the vertical timeline again:
 
 /* Old container/responsive queries removed — handled by travel cards section */
 
-/* ==================== IMAAICHA STRUCTURAL PORT (1:1 Clone) ==================== */
+/* ==================== webflow-template STRUCTURAL PORT (1:1 Clone) ==================== */
 /* Colors swapped: Original green replaced with charcoal/black palette */
 
 /* Hero Section */
@@ -2553,7 +2553,7 @@ To use the vertical timeline again:
 
 /* Navigation — let Webflow CSS control the navbar without interference */
 
-/* Contact Overlay (imaaicha structure) */
+/* Contact Overlay (webflow-template structure) */
 .text-block-15 {
     color: var(--color-white);
     font-size: 2em;
@@ -2764,7 +2764,7 @@ a.footer-link {
     }
 }
 
-/* ==================== SECTIONS 03-07 - imaaicha Port ==================== */
+/* ==================== SECTIONS 03-07 - webflow-template Port ==================== */
 
 /* Quote Section */
 .quote {

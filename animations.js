@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Lenis smooth scroll
     initLenisScroll();
 
-    // Swiper sliders (imaaicha)
+    // Swiper sliders (webflow-template)
     initSwiperSliders();
 
     // Dropdown toggles (defined section)
@@ -351,7 +351,7 @@ function initHorizontalTimeline() {
 
 /**
  * Fullscreen Hero - Header scroll behavior & Depth Masking Parallax
- * Creates 3D depth effect where text slides behind the mountain/castle foreground (imaaicha style)
+ * Creates 3D depth effect where text slides behind the mountain/castle foreground (webflow-template style)
  * Nav becomes sticky when scrolled past hero
  */
 function initFullscreenHeroScroll() {
@@ -360,7 +360,7 @@ function initFullscreenHeroScroll() {
     // Only run if page has fullscreen hero
     if (!body.classList.contains('has-fullscreen-hero')) return;
 
-    // imaaicha structure selectors
+    // webflow-template structure selectors
     const heroSection = document.querySelector('.home-hero');
     const homeParallax = document.querySelector('.home-parallax');
     const displayText = document.querySelector('.display');
@@ -372,7 +372,7 @@ function initFullscreenHeroScroll() {
     // Check for reduced motion preference
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    // Scroll handler with depth parallax (imaaicha style)
+    // Scroll handler with depth parallax (webflow-template style)
     function handleScroll() {
         const heroHeight = heroSection.offsetHeight;
         const scrollY = window.scrollY || window.pageYOffset;
@@ -514,7 +514,7 @@ function initLenisScroll() {
 }
 
 /**
- * Swiper Slider initialization (imaaicha structure)
+ * Swiper Slider initialization (webflow-template structure)
  */
 function initSwiperSliders() {
     // Check if Swiper is available
@@ -547,7 +547,7 @@ function initSwiperSliders() {
 }
 
 /**
- * Dropdown Toggles (Defined section - imaaicha structure)
+ * Dropdown Toggles (Defined section - webflow-template structure)
  */
 function initDropdownToggles() {
     const dropdowns = document.querySelectorAll('.travel-dropdown');
@@ -581,7 +581,7 @@ function initDropdownToggles() {
 }
 
 /**
- * Parallax Phrase Lines (imaaicha scroll animation)
+ * Parallax Phrase Lines (webflow-template scroll animation)
  * Text SVGs slide horizontally in opposite directions as user scrolls
  */
 function initParallaxPhrases() {
@@ -597,7 +597,7 @@ function initParallaxPhrases() {
 
     if (!phraseLine1 && !phraseLine2 && !phraseLine3) return;
 
-    // Animation values from imaaicha (in %)
+    // Animation values from webflow-template (in %)
     // At scroll 0%: all at 0
     // At scroll 100%: _3 -> 36%, _2 -> -42%, _1 -> 36%
     const animations = {

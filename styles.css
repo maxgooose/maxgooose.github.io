@@ -4081,6 +4081,25 @@ a.footer-link {
 
 /* ==================== GLOBAL MOBILE: Kill Webflow white space ==================== */
 @media (max-width: 768px) {
+
+  /* ── Prevent horizontal overflow ── */
+  html, body {
+    overflow-x: hidden !important;
+  }
+  .page_wrap {
+    overflow-x: hidden !important;
+  }
+
+  /* ── Navigation ── */
+  .nav-header {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .navbar {
+    max-width: 100vw !important;
+    border-radius: 0.8rem !important;
+    box-sizing: border-box !important;
+  }
   .menu-container {
     flex-wrap: wrap !important;
     gap: 0.25rem !important;
@@ -4091,26 +4110,72 @@ a.footer-link {
     font-size: 0.72rem !important;
     padding: 0.3rem 0.4rem !important;
   }
+  .navbar .nav-item-link.is--button {
+    padding: 0.35rem 0.65rem !important;
+    font-size: 0.68rem !important;
+  }
   .nav-arrow { display: none !important; }
   .grid-wrap, .global-code { display: none !important; }
-  .smf-hero, .home-about, .home-about.is-travels {
-    padding: 1.5rem 1rem !important;
+
+  /* ── Hero Section (keep full-viewport height) ── */
+  .smf-hero {
+    min-height: 100svh !important;
+    padding: 0 1rem !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* ── About / Intro Sections ── */
+  .home-about {
+    padding: 3rem 1rem 3rem !important;
+    margin-bottom: 0 !important;
+    min-height: unset !important;
+    background-size: auto 50vw !important;
+  }
+  .home-about.is-travels {
+    padding: 0.5rem 1rem 1rem !important;
     margin-bottom: 0 !important;
     min-height: unset !important;
   }
+
+  /* ── Section Titles ── */
   .section-title-and-text {
-    padding: 0 !important;
+    flex-direction: column !important;
+    gap: 1rem !important;
+    max-width: 100% !important;
+    padding: 0 1rem !important;
     margin: 0 !important;
+  }
+  .section-title-and-text.is-03 {
+    padding-top: 2rem !important;
+    padding-bottom: 0.5rem !important;
+  }
+  .section-title-and-text.is-04 {
+    padding-bottom: 1rem !important;
+  }
+  .section-title-and-text.is-travel {
+    padding: 0 !important;
     gap: 0.5rem !important;
   }
   .sec-numb {
     font-size: 0.65rem !important;
     margin-bottom: 0.5rem !important;
   }
-  .about-text-ctn h1, .about-text-ctn h2, .home-heading {
-    font-size: 1.6rem !important;
+  .about-text-ctn {
+    width: 100% !important;
+    border-bottom: none !important;
+  }
+  .about-text-ctn h1,
+  .about-text-ctn h2,
+  .home-heading {
+    font-size: 1.4rem !important;
+    line-height: 1.25 !important;
+  }
+  .about-text-ctn.is-travel h1 {
+    font-size: 1.8rem !important;
     line-height: 1.2 !important;
   }
+
+  /* ── Slider / Initiatives ── */
   .slider-main_component {
     padding: 1.5rem 0 !important;
     margin: 0 !important;
@@ -4118,22 +4183,226 @@ a.footer-link {
   .slider-main_top-wrapper {
     padding: 0 1rem !important;
     margin-bottom: 1rem !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.75rem !important;
   }
-  .benefits_layout { gap: 0.75rem !important; padding: 0 !important; }
-  .benefits_card_wrap { min-height: 260px !important; border-radius: 12px !important; }
-  .text-block-12 { font-size: 1.1rem !important; padding: 2rem 1rem !important; line-height: 1.5 !important; }
-  .destinations-cnt, .desti-cards { padding: 1rem 0 !important; }
-  .stats-section, .morocco-numbers { padding: 2rem 1rem !important; }
-  .blog-section { padding: 2rem 0 !important; }
-  .defined { padding: 2rem 1rem !important; }
-  .u-section, .u-container { padding: 0 1rem !important; margin: 0 !important; }
+  .swiper-slide.is-slider-main {
+    width: 85% !important;
+  }
+  .slider-main_title {
+    font-size: 1.2rem !important;
+  }
+  .slider-main_button {
+    width: 3.5rem !important;
+    height: 2rem !important;
+  }
+
+  /* ── Cards / Benefits (Partners, Numbers, Inspired, Travel) ── */
+  .cards-wrap.u-container-2 {
+    padding: 0 1rem !important;
+    margin-bottom: 2rem !important;
+  }
+  .benefits_layout {
+    flex-direction: column !important;
+    gap: 0.75rem !important;
+    padding: 0 !important;
+  }
+  .benefits_card_wrap {
+    min-height: 240px !important;
+    border-radius: 12px !important;
+    width: 100% !important;
+  }
+  .benefits_card_title {
+    font-size: 1.15rem !important;
+    line-height: 1.2 !important;
+  }
+  .benefits_card_text {
+    font-size: 0.85rem !important;
+    line-height: 1.5 !important;
+  }
+
+  /* ── Travel Partner Cards ── */
+  .benefits_layout.is-travel-plans {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+  .benefits_card_wrap.is-travel {
+    min-height: 280px !important;
+    aspect-ratio: 16 / 10 !important;
+    border-radius: 12px !important;
+  }
+  .benefits_card_header.is-travel {
+    flex-wrap: wrap !important;
+    gap: 0.3rem !important;
+  }
+  .cards-wrap.is-travel {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* ── Quote Section ── */
+  .quote {
+    height: auto !important;
+    min-height: 180px !important;
+    padding: 2.5rem 1rem !important;
+    margin: 1rem 0 !important;
+    background-attachment: scroll !important; /* fix iOS */
+  }
+  .text-block-12 {
+    font-size: 1.1rem !important;
+    width: 90% !important;
+    padding: 0 !important;
+    line-height: 1.5 !important;
+  }
+  .text-span-4 {
+    font-size: 0.55em !important;
+  }
+
+  /* ── Destinations / Stats Sections ── */
+  .destinations-cnt {
+    padding: 0.5rem 0 !important;
+    margin-bottom: 0.5rem !important;
+  }
+  .desti-cards-cnt {
+    padding: 0 !important;
+  }
+
+  /* ── Blog / News ── */
+  .blog-section {
+    padding: 2rem 1rem !important;
+  }
+  .blog-cnt {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+  .text-block-18 {
+    font-size: 0.95rem !important;
+  }
+  .blog-text {
+    font-size: 0.78rem !important;
+  }
+
+  /* ── Defined Section (Our Work Is Defined By) ── */
+  .defined {
+    padding: 0 !important;
+  }
+  .top-cnt {
+    padding: 2rem 1rem !important;
+  }
+  .defined-header {
+    padding-bottom: 2rem !important;
+  }
+  .text-block-4 {
+    font-size: 0.95rem !important;
+  }
+  .list-cnt {
+    width: 100% !important;
+  }
+  .dropdown-title {
+    font-size: 1.15rem !important;
+  }
+  .dropdown-text {
+    width: 100% !important;
+    font-size: 0.85rem !important;
+  }
+  .traval-arrow {
+    width: 1.8rem !important;
+  }
+  .div-block-3 {
+    padding: 2rem 1rem !important;
+  }
+  .text-block-6 {
+    width: 100% !important;
+    font-size: 1rem !important;
+  }
+  .div-block-4 {
+    padding: 0 1rem !important;
+  }
+
+  /* ── Long Phrases (prevent horizontal scroll) ── */
+  .long-phrases {
+    overflow: hidden !important;
+  }
+  .phrase-line {
+    width: 100% !important;
+  }
+
+  /* ── Shop Grid (override inline styles from HTML) ── */
+  .shop-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+    padding: 1.5rem 1rem 2rem !important;
+  }
+  .shop-card-img {
+    height: 200px !important;
+  }
+  .shop-card-title {
+    font-size: 1.05rem !important;
+  }
+
+  /* ── Images (prevent overflow on all pages) ── */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  .slider-main_img-height {
+    border-radius: 0.4rem !important;
+  }
+
+  /* ── Page Structure ── */
   .page_main { padding-top: 0 !important; }
-  .travels-footer { padding: 2rem 1rem !important; }
-  .travels-footer__inner { padding: 0 !important; }
-  .travels-footer__top { flex-direction: column !important; gap: 1.5rem !important; }
-  .travels-footer__nav { flex-direction: column !important; gap: 1rem !important; }
+  .u-section { padding: 0 !important; margin: 0 !important; }
+  .u-container { padding: 0 1rem !important; margin: 0 !important; }
+
+  /* ── Partner Section (travels page) ── */
+  .partner-section {
+    padding: 1.5rem 1rem !important;
+  }
+  .partner-section__inner {
+    padding: 0 !important;
+  }
+  .partner-section__text {
+    font-size: 0.88rem !important;
+  }
+  .partner-section__cta {
+    padding: 1rem !important;
+  }
+
+  /* ── Footer ── */
+  .travels-footer {
+    padding: 2rem 1rem !important;
+  }
+  .travels-footer__inner {
+    padding: 0 !important;
+  }
+  .travels-footer__top {
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+  }
+  .travels-footer__brand {
+    flex: none !important;
+  }
+  .travels-footer__nav {
+    flex-direction: column !important;
+    gap: 1rem !important;
+  }
+  .travels-footer__bottom {
+    flex-direction: column !important;
+    gap: 0.25rem !important;
+    text-align: center !important;
+  }
+
+  /* ── Logo (travels / subpages) ── */
   .logo-cnt img { height: 80px !important; }
   .logo-cnt { padding: 1rem 0 0.5rem !important; }
+
+  /* ── Contact Overlay ── */
+  .contact-overlay {
+    width: 100% !important;
+    border-radius: 0 0 0 1rem !important;
+    right: 0 !important;
+  }
 }
 
 /* ==================== Syrian Heritage Collection Shop ==================== */

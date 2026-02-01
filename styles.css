@@ -3941,6 +3941,39 @@ a.footer-link {
     padding-left: 1.5em;
 }
 
+/* Travels page — kill whitespace */
+@media (max-width: 767px) {
+    .logo-cnt {
+        padding: 1rem 0 0.5rem !important;
+    }
+    .logo-cnt img {
+        height: 80px !important;
+        width: auto !important;
+    }
+    .home-about.is-travels {
+        padding: 0.5rem 1rem 1rem !important;
+        min-height: unset !important;
+    }
+    .section-title-and-text.is-travel {
+        padding: 0 !important;
+        gap: 0.5rem !important;
+    }
+    .about-text-ctn.is-travel h1 {
+        font-size: 1.8rem !important;
+        line-height: 1.2 !important;
+        margin: 0 !important;
+    }
+    .sec-numb {
+        font-size: 0.7rem !important;
+    }
+    .benefits_card_wrap.is-travel {
+        min-height: 280px !important;
+    }
+    .partner-section {
+        padding: 1.5rem 1rem !important;
+    }
+}
+
 /* Mobile nav — compact single bar */
 @media (max-width: 767px) {
     .nav-header .navbar {

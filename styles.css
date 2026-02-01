@@ -4626,6 +4626,306 @@ a.footer-link {
     height: 100% !important;
     object-fit: cover !important;
   }
+
+  /* ── Shop card text readability ── */
+  .shop-card-desc {
+    color: rgba(255,255,255,0.75) !important;
+    font-size: 0.88rem !important;
+  }
+  .heritage-shop-card-desc {
+    color: rgba(255,255,255,0.75) !important;
+  }
+
+  /* ══════════════════════════════════════════════
+     TEAM PAGE — Kill excessive whitespace
+     ══════════════════════════════════════════════ */
+
+  /* Hero on subpages (team, contact, impact, etc.) */
+  .hero {
+    padding: 2.5rem 0 1.5rem !important;
+  }
+  .hero-title {
+    font-size: 2rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+  .hero-description {
+    font-size: 1rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  /* Reduce .section padding on all subpages */
+  .section {
+    padding: 2rem 0 !important;
+  }
+
+  /* Kill oversized bottom margins on team headings */
+  .mb-16 {
+    margin-bottom: 1.5rem !important;
+  }
+  .mb-12 {
+    margin-bottom: 1rem !important;
+  }
+  .mb-8 {
+    margin-bottom: 0.75rem !important;
+  }
+  .mt-12 {
+    margin-top: 1rem !important;
+  }
+
+  /* Highlight box (founder feature on team page) */
+  .highlight-box {
+    padding: 1rem !important;
+    margin: 1rem 0 !important;
+  }
+
+  /* Split content stacks on mobile */
+  .split-content {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+    margin: 1rem 0 !important;
+  }
+
+  /* Image grid on team page */
+  .image-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+    margin: 1.5rem 0 !important;
+  }
+  .image-card img {
+    height: 200px !important;
+  }
+
+  /* Cards grid - ensure single column at small widths */
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
+  /* Card padding reduction */
+  .card {
+    padding: 1.25rem !important;
+  }
+
+  /* Heritage section divider */
+  .heritage-section-divider {
+    margin: 1rem auto !important;
+  }
+
+  /* Section alt background - match dark theme */
+  .section-alt {
+    background: #111 !important;
+  }
+  .section-alt .card {
+    background: #1a1a1a !important;
+    border-color: rgba(212, 165, 116, 0.15) !important;
+    color: #fff !important;
+  }
+  .section-alt .card .card-title,
+  .section-alt .card h4 {
+    color: #fff !important;
+  }
+  .section-alt .card .card-content,
+  .section-alt .card .card-content p,
+  .section-alt .card p {
+    color: rgba(255,255,255,0.7) !important;
+  }
+
+  /* Section background consistency with dark theme */
+  .section:not(.section-alt) {
+    background: #0a0a0a !important;
+  }
+  .section .container h2,
+  .section .container h3 {
+    color: #fff !important;
+  }
+  .section .container p,
+  .section .container .lead,
+  .section .container .card-content {
+    color: rgba(255,255,255,0.75) !important;
+  }
+  .section .container a:not(.btn) {
+    color: #D4A574 !important;
+  }
+
+  /* Cards on dark background */
+  .section:not(.section-alt) .card {
+    background: rgba(255,255,255,0.04) !important;
+    border-color: rgba(212, 165, 116, 0.15) !important;
+  }
+  .section:not(.section-alt) .card .card-title,
+  .section:not(.section-alt) .card h3,
+  .section:not(.section-alt) .card h4 {
+    color: #fff !important;
+  }
+  .section:not(.section-alt) .card p {
+    color: rgba(255,255,255,0.7) !important;
+  }
+
+  /* Highlight box dark theme */
+  .highlight-box {
+    background: rgba(255,255,255,0.04) !important;
+    border-color: rgba(212, 165, 116, 0.2) !important;
+  }
+
+  /* Image card on dark background */
+  .image-card {
+    background: rgba(255,255,255,0.04) !important;
+    border-color: rgba(212, 165, 116, 0.15) !important;
+  }
+  .image-card-title {
+    color: #fff !important;
+  }
+  .image-card-caption {
+    color: rgba(255,255,255,0.7) !important;
+  }
+  .image-caption {
+    background: rgba(212, 165, 116, 0.1) !important;
+    color: rgba(255,255,255,0.8) !important;
+    border-left-color: #D4A574 !important;
+  }
+
+  /* Prose text */
+  .prose p,
+  .prose .lead {
+    color: rgba(255,255,255,0.7) !important;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    background: linear-gradient(135deg, #C4953A 0%, #A88A53 100%) !important;
+    border-color: #C4953A !important;
+    color: #fff !important;
+  }
+
+  /* ══════════════════════════════════════════════
+     CONTACT PAGE — Fix spacing & layout
+     ══════════════════════════════════════════════ */
+
+  /* Contact hero with background image */
+  .hero[style*="background"] {
+    padding: 3rem 1rem 2rem !important;
+    min-height: unset !important;
+  }
+
+  /* Contact form + info grid stacks on mobile */
+  .grid.grid-2[style*="max-width: 900px"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Form inputs on dark background */
+  .form-input,
+  .form-textarea {
+    background: rgba(255,255,255,0.08) !important;
+    border-color: rgba(255,255,255,0.2) !important;
+    color: #fff !important;
+  }
+  .form-input::placeholder,
+  .form-textarea::placeholder {
+    color: rgba(255,255,255,0.4) !important;
+  }
+  .form-label {
+    color: rgba(255,255,255,0.8) !important;
+  }
+
+  /* Contact info styling on dark bg */
+  .contact-info-item {
+    border-bottom-color: rgba(255,255,255,0.1) !important;
+  }
+  .contact-info-label {
+    color: #D4A574 !important;
+  }
+
+  /* ══════════════════════════════════════════════
+     ABOUT PAGE (Webflow-generated) — Mobile fixes
+     ══════════════════════════════════════════════ */
+
+  /* About page hero section */
+  .home-about.is--aboutpage {
+    padding: 2rem 1rem 2rem !important;
+    min-height: unset !important;
+  }
+
+  /* Bio/team text */
+  .bio-text-team {
+    font-size: 0.9rem !important;
+    line-height: 1.6 !important;
+  }
+
+  /* About page sections */
+  .u-section.is-team,
+  .u-section.is-values {
+    padding: 1.5rem 0 !important;
+  }
+
+  /* Values cards */
+  .card-title-values,
+  .card-title-values-cms {
+    font-size: 1.1rem !important;
+  }
+  .text-values-cards {
+    font-size: 0.85rem !important;
+  }
+
+  /* Calendar/Schedule section on about page */
+  .calend-h1 {
+    font-size: 1.6rem !important;
+  }
+  .calend-h2 {
+    font-size: 1.1rem !important;
+  }
+
+  /* ══════════════════════════════════════════════
+     IMPACT PAGE — Fix content width & spacing
+     ══════════════════════════════════════════════ */
+
+  /* Impact page sections */
+  .section .container .prose {
+    max-width: 100% !important;
+  }
+
+  /* ══════════════════════════════════════════════
+     MEDIA PAGE — Fix gap before footer
+     ══════════════════════════════════════════════ */
+
+  /* Kill any residual height on the slider gallery page sections */
+  .page-padding {
+    min-height: unset !important;
+  }
+
+  /* ══════════════════════════════════════════════
+     GLOBAL — Nav improvements & polish
+     ══════════════════════════════════════════════ */
+
+  /* Slightly larger nav text for better tap targets */
+  .nav-item-link {
+    font-size: 0.73rem !important;
+    padding: 0.4rem 0.5rem !important;
+  }
+  .nav-item-link .nav-link-text,
+  .nav-link-text {
+    font-size: 0.73rem !important;
+  }
+  .navbar .nav-item-link.is--button {
+    padding: 0.35rem 0.65rem !important;
+    font-size: 0.68rem !important;
+  }
+
+  /* Accent gold for dark pages */
+  .accent-gold {
+    color: #D4A574 !important;
+  }
+
+  /* Heritage image on dark bg */
+  .heritage-image {
+    border-radius: 8px !important;
+  }
+
+  /* Remove white background from hero on subpages */
+  .hero {
+    background: transparent !important;
+  }
 }
 
 /* ==================== Syrian Heritage Collection Shop ==================== */

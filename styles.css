@@ -4079,6 +4079,63 @@ a.footer-link {
     }
 }
 
+/* ==================== GLOBAL MOBILE: Kill Webflow white space ==================== */
+@media (max-width: 768px) {
+  .menu-container {
+    flex-wrap: wrap !important;
+    gap: 0.25rem !important;
+    justify-content: center !important;
+    padding: 0.5rem 0.75rem !important;
+  }
+  .nav-item-link {
+    font-size: 0.72rem !important;
+    padding: 0.3rem 0.4rem !important;
+  }
+  .nav-arrow { display: none !important; }
+  .grid-wrap, .global-code { display: none !important; }
+  .smf-hero, .home-about, .home-about.is-travels {
+    padding: 1.5rem 1rem !important;
+    margin-bottom: 0 !important;
+    min-height: unset !important;
+  }
+  .section-title-and-text {
+    padding: 0 !important;
+    margin: 0 !important;
+    gap: 0.5rem !important;
+  }
+  .sec-numb {
+    font-size: 0.65rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  .about-text-ctn h1, .about-text-ctn h2, .home-heading {
+    font-size: 1.6rem !important;
+    line-height: 1.2 !important;
+  }
+  .slider-main_component {
+    padding: 1.5rem 0 !important;
+    margin: 0 !important;
+  }
+  .slider-main_top-wrapper {
+    padding: 0 1rem !important;
+    margin-bottom: 1rem !important;
+  }
+  .benefits_layout { gap: 0.75rem !important; padding: 0 !important; }
+  .benefits_card_wrap { min-height: 260px !important; border-radius: 12px !important; }
+  .text-block-12 { font-size: 1.1rem !important; padding: 2rem 1rem !important; line-height: 1.5 !important; }
+  .destinations-cnt, .desti-cards { padding: 1rem 0 !important; }
+  .stats-section, .morocco-numbers { padding: 2rem 1rem !important; }
+  .blog-section { padding: 2rem 0 !important; }
+  .defined { padding: 2rem 1rem !important; }
+  .u-section, .u-container { padding: 0 1rem !important; margin: 0 !important; }
+  .page_main { padding-top: 0 !important; }
+  .travels-footer { padding: 2rem 1rem !important; }
+  .travels-footer__inner { padding: 0 !important; }
+  .travels-footer__top { flex-direction: column !important; gap: 1.5rem !important; }
+  .travels-footer__nav { flex-direction: column !important; gap: 1rem !important; }
+  .logo-cnt img { height: 80px !important; }
+  .logo-cnt { padding: 1rem 0 0.5rem !important; }
+}
+
 /* ==================== Syrian Heritage Collection Shop ==================== */
 
 .shop-grid {

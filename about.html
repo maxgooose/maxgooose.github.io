@@ -191,4 +191,23 @@ tl.to(".loader_progress", {
     duration: loaderDuration,
     ease: CustomEase.create("custom", customEase)
 }, 0);
-</script></body></html>
+</script>  <script>
+    // Mobile hamburger menu toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      var burger = document.querySelector('.burger-menu');
+      var menu = document.querySelector('.menu-container');
+      if (burger && menu) {
+        burger.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          menu.classList.toggle('is-open');
+        });
+        menu.querySelectorAll('.nav-item-link').forEach(function(link) {
+          link.addEventListener('click', function() {
+            menu.classList.remove('is-open');
+          });
+        });
+      }
+    });
+  </script>
+</body></html>

@@ -3941,26 +3941,47 @@ a.footer-link {
     padding-left: 1.5em;
 }
 
-/* On small screens, stack nav and show burger */
+/* On small screens, show burger and hide menu until toggled */
 @media (max-width: 767px) {
+    .burger-menu {
+        display: flex !important;
+        cursor: pointer;
+        z-index: 1001;
+        padding: 0.5em;
+    }
+
     .menu-container {
-        flex-wrap: wrap;
+        display: none !important;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(10, 22, 40, 0.97);
+        flex-direction: column;
+        align-items: center;
         justify-content: center;
-        gap: 0;
+        gap: 0.5rem;
+        z-index: 1000;
+    }
+
+    .menu-container.is-open {
+        display: flex !important;
     }
 
     .navbar .nav-item-link {
-        padding: 0.35em 0.5em;
-        font-size: 0.78rem;
+        padding: 0.8em 1.5em;
+        font-size: 1.1rem;
     }
 
     .navbar .nav-item-link.is--first {
-        padding-left: 0.5em;
+        padding-left: 1.5em;
     }
 
     .navbar .nav-item-link.is--button {
-        padding: 0.4em 0.7em;
-        font-size: 0.72rem;
+        padding: 0.7em 2em;
+        font-size: 1rem;
+        margin-top: 0.5rem;
     }
 }
 

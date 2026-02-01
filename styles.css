@@ -4922,9 +4922,10 @@ a.footer-link {
     border-radius: 8px !important;
   }
 
-  /* Remove white background from hero on subpages */
+  /* Remove white background from hero on subpages — 
+     but preserve inline background-image (e.g. contact hero) */
   .hero {
-    background: transparent !important;
+    background-color: transparent !important;
   }
 }
 
@@ -5053,4 +5054,281 @@ a.footer-link {
     .shop-card-desc {
         font-size: 0.85rem;
     }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   MOBILE POLISH PASS — June 2025
+   Systematic fixes after full-page mobile audit (390×844)
+   ══════════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+
+  /* ── 1. Fix .header on mobile (trip/tourist/delegation pages) ──
+     These pages use <header class="header"> instead of .nav-header.
+     Make it dark to match the site-wide mobile dark theme.          */
+  .header {
+    background: rgba(10, 10, 10, 0.95) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border-bottom-color: rgba(255, 255, 255, 0.08) !important;
+  }
+  .header-logo,
+  .header .header-logo {
+    color: #fff !important;
+  }
+  .header-link,
+  .header .header-link {
+    color: rgba(255, 255, 255, 0.8) !important;
+  }
+  .header-link:hover,
+  .header .header-link:hover {
+    color: #D4A574 !important;
+  }
+
+  /* ── 2. Contact page: fix form class collision ──
+     <form class="contact-form"> gets footer `.contact-form` styles.
+     Scope the reset to actual form elements only.                  */
+  form.contact-form {
+    background-color: transparent !important;
+    background-image: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    flex-direction: column !important;
+  }
+
+  /* ── 3. Form inputs: better visibility on dark backgrounds ── */
+  .form-input,
+  .form-textarea,
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="date"],
+  input[type="number"],
+  textarea,
+  select {
+    background: rgba(255, 255, 255, 0.07) !important;
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
+    color: #fff !important;
+    font-size: 16px !important; /* prevent iOS zoom */
+    padding: 0.75rem !important;
+    border-radius: 6px !important;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  .form-input:focus,
+  .form-textarea:focus,
+  input:focus,
+  textarea:focus,
+  select:focus {
+    border-color: #D4A574 !important;
+    outline: none !important;
+    box-shadow: 0 0 0 2px rgba(212, 165, 116, 0.2) !important;
+  }
+  .form-input::placeholder,
+  .form-textarea::placeholder,
+  input::placeholder,
+  textarea::placeholder {
+    color: rgba(255, 255, 255, 0.35) !important;
+  }
+  .form-label,
+  label {
+    color: rgba(255, 255, 255, 0.75) !important;
+    font-size: 0.875rem !important;
+    margin-bottom: 0.35rem !important;
+    display: block !important;
+  }
+  .form-group {
+    margin-bottom: 1.25rem !important;
+  }
+
+  /* ── 4. Webflow spacers: reduce on mobile ── */
+  .u-section-spacer {
+    height: 24px !important;
+    min-height: 24px !important;
+    max-height: 24px !important;
+    flex: none !important;
+  }
+  .u-section-spacer.is-bottom {
+    height: 32px !important;
+    min-height: 32px !important;
+    max-height: 32px !important;
+  }
+
+  /* ── 5. Trip-registration / selection pages text fix ──
+     These pages define dark text colors via inline CSS vars.
+     Override to white for readability on the dark body bg.  */
+  .selection-header h2 {
+    color: #fff !important;
+  }
+  .selection-header p {
+    color: rgba(255, 255, 255, 0.6) !important;
+  }
+  .logo-text {
+    color: #fff !important;
+  }
+  .selection-card .card-title {
+    color: #fff !important;
+  }
+  .selection-card .card-description {
+    color: rgba(255, 255, 255, 0.7) !important;
+  }
+  .selection-card .card-cta {
+    color: #D4A574 !important;
+  }
+  .selection-card .card-cta svg {
+    stroke: #D4A574 !important;
+  }
+  /* Selection cards: dark glass effect instead of white bg */
+  .selection-card {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    color: #fff !important;
+  }
+  .selection-card:hover {
+    border-color: rgba(212, 165, 116, 0.4) !important;
+    box-shadow: 0 4px 16px rgba(212, 165, 116, 0.15) !important;
+  }
+  .selection-card .card-icon {
+    background: rgba(255, 255, 255, 0.08) !important;
+  }
+  .selection-card .card-icon svg {
+    stroke: #D4A574 !important;
+  }
+
+  /* ── 6. Contact info items: better spacing & dividers ── */
+  .contact-info-item {
+    padding: 1rem 0 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  }
+  .contact-info-item:last-child {
+    border-bottom: none !important;
+  }
+  .contact-info-label {
+    color: #D4A574 !important;
+    font-size: 0.8rem !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.06em !important;
+    margin-bottom: 0.25rem !important;
+  }
+
+  /* ── 7. Hero with background-image: ensure it shows on mobile ──
+     Contact, impact, etc. pages set background-image inline.
+     background-color: transparent preserves the image.
+     But we also need to keep the image visible. */
+  .hero[style*="background"] {
+    background-color: transparent !important;
+    /* Let inline background-image through */
+  }
+
+  /* ── 8. Back button (tourist/delegation registration) ── */
+  .back-btn,
+  a[class*="back"] {
+    color: #D4A574 !important;
+  }
+
+  /* ── 9. Nav overlap prevention ──
+     Ensure fixed nav-header doesn't sit under the .header or vice versa */
+  body:has(.nav-header) .header:not(.nav-header) {
+    display: none !important;
+  }
+
+  /* ── 10. Polish: tighten spacing around section headings ── */
+  .section > .container > h2:first-child,
+  .section > .container > .text-center:first-child h2 {
+    margin-top: 0 !important;
+  }
+
+  /* ── 11. Booking form: tighter layout ── */
+  .multistep-form,
+  .main-form {
+    padding: 0 1rem !important;
+  }
+  .multistep-form .form-step {
+    padding: 1.5rem !important;
+  }
+
+  /* ── 12. Improve CTA button visibility ── */
+  .div-block-42 {
+    padding: 1.5rem 0 2rem !important;
+  }
+
+  /* ── 13. About page: Webflow content sections ── */
+  .home-about.is--aboutpage {
+    padding-top: 1rem !important;
+    min-height: unset !important;
+  }
+  .bio-text-team {
+    color: rgba(255, 255, 255, 0.75) !important;
+  }
+
+  /* ── 14. Artifact-recovery page: prose readability ── */
+  .prose h2,
+  .prose h3 {
+    color: #fff !important;
+    margin-top: 1.5rem !important;
+  }
+
+  /* ── 15. Ensure no horizontal overflow on any page ── */
+  *:not(html):not(body) {
+    max-width: 100vw;
+  }
+  .slider-main_component,
+  .swiper.is-slider-main {
+    max-width: 100% !important;
+  }
+
+  /* ── 16. Footer consistency: ensure dark footer bg always ── */
+  .travels-footer {
+    background-color: #111111 !important;
+  }
+  .contact-form:not(form) {
+    background-color: #0a0a0a !important;
+  }
+
+  /* ── 17. Gallery/Media page: thumbnail row polish ── */
+  .slider-thumbs_height {
+    height: 48px !important;
+    border-radius: 4px !important;
+    overflow: hidden !important;
+  }
+  .slider-thumbs_img {
+    border-radius: 4px !important;
+  }
+
+  /* ── 18. Impact page: image cards proper sizing ── */
+  .split-content img,
+  .heritage-image {
+    width: 100% !important;
+    max-height: 300px !important;
+    object-fit: cover !important;
+    border-radius: 8px !important;
+  }
+
+  /* ── 19. Fix potential scroll-anchor issues ── */
+  scroll-padding-top: 60px;
+}
+
+/* ── 20. Small phone extra polish (375px and below) ── */
+@media (max-width: 375px) {
+  .nav-item-link {
+    font-size: 0.65rem !important;
+    padding: 0.3rem 0.35rem !important;
+  }
+  .nav-link-text {
+    font-size: 0.65rem !important;
+  }
+  .navbar .nav-item-link.is--button {
+    padding: 0.25rem 0.5rem !important;
+    font-size: 0.6rem !important;
+  }
+  .hero-title {
+    font-size: 1.75rem !important;
+  }
+  .hero-description {
+    font-size: 0.9rem !important;
+  }
+  .smf-hero__title {
+    font-size: clamp(2rem, 14vw, 4rem) !important;
+  }
 }

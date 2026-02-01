@@ -1580,6 +1580,139 @@ To use the vertical timeline again:
     }
 }
 
+/* ==================== Syrian Heritage Collection Shop ==================== */
+
+.shop-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-8);
+}
+
+.shop-card {
+    background: var(--color-white);
+    border: 1px solid #F0E6D2;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: all var(--transition-slow);
+    box-shadow: 0 2px 8px rgba(212, 165, 116, 0.08);
+}
+
+.shop-card:hover {
+    box-shadow: 0 12px 32px rgba(212, 165, 116, 0.2);
+    transform: translateY(-4px);
+    border-color: #E8D4A0;
+}
+
+.shop-card-img {
+    position: relative;
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #FAFAF8 0%, #F0E6D2 100%);
+}
+
+.shop-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.6s ease;
+}
+
+.shop-card:hover .shop-card-img img {
+    transform: scale(1.05);
+}
+
+.shop-card-body {
+    padding: var(--space-6);
+}
+
+.shop-card-title {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-navy);
+    margin-bottom: var(--space-3);
+    line-height: 1.3;
+}
+
+.shop-card-desc {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-4);
+}
+
+.shop-card-price {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #A88A53;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: var(--space-4);
+    padding: var(--space-1) 0;
+}
+
+.shop-btn-inquire {
+    display: inline-block;
+    padding: var(--space-2) var(--space-6);
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    color: var(--color-white);
+    background: linear-gradient(135deg, #C4953A 0%, #A88A53 100%);
+    border: 1px solid #C4953A;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    text-decoration: none;
+    text-align: center;
+}
+
+.shop-btn-inquire:hover {
+    background: linear-gradient(135deg, #B8892E 0%, #9A7D48 100%);
+    border-color: #B8892E;
+    color: var(--color-white);
+    box-shadow: 0 4px 12px rgba(196, 149, 58, 0.35);
+    transform: translateY(-1px);
+}
+
+/* Shop Grid Responsive */
+@media (max-width: 768px) {
+    .shop-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+    }
+
+    .shop-card-img {
+        height: 240px;
+    }
+
+    .shop-card-body {
+        padding: var(--space-5);
+    }
+
+    .shop-card-title {
+        font-size: 1.125rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .shop-card-img {
+        height: 200px;
+    }
+
+    .shop-card-body {
+        padding: var(--space-4);
+    }
+
+    .shop-card-desc {
+        font-size: 0.875rem;
+    }
+}
+
 /* ==================== Reduced Motion ==================== */
 @media (prefers-reduced-motion: reduce) {
     *,

@@ -3943,11 +3943,32 @@ a.footer-link {
 
 /* On small screens, show burger and hide menu until toggled */
 @media (max-width: 767px) {
+    .nav-header .navbar {
+        background: transparent !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        position: fixed !important;
+        bottom: auto !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        inset: auto !important;
+        padding: 1rem !important;
+        justify-content: flex-end !important;
+        z-index: 1001 !important;
+    }
+
     .burger-menu {
         display: flex !important;
         cursor: pointer;
-        z-index: 1001;
+        z-index: 1002;
         padding: 0.5em;
+        background: rgba(0,0,0,0.4);
+        border-radius: 50%;
+        width: 44px;
+        height: 44px;
+        align-items: center;
+        justify-content: center;
     }
 
     .menu-container {

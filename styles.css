@@ -12,7 +12,7 @@
 /* ==================== CSS Variables ==================== */
 :root {
     /* Color Palette - Minimalist & Clean */
-    --color-navy: #1A3A52;
+    --color-navy: #222;
     --color-terracotta: #C77E5C;
     --color-gold: #D4A574;
     --color-white: #FFFFFF;
@@ -3806,7 +3806,7 @@ a.footer-link {
 
 .travel-plans-section {
     padding: var(--space-20) 0;
-    background: linear-gradient(135deg, rgba(26, 58, 82, 0.02) 0%, rgba(212, 165, 116, 0.02) 100%);
+    background: linear-gradient(135deg, rgba(34, 34, 34, 0.02) 0%, rgba(212, 165, 116, 0.02) 100%);
 }
 
 .benefits_wrap {
@@ -3823,14 +3823,202 @@ a.footer-link {
     display: flex;
 }
 
-/* ==================== Travel Partner Cards ==================== */
+/* ==================== Travels Page Redesign (.tv-*) ==================== */
 
-.benefits_layout.is-travel-plans {
-    grid-column-gap: 1rem;
-    grid-row-gap: 1rem;
-    grid-template-columns: 1fr 1fr;
-    display: grid;
+/* --- Header --- */
+.tv-header {
+    padding: 3rem 0 2.5rem;
+    background: #fff;
 }
+.tv-header__inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+.tv-header__accent {
+    width: 48px;
+    height: 3px;
+    background: var(--color-gold);
+    margin-bottom: 1.5rem;
+    border-radius: 2px;
+}
+.tv-header__title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.4rem, 5vw, 3.8rem);
+    font-weight: 600;
+    line-height: 1.1;
+    color: #111;
+    margin: 0 0 1.25rem;
+    letter-spacing: -0.01em;
+}
+.tv-header__sub {
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    font-weight: 300;
+    line-height: 1.7;
+    color: #555;
+    margin: 0;
+    max-width: 650px;
+}
+
+/* --- Partner Cards (image + logo) --- */
+.tv-partners {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem 4rem;
+}
+.tv-partners__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+.tv-pcard {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    background: #fff;
+    border: 1px solid #EAEAEA;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.tv-pcard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+}
+.tv-pcard__photo {
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+}
+.tv-pcard__photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+.tv-pcard:hover .tv-pcard__photo img {
+    transform: scale(1.04);
+}
+.tv-pcard__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.25rem 1rem;
+    gap: 0.6rem;
+}
+.tv-pcard__logo {
+    height: 40px;
+    width: auto;
+    max-width: 100px;
+    object-fit: contain;
+}
+.tv-pcard__name {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #555;
+    margin: 0;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+.tv-pcard:hover .tv-pcard__name {
+    color: #111;
+}
+
+/* --- CTA Banner (dark navy) --- */
+.tv-cta {
+    background: #0B1A2A;
+    padding: 4.5rem 2rem;
+    text-align: center;
+}
+.tv-cta__inner {
+    max-width: 580px;
+    margin: 0 auto;
+}
+.tv-cta__title {
+    font-family: var(--font-heading);
+    font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+    font-weight: 600;
+    color: #fff;
+    margin: 0 0 1rem;
+    line-height: 1.15;
+}
+.tv-cta__text {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 300;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0 0 1.75rem;
+}
+.tv-cta__btn,
+.tv-cta__btn:visited,
+.tv-cta__btn:active,
+.tv-cta__btn:focus {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 0.8rem 2rem;
+    background: var(--color-gold);
+    color: #0B1A2A !important;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none !important;
+    transition: background 0.25s ease;
+}
+.tv-cta__btn:hover {
+    background: #e0b68a;
+    color: #0B1A2A !important;
+}
+
+/* --- Responsive: Tablet --- */
+@media (max-width: 991px) {
+    .tv-partners__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+    }
+}
+
+/* --- Responsive: Mobile --- */
+@media (max-width: 767px) {
+    .tv-header {
+        padding: 2rem 0 1.5rem;
+    }
+    .tv-header__inner {
+        padding: 0 1.25rem;
+    }
+    .tv-header__title {
+        font-size: clamp(1.8rem, 8vw, 2.6rem);
+    }
+    .tv-header__sub {
+        font-size: 0.95rem;
+    }
+    .tv-partners {
+        padding: 0 1rem 2.5rem;
+    }
+    .tv-partners__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    .tv-cta {
+        padding: 3rem 1.25rem;
+    }
+}
+
+/* Logo sizing (subpages) */
+.logo-cnt {
+    padding: 1rem 1.5rem 0.5rem;
+    margin: 0;
+}
+.logo-cnt img {
+    height: 110px;
+    width: auto;
+}
+
+/* ==================== Travel Partner Cards (index page) ==================== */
 
 .benefits_card_wrap.is-travel {
     background-position: 50%;
@@ -3847,26 +4035,19 @@ a.footer-link {
     color: #fff;
 }
 
-/* Logo: small, bottom-left, inline with content */
-.partner-logo-wrap {
-    display: flex;
-    align-items: center;
-    margin-bottom: 0.75rem;
-    z-index: 10;
-    position: relative;
-}
 
-.partner-logo-wrap img {
-    height: 32px;
+/* Travel partner logo on cards */
+.travel-partner-logo {
+    height: 40px;
     width: auto;
+    max-width: 120px;
     object-fit: contain;
-    filter: brightness(0) invert(1) drop-shadow(0 1px 4px rgba(0,0,0,0.4));
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.5));
+    border-radius: 4px;
+    transition: transform 0.3s ease;
 }
-
-.partner-logo-wrap img.logo-no-invert {
-    filter: drop-shadow(0 1px 4px rgba(0,0,0,0.4));
-    border-radius: 6px;
-    height: 36px;
+.benefits_card_wrap.is-travel:hover .travel-partner-logo {
+    transform: scale(1.05);
 }
 
 /* Card content stack */
@@ -3897,39 +4078,6 @@ a.footer-link {
     color: #fff !important;
 }
 
-.partner-tagline {
-    color: #fff !important;
-    font-size: 0.85rem;
-    line-height: 1.35;
-    margin: 0;
-    font-family: var(--font-body);
-}
-
-/* Partner meta row: @ handle + visit link */
-.partner-meta {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-    margin-top: 0.4rem;
-}
-
-.partner-handle {
-    font-size: 0.78rem;
-    color: rgba(255, 255, 255, 0.7);
-    font-family: var(--font-body);
-}
-
-.partner-visit {
-    font-size: 0.78rem;
-    font-weight: 600;
-    color: #fff;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    padding: 0.3rem 0.65rem;
-    border-radius: 0.25rem;
-    font-family: var(--font-body);
-}
 
 /* Dark gradient overlay */
 .benefits_card_wrap.is-travel .benefits_bg {
@@ -3948,147 +4096,10 @@ a.footer-link {
     text-decoration: none;
 }
 
-/* ==================== Travel Plans Grid Responsive ==================== */
-
-@media (max-width: 768px) {
-    .benefits_layout.is-travel-plans {
-        grid-template-columns: 1fr;
-    }
-
-    .benefits_card_wrap.is-travel {
-        aspect-ratio: 16 / 10;
-    }
-}
-
 @media (max-width: 480px) {
-    .benefits_card_wrap {
-        padding: 20% 1rem 1rem;
-    }
-
-    .benefits_card_title {
-        font-size: 1.1rem;
-    }
-
-    .benefits_card_title.is-travel-p {
-        padding: 0.5rem;
-        font-size: 0.8rem;
-    }
-
-    .benefits_card_title.is-travel {
-        padding: 0.5rem;
-        font-size: 0.8rem;
-    }
-}
-
-/* ==================== Partner Tagline (on cards) ==================== */
-
-.partner-tagline {
-    color: #fff !important;
-    font-family: 'Inter', sans-serif;
-    font-size: 0.85rem;
-    font-weight: 400;
-    line-height: 1.4;
-    margin: 0;
-    position: relative;
-    z-index: 10;
-}
-
-/* ==================== Partner Section (below cards) ==================== */
-
-.partner-section {
-    padding: 1.5rem 1.5rem 2rem;
-    display: flex;
-    justify-content: center;
-}
-
-.partner-section__inner {
-    max-width: 720px;
-    text-align: center;
-}
-
-.partner-section__divider {
-    width: 60px;
-    height: 3px;
-    background: linear-gradient(90deg, #D4A574, #c4956a);
-    margin: 0 auto 1.25rem;
-    border-radius: 2px;
-}
-
-.partner-section__title {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #1A3A52;
-    margin: 0 0 0.75rem;
-}
-
-.partner-section__text {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.92rem;
-    font-weight: 300;
-    line-height: 1.65;
-    color: #444;
-    margin: 0 0 0.5rem;
-}
-
-.partner-section__cta {
-    margin-top: 1.5rem;
-    padding: 1.5rem;
-    background: #f0f0f0;
-    border: 1px solid #e0e0e0;
-    border-radius: 1rem;
-}
-
-.partner-section__cta-text {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.9rem;
-    font-weight: 400;
-    color: #000;
-    margin: 0 0 1rem;
-    line-height: 1.5;
-}
-
-.partner-section__button {
-    display: inline-block;
-    padding: 0.65rem 1.75rem;
-    background-color: #222;
-    color: #fff;
-    font-family: 'Inter', sans-serif;
-    font-size: 0.85rem;
-    font-weight: 500;
-    text-decoration: none;
-    border-radius: 50px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.partner-section__button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
-}
-
-/* Partner section responsive */
-@media (max-width: 768px) {
-    .partner-section {
-        padding: 1.25rem 1.25rem 1.5rem;
-    }
-
-    .partner-section__title {
-        font-size: 1.35rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .partner-tagline {
-        font-size: 0.78rem;
-    }
-
-    .partner-section {
-        padding: 1rem 1rem 1.25rem;
-    }
-
-    .partner-section__button {
-        padding: 0.6rem 1.5rem;
-        font-size: 0.85rem;
+    .travel-partner-logo {
+        height: 32px;
+        max-width: 90px;
     }
 }
 
@@ -4120,7 +4131,6 @@ a.footer-link {
     height: 60px;
     width: auto;
     margin-bottom: 0.75rem;
-    filter: brightness(0) invert(1);
 }
 
 .travels-footer__tagline {
@@ -4265,74 +4275,87 @@ a.footer-link {
     .benefits_card_wrap.is-travel {
         min-height: 280px !important;
     }
-    .partner-section {
-        padding: 1.5rem 1rem !important;
-    }
 }
 
-/* Mobile nav - use hamburger menu for very small screens */
-@media (max-width: 390px) {
-    /* Show hamburger menu on mobile */
+/* Mobile nav — clean compact bottom pill */
+@media (max-width: 767px) {
+    /* Hide burger — we show all links inline */
     .burger-menu {
-        display: block !important;
-        padding: 1rem !important;
-        z-index: 50 !important;
-    }
-
-    /* Hide the navigation links on very small mobile */
-    .menu-container {
         display: none !important;
     }
 
-    .nav-header .navbar {
-        border-radius: 2em !important;
-        inset: auto 1em 1.5em 1em !important;
-        background-color: #fff !important;
-        border: 2px solid rgba(154, 154, 154, 0.19) !important;
-        box-shadow: 0 15px 58px rgba(0, 0, 0, 0.08) !important;
-        backdrop-filter: blur(20px) !important;
-        display: flex !important;
-        position: fixed !important;
-        justify-content: center !important;
-        align-items: center !important;
-        height: 60px !important;
+    /* Hide contact link and nav arrows on mobile to save space */
+    .navbar .nav-item-link.is-contact {
+        display: none !important;
     }
-}
+    .navbar .nav-arrow {
+        display: none !important;
+    }
 
-/* Tablet and larger mobile nav - compact single bar */
-@media (min-width: 391px) and (max-width: 767px) {
+    /* Fixed bottom pill */
     .nav-header .navbar {
-        border-radius: 2em !important;
-        inset: auto 0.5em 1.5em 0.5em !important;
-        padding: 0.3em 0.4em !important;
+        inset: unset !important;
+        position: fixed !important;
+        z-index: 999 !important;
+        bottom: 1rem !important;
+        left: 50% !important;
+        top: auto !important;
+        right: auto !important;
+        transform: translateX(-50%) !important;
+        width: auto !important;
+        max-width: calc(100vw - 1.5rem) !important;
+        background: rgba(255, 255, 255, 0.95) !important;
+        backdrop-filter: blur(16px) !important;
+        -webkit-backdrop-filter: blur(16px) !important;
+        border-radius: 100px !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12) !important;
+        border: 1px solid rgba(0, 0, 0, 0.06) !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        height: auto !important;
+        padding: 0.4rem 0.3rem !important;
     }
 
     .menu-container {
+        display: flex !important;
         flex-wrap: nowrap !important;
+        align-items: center !important;
         justify-content: center !important;
         gap: 0 !important;
-        width: 100% !important;
+        padding: 0 !important;
+        width: auto !important;
     }
 
     .navbar .nav-item-link {
-        padding: 0.3em 0.45em !important;
+        padding: 0.4rem 0.55rem !important;
         white-space: nowrap !important;
+        display: flex !important;
+        align-items: center !important;
     }
 
     .navbar .nav-item-link .nav-link-text {
-        font-size: 0.6rem !important;
+        font-size: 0.68rem !important;
+        font-weight: 500 !important;
+        color: #222 !important;
+        letter-spacing: 0.01em !important;
     }
 
     .navbar .nav-item-link.is--first {
-        padding-left: 0.45em !important;
+        padding-left: 0.6rem !important;
     }
 
     .navbar .nav-item-link.is--button {
-        padding: 0.25em 0.55em !important;
+        background-color: #222 !important;
+        padding: 0.4rem 0.8rem !important;
+        border-radius: 100px !important;
+        margin-left: 0.15rem !important;
     }
 
     .navbar .nav-item-link.is--button .nav-link-text {
-        font-size: 0.58rem !important;
+        font-size: 0.62rem !important;
+        font-weight: 600 !important;
+        color: #fff !important;
     }
 }
 
@@ -4381,12 +4404,18 @@ a.footer-link {
     position: relative;
     z-index: 2;
     text-align: center;
-    display: flex;
+    display: flex !important;
     flex-direction: column;
     align-items: center;
     gap: 0;
     padding: 0 2rem;
     max-width: 900px;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+.smf-hero__content * {
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 /* Logo */
@@ -4419,19 +4448,24 @@ a.footer-link {
     font-family: 'Inter', sans-serif;
     font-size: clamp(0.8rem, 1.4vw, 1rem);
     font-weight: 400;
-    color: rgba(255, 255, 255, 0.85);
+    color: rgba(255, 255, 255, 0.85) !important;
     letter-spacing: 0.15em;
     text-transform: uppercase;
     margin: 0 0 2rem 0;
     text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 /* CTA buttons */
 .smf-hero__actions {
-    display: flex;
+    display: flex !important;
     gap: 1rem;
     flex-wrap: wrap;
     justify-content: center;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 .smf-hero__btn {
     font-family: 'Inter', sans-serif;
@@ -4441,50 +4475,33 @@ a.footer-link {
     text-transform: uppercase;
     padding: 0.85rem 2rem;
     border-radius: 4px;
-    text-decoration: none;
+    text-decoration: none !important;
     transition: all 0.25s ease;
     cursor: pointer;
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 .smf-hero__btn--primary {
-    background: #D4A574;
-    color: #0a0a0a;
-    border: 2px solid #D4A574;
+    background: #D4A574 !important;
+    color: #0a0a0a !important;
+    border: 2px solid #D4A574 !important;
 }
 .smf-hero__btn--primary:hover {
-    background: #c4955f;
-    border-color: #c4955f;
+    background: #c4955f !important;
+    border-color: #c4955f !important;
 }
 .smf-hero__btn--outline {
-    background: transparent;
-    color: #fff;
-    border: 2px solid rgba(255, 255, 255, 0.6);
+    background: transparent !important;
+    color: #fff !important;
+    border: 2px solid rgba(255, 255, 255, 0.6) !important;
 }
 .smf-hero__btn--outline:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: #fff;
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-color: #fff !important;
 }
 
-/* Mobile hero */
-@media (max-width: 768px) {
-    .smf-hero {
-        min-height: 100svh;
-    }
-    .smf-hero__logo {
-        width: 70px;
-        margin-bottom: 1.5rem;
-    }
-    .smf-hero__title {
-        margin-bottom: 1rem;
-    }
-    .smf-hero__subtitle {
-        letter-spacing: 0.1em;
-        margin-bottom: 1.5rem;
-    }
-    .smf-hero__btn {
-        padding: 0.75rem 1.5rem;
-        font-size: 0.85rem;
-    }
-}
+/* Mobile hero — main overrides are in the global mobile block below */
 
 /* ==================== GLOBAL MOBILE: Kill Webflow white space ==================== */
 @media (max-width: 768px) {
@@ -4501,48 +4518,8 @@ a.footer-link {
   .nav-header {
     padding: 0 !important;
     margin: 0 !important;
-  }
-  .navbar {
-    max-width: 100vw !important;
-    border-radius: 1.25rem !important;
-    box-sizing: border-box !important;
-    inset: auto 0.75rem 0.75rem 0.75rem !important;
-    padding: 0.5rem 0.5rem !important;
-    box-shadow: 0 4px 24px -4px rgba(0,0,0,0.15),
-                0 0 0 1px rgba(0,0,0,0.04) !important;
-    background: rgba(255,255,255,0.97) !important;
-    backdrop-filter: blur(20px) !important;
-    -webkit-backdrop-filter: blur(20px) !important;
-  }
-  .menu-container {
-    flex-wrap: wrap !important;
-    gap: 0.15rem !important;
-    justify-content: center !important;
-    padding: 0 !important;
-    width: 100% !important;
-  }
-  .navbar .nav-item-link {
-    padding: 0.35rem 0.5rem !important;
-    white-space: nowrap !important;
-  }
-  .navbar .nav-item-link .nav-link-text {
-    font-size: 0.65rem !important;
-    font-weight: 500 !important;
-    letter-spacing: 0.02em !important;
-  }
-  .navbar .nav-item-link.is--first {
-    padding-left: 0.5rem !important;
-  }
-  .navbar .nav-item-link.is--button {
-    background-color: #1A3A52 !important;
-    padding: 0.35rem 0.75rem !important;
-    border-radius: 100px !important;
-  }
-  .navbar .nav-item-link.is--button .nav-link-text {
-    font-size: 0.62rem !important;
-    font-weight: 600 !important;
-    color: #fff !important;
-    letter-spacing: 0.05em !important;
+    height: 0 !important;
+    overflow: visible !important;
   }
   .nav-arrow { display: none !important; }
   .grid-wrap, .global-code { display: none !important; }
@@ -4550,7 +4527,9 @@ a.footer-link {
   /* ── Hero Section (full-viewport photo hero) ── */
   .smf-hero {
     min-height: 100svh !important;
+    min-height: 100vh !important;
     margin-bottom: 0 !important;
+    padding-bottom: 5rem !important;
   }
   .smf-hero__bg img {
     object-position: center center !important;
@@ -4560,35 +4539,47 @@ a.footer-link {
     flex-direction: column !important;
     align-items: center !important;
     gap: 0 !important;
-    padding: 0 1.5rem !important;
-    transform: none;
+    padding: 0 1.25rem !important;
+    transform: none !important;
+    max-width: 100% !important;
   }
   .smf-hero__logo {
-    width: 70px !important;
-    margin-bottom: 1.5rem !important;
+    width: 65px !important;
+    margin-bottom: 1.25rem !important;
   }
   .smf-hero__title {
-    font-size: clamp(1.8rem, 8vw, 2.8rem) !important;
+    font-size: clamp(1.6rem, 7vw, 2.4rem) !important;
     letter-spacing: -0.01em !important;
-    line-height: 1.1 !important;
-    margin-bottom: 1rem !important;
+    line-height: 1.15 !important;
+    margin-bottom: 0.75rem !important;
+    color: #fff !important;
+    text-shadow: 0 2px 16px rgba(0,0,0,0.5) !important;
   }
   .smf-hero__subtitle {
-    font-size: 0.7rem !important;
-    letter-spacing: 0.12em !important;
-    line-height: 1.6 !important;
-    max-width: 320px !important;
+    font-size: 0.6rem !important;
+    letter-spacing: 0.1em !important;
+    line-height: 1.5 !important;
+    max-width: 300px !important;
     text-align: center !important;
     margin-bottom: 1.5rem !important;
+    color: rgba(255, 255, 255, 0.85) !important;
+    display: block !important;
+    text-transform: uppercase !important;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.4) !important;
   }
   .smf-hero__actions {
-    flex-direction: column !important;
-    width: 100% !important;
-    max-width: 280px !important;
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 0.6rem !important;
+    width: auto !important;
+    justify-content: center !important;
   }
   .smf-hero__btn {
-    width: 100% !important;
+    display: inline-block !important;
     text-align: center !important;
+    padding: 0.65rem 1.25rem !important;
+    font-size: 0.75rem !important;
+    border-radius: 4px !important;
   }
 
   /* ── About / Intro Sections ── */
@@ -4795,10 +4786,6 @@ a.footer-link {
   }
 
   /* ── Travel Partner Cards ── */
-  .benefits_layout.is-travel-plans {
-    grid-template-columns: 1fr !important;
-    gap: 1rem !important;
-  }
   .benefits_card_wrap.is-travel {
     min-height: 320px !important;
     aspect-ratio: unset !important;
@@ -5043,20 +5030,6 @@ a.footer-link {
   .page_main { padding-top: 0 !important; }
   .u-section { padding: 0 !important; margin: 0 !important; }
   .u-container { padding: 0 1rem !important; margin: 0 !important; }
-
-  /* ── Partner Section (travels page) ── */
-  .partner-section {
-    padding: 1.5rem 1rem !important;
-  }
-  .partner-section__inner {
-    padding: 0 !important;
-  }
-  .partner-section__text {
-    font-size: 0.88rem !important;
-  }
-  .partner-section__cta {
-    padding: 1rem !important;
-  }
 
   /* ── Footer ── */
   .travels-footer {
@@ -5456,7 +5429,7 @@ a.footer-link {
   }
   /* Green highlight color boost */
   .green-highlight {
-    color: #1A3A52 !important;
+    color: #222 !important;
     font-weight: 600 !important;
   }
   /* Contact overlay */
@@ -5591,5 +5564,227 @@ a.footer-link {
 
     .shop-card-desc {
         font-size: 0.85rem;
+    }
+}
+
+/* ==================== Form buttons — override Webflow green ==================== */
+.button_main_wrap.w-button,
+.button_main_wrap.is-nav {
+    background-color: #1A3A52 !important;
+    color: #fff !important;
+    border: none !important;
+    border-radius: 6px !important;
+    box-shadow: none !important;
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.03em !important;
+    cursor: pointer !important;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+.button_main_wrap.w-button:hover,
+.button_main_wrap.is-nav:hover {
+    background-color: #0f2a3d !important;
+    box-shadow: none !important;
+}
+
+/* ==================== Booking Form — Split Layout ==================== */
+
+/* Shared two-column grid used by both header row and body row */
+.bf-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 3.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2.5rem;
+}
+
+/* Header row: align baselines across columns */
+.bf-split--header {
+    align-items: baseline;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+.bf-heading {
+    font-family: 'Playfair Display', serif !important;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #1A3A52;
+    margin: 0;
+    line-height: 1.2;
+}
+.bf-heading--partners {
+    font-size: 1.55rem;
+    color: #1A3A52;
+}
+.bf-subtext {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: #666;
+    margin: 0.6rem 0 0;
+    max-width: 420px;
+}
+
+/* Body row */
+.bf-split--body {
+    align-items: start;
+    padding-bottom: 4rem;
+}
+
+/* Shared card surface — gives form + partner grid equal visual weight */
+.bf-card {
+    background: #fff;
+    border: 1px solid #EAEAEA;
+    border-radius: 14px;
+    padding: 2rem;
+}
+.bf-card--partners {
+    background: #FAFAFA;
+    position: sticky;
+    top: 2rem;
+}
+
+/* ---- Partner 2x2 grid inside the card ---- */
+.bf-partners-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.85rem;
+}
+
+/* Partner card */
+.bf-pcard {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    background: #fff;
+    border: 1px solid #EAEAEA;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.bf-pcard:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Uniform image aspect ratio */
+.bf-pcard__photo {
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+}
+.bf-pcard__photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+.bf-pcard:hover .bf-pcard__photo img {
+    transform: scale(1.04);
+}
+
+/* Info row: logo + name */
+.bf-pcard__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.9rem 0.75rem;
+    gap: 0.4rem;
+}
+.bf-pcard__logo {
+    height: 32px;
+    width: auto;
+    max-width: 80px;
+    object-fit: contain;
+}
+.bf-pcard__name {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: #666;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+.bf-pcard:hover .bf-pcard__name {
+    color: #1A3A52;
+}
+
+/* ---- Gold rule under logo ---- */
+.bf-logo-rule {
+    width: 100%;
+    max-width: 1200px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, #D4A574 30%, #D4A574 70%, transparent 100%);
+    margin: 0 auto 0.5rem;
+    opacity: 0.45;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 767px) {
+    .bf-split {
+        grid-template-columns: 1fr;
+        gap: 0;
+        padding: 0 1rem;
+    }
+    .bf-split--header {
+        padding-top: 0.75rem;
+        padding-bottom: 1rem;
+    }
+    .bf-heading {
+        font-size: 1.5rem;
+    }
+    .bf-subtext {
+        font-size: 0.85rem;
+        margin-top: 0.4rem;
+    }
+    .bf-heading--partners {
+        font-size: 1.2rem;
+        margin-top: 2rem;
+    }
+    .bf-card {
+        padding: 1.25rem 1rem;
+        border-radius: 12px;
+    }
+    .bf-card--partners {
+        position: static;
+        margin-top: 0.75rem;
+        margin-bottom: 2rem;
+        padding: 1rem;
+    }
+    .bf-partners-grid {
+        gap: 0.65rem;
+    }
+    .bf-pcard__info {
+        padding: 0.7rem 0.5rem;
+    }
+    .bf-pcard__logo {
+        height: 28px;
+        max-width: 70px;
+    }
+    .bf-pcard__name {
+        font-size: 0.72rem;
+    }
+    .bf-logo-rule {
+        margin-bottom: 0.25rem;
+    }
+}
+@media (max-width: 380px) {
+    .bf-split {
+        padding: 0 0.75rem;
+    }
+    .bf-heading {
+        font-size: 1.3rem;
+    }
+    .bf-card {
+        padding: 1rem 0.75rem;
+    }
+    .bf-partners-grid {
+        gap: 0.5rem;
+    }
+    .bf-pcard__logo {
+        height: 22px;
+    }
+    .bf-pcard__name {
+        font-size: 0.65rem;
     }
 }

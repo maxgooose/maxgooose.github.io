@@ -143,6 +143,7 @@ html.lenis {
         <img src="assets/images/smf-logo.png" alt="Syrian Mosaic Foundation" style="height: 240px; width: auto;"/>
       </a>
     </div>
+    <div class="bf-logo-rule"></div>
 
     <!-- Navigation Header -->
     <div bind="4ca375cd-d92e-94c5-dd93-80faadb53a1b" class="nav-header">
@@ -183,13 +184,13 @@ html.lenis {
             <img src="https://cdn.prod.website-files.com/657b5d5bf6c3e07bb4b09757/65e20460654b96e4fa1c544a_arrow.svg" loading="lazy" alt="" class="nav-arrow"/>
             <div class="nav-link-text">Home</div>
           </a>
-          <a data-w-id="4ca375cd-d92e-94c5-dd93-80faadb53a25" href="travels.html" class="nav-item-link w-inline-block">
+          <a data-w-id="4ca375cd-d92e-94c5-dd93-80faadb53a25" href="booking-form.html" aria-current="page" class="nav-item-link w-inline-block w--current">
             <img src="https://cdn.prod.website-files.com/657b5d5bf6c3e07bb4b09757/65e20460654b96e4fa1c544a_arrow.svg" loading="lazy" alt="" class="nav-arrow"/>
             <div class="nav-link-text">Travels</div>
           </a>
-          <a data-w-id="e72677fd-cec2-a074-aba0-b4ef6c6c865e" href="media.html" class="nav-item-link w-inline-block">
+          <a data-w-id="e72677fd-cec2-a074-aba0-b4ef6c6c865e" href="volunteer.html" class="nav-item-link w-inline-block">
             <img src="https://cdn.prod.website-files.com/657b5d5bf6c3e07bb4b09757/65e20460654b96e4fa1c544a_arrow.svg" loading="lazy" alt="" class="nav-arrow"/>
-            <div class="nav-link-text">The Syrian Mosaic</div>
+            <div class="nav-link-text">Join Us</div>
           </a>
           <a data-w-id="4ca375cd-d92e-94c5-dd93-80faadb53a21" href="shop.html" class="nav-item-link w-inline-block">
             <img src="https://cdn.prod.website-files.com/657b5d5bf6c3e07bb4b09757/65e20460654b96e4fa1c544a_arrow.svg" loading="lazy" alt="" class="nav-arrow"/>
@@ -226,14 +227,23 @@ html.lenis {
     <div class="page_main">
       <div class="u-section">
         <div class="u-section-spacer"></div>
-        <div class="main-form u-container">
-          <div class="form_inner_cnt">
-            <h1 class="form_h1">Trip Booking Form</h1>
-            <div class="form_rt w-richtext">
-              <h2>Your Journey Starts Here...</h2>
-              <p>Everything we do is individually designed around your requirements, so the more information you can provide the better. <strong>Please note that we are a full-service travel organiser and we do not handle partial trip arrangements or requests for transport-only services.</strong> Please provide us with as much information as you can allowing us to plan your perfect getaway!</p>
-            </div>
-            <div class="styleguide_card_wrap u-theme-light">
+
+        <!-- Shared header row — baselines align across columns -->
+        <div class="bf-split bf-split--header">
+          <div class="bf-split__col-left">
+            <h1 class="bf-heading">Start Your Journey</h1>
+            <p class="bf-subtext">Everything is individually designed around you. Share your details and we'll craft the perfect trip.</p>
+          </div>
+          <div class="bf-split__col-right">
+            <h2 class="bf-heading bf-heading--partners">Our Trusted On-Ground Partners</h2>
+          </div>
+        </div>
+
+        <!-- Two-column body -->
+        <div class="bf-split bf-split--body">
+          <!-- Left: Form -->
+          <div class="bf-split__col-left">
+            <div class="bf-card">
               <div bind="0e45db87-b680-fa7d-b99f-04ab20f2397e" data-form="multistep" class="form_main_wrap w-form">
                 <form id="wf-form-Booking-Form" name="wf-form-Booking-Form" data-name="Booking Form" method="post" class="form_main_layout">
                   <!-- Step 1: About You -->
@@ -409,13 +419,58 @@ html.lenis {
               </div>
             </div>
           </div>
+
+          <!-- Right: Partners (sticky) -->
+          <div class="bf-split__col-right">
+            <div class="bf-card bf-card--partners">
+              <div class="bf-partners-grid">
+                <a href="https://campsite.bio/mysyria" target="_blank" rel="noopener noreferrer" class="bf-pcard">
+                  <div class="bf-pcard__photo">
+                    <img src="assets/images/golden-team-damascus.webp" alt="Damascus old city" loading="lazy"/>
+                  </div>
+                  <div class="bf-pcard__info">
+                    <img src="assets/images/mysyria-logo.png" alt="My Syria logo" class="bf-pcard__logo"/>
+                    <span class="bf-pcard__name">My Syria</span>
+                  </div>
+                </a>
+                <a href="https://goldenteamsy.com/" target="_blank" rel="noopener noreferrer" class="bf-pcard">
+                  <div class="bf-pcard__photo">
+                    <img src="assets/images/golden-team-aleppo.webp" alt="Aleppo citadel" loading="lazy"/>
+                  </div>
+                  <div class="bf-pcard__info">
+                    <img src="assets/images/golden-team-syria-logo.png" alt="Golden Team Syria logo" class="bf-pcard__logo"/>
+                    <span class="bf-pcard__name">Golden Team Syria</span>
+                  </div>
+                </a>
+                <a href="https://syrianguides.com/" target="_blank" rel="noopener noreferrer" class="bf-pcard">
+                  <div class="bf-pcard__photo">
+                    <img src="assets/images/syrian-guides-nofara.jpg" alt="Nofara cafe, Damascus" loading="lazy"/>
+                  </div>
+                  <div class="bf-pcard__info">
+                    <img src="assets/images/syrian-guides-logo.png" alt="Syrian Guides logo" class="bf-pcard__logo"/>
+                    <span class="bf-pcard__name">Syrian Guides</span>
+                  </div>
+                </a>
+                <a href="https://syriascopetravel.com/" target="_blank" rel="noopener noreferrer" class="bf-pcard">
+                  <div class="bf-pcard__photo">
+                    <img src="assets/images/syrian-guides-damascus-viewpoint.jpg" alt="Damascus viewpoint" loading="lazy"/>
+                  </div>
+                  <div class="bf-pcard__info">
+                    <img src="assets/images/syria-scope-travel-logo.png" alt="Syria Scope Travel logo" class="bf-pcard__logo"/>
+                    <span class="bf-pcard__name">Syria Scope Travel</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
+
         <div class="u-section-spacer is-bottom"></div>
       </div>
     </div>
 
     <!-- Footer -->
-    <footer class="travels-footer"><div class="travels-footer__inner"><div class="travels-footer__top"><div class="travels-footer__brand"><img src="assets/images/smf-logo.png" alt="Syrian Mosaic Foundation" class="travels-footer__logo"/><p class="travels-footer__tagline" style="color:#fff">Connecting the world to Syria's extraordinary heritage through cultural diplomacy and responsible tourism.</p></div><div class="travels-footer__nav"><div class="travels-footer__nav-col"><h4 class="travels-footer__nav-heading" style="color:#D4A574">Explore</h4><a href="index.html" class="travels-footer__link" style="color:#fff">Home</a><a href="travels.html" class="travels-footer__link" style="color:#fff">Travels</a><a href="media.html" class="travels-footer__link" style="color:#fff">The Syrian Mosaic</a><a href="shop.html" class="travels-footer__link" style="color:#fff">Shop</a></div><div class="travels-footer__nav-col"><h4 class="travels-footer__nav-heading" style="color:#D4A574">Connect</h4><a href="booking-form.html" class="travels-footer__link" style="color:#fff">Book a Trip</a><a href="mailto:info@syrianmosaicfoundation.org" class="travels-footer__link" style="color:#fff">Email Us</a><a href="tel:+13478933032" class="travels-footer__link" style="color:#fff">+1 347-893-3032</a></div><div class="travels-footer__nav-col"><h4 class="travels-footer__nav-heading" style="color:#D4A574">Follow</h4><a href="https://instagram.com/SyrianMosaicFoundation" target="_blank" rel="noopener noreferrer" class="travels-footer__link" style="color:#fff">Instagram</a><a href="https://www.linkedin.com/company/syrian-mosaic-foundation/" target="_blank" rel="noopener noreferrer" class="travels-footer__link" style="color:#fff">LinkedIn</a><a href="https://x.com/SyrianMosaicFDN" target="_blank" rel="noopener noreferrer" class="travels-footer__link" style="color:#fff">X / Twitter</a></div></div></div><div class="travels-footer__divider"></div><div class="travels-footer__bottom"><span class="travels-footer__copy">&copy; 2026 Syrian Mosaic Foundation. All rights reserved.</span><span class="travels-footer__copy">Damascus, Syria &amp; New York, USA</span></div></div></footer>
+    <footer class="travels-footer"><div class="travels-footer__inner"><div class="travels-footer__top"><div class="travels-footer__brand"><img src="assets/images/smf-logo.png" alt="Syrian Mosaic Foundation" class="travels-footer__logo"/><p class="travels-footer__tagline" style="color:#fff">Connecting the world to Syria's extraordinary heritage through cultural diplomacy and responsible tourism.</p></div><div class="travels-footer__nav"><div class="travels-footer__nav-col"><h4 class="travels-footer__nav-heading" style="color:#D4A574">Explore</h4><a href="index.html" class="travels-footer__link" style="color:#fff">Home</a><a href="booking-form.html" class="travels-footer__link" style="color:#fff">Travels</a><a href="volunteer.html" class="travels-footer__link" style="color:#fff">Join Us</a><a href="shop.html" class="travels-footer__link" style="color:#fff">Shop</a></div><div class="travels-footer__nav-col"><h4 class="travels-footer__nav-heading" style="color:#D4A574">Connect</h4><a href="booking-form.html" class="travels-footer__link" style="color:#fff">Book a Trip</a><a href="mailto:info@syrianmosaicfoundation.org" class="travels-footer__link" style="color:#fff">Email Us</a><a href="tel:+13478933032" class="travels-footer__link" style="color:#fff">+1 347-893-3032</a></div><div class="travels-footer__nav-col"><h4 class="travels-footer__nav-heading" style="color:#D4A574">Follow</h4><a href="https://instagram.com/SyrianMosaicFoundation" target="_blank" rel="noopener noreferrer" class="travels-footer__link" style="color:#fff">Instagram</a><a href="https://www.linkedin.com/company/syrian-mosaic-foundation/" target="_blank" rel="noopener noreferrer" class="travels-footer__link" style="color:#fff">LinkedIn</a><a href="https://x.com/SyrianMosaicFDN" target="_blank" rel="noopener noreferrer" class="travels-footer__link" style="color:#fff">X / Twitter</a></div></div></div><div class="travels-footer__divider"></div><div class="travels-footer__bottom"><span class="travels-footer__copy">&copy; 2026 Syrian Mosaic Foundation. All rights reserved.</span><span class="travels-footer__copy">Damascus, Syria &amp; New York, USA</span></div></div></footer>
   </div>
 
   <!-- Scripts -->

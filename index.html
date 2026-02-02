@@ -85,14 +85,14 @@
             </div>
           </a>
         </div>
-        <!-- Slide 2: Heritage Preservation -->
+        <!-- Slide 2: Establishing Ties -->
         <div role="listitem" class="swiper-slide is-slider-main">
           <a href="team.html" class="slider-main_link w-inline-block">
             <div class="slider-main_img-height">
-              <img alt="Heritage Preservation" src="assets/images/temple-of-bel-palmyra.jpg" loading="lazy" class="slider-main_img"/>
+              <img alt="Establishing Ties" src="assets/images/establishing-ties.jpg" loading="lazy" class="slider-main_img"/>
             </div>
             <div class="slider-main_text-wrapper">
-              <h2 class="slider-main_title">Heritage Preservation</h2>
+              <h2 class="slider-main_title">Establishing Ties</h2>
             </div>
           </a>
         </div>
@@ -238,73 +238,87 @@
     </div>
   </div>
 
-  <!-- Section 04: OUR TRAVEL PLANS (webflow-template structure: destinations-cnt > section-title-and-text is-03) -->
+  <!-- Section 04: TRAVEL PARTNERS (webflow-template structure: destinations-cnt > section-title-and-text is-03) -->
   <div class="destinations-cnt">
     <div id="tours" class="section-title-and-text is-03">
       <div class="sec-numb">
-        <div>04<br/>OUR TRAVEL<br/>PLANS</div>
+        <div>04<br/>TRAVEL<br/>PARTNERS</div>
       </div>
       <div class="about-text-ctn">
-        <h1 class="home-heading">Our cultural delegations and guided journeys are how we connect the world to <span class="green-highlight">Syria's living heritage</span>. Each trip is <span class="green-highlight">limited to 12 participants</span>—designed not as tourism, but as a bridge between people and a nation rebuilding its future.</h1>
+        <h1 class="home-heading">We work with <span class="green-highlight">Syria's top travel operators</span> to bring you authentic cultural journeys. Our trusted partners offer immersive group and private tours—from the ancient streets of <span class="green-highlight">Damascus</span> to the ruins of <span class="green-highlight">Palmyra</span> and beyond.</h1>
       </div>
     </div>
   </div>
 
-  <!-- Travel Cards (webflow-template structure: page_main > cards-wrap > benefits_wrap > benefits_layout) -->
+  <!-- Travel Partner Cards (webflow-template structure: page_main > cards-wrap > benefits_wrap > benefits_layout) -->
   <div class="page_main">
     <div class="cards-wrap u-container-2">
       <!-- Container query CSS (inline as in original) -->
       <style>
         @container (width > 55em) {
-          .benefits_layout:has(.benefits_card_wrap:is(:hover, :focus-within)) .benefits_card_wrap:not(:is(:hover, :focus-within)) .benefits_card_content { opacity: 0; }
-          .benefits_card_wrap { min-height: 25rem; }
-          .benefits_card_wrap:is(:hover, :focus-within) { width: 190%; }
-          .benefits_card_wrap:is(:hover, :focus-within) .benefits_card_mask_wrap { grid-template-rows: 1fr; }
-          .benefits_card_mask_wrap { grid-template-rows: 0fr; }
-          .benefits_layout { flex-direction: row; }
+          .benefits_layout.is-partners:has(.benefits_card_wrap:is(:hover, :focus-within)) .benefits_card_wrap:not(:is(:hover, :focus-within)) .benefits_card_content { opacity: 0; }
+          .benefits_layout.is-partners .benefits_card_wrap { min-height: 25rem; }
+          .benefits_layout.is-partners .benefits_card_wrap:is(:hover, :focus-within) { width: 190%; }
+          .benefits_layout.is-partners .benefits_card_wrap:is(:hover, :focus-within) .benefits_card_mask_wrap { grid-template-rows: 1fr; }
+          .benefits_layout.is-partners .benefits_card_mask_wrap { grid-template-rows: 0fr; }
+          .benefits_layout.is-partners { flex-direction: row; }
         }
       </style>
 
       <div class="benefits_wrap">
-        <div role="list" class="benefits_layout">
+        <div role="list" class="benefits_layout is-partners">
 
-          <!-- Card 1: Heritage Discovery -->
-          <div style="background-image:url('assets/images/damascus-old-city-alley.jpg')" role="listitem" class="benefits_card_wrap is-travel">
-            <a href="travels.html" class="benefits_link"></a>
+          <!-- Card 1: My Syria -->
+          <div style="background-image:url('assets/images/golden-team-damascus.webp')" role="listitem" class="benefits_card_wrap is-travel">
+            <a href="https://campsite.bio/mysyria" target="_blank" rel="noopener noreferrer" class="benefits_link"></a>
             <div class="benefits_card_content is-travel">
               <div class="benefits_card_header is-travel">
-                <p class="benefits_card_title is-travel-p">10 Days</p>
+                <p class="benefits_card_title is-travel-p">@mysyria_</p>
               </div>
               <div class="benefits_card_header is-travel">
-                <h2 class="benefits_card_title">Heritage Discovery</h2>
+                <h2 class="benefits_card_title">My Syria</h2>
               </div>
             </div>
             <div class="benefits_bg"></div>
           </div>
 
-          <!-- Card 2: Jewish Heritage Tour -->
-          <div style="background-image:url('assets/images/An Alley in the Jewis.png')" role="listitem" class="benefits_card_wrap is-travel">
-            <a href="travels.html" class="benefits_link"></a>
+          <!-- Card 2: Golden Team Syria -->
+          <div style="background-image:url('assets/images/golden-team-aleppo.webp')" role="listitem" class="benefits_card_wrap is-travel">
+            <a href="https://goldenteamsy.com/" target="_blank" rel="noopener noreferrer" class="benefits_link"></a>
             <div class="benefits_card_content is-travel">
               <div class="benefits_card_header is-travel">
-                <p class="benefits_card_title is-travel-p">12 Days</p>
+                <p class="benefits_card_title is-travel-p">@golden.team.syria</p>
               </div>
               <div class="benefits_card_header is-travel">
-                <h2 class="benefits_card_title">Jewish Heritage Tour</h2>
+                <h2 class="benefits_card_title">Golden Team Syria</h2>
               </div>
             </div>
             <div class="benefits_bg"></div>
           </div>
 
-          <!-- Card 3: Cultural Immersion -->
-          <div style="background-image:url('assets/images/straight-street-damascus.jpg')" role="listitem" class="benefits_card_wrap is-travel">
-            <a href="travels.html" class="benefits_link"></a>
+          <!-- Card 3: Syrian Guides -->
+          <div style="background-image:url('assets/images/syrian-guides-nofara.jpg')" role="listitem" class="benefits_card_wrap is-travel">
+            <a href="https://syrianguides.com/" target="_blank" rel="noopener noreferrer" class="benefits_link"></a>
             <div class="benefits_card_content is-travel">
               <div class="benefits_card_header is-travel">
-                <p class="benefits_card_title is-travel-p">8 Days</p>
+                <p class="benefits_card_title is-travel-p">@syrianguides</p>
               </div>
               <div class="benefits_card_header is-travel">
-                <h2 class="benefits_card_title">Cultural Immersion</h2>
+                <h2 class="benefits_card_title">Syrian Guides</h2>
+              </div>
+            </div>
+            <div class="benefits_bg"></div>
+          </div>
+
+          <!-- Card 4: Syria Scope Travel -->
+          <div style="background-image:url('assets/images/syrian-guides-damascus-viewpoint.jpg')" role="listitem" class="benefits_card_wrap is-travel">
+            <a href="https://syriascopetravel.com/" target="_blank" rel="noopener noreferrer" class="benefits_link"></a>
+            <div class="benefits_card_content is-travel">
+              <div class="benefits_card_header is-travel">
+                <p class="benefits_card_title is-travel-p">@syriascopetravel</p>
+              </div>
+              <div class="benefits_card_header is-travel">
+                <h2 class="benefits_card_title">Syria Scope Travel</h2>
               </div>
             </div>
             <div class="benefits_bg"></div>
@@ -319,79 +333,17 @@
     <div class="div-block-42">
       <div class="div-block-43"></div>
       <a href="travels.html" class="nav-item-link is-home-cta">
-        <div class="nav-link-text">Discover All Travel Plans</div>
+        <div class="nav-link-text">Explore All Travel Partners</div>
       </a>
     </div>
   </div>
 
-  <!-- Section 05: GET INSPIRED (webflow-template structure) -->
-  <div class="destinations-cnt">
-    <div id="experience" class="section-title-and-text is-03">
-      <div class="sec-numb">
-        <div class="text-block-23">05<br/>GET INSPIRED</div>
-      </div>
-      <a href="media.html" class="nav-item-link is-home-cta w-inline-block">
-        <img src="https://cdn.prod.website-files.com/657b5d5bf6c3e07bb4b09757/65e20460654b96e4fa1c544a_arrow.svg" loading="lazy" alt="" class="nav-arrow"/>
-        <div class="nav-link-text">Discover All Experiences</div>
-      </a>
-    </div>
-  </div>
-
-  <div class="page_main">
-    <div class="cards-wrap u-container-2">
-      <style>
-        @container (width > 55em) {
-          .benefits_layout.is-inspired:has(.benefits_card_wrap:is(:hover, :focus-within)) .benefits_card_wrap:not(:is(:hover, :focus-within)) .benefits_card_content { opacity: 0; }
-          .benefits_layout.is-inspired .benefits_card_wrap { min-height: 45rem; }
-          .benefits_layout.is-inspired .benefits_card_wrap:is(:hover, :focus-within) { width: 160%; }
-          .benefits_layout.is-inspired .benefits_card_wrap:is(:hover, :focus-within) .benefits_card_mask_wrap { grid-template-rows: 1fr; }
-          .benefits_layout.is-inspired .benefits_card_mask_wrap { grid-template-rows: 0fr; }
-          .benefits_layout.is-inspired { flex-direction: row; }
-        }
-      </style>
-      <div class="benefits_wrap">
-        <div role="list" class="benefits_layout is-inspired">
-          <!-- Card 1: Ancient Markets -->
-          <div style="background-image:url('assets/images/hijab-lady-picture.JPG')" role="listitem" class="benefits_card_wrap">
-            <a href="media.html" class="benefits_link w-inline-block"></a>
-            <div class="benefits_card_content">
-              <div class="benefits_card_header">
-                <h2 class="benefits_card_title">Ancient Markets & Souks</h2>
-              </div>
-            </div>
-            <div class="benefits_bg"></div>
-          </div>
-          <!-- Card 2: Sacred Sites -->
-          <div style="background-image:url('assets/images/umayyad-mosque-courtyard.jpg')" role="listitem" class="benefits_card_wrap">
-            <a href="media.html" class="benefits_link w-inline-block"></a>
-            <div class="benefits_card_content">
-              <div class="benefits_card_header">
-                <h2 class="benefits_card_title">Sacred Sites & Mosques</h2>
-              </div>
-            </div>
-            <div class="benefits_bg"></div>
-          </div>
-          <!-- Card 3: Culinary Heritage -->
-          <div style="background-image:url('assets/images/syrian-cuisine-spread.jpg')" role="listitem" class="benefits_card_wrap">
-            <a href="media.html" class="benefits_link w-inline-block"></a>
-            <div class="benefits_card_content">
-              <div class="benefits_card_header">
-                <h2 class="benefits_card_title">Culinary Heritage</h2>
-              </div>
-            </div>
-            <div class="benefits_bg"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Section 06: SYRIA BY NUMBERS (webflow-template SYRIA BY NUMBERS structure) -->
+  <!-- Section 05: SYRIA BY NUMBERS (webflow-template SYRIA BY NUMBERS structure) -->
   <div class="destinations-cnt">
     <div class="desti-cards-cnt">
       <div class="section-title-and-text is-03">
         <div class="sec-numb">
-          <div>06<br/>SYRIA<br/>BY NUMBERS</div>
+          <div>05<br/>SYRIA<br/>BY NUMBERS</div>
         </div>
         <a href="shop.html" class="nav-item-link is-home-cta w-inline-block">
           <img src="https://cdn.prod.website-files.com/657b5d5bf6c3e07bb4b09757/65e20460654b96e4fa1c544a_arrow.svg" loading="lazy" alt="" class="nav-arrow"/>
@@ -527,11 +479,11 @@
     </div>
   </div>
 
-  <!-- Section 07: NEWS & UPDATES (webflow-template OUR JOURNAL structure) -->
+  <!-- Section 06: NEWS & UPDATES (webflow-template OUR JOURNAL structure) -->
   <div class="blog-section">
     <div class="section-title-and-text is-04">
       <div class="sec-numb">
-        <div>07<br/>NEWS &amp;<br/>UPDATES</div>
+        <div>06<br/>NEWS &amp;<br/>UPDATES</div>
       </div>
     </div>
     <div class="collection-list-wrapper-3">

@@ -2196,8 +2196,8 @@ To use the vertical timeline again:
 /* imaaicha CSS Variables - SINGLE DEFINITION */
 :root {
     --bg-color: #ffffff;
-    --khdyr: #333333;
-    --green: #111111;
+    --khdyr: #000000;
+    --green: #000000;
     --whitee: #fff;
     --light-green: #f0f0f0;
     --black: black;
@@ -2338,6 +2338,131 @@ To use the vertical timeline again:
     color: var(--khdyr);
 }
 
+/* ==================== Section 02: ABOUT — Editorial ==================== */
+.about-editorial {
+    background-color: #fff;
+    padding: 5rem 0 4rem;
+}
+
+.about-editorial__inner {
+    max-width: var(--container--desktop--max-width);
+    margin: 0 auto;
+}
+
+.about-editorial__top {
+    border-top: 3px solid #000;
+    padding-top: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.about-editorial__label {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.about-editorial__headline {
+    font-family: var(--font-heading);
+    font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+    font-weight: 700;
+    line-height: 1.15;
+    color: #000;
+    margin: 0;
+    max-width: 700px;
+}
+
+.about-editorial__headline em {
+    font-style: italic;
+}
+
+.about-editorial__cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    border-top: 1px solid #ddd;
+    padding-top: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+.about-editorial__col p {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 400;
+    line-height: 1.75;
+    color: #000;
+    margin: 0;
+}
+
+.about-editorial__footer {
+    border-top: 1px solid #ddd;
+    padding-top: 1.5rem;
+}
+
+.about-editorial__cta {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #000;
+    text-decoration: none;
+    letter-spacing: 0.03em;
+    transition: color 0.2s ease;
+}
+
+.about-editorial__cta:hover {
+    color: var(--color-gold);
+}
+
+/* Tablet */
+@media (max-width: 991px) {
+    .about-editorial {
+        padding: 4rem 0 3rem;
+    }
+
+    .about-editorial__inner {
+        padding: 0 2rem;
+    }
+
+    .about-editorial__cols {
+        gap: 2rem;
+    }
+
+    .about-editorial__col p {
+        font-size: 1.05rem;
+    }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+    .about-editorial {
+        padding: 3rem 0 2.5rem;
+    }
+
+    .about-editorial__inner {
+        padding: 0 1.25rem;
+    }
+
+    .about-editorial__cols {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .about-editorial__headline {
+        font-size: clamp(1.8rem, 7vw, 2.4rem);
+    }
+
+    .about-editorial__col p {
+        font-size: 1rem;
+    }
+
+    .about-editorial__top {
+        margin-bottom: 2rem;
+    }
+}
+
 /* ==================== Section 02: OUR TRAVEL PLANS ==================== */
 /* Section Container */
 .destinations-cnt {
@@ -2404,6 +2529,7 @@ To use the vertical timeline again:
 /* Benefits Card Wrap (Individual Card) - first definition kept minimal, second block overrides */
 .benefits_card_wrap {
     color: #fff;
+    background-color: var(--color-navy, #1A3A52);
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -2412,6 +2538,12 @@ To use the vertical timeline again:
     flex-flow: column;
     position: relative;
     overflow: hidden;
+}
+
+/* Benefits Card Text Color — override base h2/p dark-color rules */
+.benefits_card_wrap .benefits_card_title,
+.benefits_card_wrap .benefits_card_text {
+    color: #fff;
 }
 
 /* Benefits Card Content */
@@ -3911,7 +4043,7 @@ a.footer-link {
     font-family: 'Inter', sans-serif;
     font-size: 0.9rem;
     font-weight: 400;
-    color: #333;
+    color: #000;
     margin: 0 0 1rem;
     line-height: 1.5;
 }
@@ -4584,10 +4716,12 @@ a.footer-link {
     font-size: 1.25rem !important;
     line-height: 1.2 !important;
     font-weight: 600 !important;
+    color: #fff !important;
   }
   .benefits_card_text {
     font-size: 0.88rem !important;
     line-height: 1.55 !important;
+    color: #fff !important;
   }
 
   /* Partner cards */
@@ -4602,11 +4736,13 @@ a.footer-link {
     font-size: 1.35rem !important;
     font-weight: 600 !important;
     margin-bottom: 0.5rem !important;
+    color: #fff !important;
   }
   .benefits_layout.is-partners .benefits_card_text {
     font-size: 0.88rem !important;
     line-height: 1.55 !important;
     opacity: 0.9 !important;
+    color: #fff !important;
   }
   .benefits_layout.is-partners .benefits_card_mask_wrap {
     grid-template-rows: 1fr !important;
@@ -4627,6 +4763,7 @@ a.footer-link {
   .benefits_layout.is-inspired .benefits_card_title {
     font-size: 1.3rem !important;
     font-weight: 600 !important;
+    color: #fff !important;
   }
   .benefits_layout.is-inspired .benefits_bg {
     background-image: linear-gradient(
@@ -4646,6 +4783,7 @@ a.footer-link {
     font-weight: 700 !important;
     line-height: 1.15 !important;
     letter-spacing: -0.01em !important;
+    color: #fff !important;
   }
   .benefits_layout.is-numbers .benefits_card_mask_wrap {
     grid-template-rows: 1fr !important;
@@ -4653,6 +4791,7 @@ a.footer-link {
   .benefits_layout.is-numbers .benefits_card_text {
     font-size: 0.85rem !important;
     line-height: 1.5 !important;
+    color: #fff !important;
   }
 
   /* ── Travel Partner Cards ── */

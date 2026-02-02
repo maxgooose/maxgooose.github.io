@@ -4205,27 +4205,43 @@ a.footer-link {
 }
 
 /* ==================== SMF HERO - INSTITUTIONAL ==================== */
+/* ==================== HERO: Full-bleed photo background ==================== */
 .smf-hero {
     position: relative;
     width: 100%;
-    height: 100vh;
-    min-height: 600px;
+    min-height: 85vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(160deg, #0A1628 0%, #122240 35%, #1A3A52 65%, #0F2A3F 100%);
     overflow: hidden;
+    background: #0a0a0a;
 }
 
-/* Subtle geometric pattern overlay */
-.smf-hero__pattern {
+/* Background image — fills entire hero */
+.smf-hero__bg {
     position: absolute;
     inset: 0;
-    opacity: 0.04;
-    background-image: url('assets/images/syrian_pattern.png');
-    background-repeat: repeat;
-    background-size: 300px;
-    pointer-events: none;
+    z-index: 0;
+}
+.smf-hero__bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+}
+
+/* Dark gradient overlay for text readability */
+.smf-hero__overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.35) 0%,
+        rgba(0, 0, 0, 0.15) 40%,
+        rgba(0, 0, 0, 0.25) 70%,
+        rgba(0, 0, 0, 0.65) 100%
+    );
 }
 
 /* Content block */
@@ -4238,84 +4254,103 @@ a.footer-link {
     align-items: center;
     gap: 0;
     padding: 0 2rem;
+    max-width: 900px;
 }
 
 /* Logo */
 .smf-hero__logo {
-    width: 120px;
+    width: 100px;
     height: auto;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
 }
-
 .smf-hero__logo img {
     width: 100%;
     height: auto;
-    filter: brightness(0) invert(1);
-    opacity: 0.9;
-}
-
-/* Gold divider line */
-.smf-hero__divider {
-    width: 60px;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, #D4A574, transparent);
-    margin-bottom: 2.5rem;
+    filter: brightness(0) invert(1) drop-shadow(0 2px 8px rgba(0,0,0,0.4));
+    opacity: 0.95;
 }
 
 /* Title */
 .smf-hero__title {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(2.8rem, 7vw, 5.5rem);
-    font-weight: 400;
+    font-size: clamp(2.2rem, 6vw, 4.5rem);
+    font-weight: 600;
     color: #FFFFFF;
-    line-height: 1.05;
-    letter-spacing: -0.02em;
-    margin: 0 0 1.5rem 0;
-    text-shadow: 0 2px 30px rgba(0, 0, 0, 0.3);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    margin: 0 0 1.25rem 0;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
 }
 
 /* Subtitle */
 .smf-hero__subtitle {
     font-family: 'Inter', sans-serif;
-    font-size: clamp(0.85rem, 1.5vw, 1.1rem);
-    font-weight: 300;
-    color: rgba(212, 165, 116, 0.85);
-    letter-spacing: 0.2em;
+    font-size: clamp(0.8rem, 1.4vw, 1rem);
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.85);
+    letter-spacing: 0.15em;
     text-transform: uppercase;
-    margin: 0;
+    margin: 0 0 2rem 0;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
 }
 
-/* Subtle radial glow behind content */
-.smf-hero__content::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 700px;
-    height: 700px;
-    background: radial-gradient(ellipse, rgba(212, 165, 116, 0.06) 0%, transparent 70%);
-    pointer-events: none;
-    z-index: -1;
+/* CTA buttons */
+.smf-hero__actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.smf-hero__btn {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 0.85rem 2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    cursor: pointer;
+}
+.smf-hero__btn--primary {
+    background: #D4A574;
+    color: #0a0a0a;
+    border: 2px solid #D4A574;
+}
+.smf-hero__btn--primary:hover {
+    background: #c4955f;
+    border-color: #c4955f;
+}
+.smf-hero__btn--outline {
+    background: transparent;
+    color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+}
+.smf-hero__btn--outline:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #fff;
 }
 
-/* Mobile */
+/* Mobile hero */
 @media (max-width: 768px) {
     .smf-hero {
         min-height: 100svh;
     }
-
     .smf-hero__logo {
-        width: 90px;
-        margin-bottom: 2rem;
+        width: 70px;
+        margin-bottom: 1.5rem;
     }
-
-    .smf-hero__divider {
-        margin-bottom: 2rem;
-    }
-
     .smf-hero__title {
-        margin-bottom: 1.2rem;
+        margin-bottom: 1rem;
+    }
+    .smf-hero__subtitle {
+        letter-spacing: 0.1em;
+        margin-bottom: 1.5rem;
+    }
+    .smf-hero__btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.85rem;
     }
 }
 
@@ -4380,54 +4415,48 @@ a.footer-link {
   .nav-arrow { display: none !important; }
   .grid-wrap, .global-code { display: none !important; }
 
-  /* ── Hero Section (keep full-viewport height) ── */
+  /* ── Hero Section (full-viewport photo hero) ── */
   .smf-hero {
     min-height: 100svh !important;
-    padding: 0 1.5rem !important;
     margin-bottom: 0 !important;
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: center !important;
-    align-items: center !important;
+  }
+  .smf-hero__bg img {
+    object-position: center center !important;
   }
   .smf-hero__content {
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     gap: 0 !important;
-    padding: 0 !important;
-    transform: translateY(-5vh);
+    padding: 0 1.5rem !important;
+    transform: none;
   }
   .smf-hero__logo {
-    width: 110px !important;
-    margin-bottom: 2rem !important;
-  }
-  .smf-hero__divider {
-    width: 48px !important;
-    height: 2px !important;
-    margin-bottom: 2rem !important;
-    background: linear-gradient(90deg, transparent, #D4A574 30%, #D4A574 70%, transparent) !important;
+    width: 70px !important;
+    margin-bottom: 1.5rem !important;
   }
   .smf-hero__title {
-    font-size: clamp(2.4rem, 10vw, 3.2rem) !important;
+    font-size: clamp(1.8rem, 8vw, 2.8rem) !important;
     letter-spacing: -0.01em !important;
-    line-height: 1.05 !important;
-    margin-bottom: 1.5rem !important;
+    line-height: 1.1 !important;
+    margin-bottom: 1rem !important;
   }
   .smf-hero__subtitle {
     font-size: 0.7rem !important;
-    letter-spacing: 0.25em !important;
+    letter-spacing: 0.12em !important;
     line-height: 1.6 !important;
-    max-width: 300px !important;
+    max-width: 320px !important;
     text-align: center !important;
+    margin-bottom: 1.5rem !important;
   }
-  .smf-hero__content::after {
-    content: '' !important;
-    display: block !important;
-    width: 1px !important;
-    height: 40px !important;
-    background: linear-gradient(to bottom, rgba(212,165,116,0.6), transparent) !important;
-    margin-top: 3rem !important;
+  .smf-hero__actions {
+    flex-direction: column !important;
+    width: 100% !important;
+    max-width: 280px !important;
+  }
+  .smf-hero__btn {
+    width: 100% !important;
+    text-align: center !important;
   }
 
   /* ── About / Intro Sections ── */

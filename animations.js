@@ -6,12 +6,30 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Simple fade-in on scroll
     initScrollAnimations();
-    
+
     // Mobile menu toggle
     initMobileMenu();
-    
+
     // Timeline animations
     initTimeline();
+
+    // Fullscreen hero header scroll behavior
+    initFullscreenHeroScroll();
+
+    // Contact overlay
+    initContactOverlay();
+
+    // Lenis smooth scroll
+    initLenisScroll();
+
+    // Swiper sliders (webflow-template)
+    initSwiperSliders();
+
+    // Dropdown toggles (defined section)
+    initDropdownToggles();
+
+    // Parallax phrase lines (defined section)
+    initParallaxPhrases();
 });
 
 /**
@@ -329,4 +347,309 @@ function initHorizontalTimeline() {
             preloadImg.src = img.src;
         }
     });
+}
+
+/**
+ * Fullscreen Hero - Header scroll behavior & Depth Masking Parallax
+ * Creates 3D depth effect where text slides behind the mountain/castle foreground (webflow-template style)
+ * Nav becomes sticky when scrolled past hero
+ */
+function initFullscreenHeroScroll() {
+    const body = document.body;
+
+    // Only run if page has fullscreen hero
+    if (!body.classList.contains('has-fullscreen-hero')) return;
+
+    // webflow-template structure selectors
+    const heroSection = document.querySelector('.home-hero');
+    const homeParallax = document.querySelector('.home-parallax');
+    const displayText = document.querySelector('.display');
+    const parallaxBg = document.querySelector('.parallax-layer.is-bg');
+    const parallaxForeground = document.querySelector('.parallax-layer.is-1');
+
+    if (!heroSection) return;
+
+    // Check for reduced motion preference
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Scroll handler with depth parallax (webflow-template style)
+    function handleScroll() {
+        const heroHeight = heroSection.offsetHeight;
+        const scrollY = window.scrollY || window.pageYOffset;
+
+        // Header solid background toggle
+        if (scrollY > heroHeight * 0.3) {
+            body.classList.add('scrolled');
+        } else {
+            body.classList.remove('scrolled');
+        }
+
+        // Parallax effect — bg/fg are siblings in .home-hero, text is inside .home-parallax
+        if (!prefersReducedMotion && scrollY < heroHeight) {
+
+            // Background scrolls up slowly (depth effect)
+            if (parallaxBg) {
+                parallaxBg.style.transform = `translate3d(0px, ${scrollY * 0.3}px, 0px)`;
+            }
+
+            // Logo + text container scrolls up at medium speed
+            if (homeParallax) {
+                homeParallax.style.transform = `translate3d(0px, ${scrollY * 0.5}px, 0px)`;
+            }
+
+            // Text moves DOWN relative to its container (sinks behind castle)
+            if (displayText) {
+                const textMove = scrollY * 0.7;
+                displayText.style.transform = `translate3d(0px, ${textMove}px, 0px)`;
+
+                // Fade out text as it passes behind the castle
+                const foregroundTop = parallaxForeground ? parallaxForeground.getBoundingClientRect().top : heroHeight * 0.5;
+                const textBottom = displayText.getBoundingClientRect().bottom;
+                const textHeight = displayText.offsetHeight;
+
+                if (textBottom > foregroundTop) {
+                    const overlap = textBottom - foregroundTop;
+                    const fadeThreshold = textHeight * 0.5;
+                    const opacity = Math.max(0, 1 - (overlap / fadeThreshold));
+                    displayText.style.opacity = opacity;
+                } else {
+                    displayText.style.opacity = 1;
+                }
+            }
+
+            // Foreground: never moves — stays fixed in .home-hero
+        }
+    }
+
+    // Initial check
+    handleScroll();
+
+    // Listen for scroll with requestAnimationFrame for smooth performance
+    let ticking = false;
+    window.addEventListener('scroll', function() {
+        if (!ticking) {
+            window.requestAnimationFrame(function() {
+                handleScroll();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    }, { passive: true });
+}
+
+/**
+ * Contact Overlay - Toggle contact popup
+ */
+function initContactOverlay() {
+    const overlay = document.getElementById('contact-overlay');
+    const backdrop = document.getElementById('contact-backdrop');
+    const closeBtn = document.getElementById('close-overlay');
+    const contactTrigger = document.getElementById('nav-contact-trigger');
+
+    if (!overlay) return;
+
+    function openOverlay(e) {
+        if (e) e.preventDefault();
+        overlay.classList.add('is-open');
+        if (backdrop) backdrop.classList.add('is-visible');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeOverlay() {
+        overlay.classList.remove('is-open');
+        if (backdrop) backdrop.classList.remove('is-visible');
+        document.body.style.overflow = '';
+    }
+
+    // Open on Contact nav click
+    if (contactTrigger) {
+        contactTrigger.addEventListener('click', openOverlay);
+    }
+
+    // Close on X button click
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closeOverlay);
+    }
+
+    // Close on backdrop click
+    if (backdrop) {
+        backdrop.addEventListener('click', closeOverlay);
+    }
+
+    // Close on Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && overlay.classList.contains('is-open')) {
+            closeOverlay();
+        }
+    });
+}
+
+/**
+ * Lenis Smooth Scroll initialization
+ */
+function initLenisScroll() {
+    // Check if Lenis is available
+    if (typeof Lenis === 'undefined') return;
+
+    // Check for reduced motion preference
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const lenis = new Lenis({
+        lerp: 0.1,
+        wheelMultiplier: 0.7,
+        gestureOrientation: 'vertical',
+        normalizeWheel: false,
+        smoothTouch: false
+    });
+
+    function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    // Make lenis available globally for other scripts
+    window.lenis = lenis;
+}
+
+/**
+ * Swiper Slider initialization (webflow-template structure)
+ */
+function initSwiperSliders() {
+    // Check if Swiper is available
+    if (typeof Swiper === 'undefined') return;
+
+    // Initialize main slider (Section 04 - OUR INITIATIVES)
+    const mainSliderEl = document.querySelector('.swiper.is-slider-main');
+    if (mainSliderEl) {
+        const mainSlider = new Swiper('.swiper.is-slider-main', {
+            slidesPerView: 1,
+            spaceBetween: 16,
+            loop: false,
+            grabCursor: true,
+            navigation: {
+                nextEl: '.swiper-next',
+                prevEl: '.swiper-prev',
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 24,
+                },
+            },
+        });
+    }
+}
+
+/**
+ * Dropdown Toggles (Defined section - webflow-template structure)
+ */
+function initDropdownToggles() {
+    const dropdowns = document.querySelectorAll('.travel-dropdown');
+
+    if (dropdowns.length === 0) return;
+
+    dropdowns.forEach(dropdown => {
+        const toggle = dropdown.querySelector('.drop-toggle');
+        const list = dropdown.querySelector('.drop-list');
+        const arrow = dropdown.querySelector('.traval-arrow');
+
+        if (!toggle || !list) return;
+
+        toggle.addEventListener('click', () => {
+            const isOpen = dropdown.classList.contains('is-open');
+
+            // Close all other dropdowns
+            dropdowns.forEach(d => {
+                d.classList.remove('is-open');
+                const a = d.querySelector('.traval-arrow');
+                if (a) a.style.transform = 'rotate(0deg)';
+            });
+
+            // Toggle current dropdown
+            if (!isOpen) {
+                dropdown.classList.add('is-open');
+                if (arrow) arrow.style.transform = 'rotate(45deg)';
+            }
+        });
+    });
+}
+
+/**
+ * Parallax Phrase Lines (webflow-template scroll animation)
+ * Text SVGs slide horizontally in opposite directions as user scrolls
+ */
+function initParallaxPhrases() {
+    const container = document.querySelector('[data-parallax-phrases]');
+    if (!container) return;
+
+    // Check for reduced motion preference
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const phraseLine1 = container.querySelector('.phrase-line._1');
+    const phraseLine2 = container.querySelector('.phrase-line._2');
+    const phraseLine3 = container.querySelector('.phrase-line._3');
+
+    if (!phraseLine1 && !phraseLine2 && !phraseLine3) return;
+
+    // Animation values from webflow-template (in %)
+    // At scroll 0%: all at 0
+    // At scroll 100%: _3 -> 36%, _2 -> -42%, _1 -> 36%
+    const animations = {
+        '_1': { start: 0, end: 36 },
+        '_2': { start: 0, end: -42 },
+        '_3': { start: 0, end: 36 }
+    };
+
+    function updateParallax() {
+        const rect = container.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+
+        // Calculate scroll progress (0 to 1)
+        // Starts when element enters viewport from bottom
+        // Ends when element exits viewport from top
+        const elementTop = rect.top;
+        const elementHeight = rect.height;
+
+        // Progress: 0 when element just enters viewport, 1 when element just exits
+        const startTrigger = windowHeight; // when top of element is at bottom of viewport
+        const endTrigger = -elementHeight; // when bottom of element is at top of viewport
+
+        let progress = (startTrigger - elementTop) / (startTrigger - endTrigger);
+        progress = Math.max(0, Math.min(1, progress)); // Clamp between 0 and 1
+
+        // Apply transforms
+        if (phraseLine1) {
+            const x = animations['_1'].start + (animations['_1'].end - animations['_1'].start) * progress;
+            phraseLine1.style.transform = `translateX(${x}%)`;
+        }
+        if (phraseLine2) {
+            const x = animations['_2'].start + (animations['_2'].end - animations['_2'].start) * progress;
+            phraseLine2.style.transform = `translateX(${x}%)`;
+        }
+        if (phraseLine3) {
+            const x = animations['_3'].start + (animations['_3'].end - animations['_3'].start) * progress;
+            phraseLine3.style.transform = `translateX(${x}%)`;
+        }
+    }
+
+    // Initial update
+    updateParallax();
+
+    // Update on scroll with requestAnimationFrame for smooth performance
+    let ticking = false;
+    window.addEventListener('scroll', function() {
+        if (!ticking) {
+            window.requestAnimationFrame(function() {
+                updateParallax();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    }, { passive: true });
 }

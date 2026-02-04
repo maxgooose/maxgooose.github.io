@@ -84,6 +84,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
+    padding-bottom: 5rem; /* Space for fixed bottom nav */
 }
 
 /* Prevent styles.css from overriding Webflow navbar */
@@ -122,15 +123,19 @@ body {
     font-weight: 300;
 }
 .nav-header .navbar {
-    z-index: 40;
-    background-color: #fff;
-    border-radius: 3.9em;
+    z-index: 999;
+    background-color: rgba(255, 255, 255, 0.97);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-radius: 100vh;
     justify-content: center;
     align-items: center;
     display: flex;
-    position: absolute;
-    inset: auto auto 3.5em;
-    box-shadow: 0 1px 1.0625rem -.1875rem #11111129;
+    position: fixed;
+    bottom: 1.5em;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.04);
     pointer-events: auto;
 }
 .nav-header .menu-container {
@@ -4294,29 +4299,29 @@ a.footer-link {
         display: none !important;
     }
 
-    /* Fixed bottom pill */
+    /* Fixed bottom pill — dark glassmorphism on mobile */
     .nav-header .navbar {
         inset: unset !important;
         position: fixed !important;
         z-index: 999 !important;
-        bottom: 1rem !important;
+        bottom: 0.85rem !important;
         left: 50% !important;
         top: auto !important;
         right: auto !important;
         transform: translateX(-50%) !important;
         width: auto !important;
         max-width: calc(100vw - 1.5rem) !important;
-        background: rgba(255, 255, 255, 0.95) !important;
-        backdrop-filter: blur(16px) !important;
-        -webkit-backdrop-filter: blur(16px) !important;
-        border-radius: 100px !important;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12) !important;
-        border: 1px solid rgba(0, 0, 0, 0.06) !important;
+        background: rgba(15, 15, 15, 0.88) !important;
+        backdrop-filter: blur(20px) saturate(1.4) !important;
+        -webkit-backdrop-filter: blur(20px) saturate(1.4) !important;
+        border-radius: 100vh !important;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.06) !important;
+        border: 1px solid rgba(255, 255, 255, 0.08) !important;
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
         height: auto !important;
-        padding: 0.4rem 0.3rem !important;
+        padding: 0.45rem 0.4rem !important;
     }
 
     .menu-container {
@@ -4330,34 +4335,46 @@ a.footer-link {
     }
 
     .navbar .nav-item-link {
-        padding: 0.4rem 0.55rem !important;
+        padding: 0.45rem 0.65rem !important;
         white-space: nowrap !important;
         display: flex !important;
         align-items: center !important;
+        border-radius: 100vh !important;
+        transition: background 0.2s ease !important;
+    }
+
+    .navbar .nav-item-link:hover {
+        background: rgba(255, 255, 255, 0.08) !important;
     }
 
     .navbar .nav-item-link .nav-link-text {
-        font-size: 0.68rem !important;
+        font-size: 0.72rem !important;
         font-weight: 500 !important;
-        color: #222 !important;
-        letter-spacing: 0.01em !important;
+        color: rgba(255, 255, 255, 0.7) !important;
+        letter-spacing: 0.02em !important;
+    }
+
+    .navbar .nav-item-link.w--current .nav-link-text {
+        color: #D4A574 !important;
+        font-weight: 600 !important;
     }
 
     .navbar .nav-item-link.is--first {
-        padding-left: 0.6rem !important;
+        padding-left: 0.7rem !important;
     }
 
     .navbar .nav-item-link.is--button {
-        background-color: #222 !important;
-        padding: 0.4rem 0.8rem !important;
-        border-radius: 100px !important;
-        margin-left: 0.15rem !important;
+        background: linear-gradient(135deg, #D4A574 0%, #C49464) !important;
+        padding: 0.45rem 0.9rem !important;
+        border-radius: 100vh !important;
+        margin-left: 0.2rem !important;
     }
 
     .navbar .nav-item-link.is--button .nav-link-text {
-        font-size: 0.62rem !important;
-        font-weight: 600 !important;
-        color: #fff !important;
+        font-size: 0.65rem !important;
+        font-weight: 700 !important;
+        color: #0a0a0a !important;
+        letter-spacing: 0.04em !important;
     }
 }
 

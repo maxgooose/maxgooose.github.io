@@ -4561,7 +4561,7 @@ a.footer-link {
     max-width: 100% !important;
   }
   .smf-hero__logo {
-    width: 65px !important;
+    width: 90px !important;
     margin-bottom: 1.25rem !important;
   }
   .smf-hero__title {
@@ -4987,6 +4987,16 @@ a.footer-link {
   .traval-arrow {
     width: 1.5rem !important;
     opacity: 0.5 !important;
+  }
+  /* Fix dropdown overlay bug on mobile — force static positioning */
+  .w-dropdown {
+    position: static !important;
+  }
+  .w-dropdown-list,
+  .drop-list,
+  .drop-list.w--open {
+    position: static !important;
+    width: 100% !important;
   }
   .div-block-3 {
     padding: 2.5rem 1.25rem !important;

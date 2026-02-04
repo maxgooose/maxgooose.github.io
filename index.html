@@ -166,6 +166,25 @@
           .benefits_layout.is-partners .benefits_card_mask_wrap { grid-template-rows: 0fr; }
           .benefits_layout.is-partners { flex-direction: row; }
         }
+        /* Partner logos on travel cards */
+        .partner-logo {
+          width: 72px;
+          height: 72px;
+          object-fit: contain;
+          border-radius: 50%;
+          background: rgba(255,255,255,0.15);
+          backdrop-filter: blur(8px);
+          -webkit-backdrop-filter: blur(8px);
+          padding: 10px;
+          border: 2px solid rgba(255,255,255,0.25);
+          margin-bottom: 12px;
+          filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4));
+          transition: transform 0.3s ease, background 0.3s ease;
+        }
+        .benefits_card_wrap:hover .partner-logo {
+          transform: scale(1.1);
+          background: rgba(255,255,255,0.3);
+        }
       </style>
 
       <div class="benefits_wrap">
@@ -176,6 +195,7 @@
             <a href="https://campsite.bio/mysyria" target="_blank" rel="noopener noreferrer" class="benefits_link"></a>
             <div class="benefits_card_content is-travel">
               <div class="benefits_card_header is-travel">
+                <img src="assets/images/mysyria-logo.png" alt="My Syria" class="partner-logo">
                 <h2 class="benefits_card_title">My Syria</h2>
               </div>
             </div>
@@ -187,6 +207,7 @@
             <a href="https://goldenteamsy.com/" target="_blank" rel="noopener noreferrer" class="benefits_link"></a>
             <div class="benefits_card_content is-travel">
               <div class="benefits_card_header is-travel">
+                <img src="assets/images/golden-team-syria-logo.png" alt="Golden Team Syria" class="partner-logo">
                 <h2 class="benefits_card_title">Golden Team Syria</h2>
               </div>
             </div>
@@ -198,6 +219,7 @@
             <a href="https://syrianguides.com/" target="_blank" rel="noopener noreferrer" class="benefits_link"></a>
             <div class="benefits_card_content is-travel">
               <div class="benefits_card_header is-travel">
+                <img src="assets/images/syrian-guides-logo.png" alt="Syrian Guides" class="partner-logo">
                 <h2 class="benefits_card_title">Syrian Guides</h2>
               </div>
             </div>
@@ -209,6 +231,7 @@
             <a href="https://syriascopetravel.com/" target="_blank" rel="noopener noreferrer" class="benefits_link"></a>
             <div class="benefits_card_content is-travel">
               <div class="benefits_card_header is-travel">
+                <img src="assets/images/syria-scope-travel-logo.png" alt="Syria Scope Travel" class="partner-logo">
                 <h2 class="benefits_card_title">Syria Scope Travel</h2>
               </div>
             </div>

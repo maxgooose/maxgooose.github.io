@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta property="og:title" content="Volunteer | Syrian Mosaic Foundation">
+    <meta property="og:description" content="Join us in preserving Syria's cultural heritage. Volunteer with the Syrian Mosaic Foundation.">
+    <meta property="og:image" content="assets/images/smf-logo.png">
+    <meta property="og:type" content="website">
+
+    <title>Volunteer | Syrian Mosaic Foundation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #111111;
+            --color-secondary: #6B7280;
+            --color-border: #E5E7EB;
+            --color-bg-page: #F9FAFB;
+            --color-bg-card: #FFFFFF;
+            --color-accent: #C9A962; 
+            --radius-input: 12px;
+            --radius-card: 16px;
+            --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            font-family: var(--font-main); 
+            background: var(--color-bg-page); 
+            color: var(--color-primary); 
+            line-height: 1.6; 
+            -webkit-font-smoothing: antialiased; 
+            padding-bottom: 80px;
+            overflow-x: hidden;
+            width: 100%; 
+        }
+
+        /* --- Header --- */
+        .header { 
+            background: var(--color-bg-card); 
+            border-bottom: 1px solid var(--color-border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            will-change: transform;
+        }
+        .header-content { 
+            max-width: 900px; 
+            margin: 0 auto; 
+            padding: 16px 24px; 
+            display: flex; 
+            justify-content: space-between;
+            align-items: center; 
+        }
+        .logo-text { font-size: 15px; font-weight: 700; color: var(--color-primary); text-decoration: none; }
+        .back-link { font-size: 13px; color: var(--color-secondary); text-decoration: none; display: flex; align-items: center; gap: 4px; transition: color 0.2s; }
+        .back-link:hover { color: var(--color-primary); }
+        .back-link svg { width: 16px; height: 16px; }
+
+        /* --- Hero --- */
+        .hero { 
+            background: linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.85) 100%), url('assets/images/heritage-restoration.jpg') center center / cover no-repeat scroll;
+            padding: 40px 24px 50px; 
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        
+        .hero-logo {
+            height: 200px;
+            width: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+            transform: translateZ(0);
+            display: block;
+            margin: 40px auto 28px;
+        }
+        .flag-container {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            height: 35px;
+            width: 52px;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        .flag-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(201, 169, 98, 0.2);
+            color: #EBCB8B;
+            border: 1px solid rgba(201, 169, 98, 0.4);
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 6px 12px;
+            border-radius: 20px;
+            margin-bottom: 16px;
+        }
+        .hero h1 { font-size: 28px; font-weight: 700; line-height: 1.2; margin-bottom: 12px; }
+        .hero p { font-size: 15px; opacity: 0.9; max-width: 440px; margin: 0 auto; }
+
+        /* --- Main Container --- */
+        .main-container {
+            max-width: 540px;
+            margin: -30px auto 0; 
+            padding: 0 24px; 
+            position: relative;
+            z-index: 10;
+        }
+
+        /* --- Notice Card --- */
+        .notice-card {
+            background: #fff;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-card);
+            padding: 24px;
+            margin-bottom: 32px;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.08);
+            transform: translateZ(0);
+        }
+        .notice-title { font-size: 12px; font-weight: 700; text-transform: uppercase; color: var(--color-secondary); margin-bottom: 6px; letter-spacing: 1px; }
+        .notice-text { font-size: 14px; color: var(--color-primary); line-height: 1.6; }
+
+        /* --- Volunteer Areas --- */
+        .areas-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 32px;
+        }
+        .area-card {
+            background: #fff;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-card);
+            padding: 20px;
+            text-align: center;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .area-card:hover {
+            border-color: var(--color-accent);
+            box-shadow: 0 4px 12px rgba(201, 169, 98, 0.15);
+        }
+        .area-icon { font-size: 28px; margin-bottom: 8px; }
+        .area-title { font-size: 13px; font-weight: 600; color: var(--color-primary); margin-bottom: 4px; }
+        .area-desc { font-size: 11px; color: var(--color-secondary); line-height: 1.4; }
+
+        /* --- Form Sections --- */
+        .form-section {
+            background: var(--color-bg-card);
+            border-radius: var(--radius-card);
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            border: 1px solid var(--color-border);
+            transform: translateZ(0);
+        }
+        .section-header { margin-bottom: 24px; border-bottom: 1px solid var(--color-border); padding-bottom: 16px; }
+        .section-title { font-size: 17px; font-weight: 700; color: var(--color-primary); }
+
+        /* --- Form Elements --- */
+        .form-group { margin-bottom: 28px; }
+        .form-group:last-child { margin-bottom: 0; }
+        
+        label { 
+            display: block; 
+            font-size: 14px; 
+            font-weight: 600; 
+            margin-bottom: 8px; 
+            color: #1f2937;
+        }
+        .required::after { content: '*'; color: #C9A962; margin-left: 2px; } 
+        .sub-label { display: block; font-size: 12px; color: var(--color-secondary); margin-top: -4px; margin-bottom: 8px; font-weight: 400; }
+
+        input[type="text"], input[type="email"], input[type="tel"], input[type="date"], select, textarea {
+            width: 100%;
+            height: 52px;
+            padding: 0 16px;
+            font-size: 16px;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-input);
+            background: #fff;
+            color: var(--color-primary);
+            appearance: none;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        textarea { height: auto; min-height: 100px; padding: 16px; resize: vertical; }
+        
+        input:focus, select:focus, textarea:focus { 
+            outline: none; 
+            border-color: var(--color-accent); 
+            box-shadow: 0 0 0 4px rgba(201, 169, 98, 0.15); 
+        }
+
+        .select-wrapper { position: relative; }
+        .select-wrapper::after {
+            content: '';
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 10px;
+            height: 10px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-size: contain;
+            background-repeat: no-repeat;
+            pointer-events: none;
+        }
+
+        /* Option Cards (Radio/Checkbox) */
+        .options-group { display: flex; flex-direction: column; gap: 10px; }
+        .option-item {
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding: 14px 16px;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-input);
+            cursor: pointer;
+            transition: background 0.1s, border-color 0.1s;
+            background: white;
+        }
+        .option-item:active { transform: scale(0.99); background: #fafafa; }
+        .option-item.selected { 
+            border-color: var(--color-accent); 
+            background: #FFFCF5;
+            box-shadow: inset 0 0 0 1px var(--color-accent);
+        }
+        .option-item input {
+            height: 20px; width: 20px;
+            margin-right: 12px;
+            accent-color: var(--color-accent);
+        }
+        .option-item span { font-size: 15px; font-weight: 500; }
+
+        /* --- Footer / Submit --- */
+        .submit-section { margin-top: 32px; text-align: center; }
+        .submit-btn {
+            width: 100%;
+            background: var(--color-primary);
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 16px;
+            border-radius: var(--radius-card);
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: transform 0.1s, background 0.2s;
+            transform: translateZ(0);
+        }
+        .submit-btn:active { transform: scale(0.97); }
+        .submit-btn:hover { background: #000; }
+        .submit-btn:disabled { opacity: 0.7; cursor: not-allowed; transform: none; }
+
+        .footer { 
+            margin-top: 40px; 
+            text-align: center; 
+            font-size: 12px; 
+            color: var(--color-secondary); 
+            padding-bottom: 20px;
+        }
+
+        @media (min-width: 500px) {
+            .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+            .form-section { padding: 0; border: none; box-shadow: none; background: transparent; }
+            .section-header { border-bottom: none; margin-bottom: 30px; padding-bottom: 0; }
+            .section-title { font-size: 20px; }
+            .main-container {
+                background: white;
+                border-radius: 20px;
+                padding: 40px;
+                margin-top: -40px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            }
+            .notice-card { border: 1px solid var(--color-border); box-shadow: none; background: #F9FAFB; }
+            .area-card { box-shadow: none; }
+        }
+
+        @media (min-width: 768px) {
+            .header-content { padding: 18px 40px; }
+            .logo-text { font-size: 16px; }
+            .back-link { font-size: 14px; gap: 6px; }
+            .back-link svg { width: 18px; height: 18px; }
+            .hero { padding: 60px 40px 80px; }
+            .hero-logo { height: 220px; margin: 30px auto 32px; }
+            .flag-container { top: 30px; right: 40px; height: 35px; width: 52px; }
+            .hero h1 { font-size: 36px; }
+            .hero p { font-size: 17px; }
+            .main-container { max-width: 640px; padding: 48px; }
+        }
+
+        @media (min-width: 1024px) {
+            .header-content { max-width: 1100px; padding: 20px 60px; }
+            .hero { padding: 80px 60px 100px; }
+            .hero-logo { height: 240px; }
+            .flag-container { top: 40px; right: 60px; height: 40px; width: 60px; }
+            .hero h1 { font-size: 42px; }
+            .main-container { max-width: 680px; margin-top: -50px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-content">
+            <a href="index.html" class="logo-text">Syrian Mosaic Foundation</a>
+            <a href="index.html" class="back-link">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+                Home
+            </a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="flag-container">
+            <img src="assets/images/syria-flag.svg" alt="Syrian Flag">
+        </div>
+        <img src="assets/images/smf-logo.png" alt="Syrian Mosaic Foundation" class="hero-logo" onerror="this.style.display='none'">
+        <div class="hero-badge">Make a Difference</div>
+        <h1>Volunteer With Us</h1>
+        <p>Help preserve Syria's heritage and empower its communities. Every hand makes a difference.</p>
+    </section>
+
+    <div class="main-container">
+
+        <!-- Volunteer Areas Overview -->
+        <div class="areas-grid">
+            <div class="area-card">
+                <div class="area-icon">🏛️</div>
+                <div class="area-title">Heritage Preservation</div>
+                <div class="area-desc">Restore and protect historical sites and artifacts</div>
+            </div>
+            <div class="area-card">
+                <div class="area-icon">📚</div>
+                <div class="area-title">Education</div>
+                <div class="area-desc">Teach, mentor, and develop educational programs</div>
+            </div>
+            <div class="area-card">
+                <div class="area-icon">🤝</div>
+                <div class="area-title">Community Outreach</div>
+                <div class="area-desc">Connect with local communities and support initiatives</div>
+            </div>
+            <div class="area-card">
+                <div class="area-icon">📸</div>
+                <div class="area-title">Media & Content</div>
+                <div class="area-desc">Photography, video, writing, and social media</div>
+            </div>
+        </div>
+
+        <div class="notice-card">
+            <div class="notice-title">How It Works</div>
+            <div class="notice-text">Fill out the form below and our team will review your application. We'll reach out to discuss opportunities that match your skills and availability. Volunteers may serve remotely or on-site in Syria depending on the role.</div>
+        </div>
+
+        <form action="https://formspree.io/f/mvzozenq" method="POST" id="volunteerForm">
+            <input type="hidden" name="_subject" value="New Volunteer Application">
+            <input type="hidden" name="registrationType" value="Volunteer">
+
+            <!-- Section 1: Personal Details -->
+            <div class="form-section">
+                <div class="section-header">
+                    <h2 class="section-title">1. Personal Details</h2>
+                </div>
+                
+                <div class="form-group">
+                    <label for="fullName" class="required">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" required placeholder="e.g. Alex Doe" autocomplete="name" autocorrect="off" spellcheck="false">
+                </div>
+
+                <div class="form-group two-col">
+                    <div>
+                        <label for="email" class="required">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="alex@example.com" autocomplete="email">
+                    </div>
+                    <div style="margin-top: 24px;">
+                        <label for="phone" class="required">Phone</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="+1 (555) 000-0000" autocomplete="tel">
+                    </div>
+                </div>
+                <style>@media(min-width:500px){ [style*="margin-top: 24px"] { margin-top: 0 !important; } }</style>
+
+                <div class="form-group two-col" style="margin-top: 24px;">
+                    <div>
+                        <label for="location" class="required">City & Country</label>
+                        <input type="text" id="location" name="location" required placeholder="e.g. Brooklyn, NY, USA" autocomplete="address-level2">
+                    </div>
+                    <div style="margin-top: 24px;">
+                        <label for="age" class="required">Age Range</label>
+                        <div class="select-wrapper">
+                            <select id="age" name="ageRange" required>
+                                <option value="" disabled selected>Select</option>
+                                <option value="18-24">18–24</option>
+                                <option value="25-34">25–34</option>
+                                <option value="35-44">35–44</option>
+                                <option value="45-54">45–54</option>
+                                <option value="55+">55+</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 2: Background -->
+            <div class="form-section">
+                <div class="section-header">
+                    <h2 class="section-title">2. Background</h2>
+                </div>
+
+                <div class="form-group">
+                    <label class="required">Connection to Syria</label>
+                    <div class="options-group">
+                        <label class="option-item"><input type="radio" name="connectionToSyria" value="Syrian heritage" required><span>Syrian heritage / ancestry</span></label>
+                        <label class="option-item"><input type="radio" name="connectionToSyria" value="Family lived there"><span>Family lived there</span></label>
+                        <label class="option-item"><input type="radio" name="connectionToSyria" value="Cultural interest"><span>Cultural / historical interest</span></label>
+                        <label class="option-item"><input type="radio" name="connectionToSyria" value="Humanitarian"><span>Humanitarian / NGO work</span></label>
+                        <label class="option-item"><input type="radio" name="connectionToSyria" value="None - want to help"><span>No direct connection — just want to help</span></label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="languages">Languages Spoken</label>
+                    <span class="sub-label">List all languages you're comfortable working in</span>
+                    <input type="text" id="languages" name="languages" placeholder="e.g. English, Arabic, French">
+                </div>
+
+                <div class="form-group">
+                    <label for="occupation">Current Occupation</label>
+                    <input type="text" id="occupation" name="occupation" placeholder="e.g. Teacher, Engineer, Student">
+                </div>
+
+                <div class="form-group">
+                    <label class="required">Have you volunteered before?</label>
+                    <div class="options-group">
+                        <label class="option-item"><input type="radio" name="priorVolunteer" value="Yes, extensively" required><span>Yes, extensively</span></label>
+                        <label class="option-item"><input type="radio" name="priorVolunteer" value="Yes, a few times"><span>Yes, a few times</span></label>
+                        <label class="option-item"><input type="radio" name="priorVolunteer" value="No, first time"><span>No, this would be my first time</span></label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 3: Volunteer Interests -->
+            <div class="form-section">
+                <div class="section-header">
+                    <h2 class="section-title">3. Volunteer Interests</h2>
+                </div>
+
+                <div class="form-group">
+                    <label class="required">Areas of Interest</label>
+                    <span class="sub-label">Select all that apply</span>
+                    <div class="options-group">
+                        <label class="option-item"><input type="checkbox" name="interests" value="Heritage preservation"><span>Heritage Preservation & Restoration</span></label>
+                        <label class="option-item"><input type="checkbox" name="interests" value="Education"><span>Education & Mentorship</span></label>
+                        <label class="option-item"><input type="checkbox" name="interests" value="Community outreach"><span>Community Outreach & Events</span></label>
+                        <label class="option-item"><input type="checkbox" name="interests" value="Media & content"><span>Media, Photography & Content Creation</span></label>
+                        <label class="option-item"><input type="checkbox" name="interests" value="Translation"><span>Translation & Language Support</span></label>
+                        <label class="option-item"><input type="checkbox" name="interests" value="Fundraising"><span>Fundraising & Development</span></label>
+                        <label class="option-item"><input type="checkbox" name="interests" value="Tour guiding"><span>Tour Guiding & Cultural Exchange</span></label>
+                        <label class="option-item"><input type="checkbox" name="interests" value="Admin & operations"><span>Admin & Operations Support</span></label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="required">Preferred Volunteer Type</label>
+                    <div class="options-group">
+                        <label class="option-item"><input type="radio" name="volunteerType" value="Remote" required><span>Remote — I can contribute from anywhere</span></label>
+                        <label class="option-item"><input type="radio" name="volunteerType" value="On-site in Syria"><span>On-site in Syria</span></label>
+                        <label class="option-item"><input type="radio" name="volunteerType" value="Both"><span>Both remote and on-site</span></label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="required">Availability</label>
+                    <div class="options-group">
+                        <label class="option-item"><input type="radio" name="availability" value="A few hours/week" required><span>A few hours per week</span></label>
+                        <label class="option-item"><input type="radio" name="availability" value="Part-time"><span>Part-time (10–20 hrs/week)</span></label>
+                        <label class="option-item"><input type="radio" name="availability" value="Full-time"><span>Full-time commitment</span></label>
+                        <label class="option-item"><input type="radio" name="availability" value="Project-based"><span>Project-based / flexible</span></label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 4: Tell Us More -->
+            <div class="form-section">
+                <div class="section-header">
+                    <h2 class="section-title">4. Tell Us More</h2>
+                </div>
+
+                <div class="form-group">
+                    <label for="skills">Relevant Skills</label>
+                    <span class="sub-label">Any specific skills, certifications, or expertise you bring</span>
+                    <textarea id="skills" name="skills" placeholder="e.g. Web design, project management, Arabic tutoring, first aid certified..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="motivation" class="required">Why do you want to volunteer with SMF?</label>
+                    <textarea id="motivation" name="motivation" required placeholder="Tell us what drives you and what you hope to contribute..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="howHeard">How did you hear about us?</label>
+                    <input type="text" id="howHeard" name="howHeard" placeholder="e.g. Instagram, friend, news article">
+                </div>
+            </div>
+
+            <div class="form-group" style="margin-top: 32px;">
+                <label class="option-item" style="align-items: flex-start;">
+                    <input type="checkbox" name="acknowledgment" required style="margin-top: 4px;">
+                    <span style="font-size: 13px; line-height: 1.5; color: #555;">I understand this is a volunteer interest form. The SMF team will follow up with next steps and any additional requirements.</span>
+                </label>
+            </div>
+
+            <div class="submit-section">
+                <button type="submit" class="submit-btn" id="submitBtn">Submit Application</button>
+            </div>
+
+        </form>
+
+        <footer class="footer">
+            <p>&copy; 2025 The Syrian Mosaic Foundation. All Rights Reserved.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        // Add 'selected' class to radio/checkbox for styling
+        document.querySelectorAll('.option-item input').forEach(input => {
+            input.addEventListener('change', function() {
+                if (this.type === 'radio') {
+                    this.closest('.options-group').querySelectorAll('.option-item').forEach(item => item.classList.remove('selected'));
+                }
+                this.closest('.option-item').classList.toggle('selected', this.checked);
+            });
+        });
+
+        // Loading state
+        document.getElementById('volunteerForm').addEventListener('submit', function() {
+            const btn = document.getElementById('submitBtn');
+            btn.innerText = 'Submitting...';
+            btn.style.opacity = '0.7';
+            btn.disabled = true;
+        });
+    </script>
+</body>
+</html>

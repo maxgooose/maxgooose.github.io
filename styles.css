@@ -545,7 +545,6 @@ a:not(.nav-header a):hover {
 .hero-fullscreen-logo img {
     width: 7.5em;
     height: auto;
-    filter: brightness(0) invert(1); /* Make logo white */
 }
 
 /* Main title in center - positioned higher for sky visibility */
@@ -4446,8 +4445,7 @@ a.footer-link {
 .smf-hero__logo img {
     width: 100%;
     height: auto;
-    filter: brightness(0) invert(1) drop-shadow(0 2px 8px rgba(0,0,0,0.4));
-    opacity: 0.95;
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4));
 }
 
 /* Title */

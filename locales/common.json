@@ -1,0 +1,242 @@
+{
+  "en": {
+    "lang": "en",
+    "dir": "ltr",
+    "nav": {
+      "home": "Home",
+      "shop": "Shop",
+      "volunteer": "Volunteer",
+      "contact": "Contact",
+      "getInvolved": "GET INVOLVED"
+    },
+    "contactOverlay": {
+      "title": "Get in touch",
+      "address": "Address",
+      "addressValue": "Damascus, Syria & New York, USA",
+      "phone": "Phone number",
+      "phoneValue": "+1 347-893-3032",
+      "socials": "Socials",
+      "email": "Email",
+      "emailValue": "info@syrianmosaicfoundation.org"
+    },
+    "footer": {
+      "tagline": "Connecting the world to Syria's extraordinary heritage through cultural diplomacy and responsible tourism.",
+      "explore": "Explore",
+      "connect": "Connect",
+      "follow": "Follow",
+      "bookTrip": "Book a Trip",
+      "emailUs": "Email Us",
+      "copyright": "© 2026 Syrian Mosaic Foundation. All rights reserved.",
+      "location": "Damascus, Syria & New York, USA"
+    },
+    "languageSelector": {
+      "label": "Language",
+      "en": "English",
+      "ar": "العربية",
+      "he": "עברית",
+      "es": "Español",
+      "it": "Italiano",
+      "nl": "Nederlands"
+    }
+  },
+  "ar": {
+    "lang": "ar",
+    "dir": "rtl",
+    "nav": {
+      "home": "الرئيسية",
+      "shop": "المتجر",
+      "volunteer": "تطوع",
+      "contact": "اتصل بنا",
+      "getInvolved": "شارك معنا"
+    },
+    "contactOverlay": {
+      "title": "تواصل معنا",
+      "address": "العنوان",
+      "addressValue": "دمشق، سوريا ونيويورك، الولايات المتحدة",
+      "phone": "رقم الهاتف",
+      "phoneValue": "+1 347-893-3032",
+      "socials": "وسائل التواصل",
+      "email": "البريد الإلكتروني",
+      "emailValue": "info@syrianmosaicfoundation.org"
+    },
+    "footer": {
+      "tagline": "ربط العالم بتراث سوريا الاستثنائي من خلال الدبلوماسية الثقافية والسياحة المسؤولة.",
+      "explore": "استكشف",
+      "connect": "تواصل",
+      "follow": "تابعنا",
+      "bookTrip": "احجز رحلة",
+      "emailUs": "راسلنا",
+      "copyright": "© 2026 مؤسسة الموزاييك السورية. جميع الحقوق محفوظة.",
+      "location": "دمشق، سوريا ونيويورك، الولايات المتحدة"
+    },
+    "languageSelector": {
+      "label": "اللغة",
+      "en": "English",
+      "ar": "العربية",
+      "he": "עברית",
+      "es": "Español",
+      "it": "Italiano",
+      "nl": "Nederlands"
+    }
+  },
+  "he": {
+    "lang": "he",
+    "dir": "rtl",
+    "nav": {
+      "home": "דף הבית",
+      "shop": "חנות",
+      "volunteer": "התנדבות",
+      "contact": "צור קשר",
+      "getInvolved": "הצטרף אלינו"
+    },
+    "contactOverlay": {
+      "title": "צור קשר",
+      "address": "כתובת",
+      "addressValue": "דמשק, סוריה וניו יורק, ארה\"ב",
+      "phone": "מספר טלפון",
+      "phoneValue": "+1 347-893-3032",
+      "socials": "רשתות חברתיות",
+      "email": "דוא\"ל",
+      "emailValue": "info@syrianmosaicfoundation.org"
+    },
+    "footer": {
+      "tagline": "מחברים את העולם למורשת יוצאת הדופן של סוריה באמצעות דיפלומטיה תרבותית ותיירות אחראית.",
+      "explore": "גלה",
+      "connect": "התחבר",
+      "follow": "עקוב",
+      "bookTrip": "הזמן טיול",
+      "emailUs": "שלח דוא\"ל",
+      "copyright": "© 2026 קרן המוזאיק הסורית. כל הזכויות שמורות.",
+      "location": "דמשק, סוריה וניו יורק, ארה\"ב"
+    },
+    "languageSelector": {
+      "label": "שפה",
+      "en": "English",
+      "ar": "العربية",
+      "he": "עברית",
+      "es": "Español",
+      "it": "Italiano",
+      "nl": "Nederlands"
+    }
+  },
+  "es": {
+    "lang": "es",
+    "dir": "ltr",
+    "nav": {
+      "home": "Inicio",
+      "shop": "Tienda",
+      "volunteer": "Voluntariado",
+      "contact": "Contacto",
+      "getInvolved": "PARTICIPA"
+    },
+    "contactOverlay": {
+      "title": "Contáctanos",
+      "address": "Dirección",
+      "addressValue": "Damasco, Siria y Nueva York, EE.UU.",
+      "phone": "Teléfono",
+      "phoneValue": "+1 347-893-3032",
+      "socials": "Redes sociales",
+      "email": "Correo electrónico",
+      "emailValue": "info@syrianmosaicfoundation.org"
+    },
+    "footer": {
+      "tagline": "Conectando al mundo con el extraordinario patrimonio de Siria a través de la diplomacia cultural y el turismo responsable.",
+      "explore": "Explorar",
+      "connect": "Conectar",
+      "follow": "Síguenos",
+      "bookTrip": "Reservar un viaje",
+      "emailUs": "Escríbenos",
+      "copyright": "© 2026 Fundación Mosaico Sirio. Todos los derechos reservados.",
+      "location": "Damasco, Siria y Nueva York, EE.UU."
+    },
+    "languageSelector": {
+      "label": "Idioma",
+      "en": "English",
+      "ar": "العربية",
+      "he": "עברית",
+      "es": "Español",
+      "it": "Italiano",
+      "nl": "Nederlands"
+    }
+  },
+  "it": {
+    "lang": "it",
+    "dir": "ltr",
+    "nav": {
+      "home": "Home",
+      "shop": "Negozio",
+      "volunteer": "Volontariato",
+      "contact": "Contatti",
+      "getInvolved": "PARTECIPA"
+    },
+    "contactOverlay": {
+      "title": "Contattaci",
+      "address": "Indirizzo",
+      "addressValue": "Damasco, Siria e New York, USA",
+      "phone": "Telefono",
+      "phoneValue": "+1 347-893-3032",
+      "socials": "Social",
+      "email": "E-mail",
+      "emailValue": "info@syrianmosaicfoundation.org"
+    },
+    "footer": {
+      "tagline": "Collegare il mondo allo straordinario patrimonio della Siria attraverso la diplomazia culturale e il turismo responsabile.",
+      "explore": "Esplora",
+      "connect": "Contatti",
+      "follow": "Seguici",
+      "bookTrip": "Prenota un viaggio",
+      "emailUs": "Scrivici",
+      "copyright": "© 2026 Fondazione Mosaico Siriano. Tutti i diritti riservati.",
+      "location": "Damasco, Siria e New York, USA"
+    },
+    "languageSelector": {
+      "label": "Lingua",
+      "en": "English",
+      "ar": "العربية",
+      "he": "עברית",
+      "es": "Español",
+      "it": "Italiano",
+      "nl": "Nederlands"
+    }
+  },
+  "nl": {
+    "lang": "nl",
+    "dir": "ltr",
+    "nav": {
+      "home": "Home",
+      "shop": "Winkel",
+      "volunteer": "Vrijwilligerswerk",
+      "contact": "Contact",
+      "getInvolved": "DOE MEE"
+    },
+    "contactOverlay": {
+      "title": "Neem contact op",
+      "address": "Adres",
+      "addressValue": "Damascus, Syrië en New York, VS",
+      "phone": "Telefoonnummer",
+      "phoneValue": "+1 347-893-3032",
+      "socials": "Socials",
+      "email": "E-mail",
+      "emailValue": "info@syrianmosaicfoundation.org"
+    },
+    "footer": {
+      "tagline": "De wereld verbinden met het buitengewone erfgoed van Syrië door culturele diplomatie en verantwoord toerisme.",
+      "explore": "Ontdek",
+      "connect": "Verbind",
+      "follow": "Volg ons",
+      "bookTrip": "Boek een reis",
+      "emailUs": "E-mail ons",
+      "copyright": "© 2026 Syrian Mosaic Foundation. Alle rechten voorbehouden.",
+      "location": "Damascus, Syrië en New York, VS"
+    },
+    "languageSelector": {
+      "label": "Taal",
+      "en": "English",
+      "ar": "العربية",
+      "he": "עברית",
+      "es": "Español",
+      "it": "Italiano",
+      "nl": "Nederlands"
+    }
+  }
+}

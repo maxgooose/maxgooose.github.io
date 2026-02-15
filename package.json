@@ -1,0 +1,25 @@
+{
+  "name": "maxgooose.github.io-1",
+  "version": "1.0.0",
+  "description": "H.H © 2025 The Syrian Mosaic Foundation. All Rights Reserved.",
+  "main": "animations.js",
+  "scripts": {
+    "build:i18n": "node build-i18n.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maxgooose/maxgooose.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/maxgooose/maxgooose.github.io/issues"
+  },
+  "homepage": "https://github.com/maxgooose/maxgooose.github.io#readme",
+  "dependencies": {
+    "cheerio": "^1.2.0"
+  }
+}

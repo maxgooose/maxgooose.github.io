@@ -27,3 +27,9 @@
 - Instagram: SyrianMosaicFoundation
 - LinkedIn: syrian-mosaic-foundation
 - X/Twitter: SyrianMosaicFDN
+
+## SVGs
+- **Inline SVGs** (index.html slider arrows, button arrows): icons only (paths), no text — no translation.
+- **External SVGs**: Close overlay uses CDN pluss.svg as `<img alt="">` — no text. Syria/USA flags and syria-usa-emblem.svg are graphics only.
+- **Syria flag image**: Use translation key `syrianFlagAlt` in volunteer, trip-registration, tourist-registration, delegation-registration locale JSON so `alt="Syrian Flag"` is translated (e.g. علم سوريا, Bandiera siriana).
+- **syria-map.svg / syria-about-bg.svg**: Contain `<path title="...">` governorate names (e.g. Al Ḩasakah, Dimashq). Used as CSS background (syria-about-bg); map titles are not in DOM for locale build. Optional: per-locale SVG copies if governorate labels need translating.

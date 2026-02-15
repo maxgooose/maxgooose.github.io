@@ -145,6 +145,14 @@ function fixAssetPaths($, locale) {
     $(this).attr('src', `../${src}`);
   });
 
+  // Fix source srcset attributes (e.g. <picture> responsive images)
+  $('source[srcset]').each(function () {
+    const srcset = $(this).attr('srcset');
+    if (!srcset) return;
+    if (srcset.startsWith('http') || srcset.startsWith('//') || srcset.startsWith('/') || srcset.startsWith('data:')) return;
+    $(this).attr('srcset', `../${srcset}`);
+  });
+
   // Fix script src attributes for local scripts
   $('script[src]').each(function () {
     const src = $(this).attr('src');

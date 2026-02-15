@@ -396,11 +396,50 @@
         }
 
         /* --- Footer --- */
-        .footer { 
-            margin-top: 20px; 
-            text-align: center; 
-            font-size: 11px; 
-            color: var(--color-secondary); 
+        .footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 11px;
+            color: var(--color-secondary);
+        }
+
+        .lang-selector {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 1.25rem 0;
+            flex-wrap: wrap;
+        }
+        .lang-selector__label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--color-accent);
+        }
+        .lang-selector__options {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .lang-selector__options a {
+            font-size: 0.8rem;
+            color: var(--color-secondary);
+            text-decoration: none;
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            transition: color 0.2s, background 0.2s;
+            white-space: nowrap;
+        }
+        .lang-selector__options a:hover {
+            color: var(--color-primary);
+            background: rgba(0,0,0,0.05);
+        }
+        .lang-selector__options a.lang-active {
+            color: var(--color-accent);
+            background: rgba(201, 169, 98, 0.15);
+            font-weight: 600;
         }
 
         /* --- Mobile: Keep cards side-by-side, compact --- */

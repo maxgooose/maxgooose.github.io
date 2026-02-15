@@ -339,6 +339,15 @@ const HTML_REPLACEMENTS = {
       it: '06<br>NOTIZIE E<br>AGGIORNAMENTI',
       nl: '06<br>NIEUWS &amp;<br>UPDATES',
     },
+    // Section 07 NEWSLETTER
+    '.newsletter-section .sec-numb > div': {
+      en: '07<br>NEWSLETTER',
+      ar: '07<br>النشرة<br>الإخبارية',
+      he: '07<br>ניוזלטר',
+      es: '07<br>BOLETÍN<br>INFORMATIVO',
+      it: '07<br>NEWSLETTER',
+      nl: '07<br>NIEUWSBRIEF',
+    },
   },
   'team.html': {
     '.team-hero__title': {
@@ -571,6 +580,17 @@ function translatePage($, lang, pageName) {
       if (val.includes(en)) { val = val.split(en).join(replacements[en]); }
     }
     $(this).attr('data-name', val);
+  });
+
+  // Replace data-success-text, data-duplicate-text, data-error-text (newsletter form)
+  ['data-success-text', 'data-duplicate-text', 'data-error-text'].forEach(attr => {
+    $(`[${attr}]`).each(function () {
+      let val = $(this).attr(attr) || '';
+      for (const en of sortedEnglish) {
+        if (val.includes(en)) { val = val.split(en).join(replacements[en]); }
+      }
+      $(this).attr(attr, val);
+    });
   });
 }
 

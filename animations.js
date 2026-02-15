@@ -30,6 +30,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Parallax phrase lines (defined section)
     initParallaxPhrases();
+
+    // Newsletter (section 07)
+    initNewsletter();
 });
 
 /**
@@ -652,4 +655,85 @@ function initParallaxPhrases() {
             ticking = true;
         }
     }, { passive: true });
+}
+
+/**
+ * Newsletter — Popup (60s delay) + footer form
+ */
+function initNewsletter() {
+    var API = 'https://smf-newsletter.maxgooose.workers.dev';
+    var DISMISSED_KEY = 'smf_nl_dismissed';
+
+    // -- Shared submit handler --
+    function handleSubmit(form, msgEl, cssPrefix) {
+        var email = form.email.value.trim();
+        if (!email) return;
+        var btn = form.querySelector('button[type="submit"]');
+        btn.disabled = true;
+        msgEl.hidden = true;
+        msgEl.className = cssPrefix + '__msg';
+
+        fetch(API, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email: email })
+        }).then(function(res) {
+            var type = res.status === 409 ? 'duplicate' : res.ok ? 'success' : 'error';
+            showMsg(msgEl, cssPrefix, type);
+            if (res.ok) { form.reset(); markDismissed(); }
+        }).catch(function() {
+            showMsg(msgEl, cssPrefix, 'error');
+        }).finally(function() {
+            btn.disabled = false;
+        });
+    }
+
+    function showMsg(msgEl, cssPrefix, type) {
+        var el = document.getElementById('nl-msg-' + type);
+        msgEl.textContent = el ? el.textContent : 'Something went wrong.';
+        msgEl.className = cssPrefix + '__msg ' + cssPrefix + '__msg--' + type;
+        msgEl.hidden = false;
+    }
+
+    function markDismissed() {
+        try { localStorage.setItem(DISMISSED_KEY, '1'); } catch(e) {}
+    }
+
+    function wasDismissed() {
+        try { return localStorage.getItem(DISMISSED_KEY) === '1'; } catch(e) { return false; }
+    }
+
+    // -- Popup --
+    var popup = document.getElementById('nl-popup');
+    if (popup && !wasDismissed()) {
+        var popupForm = document.getElementById('nl-popup-form');
+        var popupMsg = document.getElementById('nl-popup-msg');
+
+        function closePopup() {
+            popup.hidden = true;
+            markDismissed();
+        }
+
+        document.getElementById('nl-popup-close').addEventListener('click', closePopup);
+        document.getElementById('nl-popup-close-bg').addEventListener('click', closePopup);
+
+        popupForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            handleSubmit(popupForm, popupMsg, 'nl-popup');
+        });
+
+        setTimeout(function() {
+            if (!wasDismissed()) popup.hidden = false;
+        }, 30000);
+    }
+
+    // -- Footer form --
+    var footerForm = document.getElementById('footer-nl-form');
+    var footerMsg = document.getElementById('footer-nl-msg');
+    if (footerForm) {
+        footerForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            handleSubmit(footerForm, footerMsg, 'footer-nl');
+        });
+    }
 }

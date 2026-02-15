@@ -104,6 +104,86 @@
   
   
 
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>La Fondazione Mosaico Siriano</title>
   <meta name="description" content="La Fondazione Mosaico Siriano ha guidato la preservazione culturale, lo sviluppo comunitario e la costruzione dell'unità in Siria per oltre 8 anni. Sul campo. Creando un impatto.">
@@ -130,6 +210,26 @@
   
   
   
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
   
 
   <link rel="canonical" href="https://www.syrianmosaicfoundation.org/it/index.html">
@@ -667,7 +767,42 @@
       </div>
     </div>
   </div>
+
+  <!-- Newsletter popup (60s delay) -->
+  <div class="nl-popup" id="nl-popup" hidden="">
+    <div class="nl-popup__backdrop" id="nl-popup-close-bg"></div>
+    <div class="nl-popup__card">
+      <button class="nl-popup__close" id="nl-popup-close" aria-label="Close">×</button>
+      <h3 class="nl-popup__title" data-i18n="mosaicTitle">Diventa parte del mosaico</h3>
+      <p class="nl-popup__text" data-i18n="mosaicSubtitle">Resta connesso con il rinascimento culturale della Siria. Ricevi aggiornamenti sui nostri progetti di patrimonio, opportunità di viaggio e iniziative comunitarie.</p>
+      <form id="nl-popup-form" class="nl-popup__form" autocomplete="on">
+        <input type="email" name="email" required="" autocomplete="email" class="nl-popup__input" data-i18n-placeholder="mosaicPlaceholder" placeholder="Il tuo indirizzo email">
+        <button type="submit" class="nl-popup__btn" data-i18n="mosaicSubscribe">Iscriviti</button>
+      </form>
+      <p class="nl-popup__msg" id="nl-popup-msg" aria-live="polite" hidden=""></p>
+    </div>
+    <span hidden="" data-i18n="mosaicSuccess" id="nl-msg-success">Ci sei! Benvenuto nel mosaico.</span>
+    <span hidden="" data-i18n="mosaicDuplicate" id="nl-msg-duplicate">Fai già parte del mosaico!</span>
+    <span hidden="" data-i18n="mosaicError" id="nl-msg-error">Qualcosa è andato storto. Riprova.</span>
+  </div>
+
   <footer class="travels-footer"><div class="travels-footer__inner"><div class="travels-footer__top"><div class="travels-footer__brand"><img src="../assets/images/smf-logo.png" alt="Fondazione Mosaico Siriano" class="travels-footer__logo"><p class="travels-footer__tagline" style="color:#fff">Collegare il mondo allo straordinario patrimonio della Siria attraverso la diplomazia culturale e il turismo responsabile.</p></div><div class="travels-footer__nav"><div class="travels-footer__nav-col"><h4 class="travels-footer__nav-heading" style="color:#D4A574">Esplora</h4><a href="/it/index.html" class="travels-footer__link" style="color:#fff">Home</a><a href="/it/shop.html" class="travels-footer__link" style="color:#fff">Negozio</a></div><div class="travels-footer__nav-col"><h4 class="travels-footer__nav-heading" style="color:#D4A574">Contatti</h4><a href="/it/booking-form.html" class="travels-footer__link" style="color:#fff">Prenota un viaggio</a><a href="mailto:info@syrianmosaicfoundation.org" class="travels-footer__link" style="color:#fff">Scrivici</a><a href="tel:+13478933032" class="travels-footer__link" style="color:#fff">+1 347-893-3032</a></div><div class="travels-footer__nav-col"><h4 class="travels-footer__nav-heading" style="color:#D4A574">Seguici</h4><a href="https://instagram.com/SyrianMosaicFoundation" target="_blank" rel="noopener noreferrer" class="travels-footer__link" style="color:#fff">Instagram</a><a href="https://www.linkedin.com/company/syrian-mosaic-foundation/" target="_blank" rel="noopener noreferrer" class="travels-footer__link" style="color:#fff">LinkedIn</a><a href="https://x.com/SyrianMosaicFDN" target="_blank" rel="noopener noreferrer" class="travels-footer__link" style="color:#fff">X / Twitter</a></div></div></div><div class="travels-footer__divider"></div>
+<div class="footer-nl">
+  <h4 class="footer-nl__heading" style="color:#D4A574" data-i18n="mosaicTitle">Diventa parte del mosaico</h4>
+  <form id="footer-nl-form" class="footer-nl__form" autocomplete="on">
+    <input type="email" name="email" required="" autocomplete="email" class="footer-nl__input" data-i18n-placeholder="mosaicPlaceholder" placeholder="Il tuo indirizzo email">
+    <button type="submit" class="footer-nl__btn" data-i18n="mosaicSubscribe">Iscriviti</button>
+  </form>
+  <p class="footer-nl__msg" id="footer-nl-msg" aria-live="polite" hidden=""></p>
+</div>
+
+
+
+
+
+
+
+
 
 
 

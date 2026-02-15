@@ -65,7 +65,15 @@
     "altUmayyadCourtyard": "Umayyad Mosque courtyard, Damascus",
     "altPalmyra": "Palmyra ruins golden",
     "altDamascusPanorama": "Damascus old city panorama",
-    "altUmayyadMosque": "Umayyad Mosque wide"
+    "altUmayyadMosque": "Umayyad Mosque wide",
+    "section07": "07\nNEWSLETTER",
+    "mosaicTitle": "Become Part of the Mosaic",
+    "mosaicSubtitle": "Stay connected with Syria's cultural renaissance. Get updates on our heritage projects, travel opportunities, and community initiatives.",
+    "mosaicPlaceholder": "Your email address",
+    "mosaicSubscribe": "Subscribe",
+    "mosaicSuccess": "You're in! Welcome to the mosaic.",
+    "mosaicDuplicate": "You're already part of the mosaic!",
+    "mosaicError": "Something went wrong. Please try again."
   },
   "ar": {
     "pageTitle": "مؤسسة الموزاييك السورية",
@@ -133,7 +141,15 @@
     "altUmayyadCourtyard": "ساحة الجامع الأموي، دمشق",
     "altPalmyra": "أطلال تدمر الذهبية",
     "altDamascusPanorama": "بانوراما مدينة دمشق القديمة",
-    "altUmayyadMosque": "الجامع الأموي"
+    "altUmayyadMosque": "الجامع الأموي",
+    "section07": "07\nالنشرة\nالإخبارية",
+    "mosaicTitle": "كن جزءًا من الفسيفساء",
+    "mosaicSubtitle": "ابقَ على تواصل مع نهضة سوريا الثقافية. احصل على آخر المستجدات حول مشاريع التراث وفرص السفر والمبادرات المجتمعية.",
+    "mosaicPlaceholder": "بريدك الإلكتروني",
+    "mosaicSubscribe": "اشترك",
+    "mosaicSuccess": "أهلاً بك! مرحبًا في الفسيفساء.",
+    "mosaicDuplicate": "أنت بالفعل جزء من الفسيفساء!",
+    "mosaicError": "حدث خطأ. يرجى المحاولة مرة أخرى."
   },
   "he": {
     "pageTitle": "קרן המוזאיק הסורי",
@@ -201,7 +217,15 @@
     "altUmayyadCourtyard": "חצר המסגד האומיי, דמשק",
     "altPalmyra": "חורבות פלמירה בזהב",
     "altDamascusPanorama": "פנורמה של העיר העתיקה בדמשק",
-    "altUmayyadMosque": "המסגד האומיי"
+    "altUmayyadMosque": "המסגד האומיי",
+    "section07": "07\nניוזלטר",
+    "mosaicTitle": "הפכו לחלק מהפסיפס",
+    "mosaicSubtitle": "הישארו מחוברים לרנסנס התרבותי של סוריה. קבלו עדכונים על פרויקטי מורשת, הזדמנויות נסיעה ויוזמות קהילתיות.",
+    "mosaicPlaceholder": "כתובת האימייל שלכם",
+    "mosaicSubscribe": "הרשמה",
+    "mosaicSuccess": "!אתם בפנים! ברוכים הבאים לפסיפס",
+    "mosaicDuplicate": "!אתם כבר חלק מהפסיפס",
+    "mosaicError": ".משהו השתבש. אנא נסו שוב"
   },
   "es": {
     "pageTitle": "La Fundación Mosaico Sirio",
@@ -269,7 +293,15 @@
     "altUmayyadCourtyard": "Patio de la Mezquita de los Omeyas, Damasco",
     "altPalmyra": "Ruinas doradas de Palmira",
     "altDamascusPanorama": "Panorama del casco antiguo de Damasco",
-    "altUmayyadMosque": "Mezquita de los Omeyas"
+    "altUmayyadMosque": "Mezquita de los Omeyas",
+    "section07": "07\nBOLETÍN\nINFORMATIVO",
+    "mosaicTitle": "Sé parte del mosaico",
+    "mosaicSubtitle": "Mantente conectado con el renacimiento cultural de Siria. Recibe actualizaciones sobre nuestros proyectos patrimoniales, oportunidades de viaje e iniciativas comunitarias.",
+    "mosaicPlaceholder": "Tu correo electrónico",
+    "mosaicSubscribe": "Suscribirse",
+    "mosaicSuccess": "¡Estás dentro! Bienvenido al mosaico.",
+    "mosaicDuplicate": "¡Ya eres parte del mosaico!",
+    "mosaicError": "Algo salió mal. Por favor, inténtalo de nuevo."
   },
   "it": {
     "pageTitle": "La Fondazione Mosaico Siriano",
@@ -337,7 +369,15 @@
     "altUmayyadCourtyard": "Cortile della Moschea degli Omayyadi, Damasco",
     "altPalmyra": "Rovine dorate di Palmira",
     "altDamascusPanorama": "Panorama della città vecchia di Damasco",
-    "altUmayyadMosque": "Moschea degli Omayyadi"
+    "altUmayyadMosque": "Moschea degli Omayyadi",
+    "section07": "07\nNEWSLETTER",
+    "mosaicTitle": "Diventa parte del mosaico",
+    "mosaicSubtitle": "Resta connesso con il rinascimento culturale della Siria. Ricevi aggiornamenti sui nostri progetti di patrimonio, opportunità di viaggio e iniziative comunitarie.",
+    "mosaicPlaceholder": "Il tuo indirizzo email",
+    "mosaicSubscribe": "Iscriviti",
+    "mosaicSuccess": "Ci sei! Benvenuto nel mosaico.",
+    "mosaicDuplicate": "Fai già parte del mosaico!",
+    "mosaicError": "Qualcosa è andato storto. Riprova."
   },
   "nl": {
     "pageTitle": "De Syrian Mosaic Foundation",
@@ -405,6 +445,14 @@
     "altUmayyadCourtyard": "Binnenplaats van de Omajjadenmoskee, Damascus",
     "altPalmyra": "Gouden ruïnes van Palmyra",
     "altDamascusPanorama": "Panorama van de oude stad van Damascus",
-    "altUmayyadMosque": "Omajjadenmoskee"
+    "altUmayyadMosque": "Omajjadenmoskee",
+    "section07": "07\nNIEUWSBRIEF",
+    "mosaicTitle": "Word deel van het mozaïek",
+    "mosaicSubtitle": "Blijf verbonden met de culturele renaissance van Syrië. Ontvang updates over onze erfgoedprojecten, reismogelijkheden en gemeenschapsinitiatieven.",
+    "mosaicPlaceholder": "Uw e-mailadres",
+    "mosaicSubscribe": "Abonneren",
+    "mosaicSuccess": "U bent erbij! Welkom bij het mozaïek.",
+    "mosaicDuplicate": "U maakt al deel uit van het mozaïek!",
+    "mosaicError": "Er ging iets mis. Probeer het opnieuw."
   }
 }

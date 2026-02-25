@@ -4290,7 +4290,7 @@ a.footer-link {
         display: none !important;
     }
 
-    /* Hide contact link and nav arrows on mobile to save space */
+    /* Hide contact, shop, and nav arrows on mobile to save space */
     .navbar .nav-item-link.is-contact {
         display: none !important;
     }
@@ -4334,7 +4334,7 @@ a.footer-link {
     }
 
     .navbar .nav-item-link {
-        padding: 0.45rem 0.65rem !important;
+        padding: 0.4rem 0.5rem !important;
         white-space: nowrap !important;
         display: flex !important;
         align-items: center !important;
@@ -4347,10 +4347,10 @@ a.footer-link {
     }
 
     .navbar .nav-item-link .nav-link-text {
-        font-size: 0.72rem !important;
+        font-size: 0.62rem !important;
         font-weight: 500 !important;
         color: rgba(255, 255, 255, 0.7) !important;
-        letter-spacing: 0.02em !important;
+        letter-spacing: 0.01em !important;
     }
 
     .navbar .nav-item-link.w--current .nav-link-text {
@@ -4364,16 +4364,16 @@ a.footer-link {
 
     .navbar .nav-item-link.is--button {
         background: linear-gradient(135deg, #D4A574 0%, #C49464) !important;
-        padding: 0.45rem 0.9rem !important;
+        padding: 0.4rem 0.7rem !important;
         border-radius: 100vh !important;
-        margin-left: 0.2rem !important;
+        margin-left: 0.15rem !important;
     }
 
     .navbar .nav-item-link.is--button .nav-link-text {
-        font-size: 0.65rem !important;
+        font-size: 0.58rem !important;
         font-weight: 700 !important;
         color: #0a0a0a !important;
-        letter-spacing: 0.04em !important;
+        letter-spacing: 0.03em !important;
     }
 }
 

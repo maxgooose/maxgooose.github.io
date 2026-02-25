@@ -14,55 +14,97 @@
   <script src="i18n.js"></script>
 
   <style>
+    /* Hero */
     .media-hero {
-      padding: 160px 24px 80px;
-      background: #1a1a1a;
-      text-align: center;
+      position: relative;
+      height: 50vh;
+      min-height: 360px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: #0a0a0a;
     }
-    .media-hero h1 {
+    .media-hero__bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.35;
+    }
+    .media-hero__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(10,10,10,0.3) 0%, rgba(10,10,10,0.85) 100%);
+    }
+    .media-hero__content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 0 24px;
+    }
+    .media-hero__label {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #D4A574;
+      margin-bottom: 16px;
+    }
+    .media-hero__title {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(36px, 5vw, 56px);
+      font-size: clamp(36px, 6vw, 64px);
       font-weight: 600;
       color: #fff;
-      margin: 0 0 16px;
+      margin: 0 0 12px;
+      line-height: 1.1;
     }
-    .media-hero p {
+    .media-hero__subtitle {
       font-family: 'Inter', sans-serif;
-      font-size: 18px;
-      color: #999;
-      max-width: 600px;
+      font-size: 17px;
+      color: rgba(255,255,255,0.6);
+      max-width: 500px;
       margin: 0 auto;
+      line-height: 1.5;
     }
-    .media-grid {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 60px 24px 80px;
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 24px;
-    }
-    .media-card {
-      border-radius: 12px;
-      overflow: hidden;
-      background: #f5f5f5;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
-    }
-    .media-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 32px rgba(0,0,0,0.12);
-    }
-    .media-card img {
-      width: 100%;
-      height: 360px;
-      object-fit: cover;
-      display: block;
-    }
-    .media-card__caption {
-      padding: 16px 20px;
+    /* Counter */
+    .media-count {
+      text-align: center;
+      padding: 32px 24px 0;
       font-family: 'Inter', sans-serif;
       font-size: 14px;
-      color: #333;
+      color: #888;
+      background: #f5f5f5;
+    }
+    .media-count span { color: #111; font-weight: 600; }
+    /* Masonry Grid */
+    .media-grid {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 32px 24px 80px;
+      columns: 3;
+      column-gap: 16px;
+      background: #f5f5f5;
+    }
+    @media (max-width: 900px) { .media-grid { columns: 2; } }
+    @media (max-width: 560px) { .media-grid { columns: 1; } }
+    .media-item {
+      break-inside: avoid;
+      margin-bottom: 16px;
+      border-radius: 8px;
+      overflow: hidden;
+      cursor: pointer;
+      position: relative;
+      background: #e0e0e0;
+    }
+    .media-item img {
+      width: 100%;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    .media-item:hover img {
+      transform: scale(1.03);
     }
     /* Lightbox */
     .media-lightbox {
@@ -70,58 +112,86 @@
       position: fixed;
       inset: 0;
       z-index: 9999;
-      background: rgba(0,0,0,0.92);
+      background: rgba(0,0,0,0.95);
       align-items: center;
       justify-content: center;
       cursor: zoom-out;
     }
     .media-lightbox.active { display: flex; }
     .media-lightbox img {
-      max-width: 90vw;
-      max-height: 90vh;
-      border-radius: 8px;
+      max-width: 92vw;
+      max-height: 92vh;
+      border-radius: 4px;
       object-fit: contain;
     }
     .media-lightbox__close {
       position: absolute;
-      top: 24px;
-      right: 32px;
-      font-size: 36px;
+      top: 20px;
+      right: 28px;
+      font-size: 40px;
       color: #fff;
       cursor: pointer;
       font-family: 'Inter', sans-serif;
-      font-weight: 300;
+      font-weight: 200;
       line-height: 1;
+      opacity: 0.7;
+      transition: opacity 0.2s;
     }
+    .media-lightbox__close:hover { opacity: 1; }
+    .media-lightbox__nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 48px;
+      color: #fff;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      font-weight: 200;
+      opacity: 0.6;
+      transition: opacity 0.2s;
+      user-select: none;
+      padding: 16px;
+    }
+    .media-lightbox__nav:hover { opacity: 1; }
+    .media-lightbox__nav--prev { left: 16px; }
+    .media-lightbox__nav--next { right: 16px; }
   </style>
 </head>
 <body>
 
   <!-- Navigation -->
-  <div bind="4ca375cd-d92e-94c5-dd93-80faadb53a1b" class="nav-header"><div id="contact-overlay" class="contact-overlay"><div class="contact-options"><div class="text-block-15">Get in touch</div><img id="close-overlay" src="https://cdn.prod.website-files.com/657b5d5bf6c3e07bb4b09757/65e2376ca1b031ac2d5e8ac4_pluss.svg" loading="lazy" alt="" class="close-overlay"></div><div class="bottom-contanct"><div class="contact-container"><div class="contact-details">Address</div><div class="contact-details is-link">Damascus, Syria &amp; New York, USA</div></div><div class="contact-container"><div class="contact-details">Socials</div><div class="div-block-23"><a href="https://instagram.com/SyrianMosaicFoundation" class="contact-details is-link">Instagram</a><a href="https://www.linkedin.com/company/syrian-mosaic-foundation/" class="contact-details is-link">LinkedIn</a><a href="https://x.com/SyrianMosaicFDN" class="contact-details is-link">X / Twitter</a></div></div><div class="contact-container"><div class="contact-details">Email</div><a href="mailto:info@syrianmosaicfoundation.org" class="contact-details is-link">info@syrianmosaicfoundation.org</a></div></div></div><nav class="navbar"><a href="#" class="burger-menu w-inline-block"><div data-is-ix2-target="1" class="burger-lottie" data-w-id="fff3aadf-ab87-c83d-10c7-477724506be0" data-animation-type="lottie" data-src="https://cdn.prod.website-files.com/657b5d5bf6c3e07bb4b09757/660203e761ba9c9405ccf4f0_burger-white.json" data-loop="0" data-direction="1" data-autoplay="0" data-renderer="svg" data-default-duration="0.9" data-duration="0" data-ix2-initial-state="0"></div></a><div class="menu-container"><a data-w-id="4ca375cd-d92e-94c5-dd93-80faadb53a1d" href="index.html" class="nav-item-link is--first w-inline-block"><img src="https://cdn.prod.website-files.com/657b5d5bf6c3e07bb4b09757/65e20460654b96e4fa1c544a_arrow.svg" loading="lazy" alt="" class="nav-arrow"><div class="nav-link-text">Home</div></a><a data-w-id="4ca375cd-d92e-94c5-dd93-80faadb53a21" href="shop.html" class="nav-item-link w-inline-block"><img src="https://cdn.prod.website-files.com/657b5d5bf6c3e07bb4b09757/65e20460654b96e4fa1c544a_arrow.svg" loading="lazy" alt="" class="nav-arrow"><div class="nav-link-text">Shop</div></a><a href="media.html" aria-current="page" class="nav-item-link w-inline-block w--current"><img src="https://cdn.prod.website-files.com/657b5d5bf6c3e07bb4b09757/65e20460654b96e4fa1c544a_arrow.svg" loading="lazy" alt="" class="nav-arrow"><div class="nav-link-text">Media</div></a><a href="volunteer.html" class="nav-item-link w-inline-block"><img src="https://cdn.prod.website-files.com/657b5d5bf6c3e07bb4b09757/65e20460654b96e4fa1c544a_arrow.svg" loading="lazy" alt="" class="nav-arrow"><div class="nav-link-text">Volunteer</div></a><a data-w-id="4ca375cd-d92e-94c5-dd93-80faadb53a29" id="nav-contact-trigger" href="#" class="nav-item-link is-contact w-inline-block"><img src="https://cdn.prod.website-files.com/657b5d5bf6c3e07bb4b09757/65e20460654b96e4fa1c544a_arrow.svg" loading="lazy" alt="" class="nav-arrow"><div class="nav-link-text">Contact</div></a><a data-w-id="acd489aa-2ba2-384d-9844-10478c0d3074" href="volunteer.html" class="nav-item-link is--button w-inline-block"><img src="https://cdn.prod.website-files.com/657b5d5bf6c3e07bb4b09757/65e20460654b96e4fa1c544a_arrow.svg" loading="lazy" alt="" class="nav-arrow"><div class="nav-link-text">GET INVOLVED</div></a></div></nav><div class="grid-wrap hide-grid"><div class="container"><div class="grid"><div class="grid-column"></div><div id="w-node-adfb7669-6c4b-aee7-f069-4392eba01b41-adb53a1b" class="grid-column"></div><div id="w-node-_8d6b31ef-c181-8edb-0cda-63d1505843c0-adb53a1b" class="grid-column"></div><div id="w-node-e3785df4-244d-6939-d512-46a2cece40e2-adb53a1b" class="grid-column"></div><div id="w-node-_5868e7f2-0f84-8f4c-4d2d-198792151b48-adb53a1b" class="grid-column"></div><div id="w-node-fbb0a514-1774-fef2-09fe-49ff021b842a-adb53a1b" class="grid-column"></div></div></div></div><div class="global-code"><pre contenteditable="false" class="w-code-block" style="display:block;overflow-x:auto;background:#2b2b2b;color:#f8f8f2;padding:0.5em"><code class="language-javascript" style="white-space:pre"></code></pre></div></div>
+  <div bind="4ca375cd-d92e-94c5-dd93-80faadb53a1b" class="nav-header"><div id="contact-overlay" class="contact-overlay"><div class="contact-options"><div class="text-block-15">Get in touch</div><img id="close-overlay" src="https://cdn.prod.website-files.com/657b5d5bf6c3e07bb4b09757/65e2376ca1b031ac2d5e8ac4_pluss.svg" loading="lazy" alt="" class="close-overlay"></div><div class="bottom-contanct"><div class="contact-container"><div class="contact-details">Address</div><div class="contact-details is-link">Damascus, Syria &amp; New York, USA</div></div><div class="contact-container"><div class="contact-details">Socials</div><div class="div-block-23"><a href="https://instagram.com/SyrianMosaicFoundation" class="contact-details is-link">Instagram</a><a href="https://www.linkedin.com/company/syrian-mosaic-foundation/" class="contact-details is-link">LinkedIn</a><a href="https://x.com/SyrianMosaicFDN" class="contact-details is-link">X / Twitter</a></div></div><div class="contact-container"><div class="contact-details">Email</div><a href="mailto:info@syrianmosaicfoundation.org" class="contact-details is-link">info@syrianmosaicfoundation.org</a></div></div></div><nav class="navbar"><a href="#" class="burger-menu w-inline-block"><div data-is-ix2-target="1" class="burger-lottie" data-w-id="fff3aadf-ab87-c83d-10c7-477724506be0" data-animation-type="lottie" data-src="https://cdn.prod.website-files.com/657b5d5bf6c3e07bb4b09757/660203e761ba9c9405ccf4f0_burger-white.json" data-loop="0" data-direction="1" data-autoplay="0" data-renderer="svg" data-default-duration="0.9" data-duration="0" data-ix2-initial-state="0"></div></a><div class="menu-container"><a data-w-id="4ca375cd-d92e-94c5-dd93-80faadb53a1d" href="index.html" class="nav-item-link is--first w-inline-block"><img src="https://cdn.prod.website-files.com/657b5d5bf6c3e07bb4b09757/65e20460654b96e4fa1c544a_arrow.svg" loading="lazy" alt="" class="nav-arrow"><div class="nav-link-text">Home</div></a><a data-w-id="4ca375cd-d92e-94c5-dd93-80faadb53a21" href="shop.html" class="nav-item-link w-inline-block"><img src="https://cdn.prod.website-files.com/657b5d5bf6c3e07bb4b09757/65e20460654b96e4fa1c544a_arrow.svg" loading="lazy" alt="" class="nav-arrow"><div class="nav-link-text">Shop</div></a><a href="media.html" aria-current="page" class="nav-item-link w-inline-block w--current"><img src="https://cdn.prod.website-files.com/657b5d5bf6c3e07bb4b09757/65e20460654b96e4fa1c544a_arrow.svg" loading="lazy" alt="" class="nav-arrow"><div class="nav-link-text">Media</div></a><a href="booking-form.html" class="nav-item-link w-inline-block"><img src="https://cdn.prod.website-files.com/657b5d5bf6c3e07bb4b09757/65e20460654b96e4fa1c544a_arrow.svg" loading="lazy" alt="" class="nav-arrow"><div class="nav-link-text">Trips</div></a><a href="volunteer.html" class="nav-item-link w-inline-block"><img src="https://cdn.prod.website-files.com/657b5d5bf6c3e07bb4b09757/65e20460654b96e4fa1c544a_arrow.svg" loading="lazy" alt="" class="nav-arrow"><div class="nav-link-text">Volunteer</div></a><a data-w-id="4ca375cd-d92e-94c5-dd93-80faadb53a29" id="nav-contact-trigger" href="#" class="nav-item-link is-contact w-inline-block"><img src="https://cdn.prod.website-files.com/657b5d5bf6c3e07bb4b09757/65e20460654b96e4fa1c544a_arrow.svg" loading="lazy" alt="" class="nav-arrow"><div class="nav-link-text">Contact</div></a><a data-w-id="acd489aa-2ba2-384d-9844-10478c0d3074" href="volunteer.html" class="nav-item-link is--button w-inline-block"><img src="https://cdn.prod.website-files.com/657b5d5bf6c3e07bb4b09757/65e20460654b96e4fa1c544a_arrow.svg" loading="lazy" alt="" class="nav-arrow"><div class="nav-link-text">GET INVOLVED</div></a></div></nav><div class="grid-wrap hide-grid"><div class="container"><div class="grid"><div class="grid-column"></div><div id="w-node-adfb7669-6c4b-aee7-f069-4392eba01b41-adb53a1b" class="grid-column"></div><div id="w-node-_8d6b31ef-c181-8edb-0cda-63d1505843c0-adb53a1b" class="grid-column"></div><div id="w-node-e3785df4-244d-6939-d512-46a2cece40e2-adb53a1b" class="grid-column"></div><div id="w-node-_5868e7f2-0f84-8f4c-4d2d-198792151b48-adb53a1b" class="grid-column"></div><div id="w-node-fbb0a514-1774-fef2-09fe-49ff021b842a-adb53a1b" class="grid-column"></div></div></div></div><div class="global-code"><pre contenteditable="false" class="w-code-block" style="display:block;overflow-x:auto;background:#2b2b2b;color:#f8f8f2;padding:0.5em"><code class="language-javascript" style="white-space:pre"></code></pre></div></div>
 
   <!-- Hero -->
   <div class="media-hero">
-    <h1>Media</h1>
-    <p>Photos and videos from our events, initiatives, and cultural work across Syria and the diaspora.</p>
+    <img src="assets/images/umayyad-courtyard-wide.jpg" alt="" class="media-hero__bg">
+    <div class="media-hero__overlay"></div>
+    <div class="media-hero__content">
+      <div class="media-hero__label">Gallery</div>
+      <h1 class="media-hero__title">Our Story in Pictures</h1>
+      <p class="media-hero__subtitle">Events, initiatives, and moments from across Syria and the diaspora.</p>
+    </div>
   </div>
 
-  <!-- Gallery Grid -->
-  <div class="media-grid">
-    <div class="media-card" onclick="openLightbox(this)">
+  <!-- Count -->
+  <div class="media-count"><span id="photo-count">2</span> photos</div>
+
+  <!-- Masonry Gallery -->
+  <div class="media-grid" id="gallery">
+    <div class="media-item" onclick="openLightbox(0)">
       <img src="assets/images/media/event-1.jpg" alt="SMF community event" loading="lazy">
-      <div class="media-card__caption">Community event</div>
     </div>
-    <div class="media-card" onclick="openLightbox(this)">
+    <div class="media-item" onclick="openLightbox(1)">
       <img src="assets/images/media/event-2.jpg" alt="SMF community event" loading="lazy">
-      <div class="media-card__caption">Community event</div>
     </div>
   </div>
 
   <!-- Lightbox -->
-  <div class="media-lightbox" id="lightbox" onclick="closeLightbox()">
-    <span class="media-lightbox__close">&times;</span>
+  <div class="media-lightbox" id="lightbox" onclick="closeLightbox(event)">
+    <span class="media-lightbox__close" onclick="closeLightbox(event)">&times;</span>
+    <span class="media-lightbox__nav media-lightbox__nav--prev" onclick="navLightbox(event,-1)">&#8249;</span>
     <img id="lightbox-img" src="" alt="">
+    <span class="media-lightbox__nav media-lightbox__nav--next" onclick="navLightbox(event,1)">&#8250;</span>
   </div>
 
   <!-- Footer -->
@@ -133,17 +203,31 @@
   <script src="https://cdn.prod.website-files.com/657b5d5bf6c3e07bb4b09757/js/webflow.schunk.e0c428ff9737f919.js" type="text/javascript"></script>
   <script src="https://cdn.prod.website-files.com/657b5d5bf6c3e07bb4b09757/js/webflow.bae725c4.a41950f637f266d0.js" type="text/javascript"></script>
   <script>
-    function openLightbox(card) {
-      const src = card.querySelector('img').src;
-      document.getElementById('lightbox-img').src = src;
+    const images = document.querySelectorAll('.media-item img');
+    let currentIdx = 0;
+    document.getElementById('photo-count').textContent = images.length;
+
+    function openLightbox(idx) {
+      currentIdx = idx;
+      document.getElementById('lightbox-img').src = images[idx].src;
       document.getElementById('lightbox').classList.add('active');
       document.body.style.overflow = 'hidden';
     }
-    function closeLightbox() {
+    function closeLightbox(e) {
+      if (e && (e.target.classList.contains('media-lightbox__nav') || e.target.id === 'lightbox-img')) return;
       document.getElementById('lightbox').classList.remove('active');
       document.body.style.overflow = '';
     }
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+    function navLightbox(e, dir) {
+      e.stopPropagation();
+      currentIdx = (currentIdx + dir + images.length) % images.length;
+      document.getElementById('lightbox-img').src = images[currentIdx].src;
+    }
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') navLightbox(e, -1);
+      if (e.key === 'ArrowRight') navLightbox(e, 1);
+    });
   </script>
   <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "c16ac2a200d74d13b71fb2e9c4940735"}'></script>
 </body></html>

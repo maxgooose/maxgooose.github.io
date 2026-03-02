@@ -1,188 +1,14 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
-  <link rel="alternate" hreflang="en" href="https://www.syrianmosaicfoundation.org/trip-registration.html">
-  <link rel="alternate" hreflang="ar" href="https://www.syrianmosaicfoundation.org/ar/trip-registration.html">
-  <link rel="alternate" hreflang="he" href="https://www.syrianmosaicfoundation.org/he/trip-registration.html">
-  <link rel="alternate" hreflang="es" href="https://www.syrianmosaicfoundation.org/es/trip-registration.html">
-  <link rel="alternate" hreflang="it" href="https://www.syrianmosaicfoundation.org/it/trip-registration.html">
-  <link rel="alternate" hreflang="nl" href="https://www.syrianmosaicfoundation.org/nl/trip-registration.html">
-  <link rel="alternate" hreflang="x-default" href="https://www.syrianmosaicfoundation.org/trip-registration.html">
-
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-  
+    <link rel="alternate" hreflang="en" href="https://www.syrianmosaicfoundation.org/trip-registration.html">
+    <link rel="alternate" hreflang="ar" href="https://www.syrianmosaicfoundation.org/ar/trip-registration.html">
+    <link rel="alternate" hreflang="he" href="https://www.syrianmosaicfoundation.org/he/trip-registration.html">
+    <link rel="alternate" hreflang="es" href="https://www.syrianmosaicfoundation.org/es/trip-registration.html">
+    <link rel="alternate" hreflang="it" href="https://www.syrianmosaicfoundation.org/it/trip-registration.html">
+    <link rel="alternate" hreflang="nl" href="https://www.syrianmosaicfoundation.org/nl/trip-registration.html">
+    <link rel="alternate" hreflang="x-default" href="https://www.syrianmosaicfoundation.org/trip-registration.html">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
@@ -193,15 +19,18 @@
 
     <title>Trip Registration | Syrian Mosaic Foundation</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --color-primary: #1A3A52;
             --color-secondary: #6B7280;
+            --color-accent: #D4A574;
+            --color-accent-dark: #B8956A;
             --color-border: #E5E7EB;
             --color-bg-page: #FFFFFF;
             --color-bg-card: #FFFFFF;
+            --color-bg-warm: #FDFBF7;
             --radius-card: 12px;
             --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
         }
@@ -261,7 +90,7 @@
             display: block;
             margin: 0 auto 24px;
         }
-        /* Flag container for animation */
+
         .flag-container {
             position: absolute;
             top: 20px;
@@ -395,6 +224,131 @@
             transform: translateX(3px);
         }
 
+        /* --- Partners Section --- */
+        .partners-section {
+            margin-top: 48px;
+            padding: 40px 0;
+            background: var(--color-bg-warm);
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .partners-header {
+            margin-bottom: 28px;
+        }
+
+        .partners-label {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--color-accent-dark);
+            margin-bottom: 8px;
+        }
+
+        .partners-title {
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--color-primary);
+            margin-bottom: 8px;
+        }
+
+        .partners-subtitle {
+            font-size: 14px;
+            color: var(--color-secondary);
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            padding: 0 24px;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        .partner-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px 12px;
+            text-decoration: none;
+            color: var(--color-primary);
+            transition: all 0.25s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 1px solid transparent;
+        }
+
+        .partner-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(26, 58, 82, 0.12);
+            border-color: var(--color-accent);
+        }
+
+        .partner-logo {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 12px;
+            border: 2px solid #F3F4F6;
+            transition: border-color 0.25s ease;
+        }
+
+        .partner-card:hover .partner-logo {
+            border-color: var(--color-accent);
+        }
+
+        .partner-name {
+            font-size: 13px;
+            font-weight: 600;
+            line-height: 1.3;
+            text-align: center;
+        }
+
+        .partner-location {
+            font-size: 11px;
+            color: var(--color-secondary);
+            margin-top: 4px;
+        }
+
+        /* Partners mobile: 2x2 grid */
+        @media (max-width: 560px) {
+            .partners-section {
+                margin-top: 32px;
+                padding: 32px 0;
+                border-radius: 0;
+                margin-left: -16px;
+                margin-right: -16px;
+            }
+
+            .partners-title {
+                font-size: 18px;
+            }
+
+            .partners-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+                padding: 0 20px;
+            }
+
+            .partner-card {
+                padding: 16px 10px;
+            }
+
+            .partner-logo {
+                width: 52px;
+                height: 52px;
+            }
+
+            .partner-name {
+                font-size: 12px;
+            }
+        }
+
         /* --- Footer --- */
         .footer {
             margin-top: 20px;
@@ -442,7 +396,7 @@
             font-weight: 600;
         }
 
-        /* --- Mobile: Keep cards side-by-side, compact --- */
+        /* --- Mobile adjustments --- */
         @media (max-width: 560px) {
             .hero {
                 min-height: 55vh;
@@ -505,7 +459,7 @@
             }
         }
 
-        /* Desktop enhancements - fit on one screen */
+        /* Desktop enhancements */
         @media (min-width: 768px) {
             .header-content {
                 padding: 14px 40px;
@@ -534,7 +488,7 @@
             }
             .main-container {
                 max-width: 750px;
-            padding-bottom: 20px;
+                padding-bottom: 20px;
             }
             .selection-header {
                 padding-top: 28px;
@@ -560,6 +514,15 @@
             }
             .card-description {
                 font-size: 13px;
+            }
+
+            .partners-section {
+                margin-top: 56px;
+                padding: 48px 32px;
+            }
+
+            .partners-title {
+                font-size: 24px;
             }
         }
 
@@ -598,11 +561,11 @@
         }
 
         /* GSAP Animation Styles */
-        .hero-logo, .hero h1, .hero p, .selection-header, .selection-card {
+        .hero-logo, .hero h1, .hero p, .selection-header, .selection-card, .partners-section {
             will-change: transform, opacity;
         }
 
-        /* Paper texture overlay - subtle premium feel */
+        /* Paper texture overlay */
         body::before {
             content: '';
             position: fixed;
@@ -616,44 +579,12 @@
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
         }
     </style>
-<link rel="stylesheet" href="styles.css">  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  <link rel="canonical" href="https://www.syrianmosaicfoundation.org/trip-registration.html">
-<script src="i18n.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="canonical" href="https://www.syrianmosaicfoundation.org/trip-registration.html">
+    <script src="i18n.js"></script>
 </head>
 <body>
-<header class="header">
+    <header class="header">
         <div class="header-content">
             <a href="index.html" class="logo-text">Syrian Mosaic Foundation</a>
         </div>
@@ -715,36 +646,88 @@
                     </svg>
                 </span>
             </a>
+        </div>
 
+        <!-- Partners Section -->
+        <section class="partners-section">
+            <div class="partners-header">
+                <p class="partners-label">Our Network</p>
+                <h3 class="partners-title">Trusted Travel Partners</h3>
+                <p class="partners-subtitle">Licensed operators on the ground in Syria, ready to craft your journey.</p>
             </div>
-        <footer class="travels-footer"><div class="travels-footer__inner"><div class="travels-footer__top"><div class="travels-footer__brand"><img src="assets/images/smf-logo.png" alt="Syrian Mosaic Foundation" class="travels-footer__logo"><p class="travels-footer__tagline" style="color:#fff">Connecting the world to Syria's extraordinary heritage through cultural diplomacy and responsible tourism.</p></div><div class="travels-footer__nav"><div class="travels-footer__nav-col"><h4 class="travels-footer__nav-heading" style="color:#D4A574">Explore</h4><a href="index.html" class="travels-footer__link" style="color:#fff">Home</a><a href="shop.html" class="travels-footer__link" style="color:#fff">Shop</a></div><div class="travels-footer__nav-col"><h4 class="travels-footer__nav-heading" style="color:#D4A574">Connect</h4><a href="volunteer.html" class="travels-footer__link" style="color:#fff">Get Involved</a><a href="mailto:info@syrianmosaicfoundation.org" class="travels-footer__link" style="color:#fff">Email Us</a></div><div class="travels-footer__nav-col"><h4 class="travels-footer__nav-heading" style="color:#D4A574">Follow</h4><a href="https://instagram.com/SyrianMosaicFoundation" target="_blank" rel="noopener noreferrer" class="travels-footer__link" style="color:#fff">Instagram</a><a href="https://www.linkedin.com/company/syrian-mosaic-foundation/" target="_blank" rel="noopener noreferrer" class="travels-footer__link" style="color:#fff">LinkedIn</a><a href="https://x.com/SyrianMosaicFDN" target="_blank" rel="noopener noreferrer" class="travels-footer__link" style="color:#fff">X / Twitter</a></div></div></div><div class="travels-footer__divider"></div>
 
+            <div class="partners-grid">
+                <a href="https://mosaictours.com" target="_blank" rel="noopener noreferrer" class="partner-card">
+                    <img src="assets/images/partners/mosaic-tours.jpg" alt="Mosaic Tours" class="partner-logo">
+                    <span class="partner-name">Mosaic Tours</span>
+                    <span class="partner-location">Syria</span>
+                </a>
 
+                <a href="https://goldenteamsyria.com" target="_blank" rel="noopener noreferrer" class="partner-card">
+                    <img src="assets/images/partners/golden-team.jpg" alt="Golden Team Syria" class="partner-logo">
+                    <span class="partner-name">Golden Team</span>
+                    <span class="partner-location">Syria</span>
+                </a>
 
+                <a href="https://syrianguides.com" target="_blank" rel="noopener noreferrer" class="partner-card">
+                    <img src="assets/images/partners/syrian-guides.jpg" alt="Syrian Guides" class="partner-logo">
+                    <span class="partner-name">Syrian Guides</span>
+                    <span class="partner-location">Syria</span>
+                </a>
 
+                <a href="https://nawafirtours.com" target="_blank" rel="noopener noreferrer" class="partner-card">
+                    <img src="assets/images/partners/nawafir.jpg" alt="Nawafir Tours" class="partner-logo">
+                    <span class="partner-name">Nawafir Tours</span>
+                    <span class="partner-location">Syria</span>
+                </a>
+            </div>
+        </section>
 
+        <footer class="travels-footer">
+            <div class="travels-footer__inner">
+                <div class="travels-footer__top">
+                    <div class="travels-footer__brand">
+                        <img src="assets/images/smf-logo.png" alt="Syrian Mosaic Foundation" class="travels-footer__logo">
+                        <p class="travels-footer__tagline" style="color:#fff">Connecting the world to Syria's extraordinary heritage through cultural diplomacy and responsible tourism.</p>
+                    </div>
+                    <div class="travels-footer__nav">
+                        <div class="travels-footer__nav-col">
+                            <h4 class="travels-footer__nav-heading" style="color:#D4A574">Explore</h4>
+                            <a href="index.html" class="travels-footer__link" style="color:#fff">Home</a>
+                            <a href="shop.html" class="travels-footer__link" style="color:#fff">Shop</a>
+                        </div>
+                        <div class="travels-footer__nav-col">
+                            <h4 class="travels-footer__nav-heading" style="color:#D4A574">Connect</h4>
+                            <a href="volunteer.html" class="travels-footer__link" style="color:#fff">Get Involved</a>
+                            <a href="mailto:info@syrianmosaicfoundation.org" class="travels-footer__link" style="color:#fff">Email Us</a>
+                        </div>
+                        <div class="travels-footer__nav-col">
+                            <h4 class="travels-footer__nav-heading" style="color:#D4A574">Follow</h4>
+                            <a href="https://instagram.com/SyrianMosaicFoundation" target="_blank" rel="noopener noreferrer" class="travels-footer__link" style="color:#fff">Instagram</a>
+                            <a href="https://www.linkedin.com/company/syrian-mosaic-foundation/" target="_blank" rel="noopener noreferrer" class="travels-footer__link" style="color:#fff">LinkedIn</a>
+                            <a href="https://x.com/SyrianMosaicFDN" target="_blank" rel="noopener noreferrer" class="travels-footer__link" style="color:#fff">X / Twitter</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="travels-footer__divider"></div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="lang-selector" aria-label="Language">
-  <span class="lang-selector__label">Language:</span>
-  <div class="lang-selector__options"><a href="/trip-registration.html" class="lang-active" data-lang="en">English</a><a href="/ar/trip-registration.html" data-lang="ar">العربية</a><a href="/he/trip-registration.html" data-lang="he">עברית</a><a href="/es/trip-registration.html" data-lang="es">Español</a><a href="/it/trip-registration.html" data-lang="it">Italiano</a><a href="/nl/trip-registration.html" data-lang="nl">Nederlands</a></div>
-</div><div class="travels-footer__bottom"><span class="travels-footer__copy">© 2026 Syrian Mosaic Foundation. All rights reserved.</span><span class="travels-footer__copy">Damascus, Syria &amp; New York, USA</span></div></div></footer>
-
+                <div class="lang-selector" aria-label="Language">
+                    <span class="lang-selector__label">Language:</span>
+                    <div class="lang-selector__options">
+                        <a href="/trip-registration.html" class="lang-active" data-lang="en">English</a>
+                        <a href="/ar/trip-registration.html" data-lang="ar">Ø§Ù„Ø¹Ø±Ø¨ÙŠØ©</a>
+                        <a href="/he/trip-registration.html" data-lang="he">×¢×‘×¨×™×ª</a>
+                        <a href="/es/trip-registration.html" data-lang="es">EspaÃ±ol</a>
+                        <a href="/it/trip-registration.html" data-lang="it">Italiano</a>
+                        <a href="/nl/trip-registration.html" data-lang="nl">Nederlands</a>
+                    </div>
+                </div>
+                <div class="travels-footer__bottom">
+                    <span class="travels-footer__copy">Â© 2026 Syrian Mosaic Foundation. All rights reserved.</span>
+                    <span class="travels-footer__copy">Damascus, Syria & New York, USA</span>
+                </div>
+            </div>
+        </footer>
     </div>
 
     <!-- GSAP Core -->
@@ -753,11 +736,6 @@
     <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
 
     <script>
-        /**
-         * Syrian Mosaic Foundation - Artisanal Motion
-         * Premium GSAP animations with "fluid gold" aesthetic
-         */
-
         // Initialize Lenis smooth scrolling
         const lenis = new Lenis({
             duration: 1.6,
@@ -775,22 +753,21 @@
         // Check for reduced motion preference
         if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
 
-            // ========== INITIAL STATES ==========
+            // Initial states
             gsap.set('.hero-logo', { opacity: 0, scale: 0.9, y: 30 });
             gsap.set('.hero-title', { opacity: 0, y: 50 });
             gsap.set('.hero-description', { opacity: 0, y: 35 });
             gsap.set('.selection-header', { opacity: 0, y: 30 });
             gsap.set('.selection-card', { opacity: 0, y: 50, scale: 0.95 });
             gsap.set('.flag-container', { opacity: 0, scale: 0.8, y: -10 });
+            gsap.set('.partners-section', { opacity: 0, y: 40 });
 
-            // ========== MASTER TIMELINE ==========
+            // Master timeline
             const masterTl = gsap.timeline({
                 defaults: { ease: 'expo.inOut' }
             });
 
-            // ========== FLAG ANIMATION ==========
-
-            // Fade in flag
+            // Flag
             masterTl.to('.flag-container', {
                 opacity: 1,
                 scale: 1,
@@ -799,9 +776,7 @@
                 ease: 'power2.out'
             }, 0.2);
 
-            // ========== PAGE CONTENT REVEALS ==========
-
-            // Main logo
+            // Logo
             masterTl.to('.hero-logo', {
                 opacity: 1,
                 scale: 1,
@@ -810,7 +785,7 @@
                 ease: 'expo.out'
             }, 1.0);
 
-            // Title - weighty, expensive feel
+            // Title
             masterTl.to('.hero-title', {
                 opacity: 1,
                 y: 0,
@@ -844,7 +819,15 @@
                 ease: 'expo.out'
             }, 2.3);
 
-            // ========== CARD HOVER ANIMATIONS ==========
+            // Partners section
+            masterTl.to('.partners-section', {
+                opacity: 1,
+                y: 0,
+                duration: 1.4,
+                ease: 'power4.out'
+            }, 2.6);
+
+            // Card hover animations
             document.querySelectorAll('.selection-card').forEach(card => {
                 card.addEventListener('mouseenter', () => {
                     gsap.to(card, {
@@ -869,7 +852,7 @@
 
         } else {
             // Reduced motion - show everything immediately
-            gsap.set('.hero-logo, .hero-title, .hero-description, .selection-header, .selection-card, .flag-container', {
+            gsap.set('.hero-logo, .hero-title, .hero-description, .selection-header, .selection-card, .flag-container, .partners-section', {
                 opacity: 1,
                 y: 0,
                 scale: 1
@@ -877,6 +860,7 @@
         }
     </script>
 
-
-<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "c16ac2a200d74d13b71fb2e9c4940735"}'></script><!-- End Cloudflare Web Analytics -->
-</body></html>
+    <!-- Cloudflare Web Analytics -->
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "c16ac2a200d74d13b71fb2e9c4940735"}'></script>
+</body>
+</html>

@@ -347,6 +347,133 @@
             }
         }
 
+        /* --- Hotel Partners Section --- */
+        .hotel-section {
+            margin-top: 40px;
+            padding: 64px 24px;
+            background: #111;
+            border-radius: 16px;
+            color: #fff;
+            text-align: center;
+        }
+
+        .hotel-inner {
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        .hotel-label {
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--color-accent);
+            margin: 0 0 12px;
+            font-weight: 600;
+        }
+
+        .hotel-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin: 0 0 10px;
+            color: #fff;
+        }
+
+        .hotel-subtitle {
+            font-size: 14px;
+            color: #888;
+            max-width: 480px;
+            margin: 0 auto 32px;
+            line-height: 1.6;
+        }
+
+        .hotel-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .hotel-card {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 28px 24px;
+            flex: 1;
+            min-width: 160px;
+            max-width: 200px;
+            transition: border-color 0.3s ease;
+        }
+
+        .hotel-card:hover {
+            border-color: var(--color-accent);
+        }
+
+        .hotel-name {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 0 0 4px;
+            color: #fff;
+        }
+
+        .hotel-city {
+            font-size: 12px;
+            color: #888;
+            margin: 0;
+        }
+
+        .hotel-code-badge {
+            background: linear-gradient(135deg, #D4A574, #c4915f);
+            display: inline-block;
+            border-radius: 12px;
+            padding: 20px 40px;
+        }
+
+        .hotel-code-label {
+            font-size: 11px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #1a1a1a;
+            margin: 0 0 4px;
+            font-weight: 500;
+        }
+
+        .hotel-code {
+            font-size: 34px;
+            font-weight: 700;
+            color: #1a1a1a;
+            letter-spacing: 4px;
+        }
+
+        .hotel-note {
+            font-size: 12px;
+            color: #555;
+            margin-top: 16px;
+        }
+
+        @media (max-width: 560px) {
+            .hotel-section {
+                margin-top: 0;
+                border-radius: 0;
+                margin-left: -16px;
+                margin-right: -16px;
+                padding: 48px 20px;
+            }
+
+            .hotel-title {
+                font-size: 20px;
+            }
+
+            .hotel-card {
+                min-width: 100%;
+                padding: 20px;
+            }
+
+            .hotel-code {
+                font-size: 28px;
+            }
+        }
+
         /* --- Footer --- */
         .footer {
             margin-top: 20px;
@@ -686,6 +813,34 @@
             </div>
         </section>
 
+        <!-- Hotel Partners -->
+        <section class="hotel-section">
+            <div class="hotel-inner">
+                <p class="hotel-label">HOTEL PARTNERS</p>
+                <h3 class="hotel-title">Exclusive 10% Off Partner Hotels</h3>
+                <p class="hotel-subtitle">Book directly with any of our partner hotels and mention our code for an exclusive discount on your stay in Syria.</p>
+                <div class="hotel-grid">
+                    <div class="hotel-card">
+                        <h4 class="hotel-name">Sheraton</h4>
+                        <p class="hotel-city">Damascus</p>
+                    </div>
+                    <div class="hotel-card">
+                        <h4 class="hotel-name">Four Seasons</h4>
+                        <p class="hotel-city">Damascus</p>
+                    </div>
+                    <div class="hotel-card">
+                        <h4 class="hotel-name">Dama Rose</h4>
+                        <p class="hotel-city">Damascus</p>
+                    </div>
+                </div>
+                <div class="hotel-code-badge">
+                    <p class="hotel-code-label">Your Discount Code</p>
+                    <span class="hotel-code">SMF10</span>
+                </div>
+                <p class="hotel-note">Mention this code when booking directly with any partner hotel for 10% off.</p>
+            </div>
+        </section>
+
         <footer class="travels-footer">
             <div class="travels-footer__inner">
                 <div class="travels-footer__top">
@@ -764,6 +919,7 @@
             gsap.set('.selection-card', { opacity: 0, y: 50, scale: 0.95 });
 
             gsap.set('.partners-section', { opacity: 0, y: 40 });
+            gsap.set('.hotel-section', { opacity: 0, y: 40 });
 
             // Master timeline
             const masterTl = gsap.timeline({
@@ -821,6 +977,14 @@
                 ease: 'power4.out'
             }, 2.6);
 
+            // Hotel section
+            masterTl.to('.hotel-section', {
+                opacity: 1,
+                y: 0,
+                duration: 1.4,
+                ease: 'power4.out'
+            }, 2.9);
+
             // Card hover animations
             document.querySelectorAll('.selection-card').forEach(card => {
                 card.addEventListener('mouseenter', () => {
@@ -846,7 +1010,7 @@
 
         } else {
             // Reduced motion - show everything immediately
-            gsap.set('.hero-logo, .hero-title, .hero-description, .selection-header, .selection-card, .partners-section', {
+            gsap.set('.hero-logo, .hero-title, .hero-description, .selection-header, .selection-card, .partners-section, .hotel-section', {
                 opacity: 1,
                 y: 0,
                 scale: 1

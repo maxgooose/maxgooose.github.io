@@ -255,49 +255,62 @@
         }
 
         .partner-card {
-            background: white;
-            border-radius: 12px;
-            padding: 20px 12px;
-            text-decoration: none;
-            color: var(--color-primary);
-            transition: all 0.25s ease;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            border: 1px solid transparent;
+            text-decoration: none;
+            background: #fff;
+            border: 1px solid #EAEAEA;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .partner-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 32px rgba(26, 58, 82, 0.12);
-            border-color: var(--color-accent);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        }
+
+        .partner-photo {
+            aspect-ratio: 4 / 3;
+            overflow: hidden;
+        }
+
+        .partner-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .partner-card:hover .partner-photo img {
+            transform: scale(1.04);
+        }
+
+        .partner-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0.9rem 0.75rem;
+            gap: 0.4rem;
         }
 
         .partner-logo {
-            width: 64px;
-            height: 64px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 12px;
-            border: 2px solid #F3F4F6;
-            transition: border-color 0.25s ease;
-        }
-
-        .partner-card:hover .partner-logo {
-            border-color: var(--color-accent);
+            height: 32px;
+            width: auto;
+            max-width: 80px;
+            object-fit: contain;
         }
 
         .partner-name {
-            font-size: 13px;
-            font-weight: 600;
-            line-height: 1.3;
+            font-size: 0.78rem;
+            font-weight: 500;
+            color: #666;
             text-align: center;
+            transition: color 0.3s ease;
         }
 
-        .partner-location {
-            font-size: 11px;
-            color: var(--color-secondary);
-            margin-top: 4px;
+        .partner-card:hover .partner-name {
+            color: var(--color-primary);
         }
 
         /* Partners mobile: 2x2 grid */
@@ -320,17 +333,17 @@
                 padding: 0 20px;
             }
 
-            .partner-card {
-                padding: 16px 10px;
+            .partner-info {
+                padding: 0.7rem 0.5rem;
             }
 
             .partner-logo {
-                width: 52px;
-                height: 52px;
+                height: 28px;
+                max-width: 70px;
             }
 
             .partner-name {
-                font-size: 12px;
+                font-size: 0.72rem;
             }
         }
 
@@ -504,6 +517,10 @@
             .partners-title {
                 font-size: 24px;
             }
+
+            .partners-grid {
+                gap: 20px;
+            }
         }
 
         @media (min-width: 1024px) {
@@ -627,28 +644,44 @@
             </div>
 
             <div class="partners-grid">
-                <div class="partner-card">
-                    <img src="assets/images/mosaic-tours-logo.png" alt="Mosaic Tours" class="partner-logo">
-                    <span class="partner-name">Mosaic Tours</span>
-                    <span class="partner-location">Syria</span>
-                </div>
+                <a href="https://mozaictours.com" target="_blank" rel="noopener noreferrer" class="partner-card">
+                    <div class="partner-photo">
+                        <img src="assets/images/golden-team-damascus.webp" alt="Damascus old city" loading="lazy">
+                    </div>
+                    <div class="partner-info">
+                        <img src="assets/images/mosaic-tours-logo.png" alt="Mosaic Tours logo" class="partner-logo">
+                        <span class="partner-name">Mosaic Tours</span>
+                    </div>
+                </a>
 
                 <a href="https://goldenteamsy.com/" target="_blank" rel="noopener noreferrer" class="partner-card">
-                    <img src="assets/images/golden-team-syria-logo.png" alt="Golden Team Syria" class="partner-logo">
-                    <span class="partner-name">Golden Team</span>
-                    <span class="partner-location">Syria</span>
+                    <div class="partner-photo">
+                        <img src="assets/images/golden-team-aleppo.webp" alt="Aleppo citadel" loading="lazy">
+                    </div>
+                    <div class="partner-info">
+                        <img src="assets/images/golden-team-syria-logo.png" alt="Golden Team Syria logo" class="partner-logo">
+                        <span class="partner-name">Golden Team Syria</span>
+                    </div>
                 </a>
 
                 <a href="https://syrianguides.com/" target="_blank" rel="noopener noreferrer" class="partner-card">
-                    <img src="assets/images/syrian-guides-logo.png" alt="Syrian Guides" class="partner-logo">
-                    <span class="partner-name">Syrian Guides</span>
-                    <span class="partner-location">Syria</span>
+                    <div class="partner-photo">
+                        <img src="assets/images/syrian-guides-nofara.jpg" alt="Nofara cafe, Damascus" loading="lazy">
+                    </div>
+                    <div class="partner-info">
+                        <img src="assets/images/syrian-guides-logo.png" alt="Syrian Guides logo" class="partner-logo">
+                        <span class="partner-name">Syrian Guides</span>
+                    </div>
                 </a>
 
                 <a href="https://nawafir-tours.com" target="_blank" rel="noopener noreferrer" class="partner-card">
-                    <img src="assets/images/nawafir-tours-logo.png" alt="Nawafir Tours" class="partner-logo">
-                    <span class="partner-name">Nawafir Tours</span>
-                    <span class="partner-location">Syria</span>
+                    <div class="partner-photo">
+                        <img src="assets/images/syrian-guides-damascus-viewpoint.jpg" alt="Damascus viewpoint" loading="lazy">
+                    </div>
+                    <div class="partner-info">
+                        <img src="assets/images/nawafir-tours-logo.png" alt="Nawafir Tours logo" class="partner-logo">
+                        <span class="partner-name">Nawafir Tours</span>
+                    </div>
                 </a>
             </div>
         </section>

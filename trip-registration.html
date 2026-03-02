@@ -91,22 +91,7 @@
             margin: 0 auto 24px;
         }
 
-        .flag-container {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            height: 40px;
-            width: 60px;
-            border-radius: 4px;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-        }
 
-        .flag-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
 
         .hero h1 { 
             font-size: 28px; 
@@ -474,12 +459,7 @@
                 height: 160px;
                 margin: 0 auto 24px;
             }
-            .flag-container {
-                top: 20px;
-                right: 30px;
-                height: 35px;
-                width: 52px;
-            }
+
             .hero h1 {
                 font-size: 32px;
             }
@@ -537,12 +517,7 @@
             .hero-logo {
                 height: 180px;
             }
-            .flag-container {
-                top: 25px;
-                right: 50px;
-                height: 40px;
-                width: 60px;
-            }
+
             .hero h1 {
                 font-size: 36px;
             }
@@ -591,11 +566,6 @@
     </header>
 
     <section class="hero">
-        <!-- Syrian Flag -->
-        <div class="flag-container">
-            <img src="assets/images/syria-flag.svg" alt="Syrian Flag">
-        </div>
-
         <img src="assets/images/smf-logo.png" alt="Syrian Mosaic Foundation" class="hero-logo" onerror="this.style.display='none'">
 
         <h1 class="hero-title">Register Your Interest</h1>
@@ -759,22 +729,13 @@
             gsap.set('.hero-description', { opacity: 0, y: 35 });
             gsap.set('.selection-header', { opacity: 0, y: 30 });
             gsap.set('.selection-card', { opacity: 0, y: 50, scale: 0.95 });
-            gsap.set('.flag-container', { opacity: 0, scale: 0.8, y: -10 });
+
             gsap.set('.partners-section', { opacity: 0, y: 40 });
 
             // Master timeline
             const masterTl = gsap.timeline({
                 defaults: { ease: 'expo.inOut' }
             });
-
-            // Flag
-            masterTl.to('.flag-container', {
-                opacity: 1,
-                scale: 1,
-                y: 0,
-                duration: 1,
-                ease: 'power2.out'
-            }, 0.2);
 
             // Logo
             masterTl.to('.hero-logo', {
@@ -852,7 +813,7 @@
 
         } else {
             // Reduced motion - show everything immediately
-            gsap.set('.hero-logo, .hero-title, .hero-description, .selection-header, .selection-card, .flag-container, .partners-section', {
+            gsap.set('.hero-logo, .hero-title, .hero-description, .selection-header, .selection-card, .partners-section', {
                 opacity: 1,
                 y: 0,
                 scale: 1

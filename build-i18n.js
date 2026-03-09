@@ -270,12 +270,12 @@ const HTML_REPLACEMENTS = {
       nl: 'Meer dan 8 jaar ter plaatse\u2002·\u2002Cultureel behoud\u2002·\u2002Gemeenschapsontwikkeling',
     },
     '.about-editorial__headline': {
-      en: 'Seven Years on the Ground in <em>Syria</em>',
-      ar: 'سبع سنوات على أرض الواقع في <em>سوريا</em>',
-      he: 'שבע שנים בשטח ב<em>סוריה</em>',
-      es: 'Siete años sobre el terreno en <em>Siria</em>',
-      it: 'Sette anni sul campo in <em>Siria</em>',
-      nl: 'Zeven jaar ter plaatse in <em>Syrië</em>',
+      en: 'Eight Years on the Ground in <em>Syria</em>',
+      ar: 'ثماني سنوات على أرض الواقع في <em>سوريا</em>',
+      he: 'שמונה שנים בשטח ב<em>סוריה</em>',
+      es: 'Ocho años sobre el terreno en <em>Siria</em>',
+      it: 'Otto anni sul campo in <em>Siria</em>',
+      nl: 'Acht jaar ter plaatse in <em>Syrië</em>',
     },
     // Section numbers with <br>
     '.slider-main_top-wrapper .sec-numb > div': {

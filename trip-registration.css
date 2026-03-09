@@ -642,41 +642,59 @@ body.treg-body .treg-lang__options a.lang-active {
     font-weight: 600;
 }
 
-/* Hotel cards (premium with elegant key icon) */
+/* Hotel cards (colorful photo cards) */
 .treg-hotels__grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 18px;
     margin-bottom: 40px;
 }
-.treg-hotels__card {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.1);
+.treg-hcard {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    background: var(--white);
     border-radius: 14px;
-    padding: 28px 20px;
-    height: 140px;
-    transition: border-color 0.35s, background 0.35s, transform 0.35s;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    transition: transform 0.4s cubic-bezier(0.22,1,0.36,1), box-shadow 0.4s cubic-bezier(0.22,1,0.36,1);
+    border: 1px solid rgba(0,0,0,0.04);
+}
+.treg-hcard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.08);
+}
+.treg-hcard__photo {
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+}
+.treg-hcard__photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.22,1,0.36,1);
+}
+.treg-hcard:hover .treg-hcard__photo img {
+    transform: scale(1.06);
+}
+.treg-hcard__info {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    text-align: center;
+    padding: 16px 14px;
+    gap: 6px;
+    background: var(--white);
 }
-.treg-hotels__card:hover {
-    border-color: rgba(212,167,116,0.35);
-    background: rgba(255,255,255,0.06);
-    transform: translateY(-3px);
-}
-.treg-hotels__logo {
-    max-height: 55px;
-    max-width: 60%;
+.treg-hcard__logo {
+    height: 48px;
+    width: auto;
+    max-width: 120px;
     object-fit: contain;
-    transition: transform 0.35s ease, filter 0.35s ease;
-    filter: brightness(0) invert(1) brightness(100);
 }
-.treg-hotels__card:hover .treg-hotels__logo {
-    transform: scale(1.05);
-    filter: brightness(0) invert(1) drop-shadow(0 0 4px rgba(255,255,255,0.4));
+.treg-hcard__name {
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--charcoal);
 }
 
 /* Discount banner (coupon ticket style) */
@@ -833,7 +851,6 @@ body.treg-body .treg-lang__options a.lang-active {
         grid-template-columns: 1fr;
         gap: 14px;
     }
-    .treg-hotels__card { padding: 22px 16px; }
     .treg-coupon-banner { padding: 20px; margin-bottom: 36px; flex-direction: column; text-align: center; gap: 12px; }
     .treg-coupon-banner__text { text-align: center; }
     .treg-coupon-banner__code { font-size: 1.4rem; letter-spacing: 4px; padding: 10px 20px; width: 100%; box-sizing: border-box; }

@@ -470,7 +470,7 @@
         }
         .lang-selector__options a {
             font-size: 0.8rem;
-            color: var(--color-secondary);
+            color: var(--color-secondary) !important;
             text-decoration: none;
             padding: 0.3rem 0.6rem;
             border-radius: 4px;
@@ -478,11 +478,11 @@
             white-space: nowrap;
         }
         .lang-selector__options a:hover {
-            color: var(--color-primary);
+            color: var(--color-primary) !important;
             background: rgba(0,0,0,0.05);
         }
         .lang-selector__options a.lang-active {
-            color: var(--color-accent);
+            color: var(--color-accent) !important;
             background: rgba(201, 169, 98, 0.15);
             font-weight: 600;
         }
@@ -550,6 +550,34 @@
                 max-width: 680px;
                 margin-top: -50px;
             }
+        }
+        /* --- Simple Form Footer --- */
+        .simple-footer {
+            max-width: 640px;
+            margin: 60px auto 0;
+            padding: 30px 24px;
+            border-top: 1px solid var(--color-border);
+            text-align: center;
+            color: var(--color-secondary);
+        }
+        .simple-footer__links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+        }
+        .simple-footer__link {
+            color: var(--color-secondary);
+            text-decoration: none;
+            font-size: 13px;
+            transition: color 0.2s;
+        }
+        .simple-footer__link:hover {
+            color: var(--color-primary);
+        }
+        .simple-footer__copy {
+            font-size: 12px;
         }
     </style>
 <link rel="stylesheet" href="../styles.css">  
@@ -747,36 +775,24 @@
             </div>
 
         </form>
-<footer class="travels-footer"><div class="travels-footer__inner"><div class="travels-footer__top"><div class="travels-footer__brand"><img src="../assets/images/smf-logo.png" alt="Syriën Mosaic Foundation" class="travels-footer__logo"><p class="travels-footer__tagline" style="color:#fff">De wereld verbinden met het buitengewone erfgoed van Syrië door culturele diplomatie en verantwoord toerisme.</p></div><div class="travels-footer__nav"><div class="travels-footer__nav-col"><h4 class="travels-footer__nav-heading" style="color:#D4A574">Ontdek</h4><a href="/nl/index.html" class="travels-footer__link" style="color:#fff">Home</a><a href="/nl/shop.html" class="travels-footer__link" style="color:#fff">Winkel</a></div><div class="travels-footer__nav-col"><h4 class="travels-footer__nav-heading" style="color:#D4A574">Verbind</h4><a href="/nl/volunteer.html" class="travels-footer__link" style="color:#fff">Get Involved</a><a href="mailto:info@syrianmosaicfoundation.org" class="travels-footer__link" style="color:#fff">E-mail ons</a></div><div class="travels-footer__nav-col"><h4 class="travels-footer__nav-heading" style="color:#D4A574">Volg ons</h4><a href="https://instagram.com/SyrianMosaicFoundation" target="_blank" rel="noopener noreferrer" class="travels-footer__link" style="color:#fff">Instagram</a><a href="https://www.linkedin.com/company/syrian-mosaic-foundation/" target="_blank" rel="noopener noreferrer" class="travels-footer__link" style="color:#fff">LinkedIn</a><a href="https://x.com/SyrianMosaicFDN" target="_blank" rel="noopener noreferrer" class="travels-footer__link" style="color:#fff">X / Twitter</a></div></div></div><div class="travels-footer__divider"></div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="lang-selector" aria-label="Taal">
-  <span class="lang-selector__label">Taal:</span>
-  <div class="lang-selector__options"><a href="/tourist-registration.html" data-lang="en">English</a><a href="/ar/tourist-registration.html" data-lang="ar">العربية</a><a href="/he/tourist-registration.html" data-lang="he">עברית</a><a href="/es/tourist-registration.html" data-lang="es">Español</a><a href="/it/tourist-registration.html" data-lang="it">Italiano</a><a href="/nl/tourist-registration.html" class="lang-active" data-lang="nl">Nederlands</a></div>
-</div><div class="travels-footer__bottom"><span class="travels-footer__copy">© 2026 Syriën Mosaic Foundation. Alle rechten voorbehouden.</span><span class="travels-footer__copy">Damascus, Syrië en New York, VS</span></div></div></footer>
+<footer class="simple-footer">
+    <div class="simple-footer__links">
+        <a href="/nl/index.html" class="simple-footer__link">Home</a>
+        <a href="/nl/shop.html" class="simple-footer__link">Winkel</a>
+        <a href="/nl/volunteer.html" class="simple-footer__link">Doe mee</a>
+        <a href="mailto:info@syrianmosaicfoundation.org" class="simple-footer__link">Contact</a>
+    </div>
+    
+    <div class="lang-selector" aria-label="Taal">
+        <span class="lang-selector__label">Taal:</span>
+        <div class="lang-selector__options"><a href="/tourist-registration.html" data-lang="en">English</a><a href="/ar/tourist-registration.html" data-lang="ar">العربية</a><a href="/he/tourist-registration.html" data-lang="he">עברית</a><a href="/es/tourist-registration.html" data-lang="es">Español</a><a href="/it/tourist-registration.html" data-lang="it">Italiano</a><a href="/nl/tourist-registration.html" class="lang-active" data-lang="nl">Nederlands</a></div>
+    </div>
+    
+    <div class="simple-footer__copy">
+        © 2026 Syriën Mosaic Foundation. Alle rechten voorbehouden. <br>
+        Damascus, Syrië en New York, VS
+    </div>
+</footer>
 
     <script>
         // Toggle 'Other' passport input

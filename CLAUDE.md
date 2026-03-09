@@ -22,10 +22,8 @@
 
 ## Contact Info
 - Address: Damascus, Syria & New York, USA
-- Phone: +1 347-893-3032
 - Email: info@syrianmosaicfoundation.org
 - Instagram: SyrianMosaicFoundation
-- LinkedIn: syrian-mosaic-foundation
 - X/Twitter: SyrianMosaicFDN
 
 ## SVGs

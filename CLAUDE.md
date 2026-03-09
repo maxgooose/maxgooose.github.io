@@ -5,6 +5,14 @@
 - Custom pages: Use styles.css + animations.js + Lenis
 - Target navbar: Webflow "nav-header" style from media.html
 
+## Language / i18n
+- Supported locales: en (root), ar, he, es, it, nl
+- Locale pages live in subdirectories: ar/, he/, es/, it/, nl/
+- i18n.js handles runtime translation; locale JSON files provide strings
+- hreflang `<link>` tags are in every page `<head>` for SEO
+- **Language selector CSS caveat**: `styles.css` sets `.lang-selector__options a` to white text (`rgba(255,255,255,0.75) !important`) for dark-footer pages. Registration subpages (tourist-registration.html, delegation-registration.html) have light/white footers, so they need an override `<style>` block placed AFTER the `styles.css` link using `body .lang-selector__options a` for higher specificity to force dark text colors. If you add a new page with a light footer and a `.lang-selector`, you must add this override or the language links will be invisible.
+- trip-registration.html uses different class names (`.treg-lang`, `.treg-lang__options`) with a dark footer — no override needed there.
+
 ## Logo
 - ALWAYS use: assets/images/smf-logo.png
 - NEVER use: smf-logo-new.png, logo.jpg, logo.jpeg

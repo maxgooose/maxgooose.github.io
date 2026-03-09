@@ -152,6 +152,17 @@ body.treg-body .treg-card__btn {
     color: var(--white) !important;
 }
 
+/* --- PARTNERS SECTION (dark bg) --- */
+body.treg-body .treg-partners .treg-label {
+    color: var(--gold-muted) !important;
+}
+body.treg-body .treg-partners .treg-heading {
+    color: var(--white) !important;
+}
+body.treg-body .treg-partners .treg-subheading {
+    color: rgba(255,255,255,0.5) !important;
+}
+
 /* --- PARTNER CARDS --- */
 body.treg-body .treg-pcard__name {
     color: var(--charcoal-light) !important;
@@ -160,53 +171,56 @@ body.treg-body .treg-pcard:hover .treg-pcard__name {
     color: var(--charcoal) !important;
 }
 
-/* --- HOTEL SECTION (dark bg) --- */
+/* --- HOTEL SECTION (light bg) --- */
 body.treg-body .treg-hotels .treg-label {
-    color: var(--gold-muted) !important;
+    color: var(--terracotta) !important;
 }
 body.treg-body .treg-hotels .treg-heading {
-    color: var(--white) !important;
+    color: var(--charcoal) !important;
 }
 body.treg-body .treg-hotels .treg-subheading {
-    color: rgba(255,255,255,0.5) !important;
+    color: var(--charcoal-light) !important;
 }
 body.treg-body .treg-hotels__name {
     font-family: 'Playfair Display', serif !important;
     font-size: 1.15rem !important;
     font-weight: 600 !important;
-    color: var(--white) !important;
+    color: var(--charcoal) !important;
     margin: 0 0 4px !important;
     letter-spacing: normal !important;
 }
 body.treg-body .treg-hotels__city {
     font-size: 0.78rem !important;
-    color: rgba(255,255,255,0.35) !important;
+    color: var(--charcoal-light) !important;
     margin: 0 !important;
     line-height: 1.4 !important;
 }
+body.treg-body .treg-hotels__code-inline {
+    color: var(--terracotta) !important;
+}
 body.treg-body .treg-coupon-banner__text {
-    font-size: 0.7rem !important;
-    color: rgba(255,255,255,0.85) !important;
+    font-size: 0.68rem !important;
+    color: var(--charcoal-light) !important;
     margin: 0 !important;
 }
 body.treg-body .treg-coupon-banner__hint {
-    font-size: 0.78rem !important;
-    color: rgba(255,255,255,0.7) !important;
+    font-size: 0.8rem !important;
+    color: var(--charcoal-light) !important;
     margin: 0 !important;
 }
 body.treg-body .treg-nawartu__label {
     font-size: 0.68rem !important;
-    color: var(--gold-muted) !important;
+    color: var(--terracotta) !important;
     margin: 0 0 10px !important;
 }
 body.treg-body .treg-nawartu__title {
     font-size: 1.6rem !important;
-    color: var(--white) !important;
+    color: var(--charcoal) !important;
     margin: 0 0 14px !important;
 }
 body.treg-body .treg-nawartu__desc {
     font-size: 0.92rem !important;
-    color: rgba(255,255,255,0.7) !important;
+    color: var(--charcoal-muted) !important;
     margin: 0 0 24px !important;
 }
 
@@ -396,6 +410,7 @@ body.treg-body .treg-lang__options a.lang-active {
 .treg-choose {
     padding: 80px 24px;
     background: var(--cream);
+    margin-top: -1px;
 }
 .treg-cards {
     max-width: 960px;
@@ -440,8 +455,8 @@ body.treg-body .treg-lang__options a.lang-active {
     inset: 0;
     background: linear-gradient(
         0deg,
-        rgba(28,28,28,0.88) 0%,
-        rgba(28,28,28,0.45) 35%,
+        rgba(28,28,28,0.95) 0%,
+        rgba(28,28,28,0.6) 40%,
         transparent 65%
     );
     z-index: 1;
@@ -517,24 +532,37 @@ body.treg-body .treg-lang__options a.lang-active {
 
 @media (min-width: 640px) {
     .treg-cards { grid-template-columns: 1fr 1fr; gap: 24px; }
-    .treg-card { min-height: 440px; }
+    .treg-card { min-height: 460px; }
+    .treg-card__desc { 
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        margin-bottom: 18px;
+    }
 }
 
 @media (max-width: 639px) {
     .treg-choose { padding: 60px 20px; }
+    .treg-card__desc { font-size: 0.8rem; margin-bottom: 16px; }
 }
 
 /* ═══════════════════════════════════════
    TRAVEL PARTNERS
    ═══════════════════════════════════════ */
 .treg-partners {
-    background: var(--sand);
-    padding: 80px 24px;
+    background: var(--deep-charcoal);
+    padding: 80px 24px 60px;
+    color: var(--white);
 }
 .treg-partners__inner {
     max-width: 900px;
     margin: 0 auto;
 }
+.treg-partners .treg-heading { color: var(--white); }
+.treg-partners .treg-subheading { color: rgba(255,255,255,0.5); }
+.treg-partners .treg-label { color: var(--gold-muted); }
+.treg-partners .treg-divider { background: var(--gold-muted); }
 .treg-partners__grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -605,18 +633,18 @@ body.treg-body .treg-lang__options a.lang-active {
    ACCOMMODATIONS (Where to Stay)
    ═══════════════════════════════════════ */
 .treg-hotels {
-    background: var(--deep-charcoal);
+    background: var(--sand);
     padding: 80px 24px;
     text-align: center;
-    color: var(--white);
+    color: var(--charcoal);
 }
 .treg-hotels__inner {
     max-width: 900px;
     margin: 0 auto;
 }
-.treg-hotels .treg-heading { color: var(--white); }
-.treg-hotels .treg-subheading { color: rgba(255,255,255,0.5); }
-.treg-hotels .treg-label { color: var(--gold-muted); }
+.treg-hotels .treg-heading { color: var(--charcoal); }
+.treg-hotels .treg-subheading { color: var(--charcoal-light); }
+.treg-hotels .treg-label { color: var(--terracotta); }
 
 /* Partner Hotels subheading */
 .treg-hotels__subheading {
@@ -627,19 +655,23 @@ body.treg-body .treg-lang__options a.lang-active {
     font-family: 'Playfair Display', serif;
     font-size: 1.1rem;
     font-weight: 600;
-    color: var(--white);
+    color: var(--charcoal);
     margin: 0 0 8px;
     letter-spacing: normal;
 }
 .treg-hotels__subdesc {
     font-size: 0.9rem;
-    color: rgba(255,255,255,0.6);
+    color: var(--charcoal-muted);
     line-height: 1.6;
     margin: 0;
 }
 .treg-hotels__code-inline {
-    color: var(--gold-light);
+    color: var(--terracotta);
     font-weight: 600;
+    background: rgba(196,120,74,0.1);
+    padding: 2px 8px;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
 }
 
 /* Hotel cards (colorful photo cards) */
@@ -658,7 +690,7 @@ body.treg-body .treg-lang__options a.lang-active {
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(0,0,0,0.04);
     transition: transform 0.4s cubic-bezier(0.22,1,0.36,1), box-shadow 0.4s cubic-bezier(0.22,1,0.36,1);
-    border: 1px solid rgba(0,0,0,0.04);
+    border: 1px solid rgba(0,0,0,0.02);
 }
 .treg-hcard:hover {
     transform: translateY(-5px);
@@ -679,72 +711,63 @@ body.treg-body .treg-lang__options a.lang-active {
 }
 .treg-hcard__info {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    padding: 16px 14px;
-    gap: 6px;
-    background: var(--white);
+    justify-content: center;
+    padding: 10px 12px;
+    background: #EBE1D3; /* A warm, creamy tan color */
 }
 .treg-hcard__logo {
-    height: 48px;
+    height: 64px;
     width: auto;
-    max-width: 120px;
+    max-width: 160px;
     object-fit: contain;
-}
-.treg-hcard__name {
-    font-size: 0.82rem;
-    font-weight: 500;
-    color: var(--charcoal);
 }
 
 /* Discount banner (coupon ticket style) */
 .treg-coupon-banner {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    padding: 24px 32px;
-    background: rgba(255,255,255,0.03);
-    border: 1px solid rgba(212,167,116,0.3);
-    border-radius: 12px;
-    box-shadow: none;
+    gap: 14px;
+    padding: 28px 32px;
+    background: var(--white);
+    border-radius: 14px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
     margin-bottom: 48px;
-    flex-wrap: wrap;
 }
 .treg-coupon-banner__text {
-    font-size: 0.7rem;
-    letter-spacing: 0.15em;
+    font-size: 0.68rem;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.7);
+    color: var(--charcoal-light);
     margin: 0;
     font-weight: 500;
 }
 .treg-coupon-banner__code {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--gold-light);
-    letter-spacing: 4px;
-    background: transparent;
-    border: 1px solid rgba(212,167,116,0.5);
-    border-radius: 6px;
-    padding: 8px 24px;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--charcoal);
+    letter-spacing: 0.25em;
+    background: var(--sand-light);
+    border: none;
+    border-radius: 8px;
+    padding: 10px 28px;
     cursor: pointer;
-    transition: background 0.25s, border-color 0.25s, transform 0.2s;
+    transition: background 0.25s, color 0.25s, transform 0.2s;
     white-space: nowrap;
+    position: relative;
 }
 .treg-coupon-banner__code:hover {
-    background: rgba(212,167,116,0.1);
-    border-color: var(--gold-light);
-    transform: scale(1.02);
+    background: var(--sand-dark);
+    color: var(--terracotta);
 }
 .treg-coupon-banner__code:active {
-    transform: scale(0.98);
+    transform: scale(0.97);
 }
 .treg-coupon-banner__hint {
-    font-size: 0.85rem;
-    color: rgba(255,255,255,0.5);
+    font-size: 0.8rem;
+    color: var(--charcoal-light);
     margin: 0;
 }
 
@@ -756,11 +779,12 @@ body.treg-body .treg-lang__options a.lang-active {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0;
-    background: rgba(255,255,255,0.03);
-    border: 1px solid rgba(255,255,255,0.08);
+    background: var(--white);
+    border: 1px solid rgba(0,0,0,0.06);
     border-radius: 18px;
     overflow: hidden;
     text-align: left;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
 }
 .treg-nawartu__content {
     padding: 40px 36px;
@@ -773,21 +797,21 @@ body.treg-body .treg-lang__options a.lang-active {
     font-weight: 600;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--gold-muted);
+    color: var(--terracotta);
     margin: 0 0 10px;
 }
 .treg-nawartu__title {
     font-family: 'Playfair Display', serif;
     font-size: 1.6rem;
     font-weight: 600;
-    color: var(--white);
+    color: var(--charcoal);
     margin: 0 0 14px;
     letter-spacing: normal;
 }
 .treg-nawartu__desc {
     font-size: 0.92rem;
     line-height: 1.7;
-    color: rgba(255,255,255,0.7);
+    color: var(--charcoal-muted);
     margin: 0 0 24px;
 }
 .treg-nawartu__btn {
@@ -816,7 +840,7 @@ body.treg-body .treg-lang__options a.lang-active {
     position: relative;
     min-height: 220px;
     display: flex;
-    background: #111;
+    background: var(--sand-dark);
 }
 .treg-nawartu__logo-img {
     width: 100%;
@@ -851,10 +875,8 @@ body.treg-body .treg-lang__options a.lang-active {
         grid-template-columns: 1fr;
         gap: 14px;
     }
-    .treg-coupon-banner { padding: 20px; margin-bottom: 36px; flex-direction: column; text-align: center; gap: 12px; }
-    .treg-coupon-banner__text { text-align: center; }
-    .treg-coupon-banner__code { font-size: 1.4rem; letter-spacing: 4px; padding: 10px 20px; width: 100%; box-sizing: border-box; }
-    .treg-coupon-banner__hint { text-align: center; }
+    .treg-coupon-banner { padding: 22px 20px; margin-bottom: 36px; gap: 10px; }
+    .treg-coupon-banner__code { font-size: 1rem; padding: 10px 24px; }
     .treg-nawartu__inner { border-radius: 14px; }
     .treg-nawartu__content { padding: 28px 22px; }
     .treg-nawartu__title { font-size: 1.4rem; }
@@ -867,9 +889,8 @@ body.treg-body .treg-lang__options a.lang-active {
    ═══════════════════════════════════════ */
 .treg-footer {
     background: var(--deep-charcoal);
-    border-top: 1px solid rgba(255,255,255,0.06);
     color: rgba(255,255,255,0.6);
-    padding: 64px 24px 40px;
+    padding: 40px 24px 40px;
 }
 .treg-footer__inner {
     max-width: 1000px;

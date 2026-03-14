@@ -84,7 +84,6 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
-    padding-bottom: 5rem; /* Space for fixed bottom nav */
 }
 
 /* Prevent styles.css from overriding Webflow navbar */
@@ -4199,29 +4198,38 @@ a.footer-link {
 }
 
 @media (max-width: 768px) {
+    .travels-footer {
+        padding: 2.5rem 1.25rem calc(1.5rem + 4.5rem) !important;
+    }
+
+    .travels-footer__inner {
+        padding: 0 !important;
+    }
+
     .travels-footer__top {
-        flex-direction: column;
-        gap: 1.5rem;
+        flex-direction: column !important;
+        gap: 1.5rem !important;
     }
 
     .travels-footer__brand {
-        flex: none;
+        flex: none !important;
     }
 
     .travels-footer__nav {
-        gap: 2rem;
+        flex-direction: column !important;
+        gap: 1rem !important;
     }
 
     .travels-footer__bottom {
-        flex-direction: column;
-        gap: 0.25rem;
-        text-align: center;
+        flex-direction: column !important;
+        gap: 0.25rem !important;
+        text-align: center !important;
     }
 }
 
 @media (max-width: 480px) {
     .travels-footer {
-        padding: 2rem 1.25rem 1.25rem;
+        padding: 2rem 1.25rem calc(1.25rem + 4.5rem) !important;
     }
 
     .travels-footer__nav {
@@ -4546,7 +4554,6 @@ a.footer-link {
     min-height: 100svh !important;
     min-height: 100vh !important;
     margin-bottom: 0 !important;
-    padding-bottom: 5rem !important;
   }
   .smf-hero__bg img {
     object-position: center center !important;
@@ -5057,30 +5064,6 @@ a.footer-link {
   .page_main { padding-top: 0 !important; }
   .u-section { padding: 0 !important; margin: 0 !important; }
   .u-container { padding: 0 1rem !important; margin: 0 !important; }
-
-  /* ── Footer ── */
-  .travels-footer {
-    padding: 2.5rem 1.25rem 1.5rem !important;
-  }
-  .travels-footer__inner {
-    padding: 0 !important;
-  }
-  .travels-footer__top {
-    flex-direction: column !important;
-    gap: 1.5rem !important;
-  }
-  .travels-footer__brand {
-    flex: none !important;
-  }
-  .travels-footer__nav {
-    flex-direction: column !important;
-    gap: 1rem !important;
-  }
-  .travels-footer__bottom {
-    flex-direction: column !important;
-    gap: 0.25rem !important;
-    text-align: center !important;
-  }
 
   /* ── Logo (travels / subpages) ── */
   .logo-cnt img { height: 80px !important; }

@@ -5,6 +5,8 @@
     "nav": {
       "home": "Home",
       "shop": "Shop",
+      "media": "Media",
+      "trips": "Trips",
       "volunteer": "Volunteer",
       "contact": "Contact",
       "getInvolved": "GET INVOLVED"
@@ -45,6 +47,8 @@
     "nav": {
       "home": "الرئيسية",
       "shop": "المتجر",
+      "media": "الإعلام",
+      "trips": "الرحلات",
       "volunteer": "تطوع",
       "contact": "اتصل بنا",
       "getInvolved": "شارك معنا"
@@ -85,6 +89,8 @@
     "nav": {
       "home": "דף הבית",
       "shop": "חנות",
+      "media": "מדיה",
+      "trips": "טיולים",
       "volunteer": "התנדבות",
       "contact": "צור קשר",
       "getInvolved": "הצטרף אלינו"
@@ -125,6 +131,8 @@
     "nav": {
       "home": "Inicio",
       "shop": "Tienda",
+      "media": "Medios",
+      "trips": "Viajes",
       "volunteer": "Voluntariado",
       "contact": "Contacto",
       "getInvolved": "PARTICIPA"
@@ -165,6 +173,8 @@
     "nav": {
       "home": "Home",
       "shop": "Negozio",
+      "media": "Media",
+      "trips": "Viaggi",
       "volunteer": "Volontariato",
       "contact": "Contatti",
       "getInvolved": "PARTECIPA"
@@ -205,6 +215,8 @@
     "nav": {
       "home": "Home",
       "shop": "Winkel",
+      "media": "Media",
+      "trips": "Reizen",
       "volunteer": "Vrijwilligerswerk",
       "contact": "Contact",
       "getInvolved": "DOE MEE"

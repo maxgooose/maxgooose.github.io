@@ -171,6 +171,8 @@ function translateCommon($, lang) {
   const navTexts = {
     'Home': t.nav.home,
     'Shop': t.nav.shop,
+    'Media': t.nav.media,
+    'Trips': t.nav.trips,
     'Volunteer': t.nav.volunteer,
     'Contact': t.nav.contact,
     'GET INVOLVED': t.nav.getInvolved,

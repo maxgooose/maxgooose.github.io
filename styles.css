@@ -6249,3 +6249,25 @@ a.footer-link {
 .footer-nl__msg--success  { color: #4ade80; }
 .footer-nl__msg--duplicate { color: var(--color-gold); }
 .footer-nl__msg--error    { color: #f87171; }
+
+/* Team member email link (team.html) */
+.team-member__email {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 5px;
+    font-size: 11px;
+    color: #666;
+    text-decoration: none;
+    word-break: break-all;
+    transition: color 0.2s;
+}
+.team-member__email:hover { color: #C9A962; }
+.team-member__email svg {
+    width: 12px;
+    height: 12px;
+    stroke: #C9A962;
+    fill: none;
+    stroke-width: 2;
+    flex-shrink: 0;
+}

@@ -33,7 +33,32 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Newsletter (section 07)
     initNewsletter();
+
+    // Promo video — defer the ~9MB download until the section nears the viewport
+    initLazyVideo();
 });
+
+/**
+ * Promo video (section 05) — with preload="none" the browser fetches nothing
+ * until we call play() as the video scrolls near the viewport.
+ */
+function initLazyVideo() {
+    var video = document.querySelector('.video-embed video');
+    if (!video) return;
+    if (!('IntersectionObserver' in window)) {
+        if (video.play) video.play().catch(function () {});
+        return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+                video.play().catch(function () {});
+                io.disconnect();
+            }
+        });
+    }, { rootMargin: '300px 0px' });
+    io.observe(video);
+}
 
 /**
  * Simple scroll-based fade-in animations

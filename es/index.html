@@ -224,6 +224,14 @@
   
   
 
+  
+  
+  
+  
+  
+  
+  
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>La Fundación Mosaico Sirio</title>
   <meta name="description" content="La Fundación Mosaico Sirio ha liderado la preservación cultural, el desarrollo comunitario y la construcción de unidad en Siria durante más de 8 años. Sobre el terreno. Generando impacto.">
@@ -235,6 +243,9 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link rel="preconnect" href="https://cdn.prod.website-files.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://d3e54v103j8qbb.cloudfront.net" crossorigin="">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
 
   <!-- Styles -->
@@ -286,6 +297,8 @@
 
   
 
+  
+
   <link rel="canonical" href="https://www.syrianmosaicfoundation.org/es/index.html">
 <script src="../i18n.js"></script>
 </head>
@@ -298,7 +311,7 @@
   <div class="smf-hero">
     <picture class="smf-hero__bg">
       <source media="(max-width: 767px)" srcset="../assets/images/trip-hero-mobile.jpg">
-      <img src="../assets/images/trip-hero-mobile.jpg" alt="Syria heritage landscape" loading="eager">
+      <img src="../assets/images/trip-hero-mobile.jpg" alt="Syria heritage landscape" loading="eager" fetchpriority="high">
     </picture>
     <div class="smf-hero__overlay"></div>
     <div class="smf-hero__content">
@@ -349,7 +362,7 @@
         <div role="listitem" class="swiper-slide is-slider-main">
           <a href="/es/team.html" class="slider-main_link w-inline-block">
             <div class="slider-main_img-height">
-              <img alt="El fundador Joe Jajati con un ministro sirio" src="../assets/images/founder-with-minister-2.JPG" loading="lazy" class="slider-main_img">
+              <img alt="El fundador Joe Jajati con un ministro sirio" src="../assets/images/founder-with-minister-2.JPG" loading="lazy" decoding="async" width="4672" height="7008" class="slider-main_img">
             </div>
             <div class="slider-main_text-wrapper">
               <h2 class="slider-main_title">Construyendo puentes</h2>
@@ -360,7 +373,7 @@
         <div role="listitem" class="swiper-slide is-slider-main">
           <a href="/es/team.html" class="slider-main_link w-inline-block">
             <div class="slider-main_img-height">
-              <img alt="Empoderamiento comunitario" src="../assets/images/religious-group-picture.JPG" loading="lazy" class="slider-main_img">
+              <img alt="Empoderamiento comunitario" src="../assets/images/religious-group-picture.JPG" loading="lazy" decoding="async" width="7008" height="4672" class="slider-main_img">
             </div>
             <div class="slider-main_text-wrapper">
               <h2 class="slider-main_title">Empoderamiento comunitario</h2>
@@ -742,7 +755,7 @@
     </div>
     <div class="div-block-4">
       <div class="video-embed w-embed">
-        <video autoplay="" muted="" loop="" playsinline="" style="width: 100%; border-radius: 0.5em; display: block;">
+        <video muted="" loop="" playsinline="" preload="none" poster="/assets/images/syria-promo-poster.jpg" style="width: 100%; border-radius: 0.5em; display: block;">
           <source src="../assets/videos/syria-promo.mp4" type="video/mp4">
         </video>
       </div>
@@ -849,6 +862,7 @@
   </form>
   <p class="footer-nl__msg" id="footer-nl-msg" aria-live="polite" hidden=""></p>
 </div>
+
 
 
 

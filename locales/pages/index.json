@@ -73,7 +73,8 @@
     "mosaicSubscribe": "Subscribe",
     "mosaicSuccess": "You're in! Welcome to the mosaic.",
     "mosaicDuplicate": "You're already part of the mosaic!",
-    "mosaicError": "Something went wrong. Please try again."
+    "mosaicError": "Something went wrong. Please try again.",
+    "heroGetInvolved": "Get Involved"
   },
   "ar": {
     "pageTitle": "مؤسسة الموزاييك السورية",
@@ -149,7 +150,8 @@
     "mosaicSubscribe": "اشترك",
     "mosaicSuccess": "أهلاً بك! مرحبًا في الفسيفساء.",
     "mosaicDuplicate": "أنت بالفعل جزء من الفسيفساء!",
-    "mosaicError": "حدث خطأ. يرجى المحاولة مرة أخرى."
+    "mosaicError": "حدث خطأ. يرجى المحاولة مرة أخرى.",
+    "heroGetInvolved": "شارك معنا"
   },
   "he": {
     "pageTitle": "קרן המוזאיק הסורי",
@@ -225,7 +227,8 @@
     "mosaicSubscribe": "הרשמה",
     "mosaicSuccess": "!אתם בפנים! ברוכים הבאים לפסיפס",
     "mosaicDuplicate": "!אתם כבר חלק מהפסיפס",
-    "mosaicError": ".משהו השתבש. אנא נסו שוב"
+    "mosaicError": ".משהו השתבש. אנא נסו שוב",
+    "heroGetInvolved": "הצטרף אלינו"
   },
   "es": {
     "pageTitle": "La Fundación Mosaico Sirio",
@@ -301,7 +304,8 @@
     "mosaicSubscribe": "Suscribirse",
     "mosaicSuccess": "¡Estás dentro! Bienvenido al mosaico.",
     "mosaicDuplicate": "¡Ya eres parte del mosaico!",
-    "mosaicError": "Algo salió mal. Por favor, inténtalo de nuevo."
+    "mosaicError": "Algo salió mal. Por favor, inténtalo de nuevo.",
+    "heroGetInvolved": "Participa"
   },
   "it": {
     "pageTitle": "La Fondazione Mosaico Siriano",
@@ -377,7 +381,8 @@
     "mosaicSubscribe": "Iscriviti",
     "mosaicSuccess": "Ci sei! Benvenuto nel mosaico.",
     "mosaicDuplicate": "Fai già parte del mosaico!",
-    "mosaicError": "Qualcosa è andato storto. Riprova."
+    "mosaicError": "Qualcosa è andato storto. Riprova.",
+    "heroGetInvolved": "Partecipa"
   },
   "nl": {
     "pageTitle": "De Syrian Mosaic Foundation",
@@ -453,6 +458,7 @@
     "mosaicSubscribe": "Abonneren",
     "mosaicSuccess": "U bent erbij! Welkom bij het mozaïek.",
     "mosaicDuplicate": "U maakt al deel uit van het mozaïek!",
-    "mosaicError": "Er ging iets mis. Probeer het opnieuw."
+    "mosaicError": "Er ging iets mis. Probeer het opnieuw.",
+    "heroGetInvolved": "Doe mee"
   }
 }

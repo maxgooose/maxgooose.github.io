@@ -216,11 +216,19 @@
   
   
 
+  
+  
+  
+  
+  
+  
+  
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <meta property="og:title" content="Volunteer | Syrian Mosaic Foundation">
     <meta property="og:description" content="Join us in preserving Syria's cultural heritage. Volunteer with the Syrian Mosaic Foundation.">
-    <meta property="og:image" content="assets/images/smf-logo.png">
+    <meta property="og:image" content="https://www.syrianmosaicfoundation.org/assets/images/smf-logo.png">
     <meta property="og:type" content="website">
 
     <title>Volunteer | Syrian Mosaic Foundation</title>
@@ -605,6 +613,8 @@
 
   
 
+  
+
   <link rel="canonical" href="https://www.syrianmosaicfoundation.org/volunteer.html">
 <script src="i18n.js"></script>
 </head>
@@ -820,12 +830,13 @@
             </div>
 
             <div class="submit-section">
-                <button type="submit" class="submit-btn" id="submitBtn">Submit Application</button>
+                <button type="submit" class="submit-btn" id="submitBtn" data-wait="Submitting...">Submit Application</button>
             </div>
 
         </form>
 
         
+
 
 
 
@@ -874,7 +885,7 @@
         // Loading state
         document.getElementById('volunteerForm').addEventListener('submit', function() {
             const btn = document.getElementById('submitBtn');
-            btn.innerText = 'Submitting...';
+            btn.innerText = btn.getAttribute('data-wait') || 'Submitting...';
             btn.style.opacity = '0.7';
             btn.disabled = true;
         });

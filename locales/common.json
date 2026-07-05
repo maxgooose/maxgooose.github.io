@@ -28,6 +28,7 @@
       "follow": "Follow",
       "bookTrip": "Book a Trip",
       "emailUs": "Email Us",
+      "getInvolved": "Get Involved",
       "copyright": "© 2026 Syrian Mosaic Foundation. All rights reserved.",
       "location": "Damascus, Syria & New York, USA"
     },
@@ -70,6 +71,7 @@
       "follow": "تابعنا",
       "bookTrip": "احجز رحلة",
       "emailUs": "راسلنا",
+      "getInvolved": "شارك معنا",
       "copyright": "© 2026 مؤسسة الموزاييك السورية. جميع الحقوق محفوظة.",
       "location": "دمشق، سوريا ونيويورك، الولايات المتحدة"
     },
@@ -112,6 +114,7 @@
       "follow": "עקוב",
       "bookTrip": "הזמן טיול",
       "emailUs": "שלח דוא\"ל",
+      "getInvolved": "הצטרף אלינו",
       "copyright": "© 2026 קרן המוזאיק הסורית. כל הזכויות שמורות.",
       "location": "דמשק, סוריה וניו יורק, ארה\"ב"
     },
@@ -154,6 +157,7 @@
       "follow": "Síguenos",
       "bookTrip": "Reservar un viaje",
       "emailUs": "Escríbenos",
+      "getInvolved": "Participa",
       "copyright": "© 2026 Fundación Mosaico Sirio. Todos los derechos reservados.",
       "location": "Damasco, Siria y Nueva York, EE.UU."
     },
@@ -196,6 +200,7 @@
       "follow": "Seguici",
       "bookTrip": "Prenota un viaggio",
       "emailUs": "Scrivici",
+      "getInvolved": "Partecipa",
       "copyright": "© 2026 Fondazione Mosaico Siriano. Tutti i diritti riservati.",
       "location": "Damasco, Siria e New York, USA"
     },
@@ -238,6 +243,7 @@
       "follow": "Volg ons",
       "bookTrip": "Boek een reis",
       "emailUs": "E-mail ons",
+      "getInvolved": "Doe mee",
       "copyright": "© 2026 Syrian Mosaic Foundation. Alle rechten voorbehouden.",
       "location": "Damascus, Syrië en New York, VS"
     },

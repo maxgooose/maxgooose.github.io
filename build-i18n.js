@@ -100,10 +100,18 @@ function rewriteLinks($, locale) {
     // Skip asset links (images, css, js)
     if (href.startsWith('assets/') || href.startsWith('styles.css') || href.endsWith('.js') ||
         href.endsWith('.css') || href.endsWith('.json')) return;
-    // For internal HTML pages, prepend locale
-    if (INTERNAL_PAGES.has(href)) {
-      if (locale === 'en') return; // English stays at root
-      $(this).attr('href', `/${locale}/${href}`);
+    if (locale === 'en') return; // English stays at root
+    // Split off any #fragment/?query so the page name matches cleanly
+    const m = href.match(/^([^#?]+)([#?].*)?$/);
+    const base = m ? m[1] : href;
+    const suffix = (m && m[2]) || '';
+    if (!base.endsWith('.html')) return;
+    if (INTERNAL_PAGES.has(base)) {
+      // Localized page — prepend locale
+      $(this).attr('href', `/${locale}/${base}${suffix}`);
+    } else {
+      // Page exists only at the root (e.g. media.html) — point at the root copy
+      $(this).attr('href', `/${base}${suffix}`);
     }
   });
 }
@@ -129,20 +137,24 @@ function fixAssetPaths($, locale) {
     $(this).attr('href', `../${href}`);
   });
 
+  // Rewrite url(...) refs in CSS text — skips absolute/CDN/data/#fragment refs
+  const CSS_URL_RE = /url\((['"]?)(?!https?:\/\/|\/\/|\/|data:|#)([^'")]+)\1\)/g;
+  const fixCssUrls = (css) => css.replace(CSS_URL_RE, 'url($1../$2$1)');
+
   // Fix background-image in inline styles
   $('[style]').each(function () {
     const style = $(this).attr('style');
     if (!style || !style.includes('url(')) return;
-    const fixed = style.replace(/url\(['"]?(?!https?:\/\/|\/\/|\/|data:)([^'")]+)['"]?\)/g, "url('../$1')");
-    $(this).attr('style', fixed);
+    $(this).attr('style', fixCssUrls(style));
   });
 
-  // Fix video source tags
-  $('source[src]').each(function () {
-    const src = $(this).attr('src');
-    if (!src) return;
-    if (src.startsWith('http') || src.startsWith('//') || src.startsWith('/') || src.startsWith('data:')) return;
-    $(this).attr('src', `../${src}`);
+  // Fix background-image and other url(...) refs inside <style> blocks
+  $('style').each(function () {
+    for (const child of this.children || []) {
+      if (child.type === 'text' && child.data && child.data.includes('url(')) {
+        child.data = fixCssUrls(child.data);
+      }
+    }
   });
 
   // Fix source srcset attributes (e.g. <picture> responsive images)
@@ -153,13 +165,8 @@ function fixAssetPaths($, locale) {
     $(this).attr('srcset', `../${srcset}`);
   });
 
-  // Fix script src attributes for local scripts
-  $('script[src]').each(function () {
-    const src = $(this).attr('src');
-    if (!src) return;
-    if (src.startsWith('http') || src.startsWith('//') || src.startsWith('/') || src.startsWith('data:')) return;
-    $(this).attr('src', `../${src}`);
-  });
+  // NOTE: <script src> and <source src> are already covered by the generic [src]
+  // pass above — do not add dedicated passes for them (it double-prefixes ../).
 }
 
 /** Apply text translations to common elements (nav, footer, contact overlay) */
@@ -223,6 +230,7 @@ function translateCommon($, lang) {
       else if (text === 'Volunteer') $(this).text(t.nav.volunteer);
       else if (text === 'Book a Trip') $(this).text(t.footer.bookTrip);
       else if (text === 'Email Us') $(this).text(t.footer.emailUs);
+      else if (text === 'Get Involved') $(this).text(t.footer.getInvolved);
     });
     footer.find('.travels-footer__copy').each(function () {
       const text = $(this).text().trim();
@@ -792,6 +800,13 @@ function generateSitemap() {
       xml += '  </url>\n';
     }
   }
+
+  // media.html exists only in English (no locale versions)
+  xml += '  <url>\n';
+  xml += `    <loc>${SITE_URL}/media.html</loc>\n`;
+  xml += `    <xhtml:link rel="alternate" hreflang="en" href="${SITE_URL}/media.html"/>\n`;
+  xml += `    <xhtml:link rel="alternate" hreflang="x-default" href="${SITE_URL}/media.html"/>\n`;
+  xml += '  </url>\n';
 
   xml += '</urlset>\n';
   fs.writeFileSync(path.join(ROOT, 'sitemap.xml'), xml, 'utf8');

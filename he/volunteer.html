@@ -216,11 +216,19 @@
   
   
 
+  
+  
+  
+  
+  
+  
+  
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <meta property="og:title" content="התנדבות | קרן המוזאיק הסורית">
     <meta property="og:description" content="Join us in preserving Syria's cultural heritage. Volunteer with the Syrian Mosaic Foundation.">
-    <meta property="og:image" content="assets/images/smf-logo.png">
+    <meta property="og:image" content="https://www.syrianmosaicfoundation.org/assets/images/smf-logo.png">
     <meta property="og:type" content="website">
 
     <title>התנדבות | קרן המוזאיק הסורית</title>
@@ -277,7 +285,7 @@
 
         /* --- Hero --- */
         .hero { 
-            background: linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.85) 100%), url('assets/images/heritage-restoration.jpg') center center / cover no-repeat scroll;
+            background: linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.85) 100%), url('../assets/images/heritage-restoration.jpg') center center / cover no-repeat scroll;
             padding: 40px 24px 50px; 
             text-align: center;
             color: white;
@@ -605,6 +613,8 @@
 
   
 
+  
+
   <link rel="canonical" href="https://www.syrianmosaicfoundation.org/he/volunteer.html">
 <script src="../i18n.js"></script>
 </head>
@@ -820,12 +830,13 @@
             </div>
 
             <div class="submit-section">
-                <button type="submit" class="submit-btn" id="submitBtn">שליחת בקשה</button>
+                <button type="submit" class="submit-btn" id="submitBtn" data-wait="שולח...">שליחת בקשה</button>
             </div>
 
         </form>
 
         
+
 
 
 
@@ -874,7 +885,7 @@
         // Loading state
         document.getElementById('volunteerForm').addEventListener('submit', function() {
             const btn = document.getElementById('submitBtn');
-            btn.innerText = 'Submitting...';
+            btn.innerText = btn.getAttribute('data-wait') || 'Submitting...';
             btn.style.opacity = '0.7';
             btn.disabled = true;
         });

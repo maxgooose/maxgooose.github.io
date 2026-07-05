@@ -601,4 +601,9 @@
     <xhtml:link rel="alternate" hreflang="nl" href="https://www.syrianmosaicfoundation.org/nl/artifact-recovery.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.syrianmosaicfoundation.org/artifact-recovery.html"/>
   </url>
+  <url>
+    <loc>https://www.syrianmosaicfoundation.org/media.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.syrianmosaicfoundation.org/media.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.syrianmosaicfoundation.org/media.html"/>
+  </url>
 </urlset>

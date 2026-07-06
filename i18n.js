@@ -16,7 +16,7 @@
   // Pages not listed here (e.g. media.html) are English-only and must never redirect.
   var LOCALIZED_PAGES = ['index.html', 'booking-form.html', 'volunteer.html',
     'trip-registration.html', 'tourist-registration.html', 'delegation-registration.html',
-    'team.html', 'shop.html', 'impact.html', 'artifact-recovery.html'];
+    'team.html', 'shop.html', 'impact.html', 'artifact-recovery.html', 'news.html'];
   var STORAGE_KEY = 'smf_lang_pref';
   var REDIRECTED_KEY = 'smf_lang_redirected';
 

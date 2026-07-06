@@ -31,6 +31,7 @@ const PAGES = [
   'shop.html',
   'impact.html',
   'artifact-recovery.html',
+  'news.html',
 ];
 
 const SITE_URL = 'https://www.syrianmosaicfoundation.org';
@@ -177,6 +178,7 @@ function translateCommon($, lang) {
   // Nav link text
   const navTexts = {
     'Home': t.nav.home,
+    'News': t.nav.news,
     'Shop': t.nav.shop,
     'Media': t.nav.media,
     'Trips': t.nav.trips,
@@ -272,20 +274,20 @@ const HTML_REPLACEMENTS = {
       nl: 'Het erfgoed van Syrië bewaren.<br>De toekomst bouwen.',
     },
     '.smf-hero__subtitle': {
-      en: '8+ years on the ground\u2002·\u2002Cultural preservation\u2002·\u2002Community development',
-      ar: 'أكثر من 8 سنوات على أرض الواقع\u2002·\u2002الحفاظ على التراث الثقافي\u2002·\u2002التنمية المجتمعية',
-      he: 'יותר מ-8 שנים בשטח\u2002·\u2002שימור תרבותי\u2002·\u2002פיתוח קהילתי',
-      es: 'Más de 8 años en el terreno\u2002·\u2002Preservación cultural\u2002·\u2002Desarrollo comunitario',
-      it: 'Oltre 8 anni sul campo\u2002·\u2002Conservazione culturale\u2002·\u2002Sviluppo comunitario',
-      nl: 'Meer dan 8 jaar ter plaatse\u2002·\u2002Cultureel behoud\u2002·\u2002Gemeenschapsontwikkeling',
+      en: 'On the ground in Syria\u2002·\u2002Cultural preservation\u2002·\u2002Community development',
+      ar: 'على أرض الواقع في سوريا\u2002·\u2002الحفاظ على التراث الثقافي\u2002·\u2002التنمية المجتمعية',
+      he: 'בשטח בסוריה\u2002·\u2002שימור תרבותי\u2002·\u2002פיתוח קהילתי',
+      es: 'Sobre el terreno en Siria\u2002·\u2002Preservación cultural\u2002·\u2002Desarrollo comunitario',
+      it: 'Sul campo in Siria\u2002·\u2002Conservazione culturale\u2002·\u2002Sviluppo comunitario',
+      nl: 'Ter plaatse in Syrië\u2002·\u2002Cultureel behoud\u2002·\u2002Gemeenschapsontwikkeling',
     },
     '.about-editorial__headline': {
-      en: 'Eight Years on the Ground in <em>Syria</em>',
-      ar: 'ثماني سنوات على أرض الواقع في <em>سوريا</em>',
-      he: 'שמונה שנים בשטח ב<em>סוריה</em>',
-      es: 'Ocho años sobre el terreno en <em>Siria</em>',
-      it: 'Otto anni sul campo in <em>Siria</em>',
-      nl: 'Acht jaar ter plaatse in <em>Syrië</em>',
+      en: 'On the Ground in <em>Syria</em>',
+      ar: 'على أرض الواقع في <em>سوريا</em>',
+      he: 'בשטח ב<em>סוריה</em>',
+      es: 'Sobre el terreno en <em>Siria</em>',
+      it: 'Sul campo in <em>Siria</em>',
+      nl: 'Ter plaatse in <em>Syrië</em>',
     },
     // Section numbers with <br>
     '.slider-main_top-wrapper .sec-numb > div': {
@@ -316,8 +318,8 @@ const HTML_REPLACEMENTS = {
     // Our Partners description with spans + strong
     '.desti-cards-cnt .home-heading': {
       en: 'Our impact in <span class="green-highlight">Syria</span> is built on deep, trusted relationships\u2014with artisans, institutions, community leaders, and government officials who share our commitment to cultural renewal. At <strong>Syrian Mosaic Foundation</strong>, these partnerships are the foundation of every initiative we lead.',
-      ar: 'تأثيرنا في <span class="green-highlight">سوريا</span> مبني على علاقات عميقة وموثوقة\u2014مع الحرفيين والمؤسسات وقادة المجتمع والمسؤولين الحكوميين الذين يشاركوننا التزامنا بالتجديد الثقافي. في <strong>مؤسسة الفسيفساء السورية</strong>، هذه الشراكات هي أساس كل مبادرة نقودها.',
-      he: 'ההשפעה שלנו ב<span class="green-highlight">סוריה</span> בנויה על יחסים עמוקים ומהימנים\u2014עם אומנים, מוסדות, מנהיגים קהילתיים ופקידי ממשל החולקים את מחויבותנו לחידוש תרבותי. ב<strong>קרן הפסיפס הסורית</strong>, שותפויות אלה הן הבסיס לכל יוזמה שאנו מובילים.',
+      ar: 'تأثيرنا في <span class="green-highlight">سوريا</span> مبني على علاقات عميقة وموثوقة\u2014مع الحرفيين والمؤسسات وقادة المجتمع والمسؤولين الحكوميين الذين يشاركوننا التزامنا بالتجديد الثقافي. في <strong>مؤسسة الموزاييك السورية</strong>، هذه الشراكات هي أساس كل مبادرة نقودها.',
+      he: 'ההשפעה שלנו ב<span class="green-highlight">סוריה</span> בנויה על יחסים עמוקים ומהימנים\u2014עם אומנים, מוסדות, מנהיגים קהילתיים ופקידי ממשל החולקים את מחויבותנו לחידוש תרבותי. ב<strong>קרן המוזאיק הסורית</strong>, שותפויות אלה הן הבסיס לכל יוזמה שאנו מובילים.',
       es: 'Nuestro impacto en <span class="green-highlight">Siria</span> se basa en relaciones profundas y de confianza\u2014con artesanos, instituciones, líderes comunitarios y funcionarios gubernamentales que comparten nuestro compromiso con la renovación cultural. En la <strong>Fundación Mosaico Sirio</strong>, estas alianzas son la base de cada iniciativa que lideramos.',
       it: 'Il nostro impatto in <span class="green-highlight">Siria</span> è costruito su relazioni profonde e fidate\u2014con artigiani, istituzioni, leader comunitari e funzionari governativi che condividono il nostro impegno per il rinnovamento culturale. Alla <strong>Fondazione Mosaico Siriano</strong>, queste partnership sono il fondamento di ogni iniziativa che guidiamo.',
       nl: 'Onze impact in <span class="green-highlight">Syrië</span> is gebouwd op diepe, betrouwbare relaties\u2014met ambachtslieden, instellingen, gemeenschapsleiders en overheidsfunctionarissen die onze toewijding aan culturele vernieuwing delen. Bij de <strong>Syrian Mosaic Foundation</strong> vormen deze partnerschappen de basis van elk initiatief dat we leiden.',
@@ -398,6 +400,16 @@ const HTML_REPLACEMENTS = {
       es: 'Recuperación de artefactos robados en Damasco',
       it: 'Recupero di manufatti rubati a Damasco',
       nl: 'Herstel van gestolen artefacten in Damascus',
+    },
+  },
+  'news.html': {
+    '.hero-title': {
+      en: 'News &amp; Updates',
+      ar: 'الأخبار والمستجدات',
+      he: 'חדשות ועדכונים',
+      es: 'Noticias y actualizaciones',
+      it: 'Notizie e aggiornamenti',
+      nl: 'Nieuws &amp; updates',
     },
   },
 };

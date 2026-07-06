@@ -152,6 +152,22 @@ body {
     display: none;
 }
 
+/* Bottom-pill nav on small screens: tighter items so all labels fit */
+@media (max-width: 768px) {
+    .nav-header .nav-item-link {
+        padding: .5em .45em;
+    }
+    .nav-header .nav-item-link.is--first {
+        padding-left: .9em;
+    }
+    .nav-header .nav-item-link.is--button {
+        padding: .5em 1em;
+    }
+    .nav-header .nav-link-text {
+        font-size: .85rem;
+    }
+}
+
 body.has-fullscreen-hero {
     padding-top: 0;
 }
@@ -327,7 +343,9 @@ a:not(.nav-header a):hover {
 }
 
 @media (max-width: 768px) {
-    body {
+    /* Only pages with the fixed top header (volunteer + registration forms)
+       need body offset; all other pages start flush at the viewport top. */
+    body:has(.header) {
         padding-top: 70px;
     }
 

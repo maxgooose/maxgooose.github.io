@@ -4,6 +4,7 @@
     "dir": "ltr",
     "nav": {
       "home": "Home",
+      "news": "News",
       "shop": "Shop",
       "media": "Media",
       "trips": "Trips",
@@ -47,6 +48,7 @@
     "dir": "rtl",
     "nav": {
       "home": "الرئيسية",
+      "news": "الأخبار",
       "shop": "المتجر",
       "media": "الإعلام",
       "trips": "الرحلات",
@@ -90,6 +92,7 @@
     "dir": "rtl",
     "nav": {
       "home": "דף הבית",
+      "news": "חדשות",
       "shop": "חנות",
       "media": "מדיה",
       "trips": "טיולים",
@@ -133,6 +136,7 @@
     "dir": "ltr",
     "nav": {
       "home": "Inicio",
+      "news": "Noticias",
       "shop": "Tienda",
       "media": "Medios",
       "trips": "Viajes",
@@ -176,6 +180,7 @@
     "dir": "ltr",
     "nav": {
       "home": "Home",
+      "news": "Notizie",
       "shop": "Negozio",
       "media": "Media",
       "trips": "Viaggi",
@@ -219,6 +224,7 @@
     "dir": "ltr",
     "nav": {
       "home": "Home",
+      "news": "Nieuws",
       "shop": "Winkel",
       "media": "Media",
       "trips": "Reizen",

@@ -602,6 +602,66 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.syrianmosaicfoundation.org/artifact-recovery.html"/>
   </url>
   <url>
+    <loc>https://www.syrianmosaicfoundation.org/news.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.syrianmosaicfoundation.org/news.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.syrianmosaicfoundation.org/ar/news.html"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://www.syrianmosaicfoundation.org/he/news.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.syrianmosaicfoundation.org/es/news.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.syrianmosaicfoundation.org/it/news.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.syrianmosaicfoundation.org/nl/news.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.syrianmosaicfoundation.org/news.html"/>
+  </url>
+  <url>
+    <loc>https://www.syrianmosaicfoundation.org/ar/news.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.syrianmosaicfoundation.org/news.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.syrianmosaicfoundation.org/ar/news.html"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://www.syrianmosaicfoundation.org/he/news.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.syrianmosaicfoundation.org/es/news.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.syrianmosaicfoundation.org/it/news.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.syrianmosaicfoundation.org/nl/news.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.syrianmosaicfoundation.org/news.html"/>
+  </url>
+  <url>
+    <loc>https://www.syrianmosaicfoundation.org/he/news.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.syrianmosaicfoundation.org/news.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.syrianmosaicfoundation.org/ar/news.html"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://www.syrianmosaicfoundation.org/he/news.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.syrianmosaicfoundation.org/es/news.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.syrianmosaicfoundation.org/it/news.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.syrianmosaicfoundation.org/nl/news.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.syrianmosaicfoundation.org/news.html"/>
+  </url>
+  <url>
+    <loc>https://www.syrianmosaicfoundation.org/es/news.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.syrianmosaicfoundation.org/news.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.syrianmosaicfoundation.org/ar/news.html"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://www.syrianmosaicfoundation.org/he/news.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.syrianmosaicfoundation.org/es/news.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.syrianmosaicfoundation.org/it/news.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.syrianmosaicfoundation.org/nl/news.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.syrianmosaicfoundation.org/news.html"/>
+  </url>
+  <url>
+    <loc>https://www.syrianmosaicfoundation.org/it/news.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.syrianmosaicfoundation.org/news.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.syrianmosaicfoundation.org/ar/news.html"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://www.syrianmosaicfoundation.org/he/news.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.syrianmosaicfoundation.org/es/news.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.syrianmosaicfoundation.org/it/news.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.syrianmosaicfoundation.org/nl/news.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.syrianmosaicfoundation.org/news.html"/>
+  </url>
+  <url>
+    <loc>https://www.syrianmosaicfoundation.org/nl/news.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.syrianmosaicfoundation.org/news.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.syrianmosaicfoundation.org/ar/news.html"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://www.syrianmosaicfoundation.org/he/news.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.syrianmosaicfoundation.org/es/news.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.syrianmosaicfoundation.org/it/news.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.syrianmosaicfoundation.org/nl/news.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.syrianmosaicfoundation.org/news.html"/>
+  </url>
+  <url>
     <loc>https://www.syrianmosaicfoundation.org/media.html</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.syrianmosaicfoundation.org/media.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.syrianmosaicfoundation.org/media.html"/>

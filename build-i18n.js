@@ -37,7 +37,17 @@ const PAGES = [
   'recognition.html',
 ];
 
-const SITE_URL = 'https://www.syrianmosaicfoundation.org';
+const SITE_URL = 'https://syrianmosaicfoundation.org';
+
+// Facebook/OG locale codes per language
+const OG_LOCALES = { en: 'en_US', ar: 'ar_AR', he: 'he_IL', es: 'es_ES', it: 'it_IT', nl: 'nl_NL' };
+
+/** Canonical URL for a page+lang; index pages use the clean directory URL */
+function pageUrl(lang, pageName) {
+  const dir = lang === 'en' ? '' : `/${lang}`;
+  if (pageName === 'index.html') return `${SITE_URL}${dir}/`;
+  return `${SITE_URL}${dir}/${pageName}`;
+}
 
 // Internal pages whose href we rewrite in nav/footer links
 const INTERNAL_PAGES = new Set(PAGES.map(p => p));
@@ -82,13 +92,10 @@ function buildLanguageSelector(currentLang, currentPage) {
 function buildHreflangTags(pageName) {
   let tags = '';
   for (const lang of ALL_LANGS) {
-    const href = lang === 'en'
-      ? `${SITE_URL}/${pageName}`
-      : `${SITE_URL}/${lang}/${pageName}`;
-    tags += `  <link rel="alternate" hreflang="${lang}" href="${href}"/>\n`;
+    tags += `  <link rel="alternate" hreflang="${lang}" href="${pageUrl(lang, pageName)}"/>\n`;
   }
   // x-default points to English
-  tags += `  <link rel="alternate" hreflang="x-default" href="${SITE_URL}/${pageName}"/>\n`;
+  tags += `  <link rel="alternate" hreflang="x-default" href="${pageUrl('en', pageName)}"/>\n`;
   return tags;
 }
 
@@ -665,14 +672,29 @@ function injectHreflangTags($, pageName) {
 
 /** Inject canonical URL */
 function injectCanonical($, lang, pageName) {
-  const href = lang === 'en'
-    ? `${SITE_URL}/${pageName}`
-    : `${SITE_URL}/${lang}/${pageName}`;
+  const href = pageUrl(lang, pageName);
   const head = $('head');
   if (head.length) {
     // Remove existing canonical if any
     head.find('link[rel="canonical"]').remove();
     head.append(`  <link rel="canonical" href="${href}"/>\n`);
+  }
+}
+
+/** Inject og:url + og:locale; point Arabic pages at the Arabic share card */
+function injectOgMeta($, lang, pageName) {
+  const head = $('head');
+  if (!head.length) return;
+  head.find('meta[property="og:url"], meta[property="og:locale"]').remove();
+  head.append(`  <meta property="og:url" content="${pageUrl(lang, pageName)}"/>\n`);
+  head.append(`  <meta property="og:locale" content="${OG_LOCALES[lang] || 'en_US'}"/>\n`);
+  if (lang === 'ar') {
+    head.find('meta[property="og:image"], meta[name="twitter:image"]').each(function () {
+      const content = $(this).attr('content') || '';
+      if (content.includes('/assets/images/og/smf-og-card.jpg')) {
+        $(this).attr('content', content.replace('/og/smf-og-card.jpg', '/og/smf-og-card-ar.jpg'));
+      }
+    });
   }
 }
 
@@ -725,6 +747,7 @@ function build() {
       const $ = cheerio.load(sourceHtml, { decodeEntities: false });
       injectHreflangTags($, pageName);
       injectCanonical($, 'en', pageName);
+      injectOgMeta($, 'en', pageName);
       injectLanguageSelector($, 'en', pageName);
       injectI18nScript($, 'en');
       const output = $.html();
@@ -754,8 +777,9 @@ function build() {
       // 6. Inject hreflang tags
       injectHreflangTags($, pageName);
 
-      // 7. Inject canonical
+      // 7. Inject canonical + og:url/og:locale
       injectCanonical($, locale, pageName);
+      injectOgMeta($, locale, pageName);
 
       // 8. Inject language selector
       injectLanguageSelector($, locale, pageName);
@@ -787,21 +811,14 @@ function generateSitemap() {
 
   for (const page of PAGES) {
     for (const lang of ALL_LANGS) {
-      const loc = lang === 'en'
-        ? `${SITE_URL}/${page}`
-        : `${SITE_URL}/${lang}/${page}`;
-
       xml += '  <url>\n';
-      xml += `    <loc>${loc}</loc>\n`;
+      xml += `    <loc>${pageUrl(lang, page)}</loc>\n`;
 
       // Add xhtml:link alternates
       for (const altLang of ALL_LANGS) {
-        const altHref = altLang === 'en'
-          ? `${SITE_URL}/${page}`
-          : `${SITE_URL}/${altLang}/${page}`;
-        xml += `    <xhtml:link rel="alternate" hreflang="${altLang}" href="${altHref}"/>\n`;
+        xml += `    <xhtml:link rel="alternate" hreflang="${altLang}" href="${pageUrl(altLang, page)}"/>\n`;
       }
-      xml += `    <xhtml:link rel="alternate" hreflang="x-default" href="${SITE_URL}/${page}"/>\n`;
+      xml += `    <xhtml:link rel="alternate" hreflang="x-default" href="${pageUrl('en', page)}"/>\n`;
       xml += '  </url>\n';
     }
   }

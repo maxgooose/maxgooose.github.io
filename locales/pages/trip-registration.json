@@ -11,7 +11,8 @@
     "registerTourist": "Register as Tourist",
     "delegation": "Delegation",
     "delegationDesc": "For business leaders, diplomats, journalists, researchers, and official organizational visits.",
-    "registerDelegation": "Register as Delegation"
+    "registerDelegation": "Register as Delegation",
+    "pageDescription": "Register for a cultural trip to Syria with the Syrian Mosaic Foundation — guided journeys through Damascus, Aleppo, Palmyra, and beyond."
   },
   "ar": {
     "pageTitle": "تسجيل الرحلة | مؤسسة الموزاييك السورية",
@@ -25,7 +26,8 @@
     "registerTourist": "التسجيل كسائح",
     "delegation": "وفد",
     "delegationDesc": "لقادة الأعمال والدبلوماسيين والصحفيين والباحثين والزيارات التنظيمية الرسمية.",
-    "registerDelegation": "التسجيل كوفد"
+    "registerDelegation": "التسجيل كوفد",
+    "pageDescription": "سجّل في رحلة ثقافية إلى سوريا مع مؤسسة الموزاييك السورية — جولات مُرشدة عبر دمشق وحلب وتدمر وما بعدها."
   },
   "he": {
     "pageTitle": "הרשמה לטיול | קרן המוזאיק הסורית",
@@ -39,7 +41,8 @@
     "registerTourist": "הרשמה כתייר",
     "delegation": "משלחת",
     "delegationDesc": "למנהיגי עסקים, דיפלומטים, עיתונאים, חוקרים וביקורים רשמיים של ארגונים.",
-    "registerDelegation": "הרשמה כמשלחת"
+    "registerDelegation": "הרשמה כמשלחת",
+    "pageDescription": "הירשמו לטיול תרבות בסוריה עם קרן המוזאיק הסורי — מסעות מודרכים בדמשק, חלב, תדמור ומעבר להם."
   },
   "es": {
     "pageTitle": "Registro de Viaje | Fundación Mosaico Sirio",
@@ -53,7 +56,8 @@
     "registerTourist": "Registrarse como Turista",
     "delegation": "Delegación",
     "delegationDesc": "Para líderes empresariales, diplomáticos, periodistas, investigadores y visitas organizacionales oficiales.",
-    "registerDelegation": "Registrarse como Delegación"
+    "registerDelegation": "Registrarse como Delegación",
+    "pageDescription": "Inscríbete en un viaje cultural a Siria con la Fundación Mosaico Sirio: recorridos guiados por Damasco, Alepo, Palmira y más allá."
   },
   "it": {
     "pageTitle": "Registrazione Viaggio | Fondazione Mosaico Siriano",
@@ -67,7 +71,8 @@
     "registerTourist": "Registrati come Turista",
     "delegation": "Delegazione",
     "delegationDesc": "Per leader aziendali, diplomatici, giornalisti, ricercatori e visite organizzative ufficiali.",
-    "registerDelegation": "Registrati come Delegazione"
+    "registerDelegation": "Registrati come Delegazione",
+    "pageDescription": "Iscriviti a un viaggio culturale in Siria con la Fondazione Mosaico Siriano: itinerari guidati tra Damasco, Aleppo, Palmira e oltre."
   },
   "nl": {
     "pageTitle": "Reisregistratie | Syrische Mozaïek Stichting",
@@ -81,6 +86,7 @@
     "registerTourist": "Registreer als Toerist",
     "delegation": "Delegatie",
     "delegationDesc": "Voor bedrijfsleiders, diplomaten, journalisten, onderzoekers en officiële organisatiebezoeken.",
-    "registerDelegation": "Registreer als Delegatie"
+    "registerDelegation": "Registreer als Delegatie",
+    "pageDescription": "Schrijf je in voor een culturele reis naar Syrië met de Syrian Mosaic Foundation — begeleide reizen door Damascus, Aleppo, Palmyra en verder."
   }
 }

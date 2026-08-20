@@ -53,7 +53,8 @@
     "australia": "Australia",
     "france": "France",
     "germany": "Germany",
-    "syriaCountry": "Syria"
+    "syriaCountry": "Syria",
+    "pageDescription": "Register as a heritage tourist with the Syrian Mosaic Foundation and experience Syria's living history with trusted local partners."
   },
   "ar": {
     "pageTitle": "تسجيل رحلة التراث | مؤسسة الموزاييك السورية",
@@ -109,7 +110,8 @@
     "australia": "أستراليا",
     "france": "فرنسا",
     "germany": "ألمانيا",
-    "syriaCountry": "سوريا"
+    "syriaCountry": "سوريا",
+    "pageDescription": "سجّل كسائح تراثٍ مع مؤسسة الموزاييك السورية واختبر تاريخ سوريا الحيّ مع شركاء محليين موثوقين."
   },
   "he": {
     "pageTitle": "הרשמה לטיול מורשת | קרן המוזאיק הסורית",
@@ -165,7 +167,8 @@
     "australia": "אוסטרליה",
     "france": "צרפת",
     "germany": "גרמניה",
-    "syriaCountry": "סוריה"
+    "syriaCountry": "סוריה",
+    "pageDescription": "הירשמו כתיירי מורשת עם קרן המוזאיק הסורי וחוו את ההיסטוריה החיה של סוריה עם שותפים מקומיים אמינים."
   },
   "es": {
     "pageTitle": "Registro de Viaje de Patrimonio | Fundación Mosaico Sirio",
@@ -221,7 +224,8 @@
     "australia": "Australia",
     "france": "Francia",
     "germany": "Alemania",
-    "syriaCountry": "Siria"
+    "syriaCountry": "Siria",
+    "pageDescription": "Regístrate como turista de patrimonio con la Fundación Mosaico Sirio y vive la historia viva de Siria con socios locales de confianza."
   },
   "it": {
     "pageTitle": "Registrazione Viaggio del Patrimonio | Fondazione Mosaico Siriano",
@@ -277,7 +281,8 @@
     "australia": "Australia",
     "france": "Francia",
     "germany": "Germania",
-    "syriaCountry": "Siria"
+    "syriaCountry": "Siria",
+    "pageDescription": "Registrati come turista del patrimonio con la Fondazione Mosaico Siriano e vivi la storia viva della Siria con partner locali affidabili."
   },
   "nl": {
     "pageTitle": "Erfgoedreis Registratie | Syrische Mozaïek Stichting",
@@ -333,6 +338,7 @@
     "australia": "Australië",
     "france": "Frankrijk",
     "germany": "Duitsland",
-    "syriaCountry": "Syrië"
+    "syriaCountry": "Syrië",
+    "pageDescription": "Registreer als erfgoedtoerist bij de Syrian Mosaic Foundation en beleef de levende geschiedenis van Syrië met betrouwbare lokale partners."
   }
 }

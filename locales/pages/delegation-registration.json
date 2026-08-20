@@ -73,7 +73,8 @@
     "france": "France",
     "germany": "Germany",
     "syriaCountry": "Syria",
-    "israel": "Israel"
+    "israel": "Israel",
+    "pageDescription": "Register your delegation’s visit to Syria — coordinated by the Syrian Mosaic Foundation with institutions and partners on the ground."
   },
   "ar": {
     "pageTitle": "تسجيل الوفد | مؤسسة الموزاييك السورية",
@@ -149,7 +150,8 @@
     "france": "فرنسا",
     "germany": "ألمانيا",
     "syriaCountry": "سوريا",
-    "israel": "إسرائيل"
+    "israel": "إسرائيل",
+    "pageDescription": "سجّل زيارة وفدكم إلى سوريا — بتنسيق من مؤسسة الموزاييك السورية مع المؤسسات والشركاء على الأرض."
   },
   "he": {
     "pageTitle": "הרשמת משלחת | קרן המוזאיק הסורית",
@@ -225,7 +227,8 @@
     "france": "צרפת",
     "germany": "גרמניה",
     "syriaCountry": "סוריה",
-    "israel": "ישראל"
+    "israel": "ישראל",
+    "pageDescription": "רשמו את ביקור המשלחת שלכם בסוריה — בתיאום קרן המוזאיק הסורי עם מוסדות ושותפים בשטח."
   },
   "es": {
     "pageTitle": "Registro de Delegación | Fundación Mosaico Sirio",
@@ -301,7 +304,8 @@
     "france": "Francia",
     "germany": "Alemania",
     "syriaCountry": "Siria",
-    "israel": "Israel"
+    "israel": "Israel",
+    "pageDescription": "Registra la visita de tu delegación a Siria, coordinada por la Fundación Mosaico Sirio con instituciones y socios sobre el terreno."
   },
   "it": {
     "pageTitle": "Registrazione Delegazione | Fondazione Mosaico Siriano",
@@ -377,7 +381,8 @@
     "france": "Francia",
     "germany": "Germania",
     "syriaCountry": "Siria",
-    "israel": "Israele"
+    "israel": "Israele",
+    "pageDescription": "Registra la visita della tua delegazione in Siria, coordinata dalla Fondazione Mosaico Siriano con istituzioni e partner sul campo."
   },
   "nl": {
     "pageTitle": "Delegatieregistratie | Syrische Mozaïek Stichting",
@@ -453,6 +458,7 @@
     "france": "Frankrijk",
     "germany": "Duitsland",
     "syriaCountry": "Syrië",
-    "israel": "Israël"
+    "israel": "Israël",
+    "pageDescription": "Registreer het bezoek van uw delegatie aan Syrië — gecoördineerd door de Syrian Mosaic Foundation met instellingen en partners ter plaatse."
   }
 }

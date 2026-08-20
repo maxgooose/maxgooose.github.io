@@ -75,7 +75,8 @@
     "howHeardPlaceholder": "e.g. Instagram, friend, news article",
     "selectDefault": "Select",
     "howItWorksFullDesc": "Fill out the form below and our team will review your application. We'll reach out to discuss opportunities that match your skills and availability. Volunteers may serve remotely or on-site in Syria depending on the role.",
-    "submitting": "Submitting..."
+    "submitting": "Submitting...",
+    "pageDescription": "Volunteer with the Syrian Mosaic Foundation — join heritage restoration, community programs, and cultural initiatives on the ground in Syria."
   },
   "ar": {
     "pageTitle": "التطوع | مؤسسة الموزاييك السورية",
@@ -153,7 +154,8 @@
     "howHeardPlaceholder": "مثال: إنستغرام، صديق، مقال إخباري",
     "selectDefault": "اختر",
     "howItWorksFullDesc": "املأ النموذج أدناه وسيراجع فريقنا طلبك. سنتواصل معك لمناقشة الفرص التي تتناسب مع مهاراتك وتوفرك. قد يخدم المتطوعون عن بُعد أو في الموقع في سوريا حسب الدور.",
-    "submitting": "جارٍ الإرسال..."
+    "submitting": "جارٍ الإرسال...",
+    "pageDescription": "تطوّع مع مؤسسة الموزاييك السورية — شارك في ترميم التراث والبرامج المجتمعية والمبادرات الثقافية على الأرض في سوريا."
   },
   "he": {
     "pageTitle": "התנדבות | קרן המוזאיק הסורית",
@@ -231,7 +233,8 @@
     "howHeardPlaceholder": "לדוגמה: אינסטגרם, חבר, כתבה",
     "selectDefault": "בחרו",
     "howItWorksFullDesc": "מלאו את הטופס למטה והצוות שלנו יבדוק את הבקשה שלכם. ניצור קשר לדון בהזדמנויות המתאימות לכישוריכם ולזמינות שלכם. מתנדבים יכולים לשרת מרחוק או בשטח בסוריה בהתאם לתפקיד.",
-    "submitting": "שולח..."
+    "submitting": "שולח...",
+    "pageDescription": "התנדבו עם קרן המוזאיק הסורי — הצטרפו לשימור מורשת, תוכניות קהילתיות ויוזמות תרבות בשטח בסוריה."
   },
   "es": {
     "pageTitle": "Voluntariado | Fundación Mosaico Sirio",
@@ -309,7 +312,8 @@
     "howHeardPlaceholder": "Ej. Instagram, amigo, artículo de noticias",
     "selectDefault": "Seleccionar",
     "howItWorksFullDesc": "Completa el formulario a continuación y nuestro equipo revisará tu solicitud. Nos comunicaremos para discutir oportunidades que coincidan con tus habilidades y disponibilidad. Los voluntarios pueden servir de forma remota o presencial en Siria según el rol.",
-    "submitting": "Enviando..."
+    "submitting": "Enviando...",
+    "pageDescription": "Sé voluntario con la Fundación Mosaico Sirio: únete a la restauración del patrimonio, programas comunitarios e iniciativas culturales sobre el terreno en Siria."
   },
   "it": {
     "pageTitle": "Volontariato | Fondazione Mosaico Siriano",
@@ -387,7 +391,8 @@
     "howHeardPlaceholder": "Es. Instagram, amico, articolo di giornale",
     "selectDefault": "Seleziona",
     "howItWorksFullDesc": "Compila il modulo qui sotto e il nostro team esaminerà la tua candidatura. Ti contatteremo per discutere le opportunità che corrispondono alle tue competenze e disponibilità. I volontari possono prestare servizio da remoto o in loco in Siria a seconda del ruolo.",
-    "submitting": "Invio in corso..."
+    "submitting": "Invio in corso...",
+    "pageDescription": "Fai volontariato con la Fondazione Mosaico Siriano: partecipa al restauro del patrimonio, ai programmi comunitari e alle iniziative culturali sul campo in Siria."
   },
   "nl": {
     "pageTitle": "Vrijwilliger | Syrische Mozaïek Stichting",
@@ -465,6 +470,7 @@
     "howHeardPlaceholder": "Bijv. Instagram, vriend, nieuwsartikel",
     "selectDefault": "Selecteer",
     "howItWorksFullDesc": "Vul het onderstaande formulier in en ons team beoordeelt je aanmelding. We nemen contact op om mogelijkheden te bespreken die passen bij je vaardigheden en beschikbaarheid. Vrijwilligers kunnen op afstand of op locatie in Syrië dienen, afhankelijk van de rol.",
-    "submitting": "Verzenden..."
+    "submitting": "Verzenden...",
+    "pageDescription": "Word vrijwilliger bij de Syrian Mosaic Foundation — help mee met erfgoedrestauratie, gemeenschapsprogramma's en culturele initiatieven in Syrië."
   }
 }

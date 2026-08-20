@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.syrianmosaicfoundation.org/sitemap.xml
+Sitemap: https://syrianmosaicfoundation.org/sitemap.xml

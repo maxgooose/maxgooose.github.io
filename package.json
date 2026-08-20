@@ -1,7 +1,7 @@
 {
   "name": "maxgooose.github.io-1",
   "version": "1.0.0",
-  "description": "H.H © 2025 The Syrian Mosaic Foundation. All Rights Reserved.",
+  "description": "H.H © 2026 The Syrian Mosaic Foundation. All Rights Reserved.",
   "main": "animations.js",
   "scripts": {
     "build:i18n": "node build-i18n.js",

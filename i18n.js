@@ -180,3 +180,21 @@
     initSelector();
   }
 })();
+
+// Keep the footer copyright year current in every language
+(function () {
+  function updateYear() {
+    var y = String(new Date().getFullYear());
+    var els = document.querySelectorAll('.travels-footer__copy, .treg-footer__copy, .simple-footer__copy, footer p');
+    for (var i = 0; i < els.length; i++) {
+      if (/©\s*20\d{2}/.test(els[i].textContent)) {
+        els[i].innerHTML = els[i].innerHTML.replace(/(©\s*)20\d{2}/, '$1' + y);
+      }
+    }
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateYear);
+  } else {
+    updateYear();
+  }
+})();

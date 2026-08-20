@@ -288,6 +288,14 @@
   
   
 
+  
+  
+  
+  
+  
+  
+  
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <meta property="og:title" content="Vrijwilliger | Syrische Mozaïek Stichting">
@@ -298,18 +306,19 @@
     <title>Vrijwilliger | Syrische Mozaïek Stichting</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
     <style>
         :root {
             --color-primary: #111111;
             --color-secondary: #6B7280;
-            --color-border: #E5E7EB;
-            --color-bg-page: #F9FAFB;
+            --color-border: #e5e5e5;
+            --color-bg-page: #faf8f4;
             --color-bg-card: #FFFFFF;
-            --color-accent: #C9A962; 
-            --radius-input: 12px;
+            --color-accent: #C9A962;
+            --radius-input: 8px;
             --radius-card: 16px;
             --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-display: 'Playfair Display', Georgia, serif;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -348,9 +357,9 @@
         .back-link svg { width: 16px; height: 16px; }
 
         /* --- Hero --- */
-        .hero { 
-            background: linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.85) 100%), url('../assets/images/heritage-restoration.jpg') center center / cover no-repeat scroll;
-            padding: 40px 24px 50px; 
+        .hero {
+            background: #111;
+            padding: 40px 24px 50px;
             text-align: center;
             color: white;
             position: relative;
@@ -383,18 +392,14 @@
 
         .hero-badge {
             display: inline-block;
-            background: rgba(201, 169, 98, 0.2);
-            color: #EBCB8B;
-            border: 1px solid rgba(201, 169, 98, 0.4);
+            color: var(--color-accent);
             font-size: 11px;
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            padding: 6px 12px;
-            border-radius: 20px;
+            letter-spacing: 2.5px;
             margin-bottom: 16px;
         }
-        .hero h1 { font-size: 28px; font-weight: 700; line-height: 1.2; margin-bottom: 12px; }
+        .hero h1 { font-family: var(--font-display); font-size: 28px; font-weight: 700; line-height: 1.2; margin-bottom: 12px; }
         .hero p { font-size: 15px; opacity: 0.9; max-width: 440px; margin: 0 auto; }
 
         /* --- Main Container --- */
@@ -409,15 +414,15 @@
         /* --- Notice Card --- */
         .notice-card {
             background: #fff;
-            border: 1px solid var(--color-border);
-            border-radius: var(--radius-card);
-            padding: 24px;
+            border-left: 3px solid var(--color-accent);
+            border-radius: 10px;
+            padding: 20px 22px;
             margin-bottom: 32px;
-            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
             transform: translateZ(0);
         }
-        .notice-title { font-size: 12px; font-weight: 700; text-transform: uppercase; color: var(--color-secondary); margin-bottom: 6px; letter-spacing: 1px; }
-        .notice-text { font-size: 14px; color: var(--color-primary); line-height: 1.6; }
+        .notice-title { font-size: 14px; font-weight: 700; color: var(--color-primary); margin-bottom: 6px; }
+        .notice-text { font-size: 14px; color: var(--color-secondary); line-height: 1.7; }
 
         /* --- Volunteer Areas --- */
         .areas-grid {
@@ -454,7 +459,7 @@
             transform: translateZ(0);
         }
         .section-header { margin-bottom: 24px; border-bottom: 1px solid var(--color-border); padding-bottom: 16px; }
-        .section-title { font-size: 17px; font-weight: 700; color: var(--color-primary); }
+        .section-title { font-family: var(--font-display); font-size: 20px; font-weight: 700; color: var(--color-primary); }
 
         /* --- Form Elements --- */
         .form-group { margin-bottom: 28px; }
@@ -472,9 +477,9 @@
 
         input[type="text"], input[type="email"], input[type="tel"], input[type="date"], select, textarea {
             width: 100%;
-            height: 52px;
-            padding: 0 16px;
-            font-size: 16px;
+            height: 44px;
+            padding: 0 13px;
+            font-size: 14px;
             border: 1px solid var(--color-border);
             border-radius: var(--radius-input);
             background: #fff;
@@ -482,12 +487,11 @@
             appearance: none;
             transition: border-color 0.2s ease, box-shadow 0.2s ease;
         }
-        textarea { height: auto; min-height: 100px; padding: 16px; resize: vertical; }
-        
-        input:focus, select:focus, textarea:focus { 
-            outline: none; 
-            border-color: var(--color-accent); 
-            box-shadow: 0 0 0 4px rgba(201, 169, 98, 0.15); 
+        textarea { height: auto; min-height: 110px; padding: 13px; resize: vertical; }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--color-accent);
         }
 
         .select-wrapper { position: relative; }
@@ -534,13 +538,15 @@
         /* --- Footer / Submit --- */
         .submit-section { margin-top: 32px; text-align: center; }
         .submit-btn {
-            width: 100%;
+            display: inline-block;
+            width: auto;
             background: var(--color-primary);
             color: white;
-            font-size: 16px;
+            font-size: 14px;
             font-weight: 600;
-            padding: 16px;
-            border-radius: var(--radius-card);
+            letter-spacing: 0.5px;
+            padding: 14px 44px;
+            border-radius: 999px;
             border: none;
             cursor: pointer;
             box-shadow: 0 4px 12px rgba(0,0,0,0.15);
@@ -553,10 +559,13 @@
 
         .footer {
             margin-top: 40px;
+            background: var(--color-primary);
+            border-radius: var(--radius-card);
             text-align: center;
-            font-size: 12px;
-            color: var(--color-secondary);
-            padding-bottom: 20px;
+            font-size: 13px;
+            color: rgba(255,255,255,0.75);
+            padding: 28px 20px;
+            line-height: 1.9;
         }
 
         .lang-selector {
@@ -647,6 +656,8 @@
   
   
   
+  
+
   
 
   
@@ -950,6 +961,7 @@
     <div class="notice-title">Andere manieren om met ons samen te werken</div>
     <div class="notice-text"><a href="/nl/partner-with-us.html">Reispartner-aanvraag</a> · <a href="/nl/vendors.html">Leveranciers</a> · <a href="/nl/partners-support.html">Partners &amp; Ondersteuning</a> · <a href="/nl/recognition.html">Erkenning</a></div>
 </div>
+
 
 
 

@@ -15,7 +15,7 @@
     "contactOverlay": {
       "title": "Get in touch",
       "address": "Address",
-      "addressValue": "Damascus, Syria & New York, USA",
+      "addressValue": "Damascus, Syria & Brooklyn, New York",
       "phone": "Phone number",
       "phoneValue": "+1 347-893-3032",
       "socials": "Socials",
@@ -31,7 +31,7 @@
       "emailUs": "Email Us",
       "getInvolved": "Get Involved",
       "copyright": "© 2026 Syrian Mosaic Foundation. All rights reserved.",
-      "location": "Damascus, Syria & New York, USA"
+      "location": "Damascus, Syria & Brooklyn, New York"
     },
     "languageSelector": {
       "label": "Language",
@@ -59,7 +59,7 @@
     "contactOverlay": {
       "title": "تواصل معنا",
       "address": "العنوان",
-      "addressValue": "دمشق، سوريا ونيويورك، الولايات المتحدة",
+      "addressValue": "دمشق، سوريا وبروكلين، نيويورك",
       "phone": "رقم الهاتف",
       "phoneValue": "+1 347-893-3032",
       "socials": "وسائل التواصل",
@@ -75,7 +75,7 @@
       "emailUs": "راسلنا",
       "getInvolved": "شارك معنا",
       "copyright": "© 2026 مؤسسة الموزاييك السورية. جميع الحقوق محفوظة.",
-      "location": "دمشق، سوريا ونيويورك، الولايات المتحدة"
+      "location": "دمشق، سوريا وبروكلين، نيويورك"
     },
     "languageSelector": {
       "label": "اللغة",
@@ -103,7 +103,7 @@
     "contactOverlay": {
       "title": "צור קשר",
       "address": "כתובת",
-      "addressValue": "דמשק, סוריה וניו יורק, ארה\"ב",
+      "addressValue": "דמשק, סוריה וברוקלין, ניו יורק",
       "phone": "מספר טלפון",
       "phoneValue": "+1 347-893-3032",
       "socials": "רשתות חברתיות",
@@ -119,7 +119,7 @@
       "emailUs": "שלח דוא\"ל",
       "getInvolved": "הצטרף אלינו",
       "copyright": "© 2026 קרן המוזאיק הסורית. כל הזכויות שמורות.",
-      "location": "דמשק, סוריה וניו יורק, ארה\"ב"
+      "location": "דמשק, סוריה וברוקלין, ניו יורק"
     },
     "languageSelector": {
       "label": "שפה",
@@ -147,7 +147,7 @@
     "contactOverlay": {
       "title": "Contáctanos",
       "address": "Dirección",
-      "addressValue": "Damasco, Siria y Nueva York, EE.UU.",
+      "addressValue": "Damasco, Siria y Brooklyn, Nueva York",
       "phone": "Teléfono",
       "phoneValue": "+1 347-893-3032",
       "socials": "Redes sociales",
@@ -163,7 +163,7 @@
       "emailUs": "Escríbenos",
       "getInvolved": "Participa",
       "copyright": "© 2026 Fundación Mosaico Sirio. Todos los derechos reservados.",
-      "location": "Damasco, Siria y Nueva York, EE.UU."
+      "location": "Damasco, Siria y Brooklyn, Nueva York"
     },
     "languageSelector": {
       "label": "Idioma",
@@ -191,7 +191,7 @@
     "contactOverlay": {
       "title": "Contattaci",
       "address": "Indirizzo",
-      "addressValue": "Damasco, Siria e New York, USA",
+      "addressValue": "Damasco, Siria e Brooklyn, New York",
       "phone": "Telefono",
       "phoneValue": "+1 347-893-3032",
       "socials": "Social",
@@ -207,7 +207,7 @@
       "emailUs": "Scrivici",
       "getInvolved": "Partecipa",
       "copyright": "© 2026 Fondazione Mosaico Siriano. Tutti i diritti riservati.",
-      "location": "Damasco, Siria e New York, USA"
+      "location": "Damasco, Siria e Brooklyn, New York"
     },
     "languageSelector": {
       "label": "Lingua",
@@ -235,7 +235,7 @@
     "contactOverlay": {
       "title": "Neem contact op",
       "address": "Adres",
-      "addressValue": "Damascus, Syrië en New York, VS",
+      "addressValue": "Damascus, Syrië en Brooklyn, New York",
       "phone": "Telefoonnummer",
       "phoneValue": "+1 347-893-3032",
       "socials": "Socials",
@@ -251,7 +251,7 @@
       "emailUs": "E-mail ons",
       "getInvolved": "Doe mee",
       "copyright": "© 2026 Syrian Mosaic Foundation. Alle rechten voorbehouden.",
-      "location": "Damascus, Syrië en New York, VS"
+      "location": "Damascus, Syrië en Brooklyn, New York"
     },
     "languageSelector": {
       "label": "Taal",

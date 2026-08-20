@@ -272,6 +272,14 @@
   
   
 
+  
+  
+  
+  
+  
+  
+  
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nuestro Equipo — Fundación Mosaico Sirio</title>
   <meta name="description" content="Conoce al equipo dedicado que preserva el patrimonio de Siria y construye puentes entre culturas.">
@@ -638,7 +646,7 @@
       .team-section { padding: 80px 32px; }
       .team-section__heading { font-size: 32px; }
 
-      .founders-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+      .founders-grid { max-width: 520px; margin: 0 auto; }
       .founder-card { margin-bottom: 0; }
       .founder-card__img-wrap { height: 280px; }
 
@@ -663,6 +671,25 @@
       .team-cta { padding: 100px 60px; }
       .team-cta__title { font-size: 36px; }
     }
+
+    /* ===== MEMBER PROFILE MODAL ===== */
+    .team-member { cursor: pointer; }
+    .team-member:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+    .team-member__bio[hidden] { display: none; }
+    .member-modal { position: fixed; inset: 0; z-index: 1000; display: flex; align-items: center; justify-content: center; padding: 20px; }
+    .member-modal[hidden] { display: none; }
+    .member-modal__backdrop { position: absolute; inset: 0; background: rgba(17,17,17,0.6); }
+    .member-modal__card { position: relative; background: var(--white); border-radius: 16px; padding: 40px 32px; max-width: 420px; width: 100%; text-align: center; box-shadow: 0 12px 48px rgba(0,0,0,0.25); }
+    .member-modal__close { position: absolute; top: 14px; right: 16px; background: none; border: none; font-size: 20px; color: var(--gray-400); cursor: pointer; line-height: 1; }
+    .member-modal__close:hover { color: var(--dark); }
+    .member-modal__avatar { width: 72px; height: 72px; border-radius: 50%; background: var(--dark); color: var(--gold); font-weight: 700; font-size: 22px; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; }
+    .member-modal__name { font-family: var(--font-display); font-size: 24px; font-weight: 700; margin-bottom: 4px; }
+    .member-modal__title { font-size: 13px; font-weight: 500; color: var(--gold); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+    .member-modal__location { font-size: 13px; color: var(--gray-600); }
+    .member-modal__bio { font-size: 14px; line-height: 1.7; color: var(--gray-600); margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--gray-200); text-align: left; }
+    .member-modal__bio:empty { display: none; }
+    html[dir="rtl"] .member-modal__bio { text-align: right; }
+    html[dir="rtl"] .member-modal__close { right: auto; left: 16px; }
   </style>
   
   
@@ -719,12 +746,14 @@
 
   
 
+  
+
   <link rel="canonical" href="https://www.syrianmosaicfoundation.org/es/team.html">
 <script src="../i18n.js"></script>
 </head>
 <body>
   <!-- Navigation -->
-  <div bind="4ca375cd-d92e-94c5-dd93-80faadb53a1b" class="nav-header"><div id="contact-overlay" class="contact-overlay"><div class="contact-options"><div class="text-block-15">Contáctanos</div><img id="close-overlay" src="https://cdn.prod.website-files.com/657b5d5bf6c3e07bb4b09757/65e2376ca1b031ac2d5e8ac4_pluss.svg" loading="lazy" alt="" class="close-overlay"></div><div class="bottom-contanct"><div class="contact-container"><div class="contact-details">Dirección</div><div class="contact-details is-link">Damasco, Siria y Nueva York, EE.UU.</div></div><div class="contact-container"><div class="contact-details">Teléfono</div><a href="https://wa.me/963993858064" class="contact-details is-link">+963 993 858 064</a></div><div class="contact-container"><div class="contact-details">Redes sociales</div><div class="div-block-23"><a href="https://instagram.com/SyrianMosaicFoundation" class="contact-details is-link">Instagram</a><a href="https://www.linkedin.com/company/syrian-mosaic-foundation/" class="contact-details is-link">LinkedIn</a><a href="https://x.com/SyrianMosaicFDN" class="contact-details is-link">X / Twitter</a></div></div><div class="contact-container"><div class="contact-details">Correo electrónico</div><a href="mailto:info@syrianmosaicfoundation.org" class="contact-details is-link">info@syrianmosaicfoundation.org</a></div></div></div><nav class="navbar"><a href="#" class="burger-menu w-inline-block"><div data-is-ix2-target="1" class="burger-lottie" data-w-id="fff3aadf-ab87-c83d-10c7-477724506be0" data-animation-type="lottie" data-src="https://cdn.prod.website-files.com/657b5d5bf6c3e07bb4b09757/660203e761ba9c9405ccf4f0_burger-white.json" data-loop="0" data-direction="1" data-autoplay="0" data-renderer="svg" data-default-duration="0.9" data-duration="0" data-ix2-initial-state="0"></div></a><div class="menu-container"><a data-w-id="4ca375cd-d92e-94c5-dd93-80faadb53a1d" href="/es/index.html" aria-current="page" class="nav-item-link is--first w-inline-block w--current"><img src="https://cdn.prod.website-files.com/657b5d5bf6c3e07bb4b09757/65e20460654b96e4fa1c544a_arrow.svg" loading="lazy" alt="" class="nav-arrow"><div class="nav-link-text">Inicio</div></a><a href="/es/news.html" class="nav-item-link w-inline-block"><img src="https://cdn.prod.website-files.com/657b5d5bf6c3e07bb4b09757/65e20460654b96e4fa1c544a_arrow.svg" loading="lazy" alt="" class="nav-arrow"><div class="nav-link-text">Noticias</div></a><a href="/media.html" class="nav-item-link w-inline-block"><img src="https://cdn.prod.website-files.com/657b5d5bf6c3e07bb4b09757/65e20460654b96e4fa1c544a_arrow.svg" loading="lazy" alt="" class="nav-arrow"><div class="nav-link-text">Medios</div></a><a href="/es/trip-registration.html" class="nav-item-link w-inline-block"><img src="https://cdn.prod.website-files.com/657b5d5bf6c3e07bb4b09757/65e20460654b96e4fa1c544a_arrow.svg" loading="lazy" alt="" class="nav-arrow"><div class="nav-link-text">Viajes</div></a><a data-w-id="acd489aa-2ba2-384d-9844-10478c0d3074" href="/es/volunteer.html" class="nav-item-link is--button w-inline-block"><img src="https://cdn.prod.website-files.com/657b5d5bf6c3e07bb4b09757/65e20460654b96e4fa1c544a_arrow.svg" loading="lazy" alt="" class="nav-arrow"><div class="nav-link-text">PARTICIPA</div></a></div></nav><div class="grid-wrap hide-grid"><div class="container"><div class="grid"><div class="grid-column"></div><div id="w-node-adfb7669-6c4b-aee7-f069-4392eba01b41-adb53a1b" class="grid-column"></div><div id="w-node-_8d6b31ef-c181-8edb-0cda-63d1505843c0-adb53a1b" class="grid-column"></div><div id="w-node-e3785df4-244d-6939-d512-46a2cece40e2-adb53a1b" class="grid-column"></div><div id="w-node-_5868e7f2-0f84-8f4c-4d2d-198792151b48-adb53a1b" class="grid-column"></div><div id="w-node-fbb0a514-1774-fef2-09fe-49ff021b842a-adb53a1b" class="grid-column"></div></div></div></div><div class="global-code"><pre contenteditable="false" class="w-code-block" style="display:block;overflow-x:auto;background:#2b2b2b;color:#f8f8f2;padding:0.5em"><code class="language-javascript" style="white-space:pre"></code></pre></div></div>
+  <div bind="4ca375cd-d92e-94c5-dd93-80faadb53a1b" class="nav-header"><div id="contact-overlay" class="contact-overlay"><div class="contact-options"><div class="text-block-15">Contáctanos</div><img id="close-overlay" src="https://cdn.prod.website-files.com/657b5d5bf6c3e07bb4b09757/65e2376ca1b031ac2d5e8ac4_pluss.svg" loading="lazy" alt="" class="close-overlay"></div><div class="bottom-contanct"><div class="contact-container"><div class="contact-details">Dirección</div><div class="contact-details is-link">Damasco, Siria y Brooklyn, Nueva York</div></div><div class="contact-container"><div class="contact-details">Teléfono</div><a href="https://wa.me/963993858064" class="contact-details is-link">+963 993 858 064</a></div><div class="contact-container"><div class="contact-details">Redes sociales</div><div class="div-block-23"><a href="https://instagram.com/SyrianMosaicFoundation" class="contact-details is-link">Instagram</a><a href="https://www.linkedin.com/company/syrian-mosaic-foundation/" class="contact-details is-link">LinkedIn</a><a href="https://x.com/SyrianMosaicFDN" class="contact-details is-link">X / Twitter</a></div></div><div class="contact-container"><div class="contact-details">Correo electrónico</div><a href="mailto:info@syrianmosaicfoundation.org" class="contact-details is-link">info@syrianmosaicfoundation.org</a></div></div></div><nav class="navbar"><a href="#" class="burger-menu w-inline-block"><div data-is-ix2-target="1" class="burger-lottie" data-w-id="fff3aadf-ab87-c83d-10c7-477724506be0" data-animation-type="lottie" data-src="https://cdn.prod.website-files.com/657b5d5bf6c3e07bb4b09757/660203e761ba9c9405ccf4f0_burger-white.json" data-loop="0" data-direction="1" data-autoplay="0" data-renderer="svg" data-default-duration="0.9" data-duration="0" data-ix2-initial-state="0"></div></a><div class="menu-container"><a data-w-id="4ca375cd-d92e-94c5-dd93-80faadb53a1d" href="/es/index.html" aria-current="page" class="nav-item-link is--first w-inline-block w--current"><img src="https://cdn.prod.website-files.com/657b5d5bf6c3e07bb4b09757/65e20460654b96e4fa1c544a_arrow.svg" loading="lazy" alt="" class="nav-arrow"><div class="nav-link-text">Inicio</div></a><a href="/es/news.html" class="nav-item-link w-inline-block"><img src="https://cdn.prod.website-files.com/657b5d5bf6c3e07bb4b09757/65e20460654b96e4fa1c544a_arrow.svg" loading="lazy" alt="" class="nav-arrow"><div class="nav-link-text">Noticias</div></a><a href="/media.html" class="nav-item-link w-inline-block"><img src="https://cdn.prod.website-files.com/657b5d5bf6c3e07bb4b09757/65e20460654b96e4fa1c544a_arrow.svg" loading="lazy" alt="" class="nav-arrow"><div class="nav-link-text">Medios</div></a><a href="/es/trip-registration.html" class="nav-item-link w-inline-block"><img src="https://cdn.prod.website-files.com/657b5d5bf6c3e07bb4b09757/65e20460654b96e4fa1c544a_arrow.svg" loading="lazy" alt="" class="nav-arrow"><div class="nav-link-text">Viajes</div></a><a data-w-id="acd489aa-2ba2-384d-9844-10478c0d3074" href="/es/volunteer.html" class="nav-item-link is--button w-inline-block"><img src="https://cdn.prod.website-files.com/657b5d5bf6c3e07bb4b09757/65e20460654b96e4fa1c544a_arrow.svg" loading="lazy" alt="" class="nav-arrow"><div class="nav-link-text">PARTICIPA</div></a></div></nav><div class="grid-wrap hide-grid"><div class="container"><div class="grid"><div class="grid-column"></div><div id="w-node-adfb7669-6c4b-aee7-f069-4392eba01b41-adb53a1b" class="grid-column"></div><div id="w-node-_8d6b31ef-c181-8edb-0cda-63d1505843c0-adb53a1b" class="grid-column"></div><div id="w-node-e3785df4-244d-6939-d512-46a2cece40e2-adb53a1b" class="grid-column"></div><div id="w-node-_5868e7f2-0f84-8f4c-4d2d-198792151b48-adb53a1b" class="grid-column"></div><div id="w-node-fbb0a514-1774-fef2-09fe-49ff021b842a-adb53a1b" class="grid-column"></div></div></div></div><div class="global-code"><pre contenteditable="false" class="w-code-block" style="display:block;overflow-x:auto;background:#2b2b2b;color:#f8f8f2;padding:0.5em"><code class="language-javascript" style="white-space:pre"></code></pre></div></div>
 
   <div class="team-page">
 
@@ -741,8 +770,8 @@
     <section class="team-section">
       <div class="team-section__inner">
         <div class="team-section__label">01 — Liderazgo</div>
-        <h2 class="team-section__heading">Nuestro Fundador y Equipo</h2>
-        <p class="team-section__desc">Un judío sirio-estadounidense y un musulmán sirio-estadounidense — vecinos de infancia de Damasco cuya amistad de toda la vida encarna la misión de la fundación.</p>
+        <h2 class="team-section__heading">Nuestro Fundador</h2>
+        <p class="team-section__desc">SMF fue fundada por Joe Jajati en Nueva York para preservar y celebrar el mosaico de culturas, religiones y tradiciones de Siria.</p>
 
         <div class="founders-grid">
           <!-- Joe -->
@@ -761,23 +790,6 @@
               </a>
             </div>
           </div>
-
-          <!-- Aziz -->
-          <div class="founder-card">
-            <div class="founder-card__img-wrap">
-              <div class="founder-card__initials">AZ</div>
-              <div class="founder-card__badge">Miembro</div>
-            </div>
-            <div class="founder-card__body">
-              <h3 class="founder-card__name">Aziz</h3>
-              <div class="founder-card__role">Miembro</div>
-              <p class="founder-card__bio">Musulmán sirio-estadounidense de Nueva York y Damasco. Vecino de infancia de Joe, su amistad de toda la vida entre religiones encarna lo que SMF representa — unidad, coexistencia y patrimonio compartido.</p>
-              <a href="mailto:aziz@syrianmosaicfoundation.org" class="founder-card__contact">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
-                aziz@syrianmosaicfoundation.org
-              </a>
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -790,6 +802,19 @@
         <p class="team-section__desc">De Damasco a Nueva York y Sudamérica — nuestro equipo abarca continentes, religiones y disciplinas.</p>
 
         <div class="team-grid">
+          <div class="team-member">
+            <div class="team-member__avatar">AZ</div>
+            <div class="team-member__info">
+              <div class="team-member__name">Aziz</div>
+              <div class="team-member__title">Miembro</div>
+              <div class="team-member__location">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                USA
+              </div>
+              <div class="team-member__bio" hidden="">Musulmán sirio-estadounidense de Nueva York y Damasco. Vecino de infancia de Joe, su amistad de toda la vida entre religiones encarna lo que SMF representa — unidad, coexistencia y patrimonio compartido.</div>
+            </div>
+          </div>
+
           <div class="team-member">
             <div class="team-member__avatar">HH</div>
             <div class="team-member__info">
@@ -1003,10 +1028,52 @@
 
 
 
+<!-- Member profile modal (template — bios fill in as they are provided) -->
+<div class="member-modal" id="memberModal" hidden="">
+  <div class="member-modal__backdrop" data-close=""></div>
+  <div class="member-modal__card" role="dialog" aria-modal="true" aria-labelledby="memberModalName">
+    <button type="button" class="member-modal__close" data-close="" aria-label="Close">✕</button>
+    <div class="member-modal__avatar"></div>
+    <h3 class="member-modal__name" id="memberModalName"></h3>
+    <div class="member-modal__title"></div>
+    <div class="member-modal__location"></div>
+    <p class="member-modal__bio"></p>
+  </div>
+</div>
+<script>
+(function () {
+  var modal = document.getElementById('memberModal');
+  if (!modal) return;
+  function q(s) { return modal.querySelector(s); }
+  function openModal(card) {
+    function get(sel) { var el = card.querySelector(sel); return el ? el.textContent.trim() : ''; }
+    q('.member-modal__avatar').textContent = get('.team-member__avatar');
+    q('.member-modal__name').textContent = get('.team-member__name');
+    q('.member-modal__title').textContent = get('.team-member__title');
+    q('.member-modal__location').textContent = get('.team-member__location');
+    q('.member-modal__bio').textContent = get('.team-member__bio');
+    modal.hidden = false;
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal() { modal.hidden = true; document.body.style.overflow = ''; }
+  document.querySelectorAll('.team-member').forEach(function (card) {
+    card.setAttribute('role', 'button');
+    card.setAttribute('tabindex', '0');
+    card.addEventListener('click', function () { openModal(card); });
+    card.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(card); }
+    });
+  });
+  modal.addEventListener('click', function (e) { if (e.target.hasAttribute('data-close')) closeModal(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !modal.hidden) closeModal(); });
+})();
+</script>
+
+
 <div class="lang-selector" aria-label="Idioma">
   <span class="lang-selector__label">Idioma:</span>
   <div class="lang-selector__options"><a href="/team.html" data-lang="en">English</a><a href="/ar/team.html" data-lang="ar">العربية</a><a href="/he/team.html" data-lang="he">עברית</a><a href="/es/team.html" class="lang-active" data-lang="es">Español</a><a href="/it/team.html" data-lang="it">Italiano</a><a href="/nl/team.html" data-lang="nl">Nederlands</a></div>
-</div><div class="travels-footer__bottom"><span class="travels-footer__copy">© 2026 Fundación Mosaico Sirio. Todos los derechos reservados.</span><span class="travels-footer__copy">Damasco, Siria y Nueva York, EE.UU.</span></div></div></footer>
+</div><div class="travels-footer__bottom"><span class="travels-footer__copy">© 2026 Fundación Mosaico Sirio. Todos los derechos reservados.</span><span class="travels-footer__copy">Damasco, Siria y Brooklyn, Nueva York</span></div></div></footer>
 
   <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.23/bundled/lenis.min.js"></script>
   <script src="../animations.js"></script>

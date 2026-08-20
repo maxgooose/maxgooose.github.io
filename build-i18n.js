@@ -28,7 +28,6 @@ const PAGES = [
   'tourist-registration.html',
   'delegation-registration.html',
   'team.html',
-  'shop.html',
   'impact.html',
   'artifact-recovery.html',
   'news.html',
@@ -179,7 +178,6 @@ function translateCommon($, lang) {
   const navTexts = {
     'Home': t.nav.home,
     'News': t.nav.news,
-    'Shop': t.nav.shop,
     'Media': t.nav.media,
     'Trips': t.nav.trips,
     'Volunteer': t.nav.volunteer,
@@ -228,7 +226,6 @@ function translateCommon($, lang) {
     footer.find('.travels-footer__link').each(function () {
       const text = $(this).text().trim();
       if (text === 'Home') $(this).text(t.nav.home);
-      else if (text === 'Shop') $(this).text(t.nav.shop);
       else if (text === 'Volunteer') $(this).text(t.nav.volunteer);
       else if (text === 'Book a Trip') $(this).text(t.footer.bookTrip);
       else if (text === 'Email Us') $(this).text(t.footer.emailUs);
@@ -369,17 +366,6 @@ const HTML_REPLACEMENTS = {
       es: 'Los rostros detrás de<br>la <em>Misión</em>',
       it: 'I volti dietro<br>la <em>Missione</em>',
       nl: 'De gezichten achter<br>de <em>Missie</em>',
-    },
-  },
-  'shop.html': {
-    // Met Museum footnote (contains <a> tag)
-    'div[style*="text-align: center"] p': {
-      en: 'Images courtesy of <a href="https://www.metmuseum.org/about-the-met/policies-and-documents/open-access" target="_blank" rel="noopener" style="color: #D4A574;">The Metropolitan Museum of Art</a> (public domain, CC0). Items shown are representative of the types of antiques available through the Syrian Heritage Collection.',
-      ar: 'الصور بإذن من <a href="https://www.metmuseum.org/about-the-met/policies-and-documents/open-access" target="_blank" rel="noopener" style="color: #D4A574;">متحف المتروبوليتان للفنون</a> (ملكية عامة، CC0). القطع المعروضة تمثّل أنواع التحف المتاحة من خلال مجموعة التراث السوري.',
-      he: 'תמונות באדיבות <a href="https://www.metmuseum.org/about-the-met/policies-and-documents/open-access" target="_blank" rel="noopener" style="color: #D4A574;">מוזיאון המטרופוליטן לאמנות</a> (נחלת הכלל, CC0). הפריטים המוצגים מייצגים את סוגי העתיקות הזמינות דרך אוסף המורשת הסורית.',
-      es: 'Imágenes cortesía de <a href="https://www.metmuseum.org/about-the-met/policies-and-documents/open-access" target="_blank" rel="noopener" style="color: #D4A574;">The Metropolitan Museum of Art</a> (dominio público, CC0). Los artículos mostrados son representativos de los tipos de antigüedades disponibles a través de la Colección del Patrimonio Sirio.',
-      it: 'Immagini per gentile concessione del <a href="https://www.metmuseum.org/about-the-met/policies-and-documents/open-access" target="_blank" rel="noopener" style="color: #D4A574;">Metropolitan Museum of Art</a> (dominio pubblico, CC0). Gli articoli mostrati sono rappresentativi dei tipi di antichità disponibili attraverso la Collezione del Patrimonio Siriano.',
-      nl: 'Afbeeldingen met dank aan <a href="https://www.metmuseum.org/about-the-met/policies-and-documents/open-access" target="_blank" rel="noopener" style="color: #D4A574;">The Metropolitan Museum of Art</a> (publiek domein, CC0). De getoonde items zijn representatief voor de soorten antiek die beschikbaar zijn via de Syrische Erfgoedcollectie.',
     },
   },
   'impact.html': {

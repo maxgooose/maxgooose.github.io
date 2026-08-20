@@ -10,6 +10,7 @@ All images below are sourced from **Wikimedia Commons** under Creative Commons l
 | `damascus-old-city-panorama.jpg` | [The Old City of Damascus](https://commons.wikimedia.org/wiki/File:Damascus,_Syria,_The_Old_City_of_Damascus.jpg) by Argenberg | CC BY 4.0 |
 | `umayyad-mosque-courtyard.jpg` | [Umayyad Mosque Courtyard, Islamic Art](https://commons.wikimedia.org/wiki/File:Damascus,_Syria,_The_Umayyad_Mosque,_The_Courtyard,_Islamic_Art.jpg) by Argenberg | CC BY 4.0 |
 | `umayyad-mosque-wide.jpg` | [Umayyad Mosque, Damascus](https://commons.wikimedia.org/wiki/File:Umayyad_Mosque,_Damascus.jpg) | CC BY-SA 3.0 |
+| `souq-al-hamidiyah-bright.jpg` | [Al-Hamidiyah Souq](https://commons.wikimedia.org/wiki/File:Al-Hamidiyah_Souq_02.jpg) by Bernard Gagnon | CC BY-SA 3.0 |
 | `umayyad-courtyard-wide.jpg` | [Umayyad Mosque Courtyard](https://commons.wikimedia.org/wiki/File:The_Umayyad_Mosque,_the_Courtyard,_Damascus,_Syria.jpg) by Argenberg | CC BY 4.0 |
 | `palmyra-ruins-golden.jpg` | [Palmyra, Syria, Ruins](https://commons.wikimedia.org/wiki/File:Palmyra,_Syria,_Ruins.jpg) by Argenberg | CC BY 4.0 |
 | `temple-of-bel-palmyra.jpg` | [Temple of Bel, Palmyra](https://commons.wikimedia.org/wiki/File:Temple_of_Bel,_Palmyra_02.jpg) | CC BY-SA 3.0 |

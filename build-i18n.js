@@ -31,6 +31,10 @@ const PAGES = [
   'impact.html',
   'artifact-recovery.html',
   'news.html',
+  'partner-with-us.html',
+  'vendors.html',
+  'partners-support.html',
+  'recognition.html',
 ];
 
 const SITE_URL = 'https://www.syrianmosaicfoundation.org';
@@ -536,7 +540,10 @@ function translatePage($, lang, pageName) {
   });
 
   // Replace in value attributes for submit buttons and hidden inputs
+  // (skip form-routing fields — their values must stay English for the inbox)
   $('input[type="submit"], input[type="hidden"]').each(function () {
+    const name = $(this).attr('name') || '';
+    if (name.startsWith('_') || name === 'formType' || name === 'registrationType') return;
     let val = $(this).attr('value') || '';
     for (const en of sortedEnglish) {
       if (val.includes(en)) { val = val.split(en).join(replacements[en]); }

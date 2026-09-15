@@ -4,7 +4,6 @@
     "pageDescription": "Plan your journey to Syria with the Syrian Mosaic Foundation.",
     "startJourney": "Start Your Journey",
     "journeySubtext": "Everything is individually designed around you. Share your details and we'll craft the perfect trip.",
-    "trustedPartners": "Our Trusted On-Ground Partners",
     "aboutYou": "About You",
     "fullName": "Full Name",
     "emailAddress": "Email Address",
@@ -53,18 +52,13 @@
     "altDamascusOldCity": "Damascus old city",
     "altAleppoCity": "Aleppo citadel",
     "altNofaraCafe": "Nofara cafe, Damascus",
-    "altDamascusViewpoint": "Damascus viewpoint",
-    "altMosaicToursLogo": "Mosaic Tours logo",
-    "altGoldenTeamLogo": "Golden Team Syria logo",
-    "altSyrianGuidesLogo": "Syrian Guides logo",
-    "altNawafirToursLogo": "Nawafir Tours logo"
+    "altDamascusViewpoint": "Damascus viewpoint"
   },
   "ar": {
     "pageTitle": "حجز رحلة | مؤسسة الموزاييك السورية",
     "pageDescription": "خطط لرحلتك إلى سوريا مع مؤسسة الموزاييك السورية.",
     "startJourney": "ابدأ رحلتك",
     "journeySubtext": "كل شيء مصمم خصيصاً لك. شاركنا تفاصيلك وسنصمم لك الرحلة المثالية.",
-    "trustedPartners": "شركاؤنا الموثوقون على الأرض",
     "aboutYou": "عنك",
     "fullName": "الاسم الكامل",
     "emailAddress": "البريد الإلكتروني",
@@ -113,18 +107,13 @@
     "altDamascusOldCity": "المدينة القديمة في دمشق",
     "altAleppoCity": "قلعة حلب",
     "altNofaraCafe": "مقهى النوفرة، دمشق",
-    "altDamascusViewpoint": "إطلالة على دمشق",
-    "altMosaicToursLogo": "شعار موزاييك تورز",
-    "altGoldenTeamLogo": "شعار الفريق الذهبي",
-    "altSyrianGuidesLogo": "شعار المرشدين السوريين",
-    "altNawafirToursLogo": "شعار نوافير تورز"
+    "altDamascusViewpoint": "إطلالة على دمشق"
   },
   "he": {
     "pageTitle": "הזמנת טיול | קרן המוזאיק הסורית",
     "pageDescription": "תכננו את המסע שלכם לסוריה עם קרן המוזאיק הסורית.",
     "startJourney": "התחילו את המסע שלכם",
     "journeySubtext": "הכל מתוכנן באופן אישי עבורכם. שתפו את הפרטים שלכם ואנחנו ניצור את הטיול המושלם.",
-    "trustedPartners": "השותפים המהימנים שלנו בשטח",
     "aboutYou": "עליכם",
     "fullName": "שם מלא",
     "emailAddress": "כתובת דוא\"ל",
@@ -173,18 +162,13 @@
     "altDamascusOldCity": "העיר העתיקה של דמשק",
     "altAleppoCity": "מצודת חלב",
     "altNofaraCafe": "בית קפה נופרה, דמשק",
-    "altDamascusViewpoint": "תצפית על דמשק",
-    "altMosaicToursLogo": "לוגו Mosaic Tours",
-    "altGoldenTeamLogo": "לוגו Golden Team Syria",
-    "altSyrianGuidesLogo": "לוגו Syrian Guides",
-    "altNawafirToursLogo": "לוגו Nawafir Tours"
+    "altDamascusViewpoint": "תצפית על דמשק"
   },
   "es": {
     "pageTitle": "Reserva de Viaje | Fundación Mosaico Sirio",
     "pageDescription": "Planifica tu viaje a Siria con la Fundación Mosaico Sirio.",
     "startJourney": "Comienza Tu Viaje",
     "journeySubtext": "Todo está diseñado individualmente para ti. Comparte tus datos y crearemos el viaje perfecto.",
-    "trustedPartners": "Nuestros Socios de Confianza en Terreno",
     "aboutYou": "Sobre Ti",
     "fullName": "Nombre Completo",
     "emailAddress": "Correo Electrónico",
@@ -233,18 +217,13 @@
     "altDamascusOldCity": "Ciudad vieja de Damasco",
     "altAleppoCity": "Ciudadela de Alepo",
     "altNofaraCafe": "Café Nofara, Damasco",
-    "altDamascusViewpoint": "Mirador de Damasco",
-    "altMosaicToursLogo": "Logo de Mosaic Tours",
-    "altGoldenTeamLogo": "Logo de Golden Team Syria",
-    "altSyrianGuidesLogo": "Logo de Syrian Guides",
-    "altNawafirToursLogo": "Logo de Nawafir Tours"
+    "altDamascusViewpoint": "Mirador de Damasco"
   },
   "it": {
     "pageTitle": "Prenotazione Viaggio | Fondazione Mosaico Siriano",
     "pageDescription": "Pianifica il tuo viaggio in Siria con la Fondazione Mosaico Siriano.",
     "startJourney": "Inizia il Tuo Viaggio",
     "journeySubtext": "Tutto è progettato su misura per te. Condividi i tuoi dati e creeremo il viaggio perfetto.",
-    "trustedPartners": "I Nostri Partner Fidati sul Campo",
     "aboutYou": "Su di Te",
     "fullName": "Nome Completo",
     "emailAddress": "Indirizzo Email",
@@ -293,18 +272,13 @@
     "altDamascusOldCity": "Città vecchia di Damasco",
     "altAleppoCity": "Cittadella di Aleppo",
     "altNofaraCafe": "Caffè Nofara, Damasco",
-    "altDamascusViewpoint": "Veduta di Damasco",
-    "altMosaicToursLogo": "Logo Mosaic Tours",
-    "altGoldenTeamLogo": "Logo Golden Team Syria",
-    "altSyrianGuidesLogo": "Logo Syrian Guides",
-    "altNawafirToursLogo": "Logo Nawafir Tours"
+    "altDamascusViewpoint": "Veduta di Damasco"
   },
   "nl": {
     "pageTitle": "Reisboeking | Syrische Mozaïek Stichting",
     "pageDescription": "Plan je reis naar Syrië met de Syrische Mozaïek Stichting.",
     "startJourney": "Begin Je Reis",
     "journeySubtext": "Alles wordt individueel op maat ontworpen voor jou. Deel je gegevens en wij creëren de perfecte reis.",
-    "trustedPartners": "Onze Betrouwbare Partners ter Plaatse",
     "aboutYou": "Over Jou",
     "fullName": "Volledige Naam",
     "emailAddress": "E-mailadres",
@@ -353,10 +327,6 @@
     "altDamascusOldCity": "Oude stad van Damascus",
     "altAleppoCity": "Citadel van Aleppo",
     "altNofaraCafe": "Nofara café, Damascus",
-    "altDamascusViewpoint": "Uitzichtpunt Damascus",
-    "altMosaicToursLogo": "Mosaic Tours logo",
-    "altGoldenTeamLogo": "Golden Team Syria logo",
-    "altSyrianGuidesLogo": "Syrian Guides logo",
-    "altNawafirToursLogo": "Nawafir Tours logo"
+    "altDamascusViewpoint": "Uitzichtpunt Damascus"
   }
 }

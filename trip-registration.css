@@ -152,25 +152,6 @@ body.treg-body .treg-card__btn {
     color: var(--white) !important;
 }
 
-/* --- PARTNERS SECTION (dark bg) --- */
-body.treg-body .treg-partners .treg-label {
-    color: var(--gold-muted) !important;
-}
-body.treg-body .treg-partners .treg-heading {
-    color: var(--white) !important;
-}
-body.treg-body .treg-partners .treg-subheading {
-    color: rgba(255,255,255,0.5) !important;
-}
-
-/* --- PARTNER CARDS --- */
-body.treg-body .treg-pcard__name {
-    color: var(--charcoal-light) !important;
-}
-body.treg-body .treg-pcard:hover .treg-pcard__name {
-    color: var(--charcoal) !important;
-}
-
 /* --- HOTEL SECTION (light bg) --- */
 body.treg-body .treg-hotels .treg-label {
     color: var(--terracotta) !important;
@@ -545,88 +526,6 @@ body.treg-body .treg-lang__options a.lang-active {
 @media (max-width: 639px) {
     .treg-choose { padding: 60px 20px; }
     .treg-card__desc { font-size: 0.8rem; margin-bottom: 16px; }
-}
-
-/* ═══════════════════════════════════════
-   TRAVEL PARTNERS
-   ═══════════════════════════════════════ */
-.treg-partners {
-    background: var(--deep-charcoal);
-    padding: 80px 24px 60px;
-    color: var(--white);
-}
-.treg-partners__inner {
-    max-width: 900px;
-    margin: 0 auto;
-}
-.treg-partners .treg-heading { color: var(--white); }
-.treg-partners .treg-subheading { color: rgba(255,255,255,0.5); }
-.treg-partners .treg-label { color: var(--gold-muted); }
-.treg-partners .treg-divider { background: var(--gold-muted); }
-.treg-partners__grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 16px;
-}
-.treg-pcard {
-    display: flex;
-    flex-direction: column;
-    text-decoration: none;
-    background: var(--white);
-    border-radius: 14px;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-    transition: transform 0.4s cubic-bezier(0.22,1,0.36,1), box-shadow 0.4s cubic-bezier(0.22,1,0.36,1);
-    border: 1px solid rgba(0,0,0,0.04);
-}
-.treg-pcard:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 16px 40px rgba(0,0,0,0.08);
-}
-.treg-pcard__photo {
-    aspect-ratio: 4 / 3;
-    overflow: hidden;
-}
-.treg-pcard__photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.6s cubic-bezier(0.22,1,0.36,1);
-}
-.treg-pcard:hover .treg-pcard__photo img {
-    transform: scale(1.06);
-}
-.treg-pcard__info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 16px 14px;
-    gap: 6px;
-}
-.treg-pcard__logo {
-    height: 32px;
-    width: auto;
-    max-width: 88px;
-    object-fit: contain;
-}
-.treg-pcard__name {
-    font-size: 0.82rem;
-    font-weight: 500;
-    color: var(--charcoal-light);
-    transition: color 0.3s;
-}
-.treg-pcard:hover .treg-pcard__name {
-    color: var(--charcoal);
-}
-
-@media (min-width: 480px) {
-    .treg-partners__grid { grid-template-columns: 1fr 1fr; gap: 18px; }
-}
-@media (min-width: 900px) {
-    .treg-partners__grid { grid-template-columns: repeat(4, 1fr); gap: 20px; }
-}
-@media (max-width: 479px) {
-    .treg-partners { padding: 60px 20px; }
 }
 
 /* ═══════════════════════════════════════

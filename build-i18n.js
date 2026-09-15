@@ -306,23 +306,6 @@ const HTML_REPLACEMENTS = {
       it: '01<br>LE NOSTRE INIZIATIVE',
       nl: '01<br>ONZE INITIATIEVEN',
     },
-    '.section-title-and-text.is-03 .sec-numb > div': {
-      en: '03<br>TRAVEL<br>PARTNERS',
-      ar: '03<br>شركاء<br>السفر',
-      he: '03<br>שותפי<br>נסיעות',
-      es: '03<br>SOCIOS DE<br>VIAJE',
-      it: '03<br>PARTNER DI<br>VIAGGIO',
-      nl: '03<br>REIS<br>PARTNERS',
-    },
-    // Travel partners description with spans
-    '.section-title-and-text.is-03 .home-heading': {
-      en: 'We work with <span class="green-highlight">Syria\'s top travel operators</span> to bring you authentic cultural journeys. Our trusted partners offer immersive group and private tours\u2014from the ancient streets of <span class="green-highlight">Damascus</span> to the ruins of <span class="green-highlight">Palmyra</span> and beyond.',
-      ar: 'نعمل مع <span class="green-highlight">أفضل منظمي الرحلات في سوريا</span> لتقديم رحلات ثقافية أصيلة لكم. يقدم شركاؤنا الموثوقون جولات جماعية وخاصة غامرة\u2014من شوارع <span class="green-highlight">دمشق</span> القديمة إلى أطلال <span class="green-highlight">تدمر</span> وما بعدها.',
-      he: 'אנו עובדים עם <span class="green-highlight">מפעילי התיירות המובילים של סוריה</span> כדי להביא לכם מסעות תרבותיים אותנטיים. השותפים המהימנים שלנו מציעים סיורים קבוצתיים ופרטיים סוחפים\u2014מהרחובות העתיקים של <span class="green-highlight">דמשק</span> ועד חורבות <span class="green-highlight">פלמירה</span> ומעבר לכך.',
-      es: 'Trabajamos con <span class="green-highlight">los mejores operadores turísticos de Siria</span> para ofrecerle viajes culturales auténticos. Nuestros socios de confianza ofrecen tours grupales y privados inmersivos\u2014desde las antiguas calles de <span class="green-highlight">Damasco</span> hasta las ruinas de <span class="green-highlight">Palmira</span> y más allá.',
-      it: 'Lavoriamo con <span class="green-highlight">i migliori operatori turistici della Siria</span> per offrirvi viaggi culturali autentici. I nostri partner di fiducia offrono tour di gruppo e privati immersivi\u2014dalle antiche strade di <span class="green-highlight">Damasco</span> alle rovine di <span class="green-highlight">Palmira</span> e oltre.',
-      nl: 'Wij werken samen met <span class="green-highlight">de beste reisoperators van Syrië</span> om u authentieke culturele reizen te bieden. Onze vertrouwde partners bieden meeslepende groeps- en privétours\u2014van de oude straten van <span class="green-highlight">Damascus</span> tot de ruïnes van <span class="green-highlight">Palmyra</span> en verder.',
-    },
     // Our Partners description with spans + strong
     '.desti-cards-cnt .home-heading': {
       en: 'Our impact in <span class="green-highlight">Syria</span> is built on deep, trusted relationships\u2014with artisans, institutions, community leaders, and government officials who share our commitment to cultural renewal. At <strong>Syrian Mosaic Foundation</strong>, these partnerships are the foundation of every initiative we lead.',
@@ -332,41 +315,32 @@ const HTML_REPLACEMENTS = {
       it: 'Il nostro impatto in <span class="green-highlight">Siria</span> è costruito su relazioni profonde e fidate\u2014con artigiani, istituzioni, leader comunitari e funzionari governativi che condividono il nostro impegno per il rinnovamento culturale. Alla <strong>Fondazione Mosaico Siriano</strong>, queste partnership sono il fondamento di ogni iniziativa che guidiamo.',
       nl: 'Onze impact in <span class="green-highlight">Syrië</span> is gebouwd op diepe, betrouwbare relaties\u2014met ambachtslieden, instellingen, gemeenschapsleiders en overheidsfunctionarissen die onze toewijding aan culturele vernieuwing delen. Bij de <strong>Syrian Mosaic Foundation</strong> vormen deze partnerschappen de basis van elk initiatief dat we leiden.',
     },
-    // Section 04 OUR PARTNERS number
-    '.desti-cards-cnt .section-title-and-text.is-03 .sec-numb > div': {
-      en: '04<br>OUR PARTNERS',
-      ar: '04<br>شركاؤنا',
-      he: '04<br>השותפים שלנו',
-      es: '04<br>NUESTROS SOCIOS',
-      it: '04<br>I NOSTRI PARTNER',
-      nl: '04<br>ONZE PARTNERS',
+    // Section 03 OUR PARTNERS number
+    '#partners .sec-numb > div': {
+      en: '03<br>OUR PARTNERS',
+      ar: '03<br>شركاؤنا',
+      he: '03<br>השותפים שלנו',
+      es: '03<br>NUESTROS SOCIOS',
+      it: '03<br>I NOSTRI PARTNER',
+      nl: '03<br>ONZE PARTNERS',
     },
-    // Section 05 number
-    '.section-title-and-text.is-03:last-of-type .sec-numb > div': {
-      en: '05<br>SYRIA<br>BY NUMBERS',
-      ar: '05<br>سوريا<br>بالأرقام',
-      he: '05<br>סוריה<br>במספרים',
-      es: '05<br>SIRIA<br>EN CIFRAS',
-      it: '05<br>SIRIA<br>IN CIFRE',
-      nl: '05<br>SYRIË<br>IN CIJFERS',
+    // Section 04 SYRIA BY NUMBERS number
+    '#numbers .sec-numb > div': {
+      en: '04<br>SYRIA<br>BY NUMBERS',
+      ar: '04<br>سوريا<br>بالأرقام',
+      he: '04<br>סוריה<br>במספרים',
+      es: '04<br>SIRIA<br>EN CIFRAS',
+      it: '04<br>SIRIA<br>IN CIFRE',
+      nl: '04<br>SYRIË<br>IN CIJFERS',
     },
-    // Section 06 NEWS
+    // Section 05 NEWS
     '.section-title-and-text.is-04 .sec-numb > div': {
-      en: '06<br>NEWS &amp;<br>UPDATES',
-      ar: '06<br>الأخبار<br>والتحديثات',
-      he: '06<br>חדשות<br>ועדכונים',
-      es: '06<br>NOTICIAS Y<br>ACTUALIZACIONES',
-      it: '06<br>NOTIZIE E<br>AGGIORNAMENTI',
-      nl: '06<br>NIEUWS &amp;<br>UPDATES',
-    },
-    // Section 07 NEWSLETTER
-    '.newsletter-section .sec-numb > div': {
-      en: '07<br>NEWSLETTER',
-      ar: '07<br>النشرة<br>الإخبارية',
-      he: '07<br>ניוזלטר',
-      es: '07<br>BOLETÍN<br>INFORMATIVO',
-      it: '07<br>NEWSLETTER',
-      nl: '07<br>NIEUWSBRIEF',
+      en: '05<br>NEWS &amp;<br>UPDATES',
+      ar: '05<br>الأخبار<br>والتحديثات',
+      he: '05<br>חדשות<br>ועדכונים',
+      es: '05<br>NOTICIAS Y<br>ACTUALIZACIONES',
+      it: '05<br>NOTIZIE E<br>AGGIORNAMENTI',
+      nl: '05<br>NIEUWS &amp;<br>UPDATES',
     },
   },
   'team.html': {

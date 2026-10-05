@@ -749,7 +749,8 @@ function initNewsletter() {
 
         setTimeout(function() {
             // Skip when the Oct 8 event modal already showed (event-signup.js sets the flag).
-            if (!wasDismissed() && !window.SMF_EVENT_POPUP_SHOWN) popup.hidden = false;
+            // Also skipped while the Oct 8 event bar is on the page (one pop-up per visit).
+            if (!wasDismissed() && !window.SMF_EVENT_POPUP_SHOWN && !document.getElementById('ev-bar')) popup.hidden = false;
         }, 30000);
     }
 

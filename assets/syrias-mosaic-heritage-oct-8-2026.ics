@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Syrian Mosaic Foundation//Event//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:dura-europos-2026-10-08@syrianmosaicfoundation.org
+DTSTAMP:20261005T170000Z
+DTSTART:20261008T223000Z
+DTEND:20261009T010000Z
+SUMMARY:Syria's Mosaic Heritage — The Ancient Jewish Legacy of Dura-Eur
+ opos
+LOCATION:Brooklyn\, New York (exact address sent by email)
+DESCRIPTION:An evening with the Syrian Mosaic Foundation dedicated to pre
+ serving Syria's cultural heritage\, with a special focus on its ancient 
+ Jewish history and the Synagogue of Dura-Europos. Live Syrian music. Gla
+ tt kosher refreshments. Questions: info@syrianmosaicfoundation.org
+URL:https://syrianmosaicfoundation.org/#rsvp
+END:VEVENT
+END:VCALENDAR

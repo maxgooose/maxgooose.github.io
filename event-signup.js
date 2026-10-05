@@ -11,7 +11,7 @@
 
     var API = 'https://smf-event-rsvp.vercel.app/api/signup';
     var EVENT_END = Date.parse('2026-10-09T03:59:59Z'); // Oct 8, 2026, 11:59 PM New York time
-    var AUTO_OPEN_DELAY = 1200;
+    var AUTO_OPEN_DELAY = 3000;
     var SEEN_KEY = 'smf_ev_dura_seen'; // sessionStorage: auto-open once per visit
     var DONE_KEY = 'smf_ev_dura_rsvp'; // localStorage: this browser already signed up
     var GENERIC_ERROR = 'Something went wrong and your sign-up was not saved. Please try again, or email info@syrianmosaicfoundation.org.';
@@ -37,12 +37,23 @@
     var lastFocus = null;
     var isOpen = false;
 
-    function storageGet(storage, key) {
-        try { return storage.getItem(key); } catch (e) { return null; }
+    // Reading window.localStorage itself throws when site data is blocked, so the
+    // store is resolved inside a try as well (not only getItem/setItem).
+    function store(name) {
+        try { return window[name] || null; } catch (e) { return null; }
     }
-    function storageSet(storage, key, value) {
-        try { storage.setItem(key, value); } catch (e) { /* private mode */ }
+    function storageGet(name, key) {
+        var s = store(name);
+        if (!s) return null;
+        try { return s.getItem(key); } catch (e) { return null; }
     }
+    function storageSet(name, key, value) {
+        var s = store(name);
+        if (!s) return;
+        try { s.setItem(key, value); } catch (e) { /* quota / private mode */ }
+    }
+
+    var alreadySignedUp = storageGet('localStorage', DONE_KEY) === '1';
 
     // ── Open / close ────────────────────────────────────────────────────────
     function open(auto) {
@@ -56,7 +67,11 @@
         document.documentElement.classList.add('ev-lock');
         if (window.lenis && typeof window.lenis.stop === 'function') window.lenis.stop();
         document.addEventListener('keydown', onKeydown);
-        var target = success.hidden ? form.querySelector('input[name="firstName"]') : success;
+        // Auto-open: focus the dialog itself so phones don't raise the keyboard over
+        // a sheet nobody has read yet. Click-open: go straight to the first field.
+        var target = card;
+        if (!success.hidden) target = success;
+        else if (!auto) target = form.querySelector('input[name="firstName"]');
         setTimeout(function () {
             if (target && typeof target.focus === 'function') target.focus({ preventScroll: true });
         }, 60);
@@ -89,10 +104,34 @@
         var last = els[els.length - 1];
         var active = document.activeElement;
         if (e.shiftKey) {
-            if (active === first || !card.contains(active)) { e.preventDefault(); last.focus(); }
+            if (active === first || !card.contains(active) || active === card) { e.preventDefault(); last.focus(); }
         } else if (active === last || !card.contains(active)) {
             e.preventDefault(); first.focus();
         }
+    }
+
+    // ── Success panel ───────────────────────────────────────────────────────
+    function showSuccessPanel(firstName, email) {
+        document.getElementById('ev-success-name').textContent = firstName ? ', ' + firstName : '';
+        var to = document.getElementById('ev-success-to');
+        if (email) {
+            document.getElementById('ev-success-email').textContent = email;
+            to.hidden = false;
+        } else {
+            to.hidden = true;
+        }
+        formWrap.hidden = true;
+        success.hidden = false;
+        card.setAttribute('aria-labelledby', 'ev-success-title');
+    }
+
+    function markSignedUp() {
+        alreadySignedUp = true;
+        storageSet('localStorage', DONE_KEY, '1');
+        var longLabel = document.querySelector('.ev-bar__btn-long');
+        var shortLabel = document.querySelector('.ev-bar__btn-short');
+        if (longLabel) longLabel.textContent = "You're signed up · Add to calendar";
+        if (shortLabel) shortLabel.textContent = 'Add to calendar';
     }
 
     // ── Form ────────────────────────────────────────────────────────────────
@@ -101,7 +140,6 @@
     function validate(d) {
         if (!d.firstName) return { field: 'firstName', message: 'Please enter your first name.' };
         if (!d.lastName) return { field: 'lastName', message: 'Please enter your last name.' };
-        if (!d.organization) return { field: 'organization', message: 'Please enter your organization, or write "Individual".' };
         if (!EMAIL_RE.test(d.email)) return { field: 'email', message: 'Please enter a valid email address.' };
         return null;
     }
@@ -109,9 +147,11 @@
     function showError(message, field) {
         errorEl.textContent = message || GENERIC_ERROR;
         errorEl.hidden = false;
-        if (field && form[field]) {
-            form[field].setAttribute('aria-invalid', 'true');
-            form[field].focus({ preventScroll: true });
+        var input = field && form[field] && form[field].setAttribute ? form[field] : null;
+        if (input) {
+            input.setAttribute('aria-invalid', 'true');
+            input.setAttribute('aria-describedby', 'ev-error');
+            input.focus({ preventScroll: true });
         }
     }
 
@@ -126,32 +166,24 @@
         submitBtn.setAttribute('aria-busy', busy ? 'true' : 'false');
     }
 
-    function showSuccess(d, updated) {
-        storageSet(localStorage, DONE_KEY, '1');
-        document.getElementById('ev-success-name').textContent = d.firstName ? ', ' + d.firstName : '';
-        document.getElementById('ev-success-email').textContent = d.email;
-        document.getElementById('ev-success-note').hidden = !updated;
-        buildCalendarLink();
-        formWrap.hidden = true;
-        success.hidden = false;
-        success.focus({ preventScroll: true });
-        form.reset();
-    }
-
     form.addEventListener('input', function (e) {
-        if (e.target && e.target.removeAttribute) e.target.removeAttribute('aria-invalid');
+        if (e.target && e.target.removeAttribute) {
+            e.target.removeAttribute('aria-invalid');
+            e.target.removeAttribute('aria-describedby');
+        }
         if (!errorEl.hidden) hideError();
     });
 
     form.addEventListener('submit', function (e) {
         e.preventDefault();
         hideError();
+        var honeypot = form.fax_ext ? form.fax_ext.value : '';
         var data = {
             firstName: form.firstName.value.trim(),
             lastName: form.lastName.value.trim(),
-            organization: form.organization.value.trim(),
+            organization: form.organization.value.trim() || 'Individual',
             email: form.email.value.trim(),
-            website: form.website.value, // honeypot, stays empty for humans
+            website: honeypot, // honeypot: always "" for humans
             lang: document.documentElement.lang || 'en',
             page: window.location.pathname
         };
@@ -174,7 +206,10 @@
             );
         }).then(function (r) {
             if (r.ok && r.json.ok) {
-                showSuccess(data, r.json.status === 'updated');
+                markSignedUp();
+                showSuccessPanel(data.firstName, data.email);
+                success.focus({ preventScroll: true });
+                form.reset();
             } else {
                 showError(r.json.error || GENERIC_ERROR, r.json.field);
             }
@@ -185,32 +220,6 @@
             setBusy(false);
         });
     });
-
-    // ── "Add to calendar" (.ics) ────────────────────────────────────────────
-    function buildCalendarLink() {
-        var link = document.getElementById('ev-ics');
-        if (!link || link.getAttribute('data-ready')) return;
-        var stamp = new Date().toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '');
-        var lines = [
-            'BEGIN:VCALENDAR',
-            'VERSION:2.0',
-            'PRODID:-//Syrian Mosaic Foundation//Event Sign-up//EN',
-            'CALSCALE:GREGORIAN',
-            'BEGIN:VEVENT',
-            'UID:dura-europos-2026-10-08@syrianmosaicfoundation.org',
-            'DTSTAMP:' + stamp,
-            'DTSTART:20261008T223000Z', // 6:30 PM New York (EDT)
-            'DTEND:20261009T010000Z',   // 9:00 PM New York (EDT)
-            "SUMMARY:Syria's Mosaic Heritage — The Ancient Jewish Legacy of Dura-Europos",
-            'LOCATION:Brooklyn\\, New York (exact address sent by email)',
-            'DESCRIPTION:An evening with the Syrian Mosaic Foundation dedicated to preserving Syria\'s cultural heritage\\, with a special focus on its ancient Jewish history and the Synagogue of Dura-Europos. Live Syrian music. Glatt kosher refreshments. Questions: info@syrianmosaicfoundation.org',
-            'URL:https://syrianmosaicfoundation.org/#rsvp',
-            'END:VEVENT',
-            'END:VCALENDAR'
-        ];
-        link.href = 'data:text/calendar;charset=utf-8,' + encodeURIComponent(lines.join('\r\n'));
-        link.setAttribute('data-ready', '1');
-    }
 
     // ── Wiring ──────────────────────────────────────────────────────────────
     Array.prototype.forEach.call(document.querySelectorAll('[data-ev-open]'), function (el) {
@@ -226,11 +235,19 @@
 
     if (bar) bar.hidden = false;
 
+    if (alreadySignedUp) {
+        // Returning guest: the bar becomes a shortcut to the calendar file.
+        markSignedUp();
+        showSuccessPanel('', '');
+    }
+
     if (wantsDeepLink()) {
         open(false);
-    } else if (!storageGet(localStorage, DONE_KEY) && !storageGet(sessionStorage, SEEN_KEY)) {
-        storageSet(sessionStorage, SEEN_KEY, '1');
-        setTimeout(function () { open(true); }, AUTO_OPEN_DELAY);
+    } else if (!alreadySignedUp && !storageGet('sessionStorage', SEEN_KEY)) {
+        setTimeout(function () {
+            storageSet('sessionStorage', SEEN_KEY, '1');
+            open(true);
+        }, AUTO_OPEN_DELAY);
     }
 
     window.addEventListener('hashchange', function () {

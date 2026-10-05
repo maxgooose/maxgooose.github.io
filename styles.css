@@ -6155,9 +6155,14 @@ a.footer-link {
     flex-shrink: 0;
 }
 /* ==================== Oct 8, 2026 Event: announcement bar + sign-up modal ==================== */
-/* Markup lives in index.html; behaviour in event-signup.js. Prefix: .ev- */
+/* Markup lives in index.html; behaviour in event-signup.js. Prefix: .ev-                         */
+/* Paragraph rules are written as `.ev-modal .x` so they out-rank the global `p:not(...)` rule.   */
 .ev-bar[hidden],
 .ev-modal[hidden] { display: none !important; }
+
+/* The English promo keeps its own direction and alignment on the RTL (ar/he) pages. */
+.ev-bar,
+.ev-modal { text-align: left; }
 
 .ev-bar {
     position: fixed;
@@ -6178,7 +6183,7 @@ a.footer-link {
     justify-content: center;
     flex-wrap: wrap;
     gap: 0.5rem 1rem;
-    padding: 0.55rem 1rem;
+    padding: 0.45rem 1rem;
     font-size: 0.85rem;
     line-height: 1.4;
 }
@@ -6193,9 +6198,14 @@ a.footer-link {
     padding: 0.18rem 0.65rem;
     white-space: nowrap;
 }
-.ev-bar__text { color: rgba(255, 255, 255, 0.85); }
-.ev-bar__text strong { color: #fff; font-weight: 600; }
+.ev-bar__text,
+.ev-bar__short { color: rgba(255, 255, 255, 0.85); }
+.ev-bar__text strong,
+.ev-bar__short strong { color: #fff; font-weight: 600; }
+.ev-bar__short,
+.ev-bar__btn-short { display: none; }
 .ev-bar__btn {
+    min-height: 2.75rem;
     font-family: var(--font-body);
     font-size: 0.72rem;
     font-weight: 600;
@@ -6205,7 +6215,7 @@ a.footer-link {
     background: transparent;
     border: 1.5px solid var(--color-gold);
     border-radius: 999px;
-    padding: 0.42rem 1rem;
+    padding: 0.5rem 1.1rem;
     cursor: pointer;
     white-space: nowrap;
     transition: background var(--transition-normal), color var(--transition-normal);
@@ -6237,6 +6247,7 @@ html.ev-lock body { overflow: hidden !important; }
     background: rgba(5, 12, 22, 0.72);
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
+    touch-action: none;
 }
 .ev-modal__card {
     position: relative;
@@ -6250,6 +6261,7 @@ html.ev-lock body { overflow: hidden !important; }
     border-radius: var(--radius-lg);
     overflow: hidden;
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
+    outline: none;
     animation: evRise 0.35s ease-out;
 }
 @keyframes evRise {
@@ -6261,16 +6273,16 @@ html.ev-lock body { overflow: hidden !important; }
 }
 .ev-modal__close {
     position: absolute;
-    top: 0.65rem;
-    right: 0.65rem;
+    top: 0.5rem;
+    right: 0.5rem;
     z-index: 2;
-    width: 2.25rem;
-    height: 2.25rem;
+    width: 2.75rem;
+    height: 2.75rem;
     border-radius: 50%;
     border: none;
     background: rgba(255, 255, 255, 0.92);
     color: var(--color-text);
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     line-height: 1;
     cursor: pointer;
     box-shadow: var(--shadow-md);
@@ -6278,6 +6290,7 @@ html.ev-lock body { overflow: hidden !important; }
 }
 .ev-modal__close:hover,
 .ev-modal__close:focus-visible { background: #fff; color: #000; }
+.ev-modal__close:focus-visible { outline: 2px solid #0B1A2A; outline-offset: 2px; }
 .ev-modal__media {
     position: relative;
     min-height: 0;
@@ -6294,13 +6307,13 @@ html.ev-lock body { overflow: hidden !important; }
     position: absolute;
     left: 0.75rem;
     bottom: 0.75rem;
-    font-size: 0.68rem;
+    font-size: 0.72rem;
     font-weight: 600;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: #0B1A2A;
     background: var(--color-gold);
-    padding: 0.35rem 0.65rem;
+    padding: 0.6rem 0.8rem;
     border-radius: 4px;
     text-decoration: none;
     transition: background var(--transition-fast), color var(--transition-fast);
@@ -6310,58 +6323,63 @@ html.ev-lock body { overflow: hidden !important; }
 .ev-modal__body {
     min-height: 0;
     overflow-y: auto;
+    overscroll-behavior: contain;
     -webkit-overflow-scrolling: touch;
-    padding: 1.75rem 1.75rem 1.5rem;
+    padding: 1.5rem 1.75rem 1.5rem;
 }
 
-.ev-eyebrow {
-    margin: 0 0 0.6rem;
+.ev-modal .ev-eyebrow {
+    margin: 0 0 0.5rem;
     font-size: 0.68rem;
     font-weight: 600;
-    letter-spacing: 0.14em;
+    line-height: 1.5;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     color: #8F6227;
 }
-.ev-title {
-    margin: 0 0 0.25rem;
+.ev-modal .ev-title {
+    margin: 0 0 0.2rem;
     font-family: var(--font-heading);
     font-size: clamp(1.5rem, 2.6vw, 2rem);
     font-weight: 700;
     line-height: 1.15;
     color: #0B1A2A;
 }
-.ev-subtitle {
-    margin: 0 0 0.9rem;
+.ev-modal .ev-subtitle {
+    margin: 0 0 0.8rem;
     font-family: var(--font-heading);
     font-style: italic;
     font-size: 1.05rem;
+    line-height: 1.35;
     color: #8F6227;
 }
-.ev-desc {
-    margin: 0 0 1.1rem;
+.ev-modal .ev-desc {
+    margin: 0 0 0.9rem;
     font-size: 0.9rem;
-    line-height: 1.6;
+    line-height: 1.55;
     color: var(--color-text-muted);
 }
-.ev-desc--small { font-size: 0.8rem; }
-.ev-desc strong { color: var(--color-text); font-weight: 600; }
+.ev-modal .ev-desc--small { font-size: 0.8rem; }
+.ev-modal .ev-desc strong { color: var(--color-text); font-weight: 600; }
+.ev-modal .ev-desc a { color: inherit; }
 
 .ev-details {
     display: grid;
     grid-template-columns: auto auto 1fr;
     gap: 0.65rem 1.25rem;
-    margin: 0 0 1.1rem;
-    padding: 0.8rem 1rem;
+    margin: 0 0 1rem;
+    padding: 0.7rem 0.9rem;
     background: var(--color-cream);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
 }
 .ev-details div { min-width: 0; }
+.ev-details__wide { grid-column: 1 / -1; }
 .ev-details dt {
     margin: 0 0 0.1rem;
-    font-size: 0.62rem;
+    font-size: 0.68rem;
     font-weight: 600;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--color-text-muted);
 }
@@ -6374,7 +6392,7 @@ html.ev-lock body { overflow: hidden !important; }
 }
 .ev-details dd span {
     display: block;
-    font-size: 0.74rem;
+    font-size: 0.76rem;
     font-weight: 400;
     color: var(--color-text-muted);
 }
@@ -6382,17 +6400,18 @@ html.ev-lock body { overflow: hidden !important; }
 .ev-form {
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 0.7rem;
 }
 .ev-form__row {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 0.75rem;
+    gap: 0.7rem;
 }
 .ev-field {
     display: flex;
     flex-direction: column;
     gap: 0.3rem;
+    margin: 0;
     min-width: 0;
 }
 .ev-field span {
@@ -6401,24 +6420,30 @@ html.ev-lock body { overflow: hidden !important; }
     letter-spacing: 0.02em;
     color: var(--color-text);
 }
+.ev-field em {
+    font-style: normal;
+    font-weight: 400;
+    color: var(--color-text-muted);
+}
 .ev-field input {
     width: 100%;
-    padding: 0.75rem 0.9rem;
+    padding: 0.72rem 0.9rem;
     font-family: var(--font-body);
     font-size: 16px; /* 16px stops iOS from zooming into the field */
+    font-weight: 400;
     color: var(--color-text);
     background: #fff;
-    border: 1.5px solid var(--color-border);
+    border: 1.5px solid #D1D5DB;
     border-radius: var(--radius-md);
     outline: none;
     transition: border-color var(--transition-normal), box-shadow var(--transition-normal);
 }
 .ev-field input:focus {
-    border-color: var(--color-gold);
-    box-shadow: 0 0 0 3px rgba(212, 165, 116, 0.28);
+    border-color: #0B1A2A;
+    box-shadow: 0 0 0 3px rgba(11, 26, 42, 0.18);
 }
 .ev-field input[aria-invalid="true"] { border-color: #dc2626; }
-.ev-field input::placeholder { color: #9CA3AF; }
+.ev-field input::placeholder { color: #6B7280; font-weight: 400; }
 [dir="rtl"] .ev-modal input { direction: ltr; text-align: left; }
 .ev-form__hp {
     position: absolute;
@@ -6428,7 +6453,7 @@ html.ev-lock body { overflow: hidden !important; }
     height: 1px;
     overflow: hidden;
 }
-.ev-form__error {
+.ev-modal .ev-form__error {
     margin: 0;
     padding: 0.55rem 0.75rem;
     font-size: 0.82rem;
@@ -6458,7 +6483,14 @@ html.ev-lock body { overflow: hidden !important; }
 }
 .ev-form__submit:hover,
 .ev-form__submit:focus-visible { background: #c4955f; border-color: #c4955f; }
+.ev-form__submit:focus-visible { outline: 2px solid #0B1A2A; outline-offset: 2px; }
 .ev-form__submit:disabled { opacity: 0.6; cursor: progress; }
+/* The confirm button rides the bottom of the scrolling card so it is always reachable. */
+.ev-form .ev-form__submit {
+    position: sticky;
+    bottom: 0;
+    box-shadow: 0 -14px 16px -8px rgba(255, 255, 255, 0.95);
+}
 .ev-form__submit--outline {
     background: transparent;
     color: #0B1A2A;
@@ -6466,14 +6498,14 @@ html.ev-lock body { overflow: hidden !important; }
 }
 .ev-form__submit--outline:hover,
 .ev-form__submit--outline:focus-visible { background: #0B1A2A; color: #fff; border-color: #0B1A2A; }
-.ev-form__fine {
+.ev-modal .ev-form__fine {
     margin: 0;
     font-size: 0.74rem;
     line-height: 1.5;
     text-align: center;
     color: var(--color-text-muted);
 }
-.ev-form__fine a { color: inherit; }
+.ev-modal .ev-form__fine a { color: inherit; }
 
 .ev-success { outline: none; }
 .ev-success__icon {
@@ -6495,10 +6527,25 @@ html.ev-lock body { overflow: hidden !important; }
     gap: 0.75rem;
     margin-top: 1.25rem;
 }
+.ev-modal .ev-success__alt {
+    margin: 0.9rem 0 0;
+    text-align: center;
+}
 
 @media (max-width: 767px) {
-    .ev-bar__inner { padding: 0.5rem 0.75rem; gap: 0.4rem 0.6rem; font-size: 0.78rem; }
-    .ev-bar__text { display: none; }
+    .ev-bar__inner {
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        gap: 0.6rem;
+        padding: 0.35rem 0.75rem;
+        font-size: 0.8rem;
+    }
+    .ev-bar__badge,
+    .ev-bar__text,
+    .ev-bar__btn-long { display: none; }
+    .ev-bar__short { display: inline; min-width: 0; }
+    .ev-bar__btn-short { display: inline; }
+    .ev-bar__btn { padding: 0.5rem 0.9rem; flex-shrink: 0; }
 
     .ev-modal { padding: 0; align-items: flex-end; }
     .ev-modal__card {
@@ -6510,9 +6557,9 @@ html.ev-lock body { overflow: hidden !important; }
     }
     .ev-modal__media { height: 150px; }
     .ev-modal__media img { object-position: center 30%; }
-    .ev-modal__body { padding: 1.4rem 1.25rem 1.6rem; }
-    .ev-details { grid-template-columns: 1fr 1fr; gap: 0.5rem 0.75rem; padding: 0.75rem 0.85rem; }
-    .ev-details__wide { grid-column: 1 / -1; }
+    .ev-modal__close { background: #fff; }
+    .ev-modal__body { padding: 1.25rem 1.25rem 1.4rem; }
+    .ev-details { grid-template-columns: 1fr 1fr; gap: 0.5rem 0.75rem; padding: 0.7rem 0.85rem; }
     .ev-form__row { grid-template-columns: 1fr; }
     .ev-success__actions { grid-template-columns: 1fr; }
 }

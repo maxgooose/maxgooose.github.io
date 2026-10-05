@@ -128,7 +128,7 @@
 
     // If user has a saved preference and it differs from current, redirect
     if (savedPref && savedPref !== currentLang && SUPPORTED_LANGS.indexOf(savedPref) !== -1) {
-      window.location.replace(buildUrl(savedPref, page));
+      window.location.replace(buildUrl(savedPref, page) + window.location.search + window.location.hash);
       return;
     }
 
@@ -138,7 +138,7 @@
       markRedirected();
 
       if (detectedLang !== currentLang && detectedLang !== 'en') {
-        window.location.replace(buildUrl(detectedLang, page));
+        window.location.replace(buildUrl(detectedLang, page) + window.location.search + window.location.hash);
         return;
       }
     }

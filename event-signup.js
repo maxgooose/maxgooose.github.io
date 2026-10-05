@@ -114,15 +114,8 @@
     }
 
     // ── Success panel ───────────────────────────────────────────────────────
-    function showSuccessPanel(firstName, email) {
+    function showSuccessPanel(firstName) {
         document.getElementById('ev-success-name').textContent = firstName ? ', ' + firstName : '';
-        var to = document.getElementById('ev-success-to');
-        if (email) {
-            document.getElementById('ev-success-email').textContent = email;
-            to.hidden = false;
-        } else {
-            to.hidden = true;
-        }
         formWrap.hidden = true;
         success.hidden = false;
         card.setAttribute('aria-labelledby', 'ev-success-title');
@@ -212,7 +205,7 @@
         }).then(function (r) {
             if (r.ok && r.json.ok) {
                 markSignedUp();
-                showSuccessPanel(data.firstName, data.email);
+                showSuccessPanel(data.firstName);
                 success.focus({ preventScroll: true });
                 form.reset();
             } else {
@@ -243,7 +236,7 @@
     if (alreadySignedUp) {
         // Returning guest: the bar becomes a shortcut to the calendar file.
         markSignedUp();
-        showSuccessPanel('', '');
+        showSuccessPanel('');
     }
 
     if (wantsDeepLink()) {

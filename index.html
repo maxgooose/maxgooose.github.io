@@ -360,6 +360,14 @@
   
   
 
+  
+  
+  
+  
+  
+  
+  
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Syrian Mosaic Foundation — Preserving Syria's Heritage, Building Its Future</title>
   <meta name="description" content="The Syrian Mosaic Foundation leads cultural preservation, community development, and unity-building in Syria. On the ground. Making an impact.">
@@ -515,6 +523,10 @@
   ]
 }
   </script>
+  
+  
+  
+
   
   
   
@@ -987,7 +999,7 @@
   </div>
 
   <!-- Oct 8, 2026 event: sign-up modal (logic in event-signup.js; data goes to the smf-event-rsvp API) -->
-  <div class="ev-modal" id="ev-modal" dir="ltr" lang="en" hidden="">
+  <div class="ev-modal" id="ev-modal" dir="ltr" lang="en" data-lenis-prevent="" hidden="">
     <div class="ev-modal__backdrop" data-ev-close=""></div>
     <div class="ev-modal__card" role="dialog" aria-modal="true" aria-labelledby="ev-title" aria-describedby="ev-desc" tabindex="-1">
       <button type="button" class="ev-modal__close" data-ev-close="" aria-label="Close">×</button>
@@ -997,12 +1009,12 @@
       </div>
       <div class="ev-modal__body">
         <div class="ev-modal__form-wrap" id="ev-form-wrap">
-          <p class="ev-eyebrow">Thursday, Oct 8 · 6:30 PM · Brooklyn<span class="ev-eyebrow__free"> · Free admission</span></p>
+          <p class="ev-eyebrow">Thursday, Oct 8 · 6:30 PM · Brooklyn · Free admission</p>
           <h2 class="ev-title" id="ev-title">Syria's Mosaic Heritage</h2>
           <p class="ev-subtitle">The Ancient Jewish Legacy of Dura-Europos</p>
           <p class="ev-desc" id="ev-desc">An evening of talks, live Syrian music and glatt kosher refreshments, honoring the Synagogue of Dura-Europos and Syria's shared heritage.</p>
           <dl class="ev-details">
-            <div class="ev-details__wide"><dt>Location</dt><dd>Brooklyn, New York <span>Exact address emailed to confirmed guests</span></dd></div>
+            <div class="ev-details__wide"><dt>Location</dt><dd id="ev-address">Brooklyn, New York</dd></div>
           </dl>
           <form class="ev-form" id="ev-form" novalidate="" autocomplete="on">
             <div class="ev-form__row">
@@ -1014,18 +1026,18 @@
             <div class="ev-form__hp" aria-hidden="true"><label>Leave this field empty<input type="text" name="fax_ext" tabindex="-1" autocomplete="off"></label></div>
             <p class="ev-form__error" id="ev-error" role="alert" hidden=""></p>
             <button type="submit" class="ev-form__submit" id="ev-submit">Confirm my spot</button>
-            <p class="ev-form__fine">Free admission · <a href="/assets/images/event-dura-europos-flyer.jpg" target="_blank" rel="noopener">View the flyer</a> · We'll only use your email for this event · Questions: <a href="mailto:info@syrianmosaicfoundation.org">info@syrianmosaicfoundation.org</a></p>
+            <p class="ev-form__fine">Free admission · We'll only use your email for event updates · Questions: <a href="mailto:info@syrianmosaicfoundation.org">info@syrianmosaicfoundation.org</a></p>
           </form>
         </div>
         <div class="ev-success" id="ev-success" hidden="" tabindex="-1">
           <div class="ev-success__icon" aria-hidden="true">✓</div>
           <h2 class="ev-title" id="ev-success-title">You're signed up<span id="ev-success-name"></span>!</h2>
-          <p class="ev-desc">Your spot is saved for <strong>Thursday, October 8 at 6:30 PM</strong> in Brooklyn. We'll email the exact location and arrival details<span id="ev-success-to"> to <strong id="ev-success-email"></strong></span> before the event.</p>
+          <p class="ev-desc">Your spot is saved for <strong>Thursday, October 8 at 6:30 PM</strong>. <span id="ev-success-where">Location: <strong>Brooklyn, New York</strong>.</span> See you there!</p>
           <div class="ev-success__actions">
             <a class="ev-form__submit ev-form__submit--outline" href="/assets/syrias-mosaic-heritage-oct-8-2026.ics">Add to calendar</a>
             <button type="button" class="ev-form__submit" data-ev-close="">Done</button>
           </div>
-          <p class="ev-desc ev-desc--small ev-success__alt">Prefer Google Calendar? <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Syria%27s%20Mosaic%20Heritage%20%E2%80%94%20The%20Ancient%20Jewish%20Legacy%20of%20Dura-Europos&amp;dates=20261008T223000Z/20261009T010000Z&amp;location=Brooklyn%2C%20New%20York%20(exact%20address%20sent%20by%20email)&amp;details=An%20evening%20with%20the%20Syrian%20Mosaic%20Foundation%3A%20talks%2C%20live%20Syrian%20music%2C%20glatt%20kosher%20refreshments.%20Questions%3A%20info%40syrianmosaicfoundation.org" target="_blank" rel="noopener">Add it there instead</a>.</p>
+          <p class="ev-desc ev-desc--small ev-success__alt">Prefer Google Calendar? <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Syria%27s%20Mosaic%20Heritage%20%E2%80%94%20The%20Ancient%20Jewish%20Legacy%20of%20Dura-Europos&amp;dates=20261008T223000Z/20261009T010000Z&amp;location=Brooklyn%2C%20New%20York&amp;details=An%20evening%20with%20the%20Syrian%20Mosaic%20Foundation%3A%20talks%2C%20live%20Syrian%20music%2C%20glatt%20kosher%20refreshments.%20Questions%3A%20info%40syrianmosaicfoundation.org" target="_blank" rel="noopener">Add it there instead</a>.</p>
         </div>
       </div>
     </div>
@@ -1058,6 +1070,7 @@
   </form>
   <p class="footer-nl__msg" id="footer-nl-msg" aria-live="polite" hidden=""></p>
 </div>
+
 
 
 

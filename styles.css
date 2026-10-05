@@ -6318,8 +6318,8 @@ html.ev-lock body { overflow: hidden !important; }
     text-decoration: none;
     transition: background var(--transition-fast), color var(--transition-fast);
 }
-.ev-modal__flyer-link:hover,
-.ev-modal__flyer-link:focus-visible { background: #fff; color: #0B1A2A; }
+.ev-modal .ev-modal__flyer-link:hover,
+.ev-modal .ev-modal__flyer-link:focus-visible { background: #fff; color: #0B1A2A; }
 .ev-modal__body {
     min-height: 0;
     overflow-y: auto;
@@ -6496,8 +6496,8 @@ html.ev-lock body { overflow: hidden !important; }
     color: #0B1A2A;
     border-color: #0B1A2A;
 }
-.ev-form__submit--outline:hover,
-.ev-form__submit--outline:focus-visible { background: #0B1A2A; color: #fff; border-color: #0B1A2A; }
+.ev-modal .ev-form__submit--outline:hover,
+.ev-modal .ev-form__submit--outline:focus-visible { background: #0B1A2A; color: #fff; border-color: #0B1A2A; }
 .ev-modal .ev-form__fine {
     margin: 0;
     font-size: 0.74rem;
@@ -6543,7 +6543,7 @@ html.ev-lock body { overflow: hidden !important; }
     .ev-bar__badge,
     .ev-bar__text,
     .ev-bar__btn-long { display: none; }
-    .ev-bar__short { display: inline; min-width: 0; }
+    .ev-bar__short { display: inline; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .ev-bar__btn-short { display: inline; }
     .ev-bar__btn { padding: 0.5rem 0.9rem; flex-shrink: 0; }
 

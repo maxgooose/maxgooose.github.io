@@ -36,6 +36,7 @@
     var submitLabel = submitBtn ? submitBtn.textContent : '';
     var lastFocus = null;
     var isOpen = false;
+    var autoTimer = null;
 
     // Reading window.localStorage itself throws when site data is blocked, so the
     // store is resolved inside a try as well (not only getItem/setItem).
@@ -57,6 +58,8 @@
 
     // ── Open / close ────────────────────────────────────────────────────────
     function open(auto) {
+        if (autoTimer) { clearTimeout(autoTimer); autoTimer = null; }
+        storageSet('sessionStorage', SEEN_KEY, '1');
         if (isOpen) return;
         isOpen = true;
         lastFocus = document.activeElement;
@@ -123,6 +126,7 @@
         formWrap.hidden = true;
         success.hidden = false;
         card.setAttribute('aria-labelledby', 'ev-success-title');
+        card.removeAttribute('aria-describedby');
     }
 
     function markSignedUp() {
@@ -147,6 +151,7 @@
     function showError(message, field) {
         errorEl.textContent = message || GENERIC_ERROR;
         errorEl.hidden = false;
+        if (errorEl.scrollIntoView) errorEl.scrollIntoView({ block: 'center' });
         var input = field && form[field] && form[field].setAttribute ? form[field] : null;
         if (input) {
             input.setAttribute('aria-invalid', 'true');
@@ -244,8 +249,8 @@
     if (wantsDeepLink()) {
         open(false);
     } else if (!alreadySignedUp && !storageGet('sessionStorage', SEEN_KEY)) {
-        setTimeout(function () {
-            storageSet('sessionStorage', SEEN_KEY, '1');
+        autoTimer = setTimeout(function () {
+            autoTimer = null;
             open(true);
         }, AUTO_OPEN_DELAY);
     }

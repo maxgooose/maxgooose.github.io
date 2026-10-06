@@ -114,8 +114,15 @@
     }
 
     // ── Success panel ───────────────────────────────────────────────────────
-    function showSuccessPanel(firstName) {
+    function showSuccessPanel(firstName, email) {
         document.getElementById('ev-success-name').textContent = firstName ? ', ' + firstName : '';
+        var mail = document.getElementById('ev-success-mail');
+        if (email) {
+            document.getElementById('ev-success-email').textContent = email;
+            mail.hidden = false;
+        } else {
+            mail.hidden = true;
+        }
         formWrap.hidden = true;
         success.hidden = false;
         card.setAttribute('aria-labelledby', 'ev-success-title');
@@ -205,7 +212,7 @@
         }).then(function (r) {
             if (r.ok && r.json.ok) {
                 markSignedUp();
-                showSuccessPanel(data.firstName);
+                showSuccessPanel(data.firstName, data.email);
                 success.focus({ preventScroll: true });
                 form.reset();
             } else {
